@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "A shared ESLint config for Limina packages",
   "main": "eslintrc.json",
-  "repository": "https://github.com/limina/packages/eslint-config",
+  "repository": "https://github.com/kohlmannj/limina/packages/eslint-config",
   "author": "Joseph Kohlmann <joseph.kohlmann@nytimes.com>",
   "license": "MIT",
   "resolutions": {

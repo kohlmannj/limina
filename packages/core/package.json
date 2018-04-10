@@ -1,10 +1,10 @@
 {
   "name": "@limina/core",
   "version": "0.0.0",
-  "description": "A CSS-in-JS library for interpolating and constraining property values with media queries",
+  "description": "A CSS-in-JS library for interpolating and constraining CSS property values across screen widths",
   "main": "dist/index.js",
   "types": "lib/index.d.ts",
-  "repository": "https://github.com/limina/packages/core",
+  "repository": "https://github.com/kohlmannj/limina/packages/core",
   "author": "Joseph Kohlmann <joseph.kohlmann@nytimes.com>",
   "license": "MIT",
   "files": [

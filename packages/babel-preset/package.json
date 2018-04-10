@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "A shared Babel preset for Limina projects",
   "main": "src/babel-preset.js",
-  "repository": "https://github.com/limina/packages/babel-preset",
+  "repository": "https://github.com/kohlmannj/limina/packages/babel-preset",
   "author": "Joseph Kohlmann <joseph.kohlmann@nytimes.com>",
   "license": "MIT",
   "dependencies": {

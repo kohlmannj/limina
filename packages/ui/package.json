@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "An expressive UI component library built with React, Emotion, and Limina Core",
   "main": "dist/index.js",
-  "repository": "https://github.com/limina/packages/core",
+  "repository": "https://github.com/kohlmannj/limina/packages/core",
   "author": "Joseph Kohlmann <joseph.kohlmann@nytimes.com>",
   "license": "MIT",
   "resolutions": {
