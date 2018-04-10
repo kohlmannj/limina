@@ -1,3 +1,5 @@
-export default function limina(widths: number[]) {}
+import { LiminaFunc } from './types';
 
-// const limen = limina([320, 540, 854, 1280, 1605]);
+const limina: LiminaFunc = widths => widths;
+
+export default limina;

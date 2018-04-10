@@ -1,17 +1,15 @@
-export enum MediaQueryType {
-  MIN_WIDTH = 'min-width',
-  MAX_WIDTH = 'max-width',
-}
+import { LiminaFunc } from './types';
 
-export const getMediaQueryType = (type = 'min-width') => (width: number) => {
+export const mapMediaQuery = (type = 'min-width', unit = 'px') => (width: number) => {
   // Disallow string-type `width` values that appear to already be media queries
   // if (typeof width === 'string' /* && width.trim().indexOf('@media') === 0 */) {
   //   throw new Error(`\`${width}\` is a string`); // already a media query`);
   // }
 
-  return `@media (${type}: ${typeof width === 'number' ? `${width}px` : width})`;
+  return `@media (${type}: ${width}${unit})`;
 };
 
-export default function getMediaQueries(widths: number[], type?: MediaQueryType) {
-  return widths.map(getMediaQueryType(type));
-}
+const getMediaQueries: LiminaFunc = (widths, mediaQueryMode, cssUnit) =>
+  widths.map(mapMediaQuery(mediaQueryMode, cssUnit));
+
+export default getMediaQueries;
