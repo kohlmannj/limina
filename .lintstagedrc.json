@@ -1,0 +1,12 @@
+{
+  "linters": {
+    "*.{js,jsx,json}": [
+      "yarn lint:js --fix",
+      "git add"
+    ],
+    "*.{ts,tsx}": [
+      "yarn lint:ts --fix",
+      "git add"
+    ]
+  }
+}

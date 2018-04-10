@@ -3,12 +3,16 @@
   "version": "0.0.0",
   "description": "A CSS-in-JS library for interpolating and constraining property values with media queries",
   "main": "dist/index.js",
+  "types": "lib/index.d.ts",
   "repository": "https://github.com/limina/packages/core",
   "author": "Joseph Kohlmann <joseph.kohlmann@nytimes.com>",
   "license": "MIT",
+  "files": [
+    "lib",
+    "src"
+  ],
   "scripts": {
-    "build": "tsc --emitDeclarationOnly --declarationDir ./lib && babel ./src --out-dir ./lib --extensions \".ts,.tsx\"",
-    "type-check": "tsc --noEmit"
+    "prepare": "node ../../scripts/prepare.js"
   },
   "devDependencies": {
     "babel-preset-limina": "^0.0.0"

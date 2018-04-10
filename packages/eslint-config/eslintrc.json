@@ -1,14 +1,46 @@
 {
-  "parser": "typescript-eslint-parser",
+  "parser": "babel-eslint",
   "extends": [
     "airbnb",
+    "prettier",
     "plugin:jest/recommended"
   ],
   "env": {
     "jest": true
   },
   "plugins": [
+    "jest",
     "json",
-    "jest"
-  ]
+    "prettier"
+  ],
+  "rules": {
+    "import/no-extraneous-dependencies": ["error", {
+      "devDependencies": [
+        "scripts/**",
+        "test/**",
+        "tests/**",
+        "spec/**",
+        "**/__tests__/**",
+        "test.js",
+        "test-*.js",
+        "**/*.test.js",
+        "**/*.spec.js",
+        "**/webpack.config.js",
+        "**/webpack.config.*.js",
+        "**/rollup.config.js",
+        "**/gulpfile.js",
+        "**/gulpfile.*.js",
+        "**/Gruntfile"
+      ],
+      "optionalDependencies": false,
+      "peerDependencies": true
+    }],
+    "prettier/prettier": ["error", {
+      "bracketSpacing": true,
+      "printWidth": 100,
+      "singleQuote": true,
+      "tabWidth": 2,
+      "trailingComma": "es5"
+    }]
+  }
 }

@@ -1,5 +1,5 @@
 {
   "presets": [
-    "babel-preset-limina"
+    "babel-preset-limina-react"
   ]
 }
