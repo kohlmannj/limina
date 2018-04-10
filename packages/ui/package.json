@@ -6,6 +6,9 @@
   "repository": "https://github.com/limina/packages/core",
   "author": "Joseph Kohlmann <joseph.kohlmann@nytimes.com>",
   "license": "MIT",
+  "resolutions": {
+    "babel-core": "^7.0.0-bridge.0"
+  },
   "dependencies": {
     "@limina/core": "^0.0.0",
     "emotion": "^9.1.1",
