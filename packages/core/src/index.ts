@@ -1,3 +1,1 @@
-export default function() {
-  console.log('Hello World!');
-}
+export { default } from './limina';
