@@ -12,6 +12,7 @@
     "lint:js": "cross-env NODE_ENV=production eslint --cache --cache-location=.cache/eslint --ext .js,.jsx,.json --report-unused-disable-directives",
     "lint:ts": "tslint -p . -c tslint.json -t stylish",
     "lint:md": "remark -q",
+    "precommit": "lint-staged",
     "storybook:ui": "start-storybook -p 4001 -c packages/ui/.storybook",
     "test": "jest",
     "type-check": "tsc --noEmit"
@@ -21,6 +22,18 @@
   ],
   "resolutions": {
     "babel-core": "^7.0.0-bridge.0"
+  },
+  "lint-staged": {
+    "linters": {
+      "*.{js,jsx,json}": [
+        "yarn lint:js --fix",
+        "git add"
+      ],
+      "*.{ts,tsx}": [
+        "yarn lint:ts --fix",
+        "git add"
+      ]
+    }
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0-beta.44",
@@ -35,6 +48,7 @@
     "chalk": "^2.3.2",
     "concurrently": "^3.5.1",
     "cross-env": "^5.1.4",
+    "husky": "^0.14.3",
     "jest": "^22.4.3",
     "lerna": "^2.10.1",
     "lint-staged": "^7.0.4",
