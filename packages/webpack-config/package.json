@@ -1,0 +1,9 @@
+{
+  "name": "webpack-config-limina",
+  "version": "0.0.0",
+  "description": "A shared Webpack config for Liminia packages",
+  "main": "dist/index.js",
+  "repository": "https://github.com/limina/packages/webpack-config",
+  "author": "Joseph Kohlmann <joseph.kohlmann@nytimes.com>",
+  "license": "MIT"
+}

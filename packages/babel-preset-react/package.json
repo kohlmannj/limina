@@ -1,0 +1,13 @@
+{
+  "name": "babel-preset-limina-react",
+  "version": "0.0.0",
+  "description": "A shared Babel preset for React-based Limina projects",
+  "main": "src/babel-preset-react.js",
+  "repository": "https://github.com/limina/packages/babel-preset-react",
+  "author": "Joseph Kohlmann <joseph.kohlmann@nytimes.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/preset-react": "^7.0.0-beta.44",
+    "babel-preset-limina": "^0.0.0"
+  }
+}

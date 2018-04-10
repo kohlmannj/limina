@@ -1,0 +1,15 @@
+{
+  "name": "@limina/storybook-config",
+  "version": "0.0.0",
+  "description": "A shared React Storybook config for Limina packages",
+  "main": "config.js",
+  "repository": "https://github.com/limina/packages/storybook-config",
+  "author": "Joseph Kohlmann <joseph.kohlmann@nytimes.com>",
+  "license": "MIT",
+  "peerDependencies": {
+    "@storybook/react": "^3.4.0",
+    "react": "^16.3.1",
+    "react-dom": "^16.3.1",
+    "webpack": "^3.11.0 || ^4.5.0"
+  }
+}
