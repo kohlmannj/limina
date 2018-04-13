@@ -1,3 +1,4 @@
+/* eslint-env node */
 module.exports = {
   collectCoverageFrom: [
     '<rootDir>/packages/**/*.{js,jsx,ts,tsx}',
@@ -5,7 +6,7 @@ module.exports = {
     '!**/vendor/**',
   ],
   moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx'],
-  setupFiles: ['<rootDir>/scripts/babel-polyfill.js'],
+  setupTestFrameworkScriptFile: '<rootDir>/scripts/babel-polyfill.js',
   testMatch: ['**/__tests__/**/*.(j|t)s?(x)', '**/?(*.)(spec|test).(j|t)s?(x)'],
   transform: {
     '^.+\\.jsx?$': 'babel-jest',

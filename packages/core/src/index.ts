@@ -1,1 +1,1 @@
-export { default } from './limina';
+export { default, auto } from './limina';

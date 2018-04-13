@@ -8,8 +8,9 @@ function getCommand(watch) {
 
   const args = [
     '--ignore __mocks__/,tests/*,__tests__/,**.test.js,**.test.ts,stories/,**.story.js,**.story.ts,**.stories.js,**.stories.ts,__snapshots__',
-    './src --out-dir ./lib',
-    '--extensions ".js,.jsx,.ts,.tsx,"',
+    './src',
+    '--out-dir ./lib',
+    '--extensions ".js,.jsx,.ts,.tsx"',
     '--copy-files',
   ];
 

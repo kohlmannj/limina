@@ -1,5 +1,23 @@
-import { LiminaFunc } from './types';
+import createLimina, { Limina } from './createLimina';
 
-const limina: LiminaFunc = widths => widths;
+export const context = {
+  breakpoints: {
+    mobilePortrait: 320,
+    tabletPortrait: 540,
+    tabletLandscape: 854,
+    desktop: 1280,
+    shell: 1605,
+  },
+  default: 'desktop',
+  compact: 'mobilePortrait',
+  regular: 'desktop',
+};
 
-export default limina;
+export default createLimina({
+  breakpoints:
+});
+
+[
+  { minWidth: 320 },
+  { minWidth: 320 },
+]

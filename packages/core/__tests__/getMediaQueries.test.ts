@@ -1,7 +1,5 @@
+import testMediaQueries from '../__stubs__/testMediaQueries';
 import getMediaQueries from '../src/getMediaQueries';
-import { MediaQueryMode } from '../src/types';
-
-const testMediaQueries: number[] = [320, 540, 854, 1280, 1605];
 
 describe('getMediaQueries', () => {
   it('returns an array of `min-width` media queries', () => {
@@ -18,13 +16,13 @@ describe('getMediaQueries', () => {
   });
 
   it('returns an array of `max-width` media queries', () => {
-    const mediaQueries = getMediaQueries(testMediaQueries, MediaQueryMode.MAX_WIDTH);
+    const mediaQueries = getMediaQueries(testMediaQueries, 'max-width');
     expect(mediaQueries.length).toEqual(testMediaQueries.length);
 
     expect(mediaQueries).toEqual(
       expect.arrayContaining(
         testMediaQueries.map(testMediaQuery =>
-          expect.stringMatching(new RegExp(`${MediaQueryMode.MAX_WIDTH}:\\s*${testMediaQuery}`))
+          expect.stringMatching(new RegExp(`max-width:\\s*${testMediaQuery}`))
         )
       )
     );

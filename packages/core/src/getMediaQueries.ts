@@ -1,4 +1,4 @@
-import { LiminaFunc } from './types';
+import { LiminaFactory } from './types';
 
 export const mapMediaQuery = (type = 'min-width', unit = 'px') => (width: number) => {
   // Disallow string-type `width` values that appear to already be media queries
@@ -9,7 +9,7 @@ export const mapMediaQuery = (type = 'min-width', unit = 'px') => (width: number
   return `@media (${type}: ${width}${unit})`;
 };
 
-const getMediaQueries: LiminaFunc = (widths, mediaQueryMode, cssUnit) =>
+const getMediaQueries: LiminaFactory = (widths, mediaQueryMode, cssUnit) =>
   widths.map(mapMediaQuery(mediaQueryMode, cssUnit));
 
 export default getMediaQueries;

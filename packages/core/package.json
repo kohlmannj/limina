@@ -14,7 +14,8 @@
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
   },
-  "devDependencies": {
-    "babel-preset-limina": "^0.0.0"
+  "dependencies": {
+    "csstype": "^2.2.0",
+    "emotion": "^9.1.1"
   }
 }
