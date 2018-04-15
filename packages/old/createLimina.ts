@@ -1,13 +1,13 @@
 import {
-  NamedBreakpointDefinitions,
   BreakpointFunctions,
   ILimina,
   ILiminaConstructor,
   ILiminaContext,
   InterpolationMode,
   Limen,
+  NamedBreakpointDefinitions,
   SupportedCSSUnit,
-} from './types';
+} from '.';
 
 export class Limina implements ILimina {
   public static readonly auto = InterpolationMode.linear;

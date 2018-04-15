@@ -1,5 +1,5 @@
-import * as emotion from 'emotion';
-import { createSerializer } from 'jest-emotion';
+const emotion = require('emotion');
+const { createSerializer } = require('jest-emotion');
 
 expect.addSnapshotSerializer(createSerializer(emotion));
 

@@ -4,5 +4,9 @@
     "noEmit": false,
     "emitDeclarationOnly": true
   },
-  "exclude": ["**/__tests__/**/*"]
+  "exclude": [
+    "**/__mocks__/**/*",
+    "**/__stubs__/**/*",
+    "**/__tests__/**/*"
+  ]
 }

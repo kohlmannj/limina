@@ -7,7 +7,18 @@ const presetEnv = require('@babel/preset-env');
 // const env = process.env.BABEL_ENV || process.env.NODE_ENV;
 
 module.exports = () => ({
-  presets: [[presetEnv, { targets: 'last two versions' }], presetStage1, presetTypescript],
+  presets: [
+    [
+      presetEnv,
+      {
+        targets: {
+          browsers: ['last 2 versions', 'safari >= 7'],
+        },
+      },
+    ],
+    presetStage1,
+    presetTypescript,
+  ],
   // plugins: [
   //   [emotionPlugin, env === 'production' ? { hoist: true } : { sourceMap: true, autoLabel: true }],
   // ],

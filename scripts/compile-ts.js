@@ -12,7 +12,9 @@ function getCommand(watch) {
     args.push('-w');
   }
 
-  return `${tsc} ${args.join(' ')}`;
+  const command = `${tsc} ${args.join(' ')}`;
+  console.log(command);
+  return command;
 }
 
 function handleExit(code, errorCallback) {

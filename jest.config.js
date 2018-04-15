@@ -6,7 +6,7 @@ module.exports = {
     '!**/vendor/**',
   ],
   moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx'],
-  setupTestFrameworkScriptFile: '<rootDir>/scripts/babel-polyfill.js',
+  setupTestFrameworkScriptFile: '<rootDir>/scripts/jest.setup.js',
   testMatch: ['**/__tests__/**/*.(j|t)s?(x)', '**/?(*.)(spec|test).(j|t)s?(x)'],
   transform: {
     '^.+\\.jsx?$': 'babel-jest',

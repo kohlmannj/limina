@@ -1,9 +1,12 @@
 import { _Interpolation1 } from 'emotion';
+import { IBreakpointTuple } from './BreakpointTuple';
 
 export enum InterpolationMode {
   auto = 'AUTO',
   linear = 'LINEAR',
 }
+
+export type CSSPropertyValueTuple = [string, IBreakpointTuple[]];
 
 export type BreakpointDefinition = number;
 export type NamedBreakpointDefinitions = Record<string, BreakpointDefinition>;
@@ -11,28 +14,26 @@ export type BreakpointDefinitions = NamedBreakpointDefinitions | BreakpointDefin
 export type DefaultBreakpointProperty = string | BreakpointDefinition;
 export type BreakpointFunctions = Record<string, Limen>;
 export type MediaQueryMode = 'min-width' | 'max-width';
+export type CSSValue = number | string;
 export type SupportedCSSUnit = 'px' | 'em' | 'rem';
-export type
 
 export type BreakpointAliases = Record<string, string>;
 
 export interface ILiminaContext {
-  breakpoints?: BreakpointDefinitions,
-  default?: DefaultBreakpointProperty,
-  defaultIndex?: number,
+  breakpoints?: BreakpointDefinitions;
+  default?: DefaultBreakpointProperty;
+  defaultIndex?: number;
   interpolation?: InterpolationMode;
   scale?: number;
 }
 
-export type BreakpointTupleFactory = (value?: number | InterpolationMode.auto) => ;
+// export type BreakpointTupleFactory = (value?: number | InterpolationMode.auto) => ;
 
 export type Limen = (value?: number | InterpolationMode.auto) => _Interpolation1;
 
 // export type Limina = (...limen: Limen[]) => _Interpolation1 | _Interpolation1[];
 
-export interface ILimina {
-
-}
+export interface ILimina {}
 
 // export type ILiminaConstructorArgs = (
 

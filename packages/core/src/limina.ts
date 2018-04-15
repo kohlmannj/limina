@@ -1,23 +1,13 @@
-import createLimina, { Limina } from './createLimina';
+import merge from 'lodash.merge';
+import { CSSPropertyValueTuple } from '.';
+import { IBreakpointTuple } from './BreakpointTuple';
+import { retargetCSSPropertyValue } from './utils/retargetCSSPropertyValue';
 
-export const context = {
-  breakpoints: {
-    mobilePortrait: 320,
-    tabletPortrait: 540,
-    tabletLandscape: 854,
-    desktop: 1280,
-    shell: 1605,
-  },
-  default: 'desktop',
-  compact: 'mobilePortrait',
-  regular: 'desktop',
-};
+const liminaNeue = (styles: Record<string, IBreakpointTuple[]>) =>
+  Object.entries(styles).reduce(
+    (retargetedStyles, styleTuple: CSSPropertyValueTuple) =>
+      merge(retargetedStyles, retargetCSSPropertyValue(styleTuple)),
+    {}
+  );
 
-export default createLimina({
-  breakpoints:
-});
-
-[
-  { minWidth: 320 },
-  { minWidth: 320 },
-]
+export default liminaNeue;
