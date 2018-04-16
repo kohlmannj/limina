@@ -7,6 +7,9 @@
   "repository": "https://github.com/kohlmannj/limina/packages/core",
   "author": "Joseph Kohlmann <joseph.kohlmann@nytimes.com>",
   "license": "Apache-2.0",
+  "publishConfig": {
+    "access": "public"
+  },
   "files": [
     "lib",
     "src"

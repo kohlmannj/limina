@@ -6,6 +6,9 @@
   "repository": "https://github.com/kohlmannj/limina/packages/tslint-config",
   "author": "Joseph Kohlmann <joseph.kohlmann@nytimes.com>",
   "license": "Apache-2.0",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "prettier": "^1.11.1",
     "tslint": "^5.9.1",
