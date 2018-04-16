@@ -1,6 +1,6 @@
 import { _Interpolation1 } from 'emotion';
-import { CSSPropertyValueTuple } from '..';
-import { IBreakpointTuple } from '../BreakpointTuple';
+import { IBreakpointTuple } from '../BreakpointTuple/BreakpointTuple.d';
+import { CSSPropertyValueTuple } from '../index.d';
 import createLinearRegressionMediaQuery from './createLinearRegressionMediaQuery';
 import defaultOptions from './cssValueRetargetingDefaultOptions';
 import { ICSSValueRetargetingOptions, IReduceToCSSOptions } from './index';

@@ -1,5 +1,5 @@
-import { CSSValue } from '..';
-import { IBreakpoint } from '../Breakpoint';
+import { IBreakpoint } from '../Breakpoint/Breakpoint.d';
+import { CSSValue } from '../index.d';
 
 export interface IBreakpointTupleOptions {
   breakpoint: IBreakpoint;

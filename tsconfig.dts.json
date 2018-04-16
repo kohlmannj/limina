@@ -3,10 +3,5 @@
   "compilerOptions": {
     "noEmit": false,
     "emitDeclarationOnly": true
-  },
-  "exclude": [
-    "**/__mocks__/**/*",
-    "**/__stubs__/**/*",
-    "**/__tests__/**/*"
-  ]
+  }
 }

@@ -1,7 +1,8 @@
 import units, { ParsedCSSValue } from 'units-css';
-import { IBreakpointTuple, IBreakpointTupleOptions } from '.';
-import { CSSValue } from '..';
-import { Breakpoint, IBreakpoint } from '../Breakpoint';
+import { Breakpoint } from '../Breakpoint';
+import { IBreakpoint } from '../Breakpoint/Breakpoint.d';
+import { CSSValue } from '../index.d';
+import { IBreakpointTuple, IBreakpointTupleOptions } from './BreakpointTuple.d';
 
 export class BreakpointTuple implements IBreakpointTuple {
   public static isValid(breakpointTuple: IBreakpointTuple) {

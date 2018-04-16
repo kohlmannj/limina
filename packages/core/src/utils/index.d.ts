@@ -1,5 +1,5 @@
 import { _Interpolation1 } from 'emotion';
-import { IBreakpointTuple } from '../BreakpointTuple';
+import { IBreakpointTuple } from '../BreakpointTuple/BreakpointTuple.d';
 
 export interface ICSSValueRetargetingDefaultOptions {
   dynamicUnit: 'vw';

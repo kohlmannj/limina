@@ -40,7 +40,7 @@
     // "rootDirs": [],                        /* List of root folders whose combined content represents the structure of the project at runtime. */
     "typeRoots": [                            /* List of folders to include type definitions from. */
       "./@types",
-      "./node_modules/@types",
+      "./node_modules/@types"
     ],
     // "types": [],                           /* Type declaration files to be included in compilation. */
     "allowSyntheticDefaultImports": true,     /* Allow default imports from modules with no default export. This does not affect code emit, just typechecking. */
@@ -56,5 +56,12 @@
     /* Experimental Options */
     "experimentalDecorators": true            /* Enables experimental support for ES7 decorators. */
     // "emitDecoratorMetadata": true,         /* Enables experimental support for emitting type metadata for decorators. */
-  }
+  },
+  "exclude": [
+    "**/__mocks__/**/*",
+    "**/__old__/**/*",
+    "**/__stubs__/**/*",
+    "**/__tests__/**/*",
+    "**/lib/**/*"
+  ]
 }

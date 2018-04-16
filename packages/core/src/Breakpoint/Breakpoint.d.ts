@@ -1,5 +1,5 @@
-import { CSSValue } from '..';
-import { IBreakpointTuple } from '../BreakpointTuple';
+import { IBreakpointTuple } from '../BreakpointTuple/BreakpointTuple.d';
+import { CSSValue } from '../index.d';
 
 export type Modifier = 'min' | 'max';
 export type Operator = 'and' | 'or';

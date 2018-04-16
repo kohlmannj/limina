@@ -1,5 +1,5 @@
 import { _Interpolation1 } from 'emotion';
-import { IBreakpointTuple } from './BreakpointTuple';
+import { IBreakpointTuple } from './BreakpointTuple/BreakpointTuple.d';
 
 export enum InterpolationMode {
   auto = 'AUTO',
@@ -33,7 +33,7 @@ export type Limen = (value?: number | InterpolationMode.auto) => _Interpolation1
 
 // export type Limina = (...limen: Limen[]) => _Interpolation1 | _Interpolation1[];
 
-export interface ILimina {}
+// export interface ILimina {}
 
 // export type ILiminaConstructorArgs = (
 

@@ -1,13 +1,14 @@
 import units from 'units-css';
+import createBreakpointTuple from '../BreakpointTuple';
+import { IBreakpointTuple } from '../BreakpointTuple/BreakpointTuple.d';
+import { CSSValue } from '../index.d';
 import {
   BreakpointOptions,
   IBreakpoint,
   IBreakpointDefaultProps,
   IBreakpointOptions,
   IBreakpointProps,
-} from '.';
-import { CSSValue } from '..';
-import createBreakpointTuple, { IBreakpointTuple } from '../BreakpointTuple';
+} from './Breakpoint.d';
 
 export const modifiers = ['min', 'max'];
 export const operators = ['and', 'or'];

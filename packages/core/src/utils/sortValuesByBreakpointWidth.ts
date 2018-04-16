@@ -1,4 +1,4 @@
-import { IBreakpointTuple } from '../BreakpointTuple';
+import { IBreakpointTuple } from '../BreakpointTuple/BreakpointTuple.d';
 
 const sortValuesByBreakpointWidth = (l: IBreakpointTuple, r: IBreakpointTuple) => {
   const leftWidth = l.breakpoint.props.width;
