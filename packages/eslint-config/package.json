@@ -1,6 +1,6 @@
 {
   "name": "@limina/eslint-config",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A shared ESLint config for Limina packages",
   "main": "eslintrc.json",
   "repository": "https://github.com/kohlmannj/limina/packages/eslint-config",
