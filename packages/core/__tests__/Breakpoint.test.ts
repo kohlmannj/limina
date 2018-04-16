@@ -1,10 +1,9 @@
-import createBreakpoint, { Breakpoint } from '..';
+import createBreakpoint, { Breakpoint } from '../src/Breakpoint';
 
 describe('Breakpoint', () => {
   describe('constructor', () => {
     it('supports strings', () => {
       const breakpoint = createBreakpoint('1280px');
-      debugger;
       expect(Breakpoint.isValid(breakpoint)).toBeTruthy();
     });
 
