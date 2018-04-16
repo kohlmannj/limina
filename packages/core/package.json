@@ -1,6 +1,6 @@
 {
   "name": "@limina/core",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "description": "A CSS-in-JS library for interpolating and constraining CSS property values across screen widths",
   "main": "dist/index.js",
   "types": "lib/index.d.ts",
