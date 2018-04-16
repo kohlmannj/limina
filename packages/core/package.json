@@ -6,7 +6,7 @@
   "types": "lib/index.d.ts",
   "repository": "https://github.com/kohlmannj/limina/packages/core",
   "author": "Joseph Kohlmann <joseph.kohlmann@nytimes.com>",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "files": [
     "lib",
     "src"

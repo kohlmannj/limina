@@ -5,7 +5,7 @@
   "main": "babel-preset-limina-core.js",
   "repository": "https://github.com/kohlmannj/limina/packages/babel-preset",
   "author": "Joseph Kohlmann <joseph.kohlmann@nytimes.com>",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "dependencies": {
     "@babel/core": "^7.0.0-beta.44",
     "@babel/preset-env": "^7.0.0-beta.44",

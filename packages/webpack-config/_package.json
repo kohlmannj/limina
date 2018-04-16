@@ -6,5 +6,5 @@
   "main": "dist/index.js",
   "repository": "https://github.com/kohlmannj/limina/packages/webpack-config",
   "author": "Joseph Kohlmann <joseph.kohlmann@nytimes.com>",
-  "license": "MIT"
+  "license": "Apache-2.0"
 }

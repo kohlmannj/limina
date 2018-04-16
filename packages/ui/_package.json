@@ -6,7 +6,7 @@
   "main": "dist/index.js",
   "repository": "https://github.com/kohlmannj/limina/packages/core",
   "author": "Joseph Kohlmann <joseph.kohlmann@nytimes.com>",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "resolutions": {
     "babel-core": "^7.0.0-bridge.0"
   },
