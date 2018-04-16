@@ -1,5 +1,6 @@
 {
   "presets": [
-    "babel-preset-limina-react"
+    "react",
+    "@limina/core"
   ]
 }

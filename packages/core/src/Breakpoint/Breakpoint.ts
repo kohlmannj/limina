@@ -63,10 +63,10 @@ export class Breakpoint implements IBreakpoint {
 
   public toString() {
     const { modifier, name, operator, rawWidth, unit, ...rest } = this.props;
-    const mediaQueryConditions = Object.entries(rest).reduce(
-      (conditions, [propName, propValue]) => [
+    const mediaQueryConditions = Object.values(rest).reduce(
+      (conditions, propName) => [
         ...conditions,
-        `(${propName === 'width' ? `${modifier}-width` : propName}: ${propValue}${unit})`,
+        `(${propName === 'width' ? `${modifier}-width` : propName}: ${rest[propName]}${unit})`,
       ],
       []
     );

@@ -8,8 +8,8 @@ module.exports = {
   moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx'],
   setupTestFrameworkScriptFile: '<rootDir>/scripts/jest.setup.js',
   testMatch: ['**/__tests__/**/*.(j|t)s?(x)', '**/?(*.)(spec|test).(j|t)s?(x)'],
+  testPathIgnorePatterns: ['__old__', '/node_modules/'],
   transform: {
-    '^.+\\.jsx?$': 'babel-jest',
-    '^.+\\.tsx?$': 'babel-jest',
+    '^.+\\.(j|t)sx?$': 'babel-jest',
   },
 };

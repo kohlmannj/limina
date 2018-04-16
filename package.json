@@ -11,9 +11,10 @@
     "dev:ts": "lerna exec --parallel -- cross-env-shell node \\$LERNA_ROOT_PATH/scripts/watch-ts.js",
     "lint": "yarn lint:js . yarn lint:ts . && yarn lint:md .",
     "lint:js": "cross-env NODE_ENV=production eslint --cache --cache-location=.cache/eslint --ext .js,.jsx,.json --report-unused-disable-directives",
-    "lint:ts": "tslint -p . -c tslint.json -t stylish",
+    "lint:ts": "tslint -p . -c tslint.json -t stylish -e",
     "lint:md": "remark -q",
     "precommit": "lint-staged",
+    "prepublishOnly": "test",
     "storybook:ui": "start-storybook -p 4001 -c packages/ui/.storybook",
     "test": "jest",
     "type-check": "tsc --noEmit"
@@ -27,11 +28,11 @@
   "lint-staged": {
     "linters": {
       "*.{js,jsx,json}": [
-        "yarn lint:js --fix",
+        "npm run lint:js --fix",
         "git add"
       ],
       "*.{ts,tsx}": [
-        "yarn lint:ts --fix",
+        "npm run lint:ts --fix",
         "git add"
       ]
     }
@@ -43,7 +44,7 @@
     "@babel/preset-stage-1": "^7.0.0-beta.44",
     "@babel/preset-typescript": "^7.0.0-beta.44",
     "@babel/register": "^7.0.0-beta.44",
-    "@types/jest": "^22.2.2",
+    "@types/jest": "^22.2.3",
     "@types/react": "^16.3.8",
     "babel-jest": "^22.4.3",
     "babel-loader": "^8.0.0-beta.0",

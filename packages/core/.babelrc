@@ -1,5 +1,6 @@
 {
+  "moduleId": "Limina",
   "presets": [
-    "limina"
+    "@limina/babel-preset-core"
   ]
 }

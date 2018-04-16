@@ -1,5 +1,5 @@
 {
   "extends": [
-    "tslint-config-limina"
+    "@limina/tslint-config"
   ]
 }

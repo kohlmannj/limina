@@ -1,5 +1,5 @@
 {
-  "name": "eslint-config-limina",
+  "name": "@limina/eslint-config",
   "version": "0.0.0",
   "description": "A shared ESLint config for Limina packages",
   "main": "eslintrc.json",
