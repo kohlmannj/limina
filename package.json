@@ -14,7 +14,7 @@
     "lint:ts": "tslint -p . -c tslint.json -t stylish -e",
     "lint:md": "remark -q",
     "precommit": "lint-staged",
-    "prerelease": "test",
+    "prerelease": "yarn test",
     "release": "lerna publish",
     "storybook:ui": "start-storybook -p 4001 -c packages/ui/.storybook",
     "test": "jest",
