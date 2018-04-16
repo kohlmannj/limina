@@ -8,15 +8,11 @@ describe('limina', () => {
   describe('styles object with array of BreakpointTuples', () => {
     describe('two breakpoints', () => {
       it('works with a single property-value pair', () => {
-        const compact = createBreakpoint({ name: 'compact', width: '540px' }).createTuple;
-        const regular = createBreakpoint({ name: 'regular', width: '1280px' }).createTuple;
-
-        const compactTuple = compact(540);
-        const regularTuple = regular(1160);
+        const [compact, regular] = [540, 1280].map(w => createBreakpoint(w).createTuple);
 
         const styles = limina({
           // TODO: order tuples before calling retargetCSSPropertyValue()
-          width: [compactTuple, regularTuple],
+          width: [compact(540), regular(1160)],
         });
 
         // console.log(styles);
@@ -27,10 +23,9 @@ describe('limina', () => {
 
     describe('three breakpoints', () => {
       it('works with a single property-value pair', () => {
-        const compact = createBreakpoint({ name: 'compact', width: '540px' }).createTuple;
-        const tabletPortrait = createBreakpoint({ name: 'tabletPortrait', width: '854px' })
-          .createTuple;
-        const regular = createBreakpoint({ name: 'regular', width: '1280px' }).createTuple;
+        const [compact, tabletPortrait, regular] = [540, 854, 1280].map(
+          w => createBreakpoint(w).createTuple
+        );
 
         const styles = limina({
           width: [compact(540), tabletPortrait(768), regular(1160)],
@@ -42,10 +37,9 @@ describe('limina', () => {
       });
 
       it('works with a multiple property-value pairs', () => {
-        const compact = createBreakpoint({ name: 'compact', width: '540px' }).createTuple;
-        const tabletPortrait = createBreakpoint({ name: 'tabletPortrait', width: '854px' })
-          .createTuple;
-        const regular = createBreakpoint({ name: 'regular', width: '1280px' }).createTuple;
+        const [compact, tabletPortrait, regular] = [540, 854, 1280].map(
+          w => createBreakpoint(w).createTuple
+        );
 
         const styles = limina({
           width: [compact(540), tabletPortrait(768), regular(1160)],
