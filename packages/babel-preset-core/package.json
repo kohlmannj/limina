@@ -1,6 +1,6 @@
 {
   "name": "@limina/babel-preset-core",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A shared Babel preset for Limina projects",
   "main": "babel-preset-limina-core.js",
   "repository": "https://github.com/kohlmannj/limina/packages/babel-preset",
