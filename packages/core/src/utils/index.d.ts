@@ -11,6 +11,6 @@ export interface ICSSValueRetargetingOptions {
 }
 
 export interface IReduceToCSSOptions {
-  merge: IBreakpointTuple[];
+  prevTuple?: IBreakpointTuple;
   css: _Interpolation1;
 }

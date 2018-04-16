@@ -5,29 +5,27 @@ import defaultOptions from './cssValueRetargetingDefaultOptions';
 import { ICSSValueRetargetingOptions, IReduceToCSSOptions } from './index';
 
 export const reduceBreakpointTuplesToCSS = (options: ICSSValueRetargetingOptions) => (
-  { merge, css }: IReduceToCSSOptions,
+  { prevTuple, css }: IReduceToCSSOptions,
   tuple: IBreakpointTuple
 ) => {
   const { property, dynamicUnit } = { ...defaultOptions, ...options };
   const { breakpoint, value } = tuple;
 
-  const nextMerge = [];
+  let tupleBreakpointString = breakpoint.toString();
+  // TODO: replace this postfix with something more architecturally sound
+  if (!prevTuple) {
+    tupleBreakpointString = tupleBreakpointString.replace('min-width', 'max-width');
+  }
 
   const nextCSS: _Interpolation1 = {
     ...css,
-    [breakpoint.toString()]: {
+    ...(typeof prevTuple === 'object' && prevTuple !== null
+      ? createLinearRegressionMediaQuery({ property, dynamicUnit })(prevTuple, tuple)
+      : undefined),
+    [tupleBreakpointString]: {
       [property]: `${value / breakpoint.props.width * 100}${dynamicUnit}`,
     },
-    ...(merge.length === 2
-      ? createLinearRegressionMediaQuery({ property, dynamicUnit })(merge[0], merge[1])
-      : undefined),
   };
 
-  if (merge.length < 2) {
-    nextMerge.push(tuple);
-  }
-
-  const nextReduceValue: IReduceToCSSOptions = { merge: nextMerge, css: nextCSS };
-
-  return nextReduceValue;
+  return { prevTuple: tuple, css: nextCSS };
 };

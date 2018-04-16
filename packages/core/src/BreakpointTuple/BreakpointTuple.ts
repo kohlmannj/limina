@@ -26,14 +26,15 @@ export class BreakpointTuple implements IBreakpointTuple {
       throw new Error('`breakpoint` must be a valid Breakpoint class instance');
     }
 
-    if (typeof rawValue !== 'string' || rawValue !== 'number') {
+    if (typeof rawValue !== 'string' && typeof rawValue !== 'number') {
       throw new Error('`value` must be a number or string');
     }
 
     this.breakpoint = breakpoint;
     this.rawValue = rawValue;
     const { unit, value } = units.parse(rawValue);
-    this.unit = unit;
+    // TODO: generalize the default unit setting
+    this.unit = unit === '' ? 'px' : unit;
     this.value = value;
   }
 

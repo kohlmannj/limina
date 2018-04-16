@@ -31,10 +31,7 @@ const createLinearRegressionMediaQuery = (options: ICSSValueRetargetingOptions) 
     throw new Error('Either leftTuple or rightTuple is invalid');
   }
 
-  const breakpointsUseSameUnits =
-    leftTuple.breakpoint.props.unit === rightTuple.breakpoint.props.unit;
-
-  if (!breakpointsUseSameUnits) {
+  if (leftTuple.breakpoint.props.unit !== rightTuple.breakpoint.props.unit) {
     throw new Error(
       `leftTuple and rightTuple's breakpoints each use different CSS units
             (${leftTuple.breakpoint.props.unit} and ${rightTuple.breakpoint.props.unit})`
@@ -48,28 +45,27 @@ const createLinearRegressionMediaQuery = (options: ICSSValueRetargetingOptions) 
     );
   }
 
-  const leftBreakpointIsSmaller =
-    leftTuple.breakpoint.props.width < rightTuple.breakpoint.props.width;
-
-  const smallerTuple = leftBreakpointIsSmaller ? leftTuple : rightTuple;
-  const largerTuple = leftBreakpointIsSmaller ? rightTuple : leftTuple;
+  // const leftBreakpointIsSmaller =
+  //   leftTuple.breakpoint.props.width < rightTuple.breakpoint.props.width;
+  // const smallerTuple = leftBreakpointIsSmaller ? leftTuple : rightTuple;
+  // const largerTuple = leftBreakpointIsSmaller ? rightTuple : leftTuple;
 
   const breakpointConditions = [
-    `(min-width: ${smallerTuple.breakpoint.props.width + 1}${smallerTuple.breakpoint.props.unit})`,
-    `(max-width: ${largerTuple.breakpoint.props.width - 1}${largerTuple.breakpoint.props.unit})`,
+    `(min-width: ${leftTuple.breakpoint.props.width + 1}${leftTuple.breakpoint.props.unit})`,
+    `(max-width: ${rightTuple.breakpoint.props.width - 1}${rightTuple.breakpoint.props.unit})`,
   ];
 
   const { coefficients } = new SLR(
-    [smallerTuple.breakpoint.props.width, largerTuple.breakpoint.props.width],
-    [smallerTuple.value, largerTuple.value]
+    [leftTuple.breakpoint.props.width, rightTuple.breakpoint.props.width],
+    [leftTuple.value, rightTuple.value]
   );
 
-  // Note: we've previously determined that both values use the same units
-  const unit = smallerTuple.unit;
-
+  // Note: we've previously determined that both tuples' values use the same units
   return {
     [`@media ${breakpointConditions.join(' and ')}`]: {
-      [property]: `calc(${coefficients[0] * 100}${dynamicUnit} + ${coefficients[1]}${unit})`,
+      [property]: `calc(${coefficients[1] * 100}${dynamicUnit} + ${coefficients[0]}${
+        leftTuple.unit
+      })`,
     },
   };
 };
