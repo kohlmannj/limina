@@ -15,7 +15,7 @@
     "lint:md": "remark -q",
     "precommit": "lint-staged",
     "prerelease": "yarn test",
-    "release": "lerna publish --registry=https://registry.npmjs.org/",
+    "release": "lerna publish",
     "storybook:ui": "start-storybook -p 4001 -c packages/ui/.storybook",
     "test": "jest",
     "type-check": "tsc --noEmit"
