@@ -56,7 +56,13 @@ export class Breakpoint implements IBreakpoint {
       throw new Error('`unit` prop is invalid');
     }
 
-    this.props = { ...Breakpoint.defaultProps, ...rest, rawWidth, unit, width };
+    this.props = {
+      ...Breakpoint.defaultProps,
+      ...rest,
+      rawWidth,
+      unit: unit === '' ? 'px' : unit, // TODO: generalize the default unit setting
+      width,
+    };
   }
 
   public createTuple = (value: CSSValue): IBreakpointTuple =>
