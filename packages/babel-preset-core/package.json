@@ -14,6 +14,6 @@
     "@babel/preset-env": "^7.0.0-beta.44",
     "@babel/preset-stage-1": "^7.0.0-beta.44",
     "@babel/preset-typescript": "^7.0.0-beta.44",
-    "babel-plugin-emotion": "^9.1.0"
+    "babel-plugin-emotion": "^9.1.2"
   }
 }
