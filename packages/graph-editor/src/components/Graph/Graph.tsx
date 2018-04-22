@@ -34,13 +34,7 @@ const Graph: SFC<IGraphProps> = ({ className, domain, lines, margin, range, ...r
   }
 
   return (
-    <svg
-      className={className}
-      viewBox={`${finalDomain[0] - margin!} ${finalRange[0] - margin!} ${finalDomain[1] -
-        finalDomain[0] +
-        margin! * 2} ${finalRange[1] - finalRange[0] + margin! * 2}`}
-      {...rest}
-    >
+    <div className={className} {...rest}>
       {Object.entries(lines).map(([name, points], index) => (
         <ThemeProvider key={name} theme={{ color: chroma.brewer.Set1[index] }}>
           <React.Fragment>
@@ -49,7 +43,7 @@ const Graph: SFC<IGraphProps> = ({ className, domain, lines, margin, range, ...r
           </React.Fragment>
         </ThemeProvider>
       ))}
-    </svg>
+    </div>
   );
 };
 
