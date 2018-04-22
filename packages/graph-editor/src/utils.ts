@@ -1,4 +1,4 @@
-import { IDomainRange, PointTuple } from './index.d';
+import { IDomainRange, IViewBox, PointTuple } from './index.d';
 
 export const getExtentsForPoints = (points: PointTuple[]): IDomainRange => {
   const xVals = points.map(([x]) => x);
@@ -10,18 +10,22 @@ export const getExtentsForPoints = (points: PointTuple[]): IDomainRange => {
   };
 };
 
-export const getViewBoxValuesForPoints = (points: PointTuple[], padding = 0): number[] => {
+export const getViewBoxForPoints = (points: PointTuple[], padding = 0): IViewBox => {
   const { domain, range } = getExtentsForPoints(points);
-  const minX = domain[0] - padding;
-  const minY = range[0] - padding;
-  const w = domain[1] - domain[0] + padding * 2;
-  const h = range[1] - range[0] + padding * 2;
-  return [minX, minY, w, h];
+
+  return {
+    minX: domain[0] - padding,
+    minY: range[0] - padding,
+    maxX: domain[1] + padding,
+    maxY: range[1] + padding,
+    width: Math.abs(domain[1] - domain[0]) + padding * 2,
+    height: Math.abs(range[1] - range[0]) + padding * 2,
+  };
 };
 
 export const getDimensionsForPoints = (points: PointTuple[], padding = 0) => {
-  const [minX, minY, w, h] = getViewBoxValuesForPoints(points, padding);
-  return { width: w, height: h };
+  const { minX, minY, width, height } = getViewBoxForPoints(points, padding);
+  return { width, height };
 };
 
 export const flattenPoints = (lines: PointTuple[][]) =>

@@ -4,20 +4,13 @@ import { IThemeProps, PointTuple } from '../../index.d';
 import { getDimensionsForPoints } from '../../utils';
 
 export interface ILineProps {
-  padding?: number;
   className?: string;
   label?: string;
   points: PointTuple[];
 }
 
-export const Line: SFC<ILineProps> = ({
-  className,
-  label,
-  padding,
-  points,
-  ...rest
-}: ILineProps) => (
-  <svg xmlns="http://www.w3.org/2000/svg" {...getDimensionsForPoints(points, padding)}>
+export const Line: SFC<ILineProps> = ({ className, label, points, ...rest }: ILineProps) => (
+  <svg xmlns="http://www.w3.org/2000/svg" {...getDimensionsForPoints(points)}>
     <polyline
       className={className}
       points={points.map(point => point.join(',')).join(' ')}
@@ -25,10 +18,6 @@ export const Line: SFC<ILineProps> = ({
     />
   </svg>
 );
-
-Line.defaultProps = {
-  padding: 8,
-};
 
 const StyledLine: StyledComponent<ILineProps, IThemeProps, {}> = styled(Line)(({ theme }) => ({
   fill: 'none',
