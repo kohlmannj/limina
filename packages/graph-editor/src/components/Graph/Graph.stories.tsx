@@ -1,14 +1,8 @@
 import { storiesOf } from '@storybook/react'; // tslint:disable-line no-implicit-dependencies
 import { ThemeProvider } from 'emotion-theming';
 import React from 'react';
-import { ILineProps } from '../Line';
+import { testLines } from '../../__stubs__/testValues';
 import Graph from './Graph';
-
-const testLines: ILineProps[] = [
-  { label: 'fontSize', points: [[320, 12], [540, 16], [1280, 24]] },
-  { label: 'width', points: [[320, 320], [540, 480], [1280, 1160]] },
-  { label: 'height', points: [[320, 320], [540, 405], [1280, 652.5]] },
-];
 
 storiesOf('graph-editor/Graph', module)
   .add('with lines', () => (
