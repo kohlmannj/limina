@@ -1,9 +1,9 @@
 import React, { Component, CSSProperties, SFC } from 'react';
 import styled, { css } from 'react-emotion';
 import { withProps } from 'recompose';
-import Graph, { IGraphProps } from '../Graph';
+import Graph, { IGraph } from '../Graph';
 
-export interface IScrollGraphProps extends IGraphProps {
+export interface IScrollGraphProps extends IGraph {
   scaleX?: number;
   scaleY?: number;
   style?: CSSProperties;

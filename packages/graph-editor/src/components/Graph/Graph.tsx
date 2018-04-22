@@ -4,15 +4,15 @@ import React, { SFC } from 'react';
 import styled, { StyledComponent } from 'react-emotion';
 import { IThemeProps, IViewBox, OriginDirection, PointTuple } from '../../index.d';
 import { flattenPoints, getExtentsForPoints, getViewBoxForPoints } from '../../utils';
-import Line, { ILineProps } from '../Line';
+import Line, { ILine } from '../Line';
 import Point, { shapes } from '../Point';
 import ViewBoxContext from '../ViewBoxContext';
 
 const shapeNames = Object.keys(shapes);
 
-export interface IGraphProps {
+export interface IGraph {
   className?: string;
-  lines: ILineProps[];
+  lines: ILine[];
   minX?: number;
   minY?: number;
   maxX?: number;
@@ -21,7 +21,7 @@ export interface IGraphProps {
   originY?: OriginDirection;
 }
 
-const Graph: SFC<IGraphProps> = ({
+const Graph: SFC<IGraph> = ({
   className,
   lines,
   minX: minXProp,
@@ -78,13 +78,13 @@ Graph.defaultProps = {
   originY: 'bottom',
 };
 
-const StyledGraph: StyledComponent<IGraphProps, IThemeProps, {}> = styled(Graph)`
+const StyledGraph: StyledComponent<IGraph, IThemeProps, {}> = styled(Graph)`
   position: relative;
   width: 100%;
   height: 100%;
 `;
 
-const GraphContainer: SFC<IGraphProps> = ({ className, ...rest }) => (
+const GraphContainer: SFC<IGraph> = ({ className, ...rest }) => (
   <div className={className}>
     <StyledGraph {...rest} />
   </div>
