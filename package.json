@@ -12,10 +12,11 @@
     "dev": "concurrently --kill-others \"yarn dev:ts\" \"yarn dev:js\"",
     "dev:js": "lerna exec --parallel -- cross-env-shell node \\$LERNA_ROOT_PATH/scripts/watch-js.js",
     "dev:ts": "lerna exec --parallel -- cross-env-shell node \\$LERNA_ROOT_PATH/scripts/watch-ts.js",
-    "lint": "yarn lint:js . yarn lint:ts . && yarn lint:md .",
+    "lint": "yarn lint:js . && yarn lint:ts **/*.ts && yarn lint:md .",
+    "lint:fix": "yarn lint:js --fix . && yarn lint:ts --fix **/*.ts && yarn lint:md . -qfo",
     "lint:js": "cross-env NODE_ENV=production eslint --cache --cache-location=.cache/eslint --ext .js,.jsx,.json --report-unused-disable-directives",
     "lint:ts": "tslint -p . -c tslint.json -t stylish -e",
-    "lint:md": "remark -q",
+    "lint:md": "remark -qf",
     "precommit": "lint-staged",
     "prerelease": "yarn test && yarn type-check",
     "release": "lerna publish",
@@ -29,11 +30,15 @@
   "lint-staged": {
     "linters": {
       "*.{js,jsx,json}": [
-        "npm run lint:js --fix",
+        "yarn lint:js --fix",
         "git add"
       ],
       "*.{ts,tsx}": [
-        "npm run lint:ts --fix",
+        "yarn lint:ts --fix",
+        "git add"
+      ],
+      "*.md": [
+        "yarn lint:md",
         "git add"
       ]
     }
@@ -42,13 +47,13 @@
     "babel-core": "^7.0.0-bridge.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.0.0-beta.44",
-    "@babel/core": "^7.0.0-beta.44",
-    "@babel/preset-env": "^7.0.0-beta.44",
-    "@babel/preset-react": "^7.0.0-beta.44",
-    "@babel/preset-stage-1": "^7.0.0-beta.44",
-    "@babel/preset-typescript": "^7.0.0-beta.44",
-    "@babel/register": "^7.0.0-beta.44",
+    "@babel/cli": "^7.0.0-beta.45",
+    "@babel/core": "^7.0.0-beta.45",
+    "@babel/preset-env": "^7.0.0-beta.45",
+    "@babel/preset-react": "^7.0.0-beta.45",
+    "@babel/preset-stage-1": "^7.0.0-beta.45",
+    "@babel/preset-typescript": "^7.0.0-beta.45",
+    "@babel/register": "^7.0.0-beta.45",
     "@storybook/addon-info": "^4.0.0-alpha.3",
     "@storybook/addon-knobs": "^4.0.0-alpha.3",
     "@storybook/addons": "^4.0.0-alpha.3",
@@ -80,8 +85,10 @@
     "react": "^16.3.2",
     "react-docgen-typescript-webpack-plugin": "^1.1.0",
     "react-dom": "^16.3.2",
-    "react-test-renderer": "^16.3.2",
     "remark": "^9.0.0",
+    "remark-cli": "^5.0.0",
+    "remark-lint": "^6.0.1",
+    "remark-preset-lint-recommended": "^3.0.1",
     "rimraf": "^2.6.2",
     "shelljs": "^0.8.1",
     "typescript": "^2.8.3",

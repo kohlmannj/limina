@@ -11,8 +11,10 @@
     "access": "public"
   },
   "files": [
+    "docs",
     "lib",
-    "LICENSE"
+    "LICENSE",
+    "README.md"
   ],
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"
