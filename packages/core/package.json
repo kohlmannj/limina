@@ -12,7 +12,7 @@
   },
   "files": [
     "lib",
-    "src"
+    "LICENSE"
   ],
   "scripts": {
     "prepare": "node ../../scripts/prepare.js"

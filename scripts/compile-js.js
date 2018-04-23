@@ -7,7 +7,7 @@ function getCommand(watch) {
   const babel = path.join(__dirname, '..', 'node_modules', '.bin', 'babel');
 
   const args = [
-    '--ignore __mocks__/,__stubs__,tests/*,__tests__/,**.test.js,**.test.ts,stories/,**.story.js,**.story.ts,**.stories.js,**.stories.ts,**.d.ts,__snapshots__',
+    '--ignore __mocks__/,__stubs__,tests/*,__tests__/,**.test.js,**.test.ts,stories/,**.story.js,**.story.jsx,**.story.ts,**.story.tsx,**.stories.js,**.stories.jsx,**.stories.ts,**.stories.tsx,**.d.ts,__snapshots__',
     './src',
     '--out-dir ./lib',
     '--extensions ".js,.jsx,.ts,.tsx"',

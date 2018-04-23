@@ -1,5 +1,6 @@
+!.storybook
+*.ts
+*.tsx
 build
 dist
 node_modules
-*.ts
-*.tsx

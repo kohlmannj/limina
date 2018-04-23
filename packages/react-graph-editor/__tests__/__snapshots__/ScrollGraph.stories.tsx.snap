@@ -1,0 +1,4103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`react-graph-editor/ScrollGraph with default scales 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ScrollGraph
+    lines={
+      Array [
+        Object {
+          "label": "fontSize",
+          "points": Array [
+            Array [
+              320,
+              12,
+            ],
+            Array [
+              540,
+              16,
+            ],
+            Array [
+              1280,
+              24,
+            ],
+          ],
+        },
+        Object {
+          "label": "width",
+          "points": Array [
+            Array [
+              320,
+              320,
+            ],
+            Array [
+              540,
+              480,
+            ],
+            Array [
+              1280,
+              1160,
+            ],
+          ],
+        },
+        Object {
+          "label": "height",
+          "points": Array [
+            Array [
+              320,
+              320,
+            ],
+            Array [
+              540,
+              405,
+            ],
+            Array [
+              1280,
+              652.5,
+            ],
+          ],
+        },
+      ]
+    }
+    scaleX={1}
+    scaleY={1}
+    style={
+      Object {
+        "height": "100vh",
+        "width": "100%",
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        <GraphTrack
+          className="css-18ga265-ScrollGraph-ScrollGraph"
+        >
+          <StyledGraphContainer
+            lines={
+              Array [
+                Object {
+                  "label": "fontSize",
+                  "points": Array [
+                    Array [
+                      320,
+                      12,
+                    ],
+                    Array [
+                      540,
+                      16,
+                    ],
+                    Array [
+                      1280,
+                      24,
+                    ],
+                  ],
+                },
+                Object {
+                  "label": "width",
+                  "points": Array [
+                    Array [
+                      320,
+                      320,
+                    ],
+                    Array [
+                      540,
+                      480,
+                    ],
+                    Array [
+                      1280,
+                      1160,
+                    ],
+                  ],
+                },
+                Object {
+                  "label": "height",
+                  "points": Array [
+                    Array [
+                      320,
+                      320,
+                    ],
+                    Array [
+                      540,
+                      405,
+                    ],
+                    Array [
+                      1280,
+                      652.5,
+                    ],
+                  ],
+                },
+              ]
+            }
+          />
+        </GraphTrack>,
+        <HorizontalRange
+          max={10}
+          min={1}
+          type="range"
+          value={1}
+        />,
+        <VerticalRange
+          max={10}
+          min={1}
+          type="range"
+          value={1}
+        />,
+      ],
+      "className": undefined,
+      "style": Object {
+        "height": "100vh",
+        "width": "100%",
+      },
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": <StyledGraphContainer
+            lines={
+              Array [
+                Object {
+                  "label": "fontSize",
+                  "points": Array [
+                    Array [
+                      320,
+                      12,
+                    ],
+                    Array [
+                      540,
+                      16,
+                    ],
+                    Array [
+                      1280,
+                      24,
+                    ],
+                  ],
+                },
+                Object {
+                  "label": "width",
+                  "points": Array [
+                    Array [
+                      320,
+                      320,
+                    ],
+                    Array [
+                      540,
+                      480,
+                    ],
+                    Array [
+                      1280,
+                      1160,
+                    ],
+                  ],
+                },
+                Object {
+                  "label": "height",
+                  "points": Array [
+                    Array [
+                      320,
+                      320,
+                    ],
+                    Array [
+                      540,
+                      405,
+                    ],
+                    Array [
+                      1280,
+                      652.5,
+                    ],
+                  ],
+                },
+              ]
+            }
+          />,
+          "className": "css-18ga265-ScrollGraph-ScrollGraph",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "lines": Array [
+              Object {
+                "label": "fontSize",
+                "points": Array [
+                  Array [
+                    320,
+                    12,
+                  ],
+                  Array [
+                    540,
+                    16,
+                  ],
+                  Array [
+                    1280,
+                    24,
+                  ],
+                ],
+              },
+              Object {
+                "label": "width",
+                "points": Array [
+                  Array [
+                    320,
+                    320,
+                  ],
+                  Array [
+                    540,
+                    480,
+                  ],
+                  Array [
+                    1280,
+                    1160,
+                  ],
+                ],
+              },
+              Object {
+                "label": "height",
+                "points": Array [
+                  Array [
+                    320,
+                    320,
+                  ],
+                  Array [
+                    540,
+                    405,
+                  ],
+                  Array [
+                    1280,
+                    652.5,
+                  ],
+                ],
+              },
+            ],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "max": 10,
+          "min": 1,
+          "type": "range",
+          "value": 1,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "max": 10,
+          "min": 1,
+          "type": "range",
+          "value": 1,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <GraphTrack
+            className="css-18ga265-ScrollGraph-ScrollGraph"
+          >
+            <StyledGraphContainer
+              lines={
+                Array [
+                  Object {
+                    "label": "fontSize",
+                    "points": Array [
+                      Array [
+                        320,
+                        12,
+                      ],
+                      Array [
+                        540,
+                        16,
+                      ],
+                      Array [
+                        1280,
+                        24,
+                      ],
+                    ],
+                  },
+                  Object {
+                    "label": "width",
+                    "points": Array [
+                      Array [
+                        320,
+                        320,
+                      ],
+                      Array [
+                        540,
+                        480,
+                      ],
+                      Array [
+                        1280,
+                        1160,
+                      ],
+                    ],
+                  },
+                  Object {
+                    "label": "height",
+                    "points": Array [
+                      Array [
+                        320,
+                        320,
+                      ],
+                      Array [
+                        540,
+                        405,
+                      ],
+                      Array [
+                        1280,
+                        652.5,
+                      ],
+                    ],
+                  },
+                ]
+              }
+            />
+          </GraphTrack>,
+          <HorizontalRange
+            max={10}
+            min={1}
+            type="range"
+            value={1}
+          />,
+          <VerticalRange
+            max={10}
+            min={1}
+            type="range"
+            value={1}
+          />,
+        ],
+        "className": undefined,
+        "style": Object {
+          "height": "100vh",
+          "width": "100%",
+        },
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <StyledGraphContainer
+              lines={
+                Array [
+                  Object {
+                    "label": "fontSize",
+                    "points": Array [
+                      Array [
+                        320,
+                        12,
+                      ],
+                      Array [
+                        540,
+                        16,
+                      ],
+                      Array [
+                        1280,
+                        24,
+                      ],
+                    ],
+                  },
+                  Object {
+                    "label": "width",
+                    "points": Array [
+                      Array [
+                        320,
+                        320,
+                      ],
+                      Array [
+                        540,
+                        480,
+                      ],
+                      Array [
+                        1280,
+                        1160,
+                      ],
+                    ],
+                  },
+                  Object {
+                    "label": "height",
+                    "points": Array [
+                      Array [
+                        320,
+                        320,
+                      ],
+                      Array [
+                        540,
+                        405,
+                      ],
+                      Array [
+                        1280,
+                        652.5,
+                      ],
+                    ],
+                  },
+                ]
+              }
+            />,
+            "className": "css-18ga265-ScrollGraph-ScrollGraph",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "lines": Array [
+                Object {
+                  "label": "fontSize",
+                  "points": Array [
+                    Array [
+                      320,
+                      12,
+                    ],
+                    Array [
+                      540,
+                      16,
+                    ],
+                    Array [
+                      1280,
+                      24,
+                    ],
+                  ],
+                },
+                Object {
+                  "label": "width",
+                  "points": Array [
+                    Array [
+                      320,
+                      320,
+                    ],
+                    Array [
+                      540,
+                      480,
+                    ],
+                    Array [
+                      1280,
+                      1160,
+                    ],
+                  ],
+                },
+                Object {
+                  "label": "height",
+                  "points": Array [
+                    Array [
+                      320,
+                      320,
+                    ],
+                    Array [
+                      540,
+                      405,
+                    ],
+                    Array [
+                      1280,
+                      652.5,
+                    ],
+                  ],
+                },
+              ],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "max": 10,
+            "min": 1,
+            "type": "range",
+            "value": 1,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "max": 10,
+            "min": 1,
+            "type": "range",
+            "value": 1,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`react-graph-editor/ScrollGraph with scaleX = 2 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ScrollGraph
+    lines={
+      Array [
+        Object {
+          "label": "fontSize",
+          "points": Array [
+            Array [
+              320,
+              12,
+            ],
+            Array [
+              540,
+              16,
+            ],
+            Array [
+              1280,
+              24,
+            ],
+          ],
+        },
+        Object {
+          "label": "width",
+          "points": Array [
+            Array [
+              320,
+              320,
+            ],
+            Array [
+              540,
+              480,
+            ],
+            Array [
+              1280,
+              1160,
+            ],
+          ],
+        },
+        Object {
+          "label": "height",
+          "points": Array [
+            Array [
+              320,
+              320,
+            ],
+            Array [
+              540,
+              405,
+            ],
+            Array [
+              1280,
+              652.5,
+            ],
+          ],
+        },
+      ]
+    }
+    scaleX={2}
+    scaleY={1}
+    style={
+      Object {
+        "height": "100vh",
+        "width": "100%",
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        <GraphTrack
+          className="css-a94tej-ScrollGraph-ScrollGraph"
+        >
+          <StyledGraphContainer
+            lines={
+              Array [
+                Object {
+                  "label": "fontSize",
+                  "points": Array [
+                    Array [
+                      320,
+                      12,
+                    ],
+                    Array [
+                      540,
+                      16,
+                    ],
+                    Array [
+                      1280,
+                      24,
+                    ],
+                  ],
+                },
+                Object {
+                  "label": "width",
+                  "points": Array [
+                    Array [
+                      320,
+                      320,
+                    ],
+                    Array [
+                      540,
+                      480,
+                    ],
+                    Array [
+                      1280,
+                      1160,
+                    ],
+                  ],
+                },
+                Object {
+                  "label": "height",
+                  "points": Array [
+                    Array [
+                      320,
+                      320,
+                    ],
+                    Array [
+                      540,
+                      405,
+                    ],
+                    Array [
+                      1280,
+                      652.5,
+                    ],
+                  ],
+                },
+              ]
+            }
+          />
+        </GraphTrack>,
+        <HorizontalRange
+          max={10}
+          min={1}
+          type="range"
+          value={2}
+        />,
+        <VerticalRange
+          max={10}
+          min={1}
+          type="range"
+          value={1}
+        />,
+      ],
+      "className": undefined,
+      "style": Object {
+        "height": "100vh",
+        "width": "100%",
+      },
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": <StyledGraphContainer
+            lines={
+              Array [
+                Object {
+                  "label": "fontSize",
+                  "points": Array [
+                    Array [
+                      320,
+                      12,
+                    ],
+                    Array [
+                      540,
+                      16,
+                    ],
+                    Array [
+                      1280,
+                      24,
+                    ],
+                  ],
+                },
+                Object {
+                  "label": "width",
+                  "points": Array [
+                    Array [
+                      320,
+                      320,
+                    ],
+                    Array [
+                      540,
+                      480,
+                    ],
+                    Array [
+                      1280,
+                      1160,
+                    ],
+                  ],
+                },
+                Object {
+                  "label": "height",
+                  "points": Array [
+                    Array [
+                      320,
+                      320,
+                    ],
+                    Array [
+                      540,
+                      405,
+                    ],
+                    Array [
+                      1280,
+                      652.5,
+                    ],
+                  ],
+                },
+              ]
+            }
+          />,
+          "className": "css-a94tej-ScrollGraph-ScrollGraph",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "lines": Array [
+              Object {
+                "label": "fontSize",
+                "points": Array [
+                  Array [
+                    320,
+                    12,
+                  ],
+                  Array [
+                    540,
+                    16,
+                  ],
+                  Array [
+                    1280,
+                    24,
+                  ],
+                ],
+              },
+              Object {
+                "label": "width",
+                "points": Array [
+                  Array [
+                    320,
+                    320,
+                  ],
+                  Array [
+                    540,
+                    480,
+                  ],
+                  Array [
+                    1280,
+                    1160,
+                  ],
+                ],
+              },
+              Object {
+                "label": "height",
+                "points": Array [
+                  Array [
+                    320,
+                    320,
+                  ],
+                  Array [
+                    540,
+                    405,
+                  ],
+                  Array [
+                    1280,
+                    652.5,
+                  ],
+                ],
+              },
+            ],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "max": 10,
+          "min": 1,
+          "type": "range",
+          "value": 2,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "max": 10,
+          "min": 1,
+          "type": "range",
+          "value": 1,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <GraphTrack
+            className="css-a94tej-ScrollGraph-ScrollGraph"
+          >
+            <StyledGraphContainer
+              lines={
+                Array [
+                  Object {
+                    "label": "fontSize",
+                    "points": Array [
+                      Array [
+                        320,
+                        12,
+                      ],
+                      Array [
+                        540,
+                        16,
+                      ],
+                      Array [
+                        1280,
+                        24,
+                      ],
+                    ],
+                  },
+                  Object {
+                    "label": "width",
+                    "points": Array [
+                      Array [
+                        320,
+                        320,
+                      ],
+                      Array [
+                        540,
+                        480,
+                      ],
+                      Array [
+                        1280,
+                        1160,
+                      ],
+                    ],
+                  },
+                  Object {
+                    "label": "height",
+                    "points": Array [
+                      Array [
+                        320,
+                        320,
+                      ],
+                      Array [
+                        540,
+                        405,
+                      ],
+                      Array [
+                        1280,
+                        652.5,
+                      ],
+                    ],
+                  },
+                ]
+              }
+            />
+          </GraphTrack>,
+          <HorizontalRange
+            max={10}
+            min={1}
+            type="range"
+            value={2}
+          />,
+          <VerticalRange
+            max={10}
+            min={1}
+            type="range"
+            value={1}
+          />,
+        ],
+        "className": undefined,
+        "style": Object {
+          "height": "100vh",
+          "width": "100%",
+        },
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <StyledGraphContainer
+              lines={
+                Array [
+                  Object {
+                    "label": "fontSize",
+                    "points": Array [
+                      Array [
+                        320,
+                        12,
+                      ],
+                      Array [
+                        540,
+                        16,
+                      ],
+                      Array [
+                        1280,
+                        24,
+                      ],
+                    ],
+                  },
+                  Object {
+                    "label": "width",
+                    "points": Array [
+                      Array [
+                        320,
+                        320,
+                      ],
+                      Array [
+                        540,
+                        480,
+                      ],
+                      Array [
+                        1280,
+                        1160,
+                      ],
+                    ],
+                  },
+                  Object {
+                    "label": "height",
+                    "points": Array [
+                      Array [
+                        320,
+                        320,
+                      ],
+                      Array [
+                        540,
+                        405,
+                      ],
+                      Array [
+                        1280,
+                        652.5,
+                      ],
+                    ],
+                  },
+                ]
+              }
+            />,
+            "className": "css-a94tej-ScrollGraph-ScrollGraph",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "lines": Array [
+                Object {
+                  "label": "fontSize",
+                  "points": Array [
+                    Array [
+                      320,
+                      12,
+                    ],
+                    Array [
+                      540,
+                      16,
+                    ],
+                    Array [
+                      1280,
+                      24,
+                    ],
+                  ],
+                },
+                Object {
+                  "label": "width",
+                  "points": Array [
+                    Array [
+                      320,
+                      320,
+                    ],
+                    Array [
+                      540,
+                      480,
+                    ],
+                    Array [
+                      1280,
+                      1160,
+                    ],
+                  ],
+                },
+                Object {
+                  "label": "height",
+                  "points": Array [
+                    Array [
+                      320,
+                      320,
+                    ],
+                    Array [
+                      540,
+                      405,
+                    ],
+                    Array [
+                      1280,
+                      652.5,
+                    ],
+                  ],
+                },
+              ],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "max": 10,
+            "min": 1,
+            "type": "range",
+            "value": 2,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "max": 10,
+            "min": 1,
+            "type": "range",
+            "value": 1,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`react-graph-editor/ScrollGraph with scaleX = 10 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ScrollGraph
+    lines={
+      Array [
+        Object {
+          "label": "fontSize",
+          "points": Array [
+            Array [
+              320,
+              12,
+            ],
+            Array [
+              540,
+              16,
+            ],
+            Array [
+              1280,
+              24,
+            ],
+          ],
+        },
+        Object {
+          "label": "width",
+          "points": Array [
+            Array [
+              320,
+              320,
+            ],
+            Array [
+              540,
+              480,
+            ],
+            Array [
+              1280,
+              1160,
+            ],
+          ],
+        },
+        Object {
+          "label": "height",
+          "points": Array [
+            Array [
+              320,
+              320,
+            ],
+            Array [
+              540,
+              405,
+            ],
+            Array [
+              1280,
+              652.5,
+            ],
+          ],
+        },
+      ]
+    }
+    scaleX={10}
+    scaleY={1}
+    style={
+      Object {
+        "height": "100vh",
+        "width": "100%",
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        <GraphTrack
+          className="css-d1g3pu-ScrollGraph-ScrollGraph"
+        >
+          <StyledGraphContainer
+            lines={
+              Array [
+                Object {
+                  "label": "fontSize",
+                  "points": Array [
+                    Array [
+                      320,
+                      12,
+                    ],
+                    Array [
+                      540,
+                      16,
+                    ],
+                    Array [
+                      1280,
+                      24,
+                    ],
+                  ],
+                },
+                Object {
+                  "label": "width",
+                  "points": Array [
+                    Array [
+                      320,
+                      320,
+                    ],
+                    Array [
+                      540,
+                      480,
+                    ],
+                    Array [
+                      1280,
+                      1160,
+                    ],
+                  ],
+                },
+                Object {
+                  "label": "height",
+                  "points": Array [
+                    Array [
+                      320,
+                      320,
+                    ],
+                    Array [
+                      540,
+                      405,
+                    ],
+                    Array [
+                      1280,
+                      652.5,
+                    ],
+                  ],
+                },
+              ]
+            }
+          />
+        </GraphTrack>,
+        <HorizontalRange
+          max={10}
+          min={1}
+          type="range"
+          value={10}
+        />,
+        <VerticalRange
+          max={10}
+          min={1}
+          type="range"
+          value={1}
+        />,
+      ],
+      "className": undefined,
+      "style": Object {
+        "height": "100vh",
+        "width": "100%",
+      },
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": <StyledGraphContainer
+            lines={
+              Array [
+                Object {
+                  "label": "fontSize",
+                  "points": Array [
+                    Array [
+                      320,
+                      12,
+                    ],
+                    Array [
+                      540,
+                      16,
+                    ],
+                    Array [
+                      1280,
+                      24,
+                    ],
+                  ],
+                },
+                Object {
+                  "label": "width",
+                  "points": Array [
+                    Array [
+                      320,
+                      320,
+                    ],
+                    Array [
+                      540,
+                      480,
+                    ],
+                    Array [
+                      1280,
+                      1160,
+                    ],
+                  ],
+                },
+                Object {
+                  "label": "height",
+                  "points": Array [
+                    Array [
+                      320,
+                      320,
+                    ],
+                    Array [
+                      540,
+                      405,
+                    ],
+                    Array [
+                      1280,
+                      652.5,
+                    ],
+                  ],
+                },
+              ]
+            }
+          />,
+          "className": "css-d1g3pu-ScrollGraph-ScrollGraph",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "lines": Array [
+              Object {
+                "label": "fontSize",
+                "points": Array [
+                  Array [
+                    320,
+                    12,
+                  ],
+                  Array [
+                    540,
+                    16,
+                  ],
+                  Array [
+                    1280,
+                    24,
+                  ],
+                ],
+              },
+              Object {
+                "label": "width",
+                "points": Array [
+                  Array [
+                    320,
+                    320,
+                  ],
+                  Array [
+                    540,
+                    480,
+                  ],
+                  Array [
+                    1280,
+                    1160,
+                  ],
+                ],
+              },
+              Object {
+                "label": "height",
+                "points": Array [
+                  Array [
+                    320,
+                    320,
+                  ],
+                  Array [
+                    540,
+                    405,
+                  ],
+                  Array [
+                    1280,
+                    652.5,
+                  ],
+                ],
+              },
+            ],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "max": 10,
+          "min": 1,
+          "type": "range",
+          "value": 10,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "max": 10,
+          "min": 1,
+          "type": "range",
+          "value": 1,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <GraphTrack
+            className="css-d1g3pu-ScrollGraph-ScrollGraph"
+          >
+            <StyledGraphContainer
+              lines={
+                Array [
+                  Object {
+                    "label": "fontSize",
+                    "points": Array [
+                      Array [
+                        320,
+                        12,
+                      ],
+                      Array [
+                        540,
+                        16,
+                      ],
+                      Array [
+                        1280,
+                        24,
+                      ],
+                    ],
+                  },
+                  Object {
+                    "label": "width",
+                    "points": Array [
+                      Array [
+                        320,
+                        320,
+                      ],
+                      Array [
+                        540,
+                        480,
+                      ],
+                      Array [
+                        1280,
+                        1160,
+                      ],
+                    ],
+                  },
+                  Object {
+                    "label": "height",
+                    "points": Array [
+                      Array [
+                        320,
+                        320,
+                      ],
+                      Array [
+                        540,
+                        405,
+                      ],
+                      Array [
+                        1280,
+                        652.5,
+                      ],
+                    ],
+                  },
+                ]
+              }
+            />
+          </GraphTrack>,
+          <HorizontalRange
+            max={10}
+            min={1}
+            type="range"
+            value={10}
+          />,
+          <VerticalRange
+            max={10}
+            min={1}
+            type="range"
+            value={1}
+          />,
+        ],
+        "className": undefined,
+        "style": Object {
+          "height": "100vh",
+          "width": "100%",
+        },
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <StyledGraphContainer
+              lines={
+                Array [
+                  Object {
+                    "label": "fontSize",
+                    "points": Array [
+                      Array [
+                        320,
+                        12,
+                      ],
+                      Array [
+                        540,
+                        16,
+                      ],
+                      Array [
+                        1280,
+                        24,
+                      ],
+                    ],
+                  },
+                  Object {
+                    "label": "width",
+                    "points": Array [
+                      Array [
+                        320,
+                        320,
+                      ],
+                      Array [
+                        540,
+                        480,
+                      ],
+                      Array [
+                        1280,
+                        1160,
+                      ],
+                    ],
+                  },
+                  Object {
+                    "label": "height",
+                    "points": Array [
+                      Array [
+                        320,
+                        320,
+                      ],
+                      Array [
+                        540,
+                        405,
+                      ],
+                      Array [
+                        1280,
+                        652.5,
+                      ],
+                    ],
+                  },
+                ]
+              }
+            />,
+            "className": "css-d1g3pu-ScrollGraph-ScrollGraph",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "lines": Array [
+                Object {
+                  "label": "fontSize",
+                  "points": Array [
+                    Array [
+                      320,
+                      12,
+                    ],
+                    Array [
+                      540,
+                      16,
+                    ],
+                    Array [
+                      1280,
+                      24,
+                    ],
+                  ],
+                },
+                Object {
+                  "label": "width",
+                  "points": Array [
+                    Array [
+                      320,
+                      320,
+                    ],
+                    Array [
+                      540,
+                      480,
+                    ],
+                    Array [
+                      1280,
+                      1160,
+                    ],
+                  ],
+                },
+                Object {
+                  "label": "height",
+                  "points": Array [
+                    Array [
+                      320,
+                      320,
+                    ],
+                    Array [
+                      540,
+                      405,
+                    ],
+                    Array [
+                      1280,
+                      652.5,
+                    ],
+                  ],
+                },
+              ],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "max": 10,
+            "min": 1,
+            "type": "range",
+            "value": 10,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "max": 10,
+            "min": 1,
+            "type": "range",
+            "value": 1,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`react-graph-editor/ScrollGraph with scaleX = scaleY = 2 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ScrollGraph
+    lines={
+      Array [
+        Object {
+          "label": "fontSize",
+          "points": Array [
+            Array [
+              320,
+              12,
+            ],
+            Array [
+              540,
+              16,
+            ],
+            Array [
+              1280,
+              24,
+            ],
+          ],
+        },
+        Object {
+          "label": "width",
+          "points": Array [
+            Array [
+              320,
+              320,
+            ],
+            Array [
+              540,
+              480,
+            ],
+            Array [
+              1280,
+              1160,
+            ],
+          ],
+        },
+        Object {
+          "label": "height",
+          "points": Array [
+            Array [
+              320,
+              320,
+            ],
+            Array [
+              540,
+              405,
+            ],
+            Array [
+              1280,
+              652.5,
+            ],
+          ],
+        },
+      ]
+    }
+    scaleX={2}
+    scaleY={2}
+    style={
+      Object {
+        "height": "100vh",
+        "width": "100%",
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        <GraphTrack
+          className="css-10golbj-ScrollGraph-ScrollGraph"
+        >
+          <StyledGraphContainer
+            lines={
+              Array [
+                Object {
+                  "label": "fontSize",
+                  "points": Array [
+                    Array [
+                      320,
+                      12,
+                    ],
+                    Array [
+                      540,
+                      16,
+                    ],
+                    Array [
+                      1280,
+                      24,
+                    ],
+                  ],
+                },
+                Object {
+                  "label": "width",
+                  "points": Array [
+                    Array [
+                      320,
+                      320,
+                    ],
+                    Array [
+                      540,
+                      480,
+                    ],
+                    Array [
+                      1280,
+                      1160,
+                    ],
+                  ],
+                },
+                Object {
+                  "label": "height",
+                  "points": Array [
+                    Array [
+                      320,
+                      320,
+                    ],
+                    Array [
+                      540,
+                      405,
+                    ],
+                    Array [
+                      1280,
+                      652.5,
+                    ],
+                  ],
+                },
+              ]
+            }
+          />
+        </GraphTrack>,
+        <HorizontalRange
+          max={10}
+          min={1}
+          type="range"
+          value={2}
+        />,
+        <VerticalRange
+          max={10}
+          min={1}
+          type="range"
+          value={2}
+        />,
+      ],
+      "className": undefined,
+      "style": Object {
+        "height": "100vh",
+        "width": "100%",
+      },
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": <StyledGraphContainer
+            lines={
+              Array [
+                Object {
+                  "label": "fontSize",
+                  "points": Array [
+                    Array [
+                      320,
+                      12,
+                    ],
+                    Array [
+                      540,
+                      16,
+                    ],
+                    Array [
+                      1280,
+                      24,
+                    ],
+                  ],
+                },
+                Object {
+                  "label": "width",
+                  "points": Array [
+                    Array [
+                      320,
+                      320,
+                    ],
+                    Array [
+                      540,
+                      480,
+                    ],
+                    Array [
+                      1280,
+                      1160,
+                    ],
+                  ],
+                },
+                Object {
+                  "label": "height",
+                  "points": Array [
+                    Array [
+                      320,
+                      320,
+                    ],
+                    Array [
+                      540,
+                      405,
+                    ],
+                    Array [
+                      1280,
+                      652.5,
+                    ],
+                  ],
+                },
+              ]
+            }
+          />,
+          "className": "css-10golbj-ScrollGraph-ScrollGraph",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "lines": Array [
+              Object {
+                "label": "fontSize",
+                "points": Array [
+                  Array [
+                    320,
+                    12,
+                  ],
+                  Array [
+                    540,
+                    16,
+                  ],
+                  Array [
+                    1280,
+                    24,
+                  ],
+                ],
+              },
+              Object {
+                "label": "width",
+                "points": Array [
+                  Array [
+                    320,
+                    320,
+                  ],
+                  Array [
+                    540,
+                    480,
+                  ],
+                  Array [
+                    1280,
+                    1160,
+                  ],
+                ],
+              },
+              Object {
+                "label": "height",
+                "points": Array [
+                  Array [
+                    320,
+                    320,
+                  ],
+                  Array [
+                    540,
+                    405,
+                  ],
+                  Array [
+                    1280,
+                    652.5,
+                  ],
+                ],
+              },
+            ],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "max": 10,
+          "min": 1,
+          "type": "range",
+          "value": 2,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "max": 10,
+          "min": 1,
+          "type": "range",
+          "value": 2,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <GraphTrack
+            className="css-10golbj-ScrollGraph-ScrollGraph"
+          >
+            <StyledGraphContainer
+              lines={
+                Array [
+                  Object {
+                    "label": "fontSize",
+                    "points": Array [
+                      Array [
+                        320,
+                        12,
+                      ],
+                      Array [
+                        540,
+                        16,
+                      ],
+                      Array [
+                        1280,
+                        24,
+                      ],
+                    ],
+                  },
+                  Object {
+                    "label": "width",
+                    "points": Array [
+                      Array [
+                        320,
+                        320,
+                      ],
+                      Array [
+                        540,
+                        480,
+                      ],
+                      Array [
+                        1280,
+                        1160,
+                      ],
+                    ],
+                  },
+                  Object {
+                    "label": "height",
+                    "points": Array [
+                      Array [
+                        320,
+                        320,
+                      ],
+                      Array [
+                        540,
+                        405,
+                      ],
+                      Array [
+                        1280,
+                        652.5,
+                      ],
+                    ],
+                  },
+                ]
+              }
+            />
+          </GraphTrack>,
+          <HorizontalRange
+            max={10}
+            min={1}
+            type="range"
+            value={2}
+          />,
+          <VerticalRange
+            max={10}
+            min={1}
+            type="range"
+            value={2}
+          />,
+        ],
+        "className": undefined,
+        "style": Object {
+          "height": "100vh",
+          "width": "100%",
+        },
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <StyledGraphContainer
+              lines={
+                Array [
+                  Object {
+                    "label": "fontSize",
+                    "points": Array [
+                      Array [
+                        320,
+                        12,
+                      ],
+                      Array [
+                        540,
+                        16,
+                      ],
+                      Array [
+                        1280,
+                        24,
+                      ],
+                    ],
+                  },
+                  Object {
+                    "label": "width",
+                    "points": Array [
+                      Array [
+                        320,
+                        320,
+                      ],
+                      Array [
+                        540,
+                        480,
+                      ],
+                      Array [
+                        1280,
+                        1160,
+                      ],
+                    ],
+                  },
+                  Object {
+                    "label": "height",
+                    "points": Array [
+                      Array [
+                        320,
+                        320,
+                      ],
+                      Array [
+                        540,
+                        405,
+                      ],
+                      Array [
+                        1280,
+                        652.5,
+                      ],
+                    ],
+                  },
+                ]
+              }
+            />,
+            "className": "css-10golbj-ScrollGraph-ScrollGraph",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "lines": Array [
+                Object {
+                  "label": "fontSize",
+                  "points": Array [
+                    Array [
+                      320,
+                      12,
+                    ],
+                    Array [
+                      540,
+                      16,
+                    ],
+                    Array [
+                      1280,
+                      24,
+                    ],
+                  ],
+                },
+                Object {
+                  "label": "width",
+                  "points": Array [
+                    Array [
+                      320,
+                      320,
+                    ],
+                    Array [
+                      540,
+                      480,
+                    ],
+                    Array [
+                      1280,
+                      1160,
+                    ],
+                  ],
+                },
+                Object {
+                  "label": "height",
+                  "points": Array [
+                    Array [
+                      320,
+                      320,
+                    ],
+                    Array [
+                      540,
+                      405,
+                    ],
+                    Array [
+                      1280,
+                      652.5,
+                    ],
+                  ],
+                },
+              ],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "max": 10,
+            "min": 1,
+            "type": "range",
+            "value": 2,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "max": 10,
+            "min": 1,
+            "type": "range",
+            "value": 2,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`react-graph-editor/ScrollGraph with scaleX = scaleY = 10 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ScrollGraph
+    lines={
+      Array [
+        Object {
+          "label": "fontSize",
+          "points": Array [
+            Array [
+              320,
+              12,
+            ],
+            Array [
+              540,
+              16,
+            ],
+            Array [
+              1280,
+              24,
+            ],
+          ],
+        },
+        Object {
+          "label": "width",
+          "points": Array [
+            Array [
+              320,
+              320,
+            ],
+            Array [
+              540,
+              480,
+            ],
+            Array [
+              1280,
+              1160,
+            ],
+          ],
+        },
+        Object {
+          "label": "height",
+          "points": Array [
+            Array [
+              320,
+              320,
+            ],
+            Array [
+              540,
+              405,
+            ],
+            Array [
+              1280,
+              652.5,
+            ],
+          ],
+        },
+      ]
+    }
+    scaleX={10}
+    scaleY={10}
+    style={
+      Object {
+        "height": "100vh",
+        "width": "100%",
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        <GraphTrack
+          className="css-kczdsi-ScrollGraph-ScrollGraph"
+        >
+          <StyledGraphContainer
+            lines={
+              Array [
+                Object {
+                  "label": "fontSize",
+                  "points": Array [
+                    Array [
+                      320,
+                      12,
+                    ],
+                    Array [
+                      540,
+                      16,
+                    ],
+                    Array [
+                      1280,
+                      24,
+                    ],
+                  ],
+                },
+                Object {
+                  "label": "width",
+                  "points": Array [
+                    Array [
+                      320,
+                      320,
+                    ],
+                    Array [
+                      540,
+                      480,
+                    ],
+                    Array [
+                      1280,
+                      1160,
+                    ],
+                  ],
+                },
+                Object {
+                  "label": "height",
+                  "points": Array [
+                    Array [
+                      320,
+                      320,
+                    ],
+                    Array [
+                      540,
+                      405,
+                    ],
+                    Array [
+                      1280,
+                      652.5,
+                    ],
+                  ],
+                },
+              ]
+            }
+          />
+        </GraphTrack>,
+        <HorizontalRange
+          max={10}
+          min={1}
+          type="range"
+          value={10}
+        />,
+        <VerticalRange
+          max={10}
+          min={1}
+          type="range"
+          value={10}
+        />,
+      ],
+      "className": undefined,
+      "style": Object {
+        "height": "100vh",
+        "width": "100%",
+      },
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": <StyledGraphContainer
+            lines={
+              Array [
+                Object {
+                  "label": "fontSize",
+                  "points": Array [
+                    Array [
+                      320,
+                      12,
+                    ],
+                    Array [
+                      540,
+                      16,
+                    ],
+                    Array [
+                      1280,
+                      24,
+                    ],
+                  ],
+                },
+                Object {
+                  "label": "width",
+                  "points": Array [
+                    Array [
+                      320,
+                      320,
+                    ],
+                    Array [
+                      540,
+                      480,
+                    ],
+                    Array [
+                      1280,
+                      1160,
+                    ],
+                  ],
+                },
+                Object {
+                  "label": "height",
+                  "points": Array [
+                    Array [
+                      320,
+                      320,
+                    ],
+                    Array [
+                      540,
+                      405,
+                    ],
+                    Array [
+                      1280,
+                      652.5,
+                    ],
+                  ],
+                },
+              ]
+            }
+          />,
+          "className": "css-kczdsi-ScrollGraph-ScrollGraph",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "lines": Array [
+              Object {
+                "label": "fontSize",
+                "points": Array [
+                  Array [
+                    320,
+                    12,
+                  ],
+                  Array [
+                    540,
+                    16,
+                  ],
+                  Array [
+                    1280,
+                    24,
+                  ],
+                ],
+              },
+              Object {
+                "label": "width",
+                "points": Array [
+                  Array [
+                    320,
+                    320,
+                  ],
+                  Array [
+                    540,
+                    480,
+                  ],
+                  Array [
+                    1280,
+                    1160,
+                  ],
+                ],
+              },
+              Object {
+                "label": "height",
+                "points": Array [
+                  Array [
+                    320,
+                    320,
+                  ],
+                  Array [
+                    540,
+                    405,
+                  ],
+                  Array [
+                    1280,
+                    652.5,
+                  ],
+                ],
+              },
+            ],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "max": 10,
+          "min": 1,
+          "type": "range",
+          "value": 10,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "max": 10,
+          "min": 1,
+          "type": "range",
+          "value": 10,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <GraphTrack
+            className="css-kczdsi-ScrollGraph-ScrollGraph"
+          >
+            <StyledGraphContainer
+              lines={
+                Array [
+                  Object {
+                    "label": "fontSize",
+                    "points": Array [
+                      Array [
+                        320,
+                        12,
+                      ],
+                      Array [
+                        540,
+                        16,
+                      ],
+                      Array [
+                        1280,
+                        24,
+                      ],
+                    ],
+                  },
+                  Object {
+                    "label": "width",
+                    "points": Array [
+                      Array [
+                        320,
+                        320,
+                      ],
+                      Array [
+                        540,
+                        480,
+                      ],
+                      Array [
+                        1280,
+                        1160,
+                      ],
+                    ],
+                  },
+                  Object {
+                    "label": "height",
+                    "points": Array [
+                      Array [
+                        320,
+                        320,
+                      ],
+                      Array [
+                        540,
+                        405,
+                      ],
+                      Array [
+                        1280,
+                        652.5,
+                      ],
+                    ],
+                  },
+                ]
+              }
+            />
+          </GraphTrack>,
+          <HorizontalRange
+            max={10}
+            min={1}
+            type="range"
+            value={10}
+          />,
+          <VerticalRange
+            max={10}
+            min={1}
+            type="range"
+            value={10}
+          />,
+        ],
+        "className": undefined,
+        "style": Object {
+          "height": "100vh",
+          "width": "100%",
+        },
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <StyledGraphContainer
+              lines={
+                Array [
+                  Object {
+                    "label": "fontSize",
+                    "points": Array [
+                      Array [
+                        320,
+                        12,
+                      ],
+                      Array [
+                        540,
+                        16,
+                      ],
+                      Array [
+                        1280,
+                        24,
+                      ],
+                    ],
+                  },
+                  Object {
+                    "label": "width",
+                    "points": Array [
+                      Array [
+                        320,
+                        320,
+                      ],
+                      Array [
+                        540,
+                        480,
+                      ],
+                      Array [
+                        1280,
+                        1160,
+                      ],
+                    ],
+                  },
+                  Object {
+                    "label": "height",
+                    "points": Array [
+                      Array [
+                        320,
+                        320,
+                      ],
+                      Array [
+                        540,
+                        405,
+                      ],
+                      Array [
+                        1280,
+                        652.5,
+                      ],
+                    ],
+                  },
+                ]
+              }
+            />,
+            "className": "css-kczdsi-ScrollGraph-ScrollGraph",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "lines": Array [
+                Object {
+                  "label": "fontSize",
+                  "points": Array [
+                    Array [
+                      320,
+                      12,
+                    ],
+                    Array [
+                      540,
+                      16,
+                    ],
+                    Array [
+                      1280,
+                      24,
+                    ],
+                  ],
+                },
+                Object {
+                  "label": "width",
+                  "points": Array [
+                    Array [
+                      320,
+                      320,
+                    ],
+                    Array [
+                      540,
+                      480,
+                    ],
+                    Array [
+                      1280,
+                      1160,
+                    ],
+                  ],
+                },
+                Object {
+                  "label": "height",
+                  "points": Array [
+                    Array [
+                      320,
+                      320,
+                    ],
+                    Array [
+                      540,
+                      405,
+                    ],
+                    Array [
+                      1280,
+                      652.5,
+                    ],
+                  ],
+                },
+              ],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "max": 10,
+            "min": 1,
+            "type": "range",
+            "value": 10,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "max": 10,
+            "min": 1,
+            "type": "range",
+            "value": 10,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`react-graph-editor/ScrollGraph with scaleY = 2 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ScrollGraph
+    lines={
+      Array [
+        Object {
+          "label": "fontSize",
+          "points": Array [
+            Array [
+              320,
+              12,
+            ],
+            Array [
+              540,
+              16,
+            ],
+            Array [
+              1280,
+              24,
+            ],
+          ],
+        },
+        Object {
+          "label": "width",
+          "points": Array [
+            Array [
+              320,
+              320,
+            ],
+            Array [
+              540,
+              480,
+            ],
+            Array [
+              1280,
+              1160,
+            ],
+          ],
+        },
+        Object {
+          "label": "height",
+          "points": Array [
+            Array [
+              320,
+              320,
+            ],
+            Array [
+              540,
+              405,
+            ],
+            Array [
+              1280,
+              652.5,
+            ],
+          ],
+        },
+      ]
+    }
+    scaleX={1}
+    scaleY={2}
+    style={
+      Object {
+        "height": "100vh",
+        "width": "100%",
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        <GraphTrack
+          className="css-1y6pzby-ScrollGraph-ScrollGraph"
+        >
+          <StyledGraphContainer
+            lines={
+              Array [
+                Object {
+                  "label": "fontSize",
+                  "points": Array [
+                    Array [
+                      320,
+                      12,
+                    ],
+                    Array [
+                      540,
+                      16,
+                    ],
+                    Array [
+                      1280,
+                      24,
+                    ],
+                  ],
+                },
+                Object {
+                  "label": "width",
+                  "points": Array [
+                    Array [
+                      320,
+                      320,
+                    ],
+                    Array [
+                      540,
+                      480,
+                    ],
+                    Array [
+                      1280,
+                      1160,
+                    ],
+                  ],
+                },
+                Object {
+                  "label": "height",
+                  "points": Array [
+                    Array [
+                      320,
+                      320,
+                    ],
+                    Array [
+                      540,
+                      405,
+                    ],
+                    Array [
+                      1280,
+                      652.5,
+                    ],
+                  ],
+                },
+              ]
+            }
+          />
+        </GraphTrack>,
+        <HorizontalRange
+          max={10}
+          min={1}
+          type="range"
+          value={1}
+        />,
+        <VerticalRange
+          max={10}
+          min={1}
+          type="range"
+          value={2}
+        />,
+      ],
+      "className": undefined,
+      "style": Object {
+        "height": "100vh",
+        "width": "100%",
+      },
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": <StyledGraphContainer
+            lines={
+              Array [
+                Object {
+                  "label": "fontSize",
+                  "points": Array [
+                    Array [
+                      320,
+                      12,
+                    ],
+                    Array [
+                      540,
+                      16,
+                    ],
+                    Array [
+                      1280,
+                      24,
+                    ],
+                  ],
+                },
+                Object {
+                  "label": "width",
+                  "points": Array [
+                    Array [
+                      320,
+                      320,
+                    ],
+                    Array [
+                      540,
+                      480,
+                    ],
+                    Array [
+                      1280,
+                      1160,
+                    ],
+                  ],
+                },
+                Object {
+                  "label": "height",
+                  "points": Array [
+                    Array [
+                      320,
+                      320,
+                    ],
+                    Array [
+                      540,
+                      405,
+                    ],
+                    Array [
+                      1280,
+                      652.5,
+                    ],
+                  ],
+                },
+              ]
+            }
+          />,
+          "className": "css-1y6pzby-ScrollGraph-ScrollGraph",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "lines": Array [
+              Object {
+                "label": "fontSize",
+                "points": Array [
+                  Array [
+                    320,
+                    12,
+                  ],
+                  Array [
+                    540,
+                    16,
+                  ],
+                  Array [
+                    1280,
+                    24,
+                  ],
+                ],
+              },
+              Object {
+                "label": "width",
+                "points": Array [
+                  Array [
+                    320,
+                    320,
+                  ],
+                  Array [
+                    540,
+                    480,
+                  ],
+                  Array [
+                    1280,
+                    1160,
+                  ],
+                ],
+              },
+              Object {
+                "label": "height",
+                "points": Array [
+                  Array [
+                    320,
+                    320,
+                  ],
+                  Array [
+                    540,
+                    405,
+                  ],
+                  Array [
+                    1280,
+                    652.5,
+                  ],
+                ],
+              },
+            ],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "max": 10,
+          "min": 1,
+          "type": "range",
+          "value": 1,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "max": 10,
+          "min": 1,
+          "type": "range",
+          "value": 2,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <GraphTrack
+            className="css-1y6pzby-ScrollGraph-ScrollGraph"
+          >
+            <StyledGraphContainer
+              lines={
+                Array [
+                  Object {
+                    "label": "fontSize",
+                    "points": Array [
+                      Array [
+                        320,
+                        12,
+                      ],
+                      Array [
+                        540,
+                        16,
+                      ],
+                      Array [
+                        1280,
+                        24,
+                      ],
+                    ],
+                  },
+                  Object {
+                    "label": "width",
+                    "points": Array [
+                      Array [
+                        320,
+                        320,
+                      ],
+                      Array [
+                        540,
+                        480,
+                      ],
+                      Array [
+                        1280,
+                        1160,
+                      ],
+                    ],
+                  },
+                  Object {
+                    "label": "height",
+                    "points": Array [
+                      Array [
+                        320,
+                        320,
+                      ],
+                      Array [
+                        540,
+                        405,
+                      ],
+                      Array [
+                        1280,
+                        652.5,
+                      ],
+                    ],
+                  },
+                ]
+              }
+            />
+          </GraphTrack>,
+          <HorizontalRange
+            max={10}
+            min={1}
+            type="range"
+            value={1}
+          />,
+          <VerticalRange
+            max={10}
+            min={1}
+            type="range"
+            value={2}
+          />,
+        ],
+        "className": undefined,
+        "style": Object {
+          "height": "100vh",
+          "width": "100%",
+        },
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <StyledGraphContainer
+              lines={
+                Array [
+                  Object {
+                    "label": "fontSize",
+                    "points": Array [
+                      Array [
+                        320,
+                        12,
+                      ],
+                      Array [
+                        540,
+                        16,
+                      ],
+                      Array [
+                        1280,
+                        24,
+                      ],
+                    ],
+                  },
+                  Object {
+                    "label": "width",
+                    "points": Array [
+                      Array [
+                        320,
+                        320,
+                      ],
+                      Array [
+                        540,
+                        480,
+                      ],
+                      Array [
+                        1280,
+                        1160,
+                      ],
+                    ],
+                  },
+                  Object {
+                    "label": "height",
+                    "points": Array [
+                      Array [
+                        320,
+                        320,
+                      ],
+                      Array [
+                        540,
+                        405,
+                      ],
+                      Array [
+                        1280,
+                        652.5,
+                      ],
+                    ],
+                  },
+                ]
+              }
+            />,
+            "className": "css-1y6pzby-ScrollGraph-ScrollGraph",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "lines": Array [
+                Object {
+                  "label": "fontSize",
+                  "points": Array [
+                    Array [
+                      320,
+                      12,
+                    ],
+                    Array [
+                      540,
+                      16,
+                    ],
+                    Array [
+                      1280,
+                      24,
+                    ],
+                  ],
+                },
+                Object {
+                  "label": "width",
+                  "points": Array [
+                    Array [
+                      320,
+                      320,
+                    ],
+                    Array [
+                      540,
+                      480,
+                    ],
+                    Array [
+                      1280,
+                      1160,
+                    ],
+                  ],
+                },
+                Object {
+                  "label": "height",
+                  "points": Array [
+                    Array [
+                      320,
+                      320,
+                    ],
+                    Array [
+                      540,
+                      405,
+                    ],
+                    Array [
+                      1280,
+                      652.5,
+                    ],
+                  ],
+                },
+              ],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "max": 10,
+            "min": 1,
+            "type": "range",
+            "value": 1,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "max": 10,
+            "min": 1,
+            "type": "range",
+            "value": 2,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`react-graph-editor/ScrollGraph with scaleY = 10 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ScrollGraph
+    lines={
+      Array [
+        Object {
+          "label": "fontSize",
+          "points": Array [
+            Array [
+              320,
+              12,
+            ],
+            Array [
+              540,
+              16,
+            ],
+            Array [
+              1280,
+              24,
+            ],
+          ],
+        },
+        Object {
+          "label": "width",
+          "points": Array [
+            Array [
+              320,
+              320,
+            ],
+            Array [
+              540,
+              480,
+            ],
+            Array [
+              1280,
+              1160,
+            ],
+          ],
+        },
+        Object {
+          "label": "height",
+          "points": Array [
+            Array [
+              320,
+              320,
+            ],
+            Array [
+              540,
+              405,
+            ],
+            Array [
+              1280,
+              652.5,
+            ],
+          ],
+        },
+      ]
+    }
+    scaleX={1}
+    scaleY={10}
+    style={
+      Object {
+        "height": "100vh",
+        "width": "100%",
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        <GraphTrack
+          className="css-kq3jlb-ScrollGraph-ScrollGraph"
+        >
+          <StyledGraphContainer
+            lines={
+              Array [
+                Object {
+                  "label": "fontSize",
+                  "points": Array [
+                    Array [
+                      320,
+                      12,
+                    ],
+                    Array [
+                      540,
+                      16,
+                    ],
+                    Array [
+                      1280,
+                      24,
+                    ],
+                  ],
+                },
+                Object {
+                  "label": "width",
+                  "points": Array [
+                    Array [
+                      320,
+                      320,
+                    ],
+                    Array [
+                      540,
+                      480,
+                    ],
+                    Array [
+                      1280,
+                      1160,
+                    ],
+                  ],
+                },
+                Object {
+                  "label": "height",
+                  "points": Array [
+                    Array [
+                      320,
+                      320,
+                    ],
+                    Array [
+                      540,
+                      405,
+                    ],
+                    Array [
+                      1280,
+                      652.5,
+                    ],
+                  ],
+                },
+              ]
+            }
+          />
+        </GraphTrack>,
+        <HorizontalRange
+          max={10}
+          min={1}
+          type="range"
+          value={1}
+        />,
+        <VerticalRange
+          max={10}
+          min={1}
+          type="range"
+          value={10}
+        />,
+      ],
+      "className": undefined,
+      "style": Object {
+        "height": "100vh",
+        "width": "100%",
+      },
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": <StyledGraphContainer
+            lines={
+              Array [
+                Object {
+                  "label": "fontSize",
+                  "points": Array [
+                    Array [
+                      320,
+                      12,
+                    ],
+                    Array [
+                      540,
+                      16,
+                    ],
+                    Array [
+                      1280,
+                      24,
+                    ],
+                  ],
+                },
+                Object {
+                  "label": "width",
+                  "points": Array [
+                    Array [
+                      320,
+                      320,
+                    ],
+                    Array [
+                      540,
+                      480,
+                    ],
+                    Array [
+                      1280,
+                      1160,
+                    ],
+                  ],
+                },
+                Object {
+                  "label": "height",
+                  "points": Array [
+                    Array [
+                      320,
+                      320,
+                    ],
+                    Array [
+                      540,
+                      405,
+                    ],
+                    Array [
+                      1280,
+                      652.5,
+                    ],
+                  ],
+                },
+              ]
+            }
+          />,
+          "className": "css-kq3jlb-ScrollGraph-ScrollGraph",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "lines": Array [
+              Object {
+                "label": "fontSize",
+                "points": Array [
+                  Array [
+                    320,
+                    12,
+                  ],
+                  Array [
+                    540,
+                    16,
+                  ],
+                  Array [
+                    1280,
+                    24,
+                  ],
+                ],
+              },
+              Object {
+                "label": "width",
+                "points": Array [
+                  Array [
+                    320,
+                    320,
+                  ],
+                  Array [
+                    540,
+                    480,
+                  ],
+                  Array [
+                    1280,
+                    1160,
+                  ],
+                ],
+              },
+              Object {
+                "label": "height",
+                "points": Array [
+                  Array [
+                    320,
+                    320,
+                  ],
+                  Array [
+                    540,
+                    405,
+                  ],
+                  Array [
+                    1280,
+                    652.5,
+                  ],
+                ],
+              },
+            ],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "max": 10,
+          "min": 1,
+          "type": "range",
+          "value": 1,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "max": 10,
+          "min": 1,
+          "type": "range",
+          "value": 10,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <GraphTrack
+            className="css-kq3jlb-ScrollGraph-ScrollGraph"
+          >
+            <StyledGraphContainer
+              lines={
+                Array [
+                  Object {
+                    "label": "fontSize",
+                    "points": Array [
+                      Array [
+                        320,
+                        12,
+                      ],
+                      Array [
+                        540,
+                        16,
+                      ],
+                      Array [
+                        1280,
+                        24,
+                      ],
+                    ],
+                  },
+                  Object {
+                    "label": "width",
+                    "points": Array [
+                      Array [
+                        320,
+                        320,
+                      ],
+                      Array [
+                        540,
+                        480,
+                      ],
+                      Array [
+                        1280,
+                        1160,
+                      ],
+                    ],
+                  },
+                  Object {
+                    "label": "height",
+                    "points": Array [
+                      Array [
+                        320,
+                        320,
+                      ],
+                      Array [
+                        540,
+                        405,
+                      ],
+                      Array [
+                        1280,
+                        652.5,
+                      ],
+                    ],
+                  },
+                ]
+              }
+            />
+          </GraphTrack>,
+          <HorizontalRange
+            max={10}
+            min={1}
+            type="range"
+            value={1}
+          />,
+          <VerticalRange
+            max={10}
+            min={1}
+            type="range"
+            value={10}
+          />,
+        ],
+        "className": undefined,
+        "style": Object {
+          "height": "100vh",
+          "width": "100%",
+        },
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <StyledGraphContainer
+              lines={
+                Array [
+                  Object {
+                    "label": "fontSize",
+                    "points": Array [
+                      Array [
+                        320,
+                        12,
+                      ],
+                      Array [
+                        540,
+                        16,
+                      ],
+                      Array [
+                        1280,
+                        24,
+                      ],
+                    ],
+                  },
+                  Object {
+                    "label": "width",
+                    "points": Array [
+                      Array [
+                        320,
+                        320,
+                      ],
+                      Array [
+                        540,
+                        480,
+                      ],
+                      Array [
+                        1280,
+                        1160,
+                      ],
+                    ],
+                  },
+                  Object {
+                    "label": "height",
+                    "points": Array [
+                      Array [
+                        320,
+                        320,
+                      ],
+                      Array [
+                        540,
+                        405,
+                      ],
+                      Array [
+                        1280,
+                        652.5,
+                      ],
+                    ],
+                  },
+                ]
+              }
+            />,
+            "className": "css-kq3jlb-ScrollGraph-ScrollGraph",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "lines": Array [
+                Object {
+                  "label": "fontSize",
+                  "points": Array [
+                    Array [
+                      320,
+                      12,
+                    ],
+                    Array [
+                      540,
+                      16,
+                    ],
+                    Array [
+                      1280,
+                      24,
+                    ],
+                  ],
+                },
+                Object {
+                  "label": "width",
+                  "points": Array [
+                    Array [
+                      320,
+                      320,
+                    ],
+                    Array [
+                      540,
+                      480,
+                    ],
+                    Array [
+                      1280,
+                      1160,
+                    ],
+                  ],
+                },
+                Object {
+                  "label": "height",
+                  "points": Array [
+                    Array [
+                      320,
+                      320,
+                    ],
+                    Array [
+                      540,
+                      405,
+                    ],
+                    Array [
+                      1280,
+                      652.5,
+                    ],
+                  ],
+                },
+              ],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "max": 10,
+            "min": 1,
+            "type": "range",
+            "value": 1,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "max": 10,
+            "min": 1,
+            "type": "range",
+            "value": 10,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
