@@ -5,6 +5,7 @@
   },
   "scripts": {
     "bootstrap": "lerna bootstrap",
+    "build": "lerna exec --parallel -- cross-env-shell node \\$LERNA_ROOT_PATH/scripts/prepare.js",
     "clean": "yarn clean:lib && yarn clean:cache && yarn clean:node_modules",
     "clean:cache": "rimraf .cache",
     "clean:lib": "rimraf packages/*/lib",

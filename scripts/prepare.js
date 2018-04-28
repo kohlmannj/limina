@@ -22,11 +22,13 @@ function removeTsFromLib() {
   // --copy-files option doesn't work with --ignore
   // https://github.com/babel/babel/issues/5404
 
-  const tsFiles = shell.find('lib').filter(tsFile => tsFile.match(/\.ts$/));
+  try {
+    const tsFiles = shell.find('lib').filter(tsFile => tsFile.match(/\.ts$/));
 
-  if (tsFiles.length) {
-    shell.rm(tsFiles);
-  }
+    if (tsFiles.length) {
+      shell.rm(tsFiles);
+    }
+  } catch (e) {} // eslint-disable-line no-empty
 }
 
 function copyLicence() {
