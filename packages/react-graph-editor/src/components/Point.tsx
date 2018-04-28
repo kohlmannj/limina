@@ -6,8 +6,7 @@ import ViewBoxContext from './ViewBoxContext';
 export interface IPointProps {
   className?: string;
   selected?: boolean;
-  // style?: CSSProperties;
-  theme?: IThemeProps;
+  theme?: Partial<IThemeProps>;
   x: number;
   y: number;
 }

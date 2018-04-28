@@ -25,7 +25,7 @@ export interface IDomainRange {
 }
 
 export interface IThemeProps {
-  color?: string;
-  thickness?: number;
-  shape?: PointShape;
+  color: string;
+  thickness: number;
+  shape: PointShape;
 }
