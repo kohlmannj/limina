@@ -44,6 +44,7 @@
     }
   },
   "resolutions": {
+    "@types/node": "^8.10.10",
     "babel-core": "^7.0.0-bridge.0"
   },
   "devDependencies": {
