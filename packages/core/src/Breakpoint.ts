@@ -1,14 +1,41 @@
 import units from 'units-css';
-import createBreakpointTuple from '../BreakpointTuple';
-import { IBreakpointTuple } from '../BreakpointTuple/BreakpointTuple.d';
-import { CSSValue } from '../index.d';
-import {
-  BreakpointOptions,
-  IBreakpoint,
-  IBreakpointDefaultProps,
-  IBreakpointOptions,
-  IBreakpointProps,
-} from './Breakpoint.d';
+import { CSSValue } from '.';
+import createBreakpointTuple, { IBreakpointTuple } from './BreakpointTuple';
+
+export type Modifier = 'min' | 'max';
+export type Operator = 'and' | 'or';
+
+export interface IBreakpointDefaultProps {
+  readonly modifier: Modifier;
+  readonly operator: Operator;
+  readonly unit: string;
+}
+
+export interface IBreakpointOptions {
+  readonly modifier?: Modifier;
+  readonly name?: string;
+  readonly operator?: Operator;
+  readonly unit?: string;
+  readonly width: CSSValue;
+}
+
+export type BreakpointOptions = IBreakpointOptions | CSSValue;
+
+export interface IBreakpointProps {
+  readonly modifier: Modifier;
+  readonly name?: string;
+  readonly operator: Operator;
+  readonly rawWidth: CSSValue;
+  readonly unit: string;
+  readonly width: number;
+  readonly [propName: string]: any;
+}
+
+export interface IBreakpoint {
+  props: IBreakpointProps;
+  createTuple: (value: CSSValue) => IBreakpointTuple;
+  toString: () => string;
+}
 
 export const modifiers = ['min', 'max'];
 export const operators = ['and', 'or'];
