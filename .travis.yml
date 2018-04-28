@@ -5,6 +5,7 @@ cache:
     - node_modules
 before_install:
   - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.6.0
+  - export PATH=$HOME/.yarn/bin:$PATH
 before_script:
   - echo -e "machine github.com\n  login $GITHUB_TOKEN" >> ~/.netrc
   - yarn global add codecov
