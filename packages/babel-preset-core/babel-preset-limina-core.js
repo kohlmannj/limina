@@ -17,7 +17,7 @@ module.exports = () => ({
         },
       },
     ],
-    presetStage1,
+    [presetStage1, { decoratorsLegacy: true }],
     presetTypescript,
   ],
   // plugins: [
