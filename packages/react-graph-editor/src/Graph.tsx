@@ -91,9 +91,9 @@ const GraphContainer: SFC<IGraphProps> = ({ className, ...rest }) => (
 );
 
 const StyledGraphContainer = styled(GraphContainer)`
-  box-sizing: border-box;
   width: 100%;
   height: 100%;
+  box-sizing: border-box;
   padding: ${props => `${(props.theme.thickness || 8) / 2}px`};
 `;
 

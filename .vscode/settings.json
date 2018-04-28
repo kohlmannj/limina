@@ -3,6 +3,5 @@
     "**/node_modules": true,
     "**/lib": true
   },
-  "workbench.colorTheme": "Atom One Dark",
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "workbench.colorTheme": "Atom One Dark"
 }

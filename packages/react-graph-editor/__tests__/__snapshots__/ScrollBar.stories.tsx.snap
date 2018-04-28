@@ -21,7 +21,7 @@ exports[`react-graph-editor/ScrollBar with knobs 1`] = `
   orientation="vertical"
   overflow="auto"
   progress={0}
-  scale={1}
+  scale={2}
   style={
     Object {
       "height": "400px",
@@ -54,6 +54,7 @@ exports[`react-graph-editor/ScrollBar/Vertical/Scale 2 with progress 0 1`] = `
 exports[`react-graph-editor/ScrollBar/Vertical/Scale 2 with progress 0.5 1`] = `
 <Track
   orientation="vertical"
+  progress={0.5}
   style={
     Object {
       "height": "100vh",
@@ -75,6 +76,7 @@ exports[`react-graph-editor/ScrollBar/Vertical/Scale 2 with progress 0.5 1`] = `
 exports[`react-graph-editor/ScrollBar/Vertical/Scale 2 with progress 0.25 1`] = `
 <Track
   orientation="vertical"
+  progress={0.25}
   style={
     Object {
       "height": "100vh",
@@ -96,6 +98,7 @@ exports[`react-graph-editor/ScrollBar/Vertical/Scale 2 with progress 0.25 1`] = 
 exports[`react-graph-editor/ScrollBar/Vertical/Scale 2 with progress 0.75 1`] = `
 <Track
   orientation="vertical"
+  progress={0.75}
   style={
     Object {
       "height": "100vh",
@@ -117,6 +120,7 @@ exports[`react-graph-editor/ScrollBar/Vertical/Scale 2 with progress 0.75 1`] = 
 exports[`react-graph-editor/ScrollBar/Vertical/Scale 2 with progress 1 1`] = `
 <Track
   orientation="vertical"
+  progress={1}
   style={
     Object {
       "height": "100vh",
@@ -158,6 +162,7 @@ exports[`react-graph-editor/ScrollBar/Vertical/Scale 10 with progress 0 1`] = `
 exports[`react-graph-editor/ScrollBar/Vertical/Scale 10 with progress 0.5 1`] = `
 <Track
   orientation="vertical"
+  progress={0.5}
   style={
     Object {
       "height": "100vh",
@@ -179,6 +184,7 @@ exports[`react-graph-editor/ScrollBar/Vertical/Scale 10 with progress 0.5 1`] = 
 exports[`react-graph-editor/ScrollBar/Vertical/Scale 10 with progress 0.25 1`] = `
 <Track
   orientation="vertical"
+  progress={0.25}
   style={
     Object {
       "height": "100vh",
@@ -200,6 +206,7 @@ exports[`react-graph-editor/ScrollBar/Vertical/Scale 10 with progress 0.25 1`] =
 exports[`react-graph-editor/ScrollBar/Vertical/Scale 10 with progress 0.75 1`] = `
 <Track
   orientation="vertical"
+  progress={0.75}
   style={
     Object {
       "height": "100vh",
@@ -221,6 +228,7 @@ exports[`react-graph-editor/ScrollBar/Vertical/Scale 10 with progress 0.75 1`] =
 exports[`react-graph-editor/ScrollBar/Vertical/Scale 10 with progress 1 1`] = `
 <Track
   orientation="vertical"
+  progress={1}
   style={
     Object {
       "height": "100vh",

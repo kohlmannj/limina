@@ -17,6 +17,7 @@
     "lint:fix": "yarn lint:js --fix . && yarn lint:ts --fix **/*.ts && yarn lint:md . -qfo",
     "lint:js": "cross-env NODE_ENV=production eslint --cache --cache-location=.cache/eslint --ext .js,.jsx,.json --report-unused-disable-directives",
     "lint:ts": "tslint -p . -c tslint.json -t stylish -e",
+    "lint:style": "stylelint",
     "lint:md": "remark -qf",
     "precommit": "lint-staged",
     "prerelease": "yarn test && yarn type-check",
@@ -37,6 +38,10 @@
       ],
       "*.{ts,tsx}": [
         "yarn lint:ts --fix",
+        "git add"
+      ],
+      "*.{js,jsx,ts,tsx}": [
+        "yarn lint:style",
         "git add"
       ],
       "*.md": [

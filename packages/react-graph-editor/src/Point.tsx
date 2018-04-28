@@ -28,9 +28,9 @@ export const shapes: Record<PointShape, DynamicStyle> = {
 };
 
 const selectedClassName = (props: IPointProps) => css`
-  box-shadow: 0 0 5px 2px rgba(59, 153, 252, 0.75);
   background: #fff;
   border-color: ${props.theme && props.theme.color ? props.theme.color : '#000'};
+  box-shadow: 0 0 5px 2px rgba(59, 153, 252, 0.75);
 `;
 
 const translate = (props: IStyledButtonProps) =>
@@ -44,9 +44,8 @@ const position = (props: IStyledButtonProps) => css`
   position: absolute;
   ${props.originX && `${props.originX}: ${(props.x - props.minX) / props.width * 100}%;`}
   ${props.originY && `${props.originY}: ${(props.y - props.minY) / props.height * 100}%;`}
-  transform: ${translate(props)} ${
-  props.theme && props.theme.shape === 'diamond' ? 'rotate(45deg)' : ''
-} ;
+  transform:
+    ${translate(props)} ${props.theme && props.theme.shape === 'diamond' ? 'rotate(45deg)' : ''};
 `;
 
 const Button: SFC<IStyledButtonProps> = ({ className, selected, x, y, ...rest }) => (
@@ -59,18 +58,18 @@ const Button: SFC<IStyledButtonProps> = ({ className, selected, x, y, ...rest })
 );
 
 const StyledButton: StyledComponent<IStyledButtonProps, IThemeProps, {}> = styled(Button)`
-  background: ${props => props.theme.color || '#000'};
-  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.15);
-  box-sizing: border-box;
-  font-size: 0;
-  line-height: 0;
-  text-indent: 100%;
-  border: 1px solid transparent;
-  padding: 0;
-  outline: 0;
-  cursor: move;
   width: ${props => `${props.theme.thickness || 8}px`};
   height: ${props => `${props.theme.thickness || 8}px`};
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: ${props => props.theme.color || '#000'};
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  outline: 0;
+  text-indent: 100%;
   ${props => (!props.theme || props.theme.shape === 'circle') && `border-radius: 50%`};
   ${props => props.selected && selectedClassName};
   ${position};

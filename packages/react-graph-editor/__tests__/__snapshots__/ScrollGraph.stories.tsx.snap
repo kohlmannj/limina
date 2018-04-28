@@ -6,7 +6,7 @@ exports[`react-graph-editor/ScrollGraph with default scales 1`] = `
   height: 100%;
 }
 
-<GraphContainer
+<ScrollView
   style={
     Object {
       "height": "100vh",
@@ -14,67 +14,64 @@ exports[`react-graph-editor/ScrollGraph with default scales 1`] = `
     }
   }
 >
-  <GraphTrack
+  <StyledGraphContainer
     className="emotion-0"
-  >
-    <StyledGraphContainer
-      lines={
-        Array [
-          Object {
-            "label": "fontSize",
-            "points": Array [
-              Array [
-                320,
-                12,
-              ],
-              Array [
-                540,
-                16,
-              ],
-              Array [
-                1280,
-                24,
-              ],
+    lines={
+      Array [
+        Object {
+          "label": "fontSize",
+          "points": Array [
+            Array [
+              320,
+              12,
             ],
-          },
-          Object {
-            "label": "width",
-            "points": Array [
-              Array [
-                320,
-                320,
-              ],
-              Array [
-                540,
-                480,
-              ],
-              Array [
-                1280,
-                1160,
-              ],
+            Array [
+              540,
+              16,
             ],
-          },
-          Object {
-            "label": "height",
-            "points": Array [
-              Array [
-                320,
-                320,
-              ],
-              Array [
-                540,
-                405,
-              ],
-              Array [
-                1280,
-                652.5,
-              ],
+            Array [
+              1280,
+              24,
             ],
-          },
-        ]
-      }
-    />
-  </GraphTrack>
+          ],
+        },
+        Object {
+          "label": "width",
+          "points": Array [
+            Array [
+              320,
+              320,
+            ],
+            Array [
+              540,
+              480,
+            ],
+            Array [
+              1280,
+              1160,
+            ],
+          ],
+        },
+        Object {
+          "label": "height",
+          "points": Array [
+            Array [
+              320,
+              320,
+            ],
+            Array [
+              540,
+              405,
+            ],
+            Array [
+              1280,
+              652.5,
+            ],
+          ],
+        },
+      ]
+    }
+  />
   <HorizontalRange
     max={10}
     min={1}
@@ -87,7 +84,7 @@ exports[`react-graph-editor/ScrollGraph with default scales 1`] = `
     type="range"
     value={1}
   />
-</GraphContainer>
+</ScrollView>
 `;
 
 exports[`react-graph-editor/ScrollGraph with scaleX = 2 1`] = `
@@ -96,7 +93,7 @@ exports[`react-graph-editor/ScrollGraph with scaleX = 2 1`] = `
   height: 100%;
 }
 
-<GraphContainer
+<ScrollView
   style={
     Object {
       "height": "100vh",
@@ -104,67 +101,64 @@ exports[`react-graph-editor/ScrollGraph with scaleX = 2 1`] = `
     }
   }
 >
-  <GraphTrack
+  <StyledGraphContainer
     className="emotion-0"
-  >
-    <StyledGraphContainer
-      lines={
-        Array [
-          Object {
-            "label": "fontSize",
-            "points": Array [
-              Array [
-                320,
-                12,
-              ],
-              Array [
-                540,
-                16,
-              ],
-              Array [
-                1280,
-                24,
-              ],
+    lines={
+      Array [
+        Object {
+          "label": "fontSize",
+          "points": Array [
+            Array [
+              320,
+              12,
             ],
-          },
-          Object {
-            "label": "width",
-            "points": Array [
-              Array [
-                320,
-                320,
-              ],
-              Array [
-                540,
-                480,
-              ],
-              Array [
-                1280,
-                1160,
-              ],
+            Array [
+              540,
+              16,
             ],
-          },
-          Object {
-            "label": "height",
-            "points": Array [
-              Array [
-                320,
-                320,
-              ],
-              Array [
-                540,
-                405,
-              ],
-              Array [
-                1280,
-                652.5,
-              ],
+            Array [
+              1280,
+              24,
             ],
-          },
-        ]
-      }
-    />
-  </GraphTrack>
+          ],
+        },
+        Object {
+          "label": "width",
+          "points": Array [
+            Array [
+              320,
+              320,
+            ],
+            Array [
+              540,
+              480,
+            ],
+            Array [
+              1280,
+              1160,
+            ],
+          ],
+        },
+        Object {
+          "label": "height",
+          "points": Array [
+            Array [
+              320,
+              320,
+            ],
+            Array [
+              540,
+              405,
+            ],
+            Array [
+              1280,
+              652.5,
+            ],
+          ],
+        },
+      ]
+    }
+  />
   <HorizontalRange
     max={10}
     min={1}
@@ -177,7 +171,7 @@ exports[`react-graph-editor/ScrollGraph with scaleX = 2 1`] = `
     type="range"
     value={1}
   />
-</GraphContainer>
+</ScrollView>
 `;
 
 exports[`react-graph-editor/ScrollGraph with scaleX = 10 1`] = `
@@ -186,7 +180,7 @@ exports[`react-graph-editor/ScrollGraph with scaleX = 10 1`] = `
   height: 100%;
 }
 
-<GraphContainer
+<ScrollView
   style={
     Object {
       "height": "100vh",
@@ -194,67 +188,64 @@ exports[`react-graph-editor/ScrollGraph with scaleX = 10 1`] = `
     }
   }
 >
-  <GraphTrack
+  <StyledGraphContainer
     className="emotion-0"
-  >
-    <StyledGraphContainer
-      lines={
-        Array [
-          Object {
-            "label": "fontSize",
-            "points": Array [
-              Array [
-                320,
-                12,
-              ],
-              Array [
-                540,
-                16,
-              ],
-              Array [
-                1280,
-                24,
-              ],
+    lines={
+      Array [
+        Object {
+          "label": "fontSize",
+          "points": Array [
+            Array [
+              320,
+              12,
             ],
-          },
-          Object {
-            "label": "width",
-            "points": Array [
-              Array [
-                320,
-                320,
-              ],
-              Array [
-                540,
-                480,
-              ],
-              Array [
-                1280,
-                1160,
-              ],
+            Array [
+              540,
+              16,
             ],
-          },
-          Object {
-            "label": "height",
-            "points": Array [
-              Array [
-                320,
-                320,
-              ],
-              Array [
-                540,
-                405,
-              ],
-              Array [
-                1280,
-                652.5,
-              ],
+            Array [
+              1280,
+              24,
             ],
-          },
-        ]
-      }
-    />
-  </GraphTrack>
+          ],
+        },
+        Object {
+          "label": "width",
+          "points": Array [
+            Array [
+              320,
+              320,
+            ],
+            Array [
+              540,
+              480,
+            ],
+            Array [
+              1280,
+              1160,
+            ],
+          ],
+        },
+        Object {
+          "label": "height",
+          "points": Array [
+            Array [
+              320,
+              320,
+            ],
+            Array [
+              540,
+              405,
+            ],
+            Array [
+              1280,
+              652.5,
+            ],
+          ],
+        },
+      ]
+    }
+  />
   <HorizontalRange
     max={10}
     min={1}
@@ -267,7 +258,7 @@ exports[`react-graph-editor/ScrollGraph with scaleX = 10 1`] = `
     type="range"
     value={1}
   />
-</GraphContainer>
+</ScrollView>
 `;
 
 exports[`react-graph-editor/ScrollGraph with scaleX = scaleY = 2 1`] = `
@@ -276,7 +267,7 @@ exports[`react-graph-editor/ScrollGraph with scaleX = scaleY = 2 1`] = `
   height: 200%;
 }
 
-<GraphContainer
+<ScrollView
   style={
     Object {
       "height": "100vh",
@@ -284,67 +275,64 @@ exports[`react-graph-editor/ScrollGraph with scaleX = scaleY = 2 1`] = `
     }
   }
 >
-  <GraphTrack
+  <StyledGraphContainer
     className="emotion-0"
-  >
-    <StyledGraphContainer
-      lines={
-        Array [
-          Object {
-            "label": "fontSize",
-            "points": Array [
-              Array [
-                320,
-                12,
-              ],
-              Array [
-                540,
-                16,
-              ],
-              Array [
-                1280,
-                24,
-              ],
+    lines={
+      Array [
+        Object {
+          "label": "fontSize",
+          "points": Array [
+            Array [
+              320,
+              12,
             ],
-          },
-          Object {
-            "label": "width",
-            "points": Array [
-              Array [
-                320,
-                320,
-              ],
-              Array [
-                540,
-                480,
-              ],
-              Array [
-                1280,
-                1160,
-              ],
+            Array [
+              540,
+              16,
             ],
-          },
-          Object {
-            "label": "height",
-            "points": Array [
-              Array [
-                320,
-                320,
-              ],
-              Array [
-                540,
-                405,
-              ],
-              Array [
-                1280,
-                652.5,
-              ],
+            Array [
+              1280,
+              24,
             ],
-          },
-        ]
-      }
-    />
-  </GraphTrack>
+          ],
+        },
+        Object {
+          "label": "width",
+          "points": Array [
+            Array [
+              320,
+              320,
+            ],
+            Array [
+              540,
+              480,
+            ],
+            Array [
+              1280,
+              1160,
+            ],
+          ],
+        },
+        Object {
+          "label": "height",
+          "points": Array [
+            Array [
+              320,
+              320,
+            ],
+            Array [
+              540,
+              405,
+            ],
+            Array [
+              1280,
+              652.5,
+            ],
+          ],
+        },
+      ]
+    }
+  />
   <HorizontalRange
     max={10}
     min={1}
@@ -357,7 +345,7 @@ exports[`react-graph-editor/ScrollGraph with scaleX = scaleY = 2 1`] = `
     type="range"
     value={2}
   />
-</GraphContainer>
+</ScrollView>
 `;
 
 exports[`react-graph-editor/ScrollGraph with scaleX = scaleY = 10 1`] = `
@@ -366,7 +354,7 @@ exports[`react-graph-editor/ScrollGraph with scaleX = scaleY = 10 1`] = `
   height: 1000%;
 }
 
-<GraphContainer
+<ScrollView
   style={
     Object {
       "height": "100vh",
@@ -374,67 +362,64 @@ exports[`react-graph-editor/ScrollGraph with scaleX = scaleY = 10 1`] = `
     }
   }
 >
-  <GraphTrack
+  <StyledGraphContainer
     className="emotion-0"
-  >
-    <StyledGraphContainer
-      lines={
-        Array [
-          Object {
-            "label": "fontSize",
-            "points": Array [
-              Array [
-                320,
-                12,
-              ],
-              Array [
-                540,
-                16,
-              ],
-              Array [
-                1280,
-                24,
-              ],
+    lines={
+      Array [
+        Object {
+          "label": "fontSize",
+          "points": Array [
+            Array [
+              320,
+              12,
             ],
-          },
-          Object {
-            "label": "width",
-            "points": Array [
-              Array [
-                320,
-                320,
-              ],
-              Array [
-                540,
-                480,
-              ],
-              Array [
-                1280,
-                1160,
-              ],
+            Array [
+              540,
+              16,
             ],
-          },
-          Object {
-            "label": "height",
-            "points": Array [
-              Array [
-                320,
-                320,
-              ],
-              Array [
-                540,
-                405,
-              ],
-              Array [
-                1280,
-                652.5,
-              ],
+            Array [
+              1280,
+              24,
             ],
-          },
-        ]
-      }
-    />
-  </GraphTrack>
+          ],
+        },
+        Object {
+          "label": "width",
+          "points": Array [
+            Array [
+              320,
+              320,
+            ],
+            Array [
+              540,
+              480,
+            ],
+            Array [
+              1280,
+              1160,
+            ],
+          ],
+        },
+        Object {
+          "label": "height",
+          "points": Array [
+            Array [
+              320,
+              320,
+            ],
+            Array [
+              540,
+              405,
+            ],
+            Array [
+              1280,
+              652.5,
+            ],
+          ],
+        },
+      ]
+    }
+  />
   <HorizontalRange
     max={10}
     min={1}
@@ -447,7 +432,7 @@ exports[`react-graph-editor/ScrollGraph with scaleX = scaleY = 10 1`] = `
     type="range"
     value={10}
   />
-</GraphContainer>
+</ScrollView>
 `;
 
 exports[`react-graph-editor/ScrollGraph with scaleY = 2 1`] = `
@@ -456,7 +441,7 @@ exports[`react-graph-editor/ScrollGraph with scaleY = 2 1`] = `
   height: 200%;
 }
 
-<GraphContainer
+<ScrollView
   style={
     Object {
       "height": "100vh",
@@ -464,67 +449,64 @@ exports[`react-graph-editor/ScrollGraph with scaleY = 2 1`] = `
     }
   }
 >
-  <GraphTrack
+  <StyledGraphContainer
     className="emotion-0"
-  >
-    <StyledGraphContainer
-      lines={
-        Array [
-          Object {
-            "label": "fontSize",
-            "points": Array [
-              Array [
-                320,
-                12,
-              ],
-              Array [
-                540,
-                16,
-              ],
-              Array [
-                1280,
-                24,
-              ],
+    lines={
+      Array [
+        Object {
+          "label": "fontSize",
+          "points": Array [
+            Array [
+              320,
+              12,
             ],
-          },
-          Object {
-            "label": "width",
-            "points": Array [
-              Array [
-                320,
-                320,
-              ],
-              Array [
-                540,
-                480,
-              ],
-              Array [
-                1280,
-                1160,
-              ],
+            Array [
+              540,
+              16,
             ],
-          },
-          Object {
-            "label": "height",
-            "points": Array [
-              Array [
-                320,
-                320,
-              ],
-              Array [
-                540,
-                405,
-              ],
-              Array [
-                1280,
-                652.5,
-              ],
+            Array [
+              1280,
+              24,
             ],
-          },
-        ]
-      }
-    />
-  </GraphTrack>
+          ],
+        },
+        Object {
+          "label": "width",
+          "points": Array [
+            Array [
+              320,
+              320,
+            ],
+            Array [
+              540,
+              480,
+            ],
+            Array [
+              1280,
+              1160,
+            ],
+          ],
+        },
+        Object {
+          "label": "height",
+          "points": Array [
+            Array [
+              320,
+              320,
+            ],
+            Array [
+              540,
+              405,
+            ],
+            Array [
+              1280,
+              652.5,
+            ],
+          ],
+        },
+      ]
+    }
+  />
   <HorizontalRange
     max={10}
     min={1}
@@ -537,7 +519,7 @@ exports[`react-graph-editor/ScrollGraph with scaleY = 2 1`] = `
     type="range"
     value={2}
   />
-</GraphContainer>
+</ScrollView>
 `;
 
 exports[`react-graph-editor/ScrollGraph with scaleY = 10 1`] = `
@@ -546,7 +528,7 @@ exports[`react-graph-editor/ScrollGraph with scaleY = 10 1`] = `
   height: 1000%;
 }
 
-<GraphContainer
+<ScrollView
   style={
     Object {
       "height": "100vh",
@@ -554,67 +536,64 @@ exports[`react-graph-editor/ScrollGraph with scaleY = 10 1`] = `
     }
   }
 >
-  <GraphTrack
+  <StyledGraphContainer
     className="emotion-0"
-  >
-    <StyledGraphContainer
-      lines={
-        Array [
-          Object {
-            "label": "fontSize",
-            "points": Array [
-              Array [
-                320,
-                12,
-              ],
-              Array [
-                540,
-                16,
-              ],
-              Array [
-                1280,
-                24,
-              ],
+    lines={
+      Array [
+        Object {
+          "label": "fontSize",
+          "points": Array [
+            Array [
+              320,
+              12,
             ],
-          },
-          Object {
-            "label": "width",
-            "points": Array [
-              Array [
-                320,
-                320,
-              ],
-              Array [
-                540,
-                480,
-              ],
-              Array [
-                1280,
-                1160,
-              ],
+            Array [
+              540,
+              16,
             ],
-          },
-          Object {
-            "label": "height",
-            "points": Array [
-              Array [
-                320,
-                320,
-              ],
-              Array [
-                540,
-                405,
-              ],
-              Array [
-                1280,
-                652.5,
-              ],
+            Array [
+              1280,
+              24,
             ],
-          },
-        ]
-      }
-    />
-  </GraphTrack>
+          ],
+        },
+        Object {
+          "label": "width",
+          "points": Array [
+            Array [
+              320,
+              320,
+            ],
+            Array [
+              540,
+              480,
+            ],
+            Array [
+              1280,
+              1160,
+            ],
+          ],
+        },
+        Object {
+          "label": "height",
+          "points": Array [
+            Array [
+              320,
+              320,
+            ],
+            Array [
+              540,
+              405,
+            ],
+            Array [
+              1280,
+              652.5,
+            ],
+          ],
+        },
+      ]
+    }
+  />
   <HorizontalRange
     max={10}
     min={1}
@@ -627,5 +606,5 @@ exports[`react-graph-editor/ScrollGraph with scaleY = 10 1`] = `
     type="range"
     value={10}
   />
-</GraphContainer>
+</ScrollView>
 `;
