@@ -1,10 +1,9 @@
 /* tslint:disable no-implicit-dependencies */
-import { color, number, select } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import { ThemeProvider } from 'emotion-theming';
 import React from 'react';
 import textContent from '../../../__stubs__/lipsum.md';
-import ScrollView from '../src/ScrollView';
+import ScrollView from '../src/components/ScrollView';
 
 storiesOf('react-graph-editor/ScrollView', module)
   .add('with y overflow', () => (

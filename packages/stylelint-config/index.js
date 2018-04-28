@@ -6,6 +6,9 @@ module.exports = {
     'stylelint-config-styled-components',
   ],
   rules: {
+    'declaration-empty-line-before': null,
+    'declaration-block-semicolon-newline-after': null,
+    'declaration-colon-newline-after': null,
     indentation: 2,
     'order/properties-alphabetical-order': null,
     'selector-max-compound-selectors': 4,

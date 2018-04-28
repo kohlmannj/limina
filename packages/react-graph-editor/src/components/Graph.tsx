@@ -2,10 +2,10 @@ import chroma from 'chroma-js';
 import { ThemeProvider } from 'emotion-theming';
 import React, { SFC } from 'react';
 import styled, { StyledComponent } from 'react-emotion';
-import { IThemeProps, OriginDirection, PointTuple } from './index';
+import { IThemeProps, OriginDirection, PointTuple } from '../index';
+import { getViewBoxForPoints } from '../utils';
 import Point, { shapes } from './Point';
 import { IPolyLineSVG } from './PolyLineSVG';
-import { getViewBoxForPoints } from './utils';
 import ViewBoxContext from './ViewBoxContext';
 
 const shapeNames = Object.keys(shapes);

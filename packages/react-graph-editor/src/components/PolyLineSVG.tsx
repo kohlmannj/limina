@@ -1,7 +1,7 @@
 import React, { SFC } from 'react';
 import styled, { css, cx, Interpolation, StyledComponent } from 'react-emotion';
-import { IThemeProps, PointTuple } from './index';
-import { getDimensionsForPoints } from './utils';
+import { IThemeProps, PointTuple } from '../index';
+import { getDimensionsForPoints } from '../utils';
 
 export interface IPolyLineSVG {
   className?: string;

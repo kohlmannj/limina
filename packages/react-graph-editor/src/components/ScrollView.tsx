@@ -1,6 +1,6 @@
 import React, { Component, CSSProperties } from 'react';
 import styled, { css } from 'react-emotion';
-import { OverflowMode } from './index';
+import { OverflowMode } from '../index';
 import ScrollBar from './ScrollBar';
 
 export interface IScrollViewProps {
@@ -23,9 +23,9 @@ export interface IScrollViewState {
 
 const ScrollBarCorner = styled('div')`
   position: absolute;
-  bottom: 0;
-  right: 0;
   z-index: 9999;
+  right: 0;
+  bottom: 0;
   width: ${props => props.theme.trackWidth || 15}px;
   height: ${props => props.theme.trackWidth || 15}px;
   background: ${props => props.theme.trackColor || '#efefef'};
@@ -37,6 +37,7 @@ const ScrollViewContainer = styled('div')`
 `;
 
 const ScrollViewOverflowContainer = styled('div')`
+  overflow: auto;
   width: ${props =>
     `calc(100% - ${
       props.theme && typeof props.theme.trackWidth === 'number' ? props.theme.trackWidth : 15
@@ -45,7 +46,6 @@ const ScrollViewOverflowContainer = styled('div')`
     `calc(100% - ${
       props.theme && typeof props.theme.trackWidth === 'number' ? props.theme.trackWidth : 15
     }px)`};
-  overflow: auto;
 
   ::-webkit-scrollbar {
     display: none;

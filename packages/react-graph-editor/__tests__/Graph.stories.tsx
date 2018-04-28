@@ -2,7 +2,7 @@ import { storiesOf } from '@storybook/react'; // tslint:disable-line no-implicit
 import { ThemeProvider } from 'emotion-theming';
 import React from 'react';
 import { testLines } from '../__stubs__/testValues';
-import Graph from '../src/Graph';
+import Graph from '../src/components/Graph';
 
 storiesOf('react-graph-editor/Graph', module)
   .add('with lines', () => (

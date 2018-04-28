@@ -1,5 +1,5 @@
 import { PointTuple } from '../src';
-import { IPolyLineSVG } from '../src/PolyLineSVG';
+import { IPolyLineSVG } from '../src/components/PolyLineSVG';
 
 export const testPoints: PointTuple[] = [[320, 320], [480, 0], [1280, 1160]];
 

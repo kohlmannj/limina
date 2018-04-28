@@ -3,7 +3,7 @@ import { color, number, select } from '@storybook/addon-knobs';
 import { storiesOf } from '@storybook/react';
 import { ThemeProvider } from 'emotion-theming';
 import React from 'react';
-import ScrollBar from '../src/ScrollBar';
+import ScrollBar from '../src/components/ScrollBar';
 
 storiesOf('react-graph-editor/ScrollBar', module)
   .add('with knobs', () => {

@@ -1,6 +1,6 @@
 import React, { CSSProperties, SFC } from 'react';
 import styled, { css, cx, StyledComponent } from 'react-emotion';
-import { IThemeProps, IViewBox, OriginDirection, PointShape, PointTuple } from './index';
+import { IThemeProps, IViewBox, OriginDirection, PointShape, PointTuple } from '../index';
 import ViewBoxContext from './ViewBoxContext';
 
 export interface IPointProps {
@@ -44,8 +44,9 @@ const position = (props: IStyledButtonProps) => css`
   position: absolute;
   ${props.originX && `${props.originX}: ${(props.x - props.minX) / props.width * 100}%;`}
   ${props.originY && `${props.originY}: ${(props.y - props.minY) / props.height * 100}%;`}
-  transform:
-    ${translate(props)} ${props.theme && props.theme.shape === 'diamond' ? 'rotate(45deg)' : ''};
+  transform: ${translate(props)} ${
+  props.theme && props.theme.shape === 'diamond' ? 'rotate(45deg)' : ''
+};
 `;
 
 const Button: SFC<IStyledButtonProps> = ({ className, selected, x, y, ...rest }) => (
@@ -68,11 +69,11 @@ const StyledButton: StyledComponent<IStyledButtonProps, IThemeProps, {}> = style
   cursor: move;
   font-size: 0;
   line-height: 0;
-  outline: 0;
-  text-indent: 100%;
   ${props => (!props.theme || props.theme.shape === 'circle') && `border-radius: 50%`};
   ${props => props.selected && selectedClassName};
   ${position};
+  outline: 0;
+  text-indent: 100%;
 `;
 
 export const Point: SFC<IPointProps> = props => {

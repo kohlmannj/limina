@@ -1,5 +1,5 @@
 import { Context, createContext } from 'react';
-import { IViewBox } from './index';
+import { IViewBox } from '../index';
 
 const ViewBoxContext: Context<IViewBox> = createContext({
   minX: 0,

@@ -11,15 +11,15 @@ export interface IScrollGraphProps extends IGraphProps {
 }
 
 const HorizontalRange = styled('input')`
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
   width: 150px;
   height: 15px;
   margin: 0;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  z-index: 1;
-  transition: 0.25s opacity ease-in-out;
   opacity: 0;
+  transition: 0.25s opacity ease-in-out;
 
   &:hover,
   &:focus {
@@ -28,18 +28,18 @@ const HorizontalRange = styled('input')`
 `;
 
 const VerticalRange = styled(HorizontalRange)`
-  transform-origin: 7.5px 50%;
-  transform: rotate(90deg);
   top: 0;
   right: -135px;
   bottom: auto;
   left: auto;
+  transform: rotate(90deg);
+  transform-origin: 7.5px 50%;
 `;
 
 const GraphContainer = styled.div`
+  overflow: auto;
   width: 100%;
   height: 100%;
-  overflow: auto;
   background: rgba(0, 0, 0, 0.25);
 `;
 

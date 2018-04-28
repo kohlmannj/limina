@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/react'; // tslint:disable-line no-implicit-dependencies
 import React from 'react';
 import { testLines } from '../__stubs__/testValues';
-import ScrollGraph from '../src/ScrollGraph';
+import ScrollGraph from '../src/components/ScrollGraph';
 
 storiesOf('react-graph-editor/ScrollGraph', module)
   .add('with default scales', () => (

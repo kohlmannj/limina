@@ -1,9 +1,7 @@
 import { storiesOf } from '@storybook/react'; // tslint:disable-line no-implicit-dependencies
 import { ThemeProvider } from 'emotion-theming';
 import React from 'react';
-import { testPoints } from '../__stubs__/testValues';
-import { PointTuple } from '../src/index';
-import Point from '../src/Point';
+import Point from '../src/components/Point';
 
 storiesOf('react-graph-editor/Point', module)
   .add('with default appearance', () => <Point x={0} y={0} />)

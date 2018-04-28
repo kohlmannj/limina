@@ -1,6 +1,6 @@
 import React, { CSSProperties, SFC } from 'react';
 import styled, { css, StyledComponent } from 'react-emotion';
-import { OverflowMode, ScrollBarOrientation } from './index';
+import { OverflowMode, ScrollBarOrientation } from '..';
 
 export interface IScrollBarProps {
   className?: string;
@@ -33,26 +33,26 @@ const getOvershootFactor = (progress = 0, min = 0, max = 1): number => {
 };
 
 const positionForOrientation = (props: IStyledScrollBarProps) => css`
-  left: ${!props.orientation || props.orientation === 'vertical' ? 'auto' : 0};
+  top: ${!props.orientation || props.orientation === 'vertical' ? 0 : 'auto'};
   right: ${!props.orientation || props.orientation === 'vertical'
     ? 0
     : `${
         props.theme && typeof props.theme.trackWidth === 'number' ? props.theme.trackWidth : 15
       }px`};
-  top: ${!props.orientation || props.orientation === 'vertical' ? 0 : 'auto'};
   bottom: ${!props.orientation || props.orientation === 'vertical'
     ? `${props.theme && typeof props.theme.trackWidth === 'number' ? props.theme.trackWidth : 15}px`
     : 0};
+  left: ${!props.orientation || props.orientation === 'vertical' ? 'auto' : 0};
 `;
 
 const Track = styled<IScrollBarProps, 'div'>('div')`
-  background: ${props => props.theme.trackColor || `#efefef`};
   display: flex;
   flex-direction: ${props =>
     !props.orientation || props.orientation === 'vertical' ? 'column' : 'row'};
   align-items: center;
   justify-content: ${props =>
     typeof props.progress === 'number' && props.progress >= 0.5 ? 'flex-end' : 'flex-start'};
+  background: ${props => props.theme.trackColor || `#efefef`};
   ${props =>
     !props.orientation || props.orientation === 'vertical' ? 'width' : 'height'}: ${props =>
     `${typeof props.theme.trackWidth === 'number' ? props.theme.trackWidth : 15}px`};
@@ -62,11 +62,10 @@ const Track = styled<IScrollBarProps, 'div'>('div')`
 const ThumbContainer = styled<IScrollBarProps, 'div'>('div')`
   display: flex;
   flex-direction: inherit;
-  justify-content: inherit;
   align-items: center;
-  --overshoot-factor: ${props => getOvershootFactor(props.progress)};
-  ${props => (!props.orientation || props.orientation === 'vertical' ? 'width' : 'height')}: 100%;
-  /* Thumb Length */
+  justify-content: inherit;
+  ${props =>
+    !props.orientation || props.orientation === 'vertical' ? 'width: 100%' : 'height: 100%'};
   ${props =>
     !props.orientation || props.orientation === 'vertical' ? 'height' : 'width'}: ${props =>
     `calc(1 / ${props.scale || 1} * ${getOvershootFactor(props.progress)} * 100%)`};
@@ -76,11 +75,7 @@ const ThumbContainer = styled<IScrollBarProps, 'div'>('div')`
       1
     ) +
       (typeof props.progress === 'number' && props.progress >= 0.5 ? -1 : 0)) *
-    ((props.scale || 1) -
-      1) /* *
-      (typeof props.progress === 'number' && props.progress > 1
-        ? (props.progress || 1) / getOvershootFactor(props.progress)
-        : 1) */ *
+      ((props.scale || 1) - 1) *
       100}%)`};
 `;
 
@@ -88,18 +83,12 @@ export interface IStyledScrollBarProps extends IScrollBarProps {
   theme?: IScrollBarTheme;
 }
 
-export const Thumb: StyledComponent<IScrollBarProps, IScrollBarTheme, {}> = styled<
-  IScrollBarProps,
-  'button'
->('button')`
-  background: ${props => props.theme.thumbColor || '#666'};
-  border-radius: ${props =>
-    `${(typeof props.theme.thumbWidth === 'number' ? props.theme.thumbWidth : 15) / 2}px`};
+export const Thumb = styled<IScrollBarProps, 'button'>('button')`
   display: flex;
+  flex: 0 1 100%;
+  flex-direction: inherit;
   padding: 0;
   border: 0;
-  flex-direction: inherit;
-  flex: 0 1 100%;
   margin: ${props =>
     `${!props.orientation || props.orientation === 'vertical' ? '' : '0 '}${((typeof props.theme
       .trackWidth === 'number'
@@ -107,6 +96,9 @@ export const Thumb: StyledComponent<IScrollBarProps, IScrollBarTheme, {}> = styl
       : 15) -
       (typeof props.theme.thumbWidth === 'number' ? props.theme.thumbWidth : 15)) /
       2}px${!props.orientation || props.orientation === 'vertical' ? ' 0' : ''}`};
+  background: ${props => props.theme.thumbColor || '#666'};
+  border-radius: ${props =>
+    `${(typeof props.theme.thumbWidth === 'number' ? props.theme.thumbWidth : 15) / 2}px`};
   ${props =>
     !props.orientation || props.orientation === 'vertical' ? 'width' : 'height'}: ${props =>
     `${typeof props.theme.thumbWidth === 'number' ? props.theme.thumbWidth : 15}px`};

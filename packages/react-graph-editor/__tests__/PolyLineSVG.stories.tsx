@@ -2,7 +2,7 @@ import { storiesOf } from '@storybook/react'; // tslint:disable-line no-implicit
 import { ThemeProvider } from 'emotion-theming';
 import React from 'react';
 import { PointTuple } from '../src';
-import PolyLineSVG from '../src/PolyLineSVG';
+import PolyLineSVG from '../src/components/PolyLineSVG';
 
 const testPoints: PointTuple[] = [[320, 320], [480, 0], [1280, 1160]];
 
