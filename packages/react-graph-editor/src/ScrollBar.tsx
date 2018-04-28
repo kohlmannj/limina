@@ -51,7 +51,8 @@ const Track = styled<IScrollBarProps, 'div'>('div')`
   flex-direction: ${props =>
     !props.orientation || props.orientation === 'vertical' ? 'column' : 'row'};
   align-items: center;
-  justify-content: flex-start;
+  justify-content: ${props =>
+    typeof props.progress === 'number' && props.progress >= 0.5 ? 'flex-end' : 'flex-start'};
   ${props =>
     !props.orientation || props.orientation === 'vertical' ? 'width' : 'height'}: ${props =>
     `${typeof props.theme.trackWidth === 'number' ? props.theme.trackWidth : 15}px`};
@@ -61,7 +62,7 @@ const Track = styled<IScrollBarProps, 'div'>('div')`
 const ThumbContainer = styled<IScrollBarProps, 'div'>('div')`
   display: flex;
   flex-direction: inherit;
-  justify-content: center;
+  justify-content: inherit;
   align-items: center;
   --overshoot-factor: ${props => getOvershootFactor(props.progress)};
   ${props => (!props.orientation || props.orientation === 'vertical' ? 'width' : 'height')}: 100%;
@@ -70,14 +71,16 @@ const ThumbContainer = styled<IScrollBarProps, 'div'>('div')`
     !props.orientation || props.orientation === 'vertical' ? 'height' : 'width'}: ${props =>
     `calc(1 / ${props.scale || 1} * ${getOvershootFactor(props.progress)} * 100%)`};
   transform: ${props =>
-    `translate${!props.orientation || props.orientation === 'vertical' ? 'Y' : 'X'}(${Math.min(
+    `translate${!props.orientation || props.orientation === 'vertical' ? 'Y' : 'X'}(${(Math.min(
       Math.max(props.progress || 0, 0),
       1
-    ) *
-      ((props.scale || 1) - 1) *
+    ) +
+      (typeof props.progress === 'number' && props.progress >= 0.5 ? -1 : 0)) *
+    ((props.scale || 1) -
+      1) /* *
       (typeof props.progress === 'number' && props.progress > 1
         ? (props.progress || 1) / getOvershootFactor(props.progress)
-        : 1) *
+        : 1) */ *
       100}%)`};
 `;
 
@@ -96,9 +99,14 @@ export const Thumb: StyledComponent<IScrollBarProps, IScrollBarTheme, {}> = styl
   padding: 0;
   border: 0;
   flex-direction: inherit;
-  flex-basis: ${props =>
-    `calc(100% - ${(typeof props.theme.trackWidth === 'number' ? props.theme.trackWidth : 15) -
-      (typeof props.theme.thumbWidth === 'number' ? props.theme.thumbWidth : 15)}px)`};
+  flex: 0 1 100%;
+  margin: ${props =>
+    `${!props.orientation || props.orientation === 'vertical' ? '' : '0 '}${((typeof props.theme
+      .trackWidth === 'number'
+      ? props.theme.trackWidth
+      : 15) -
+      (typeof props.theme.thumbWidth === 'number' ? props.theme.thumbWidth : 15)) /
+      2}px${!props.orientation || props.orientation === 'vertical' ? ' 0' : ''}`};
   ${props =>
     !props.orientation || props.orientation === 'vertical' ? 'width' : 'height'}: ${props =>
     `${typeof props.theme.thumbWidth === 'number' ? props.theme.thumbWidth : 15}px`};
@@ -112,7 +120,7 @@ export const ScrollBar: SFC<IScrollBarProps> = ({
   scale,
   style,
 }) => (
-  <Track className={className} orientation={orientation} style={style}>
+  <Track className={className} orientation={orientation} progress={progress} style={style}>
     <ThumbContainer orientation={orientation} progress={progress} scale={scale}>
       {typeof scale === 'number' &&
         (scale > 1 || (scale <= 1 && overflow === 'scroll')) && <Thumb orientation={orientation} />}

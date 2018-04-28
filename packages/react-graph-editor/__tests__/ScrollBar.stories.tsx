@@ -57,7 +57,7 @@ storiesOf('react-graph-editor/ScrollBar', module)
           )}
           scale={number(
             'Scale',
-            1,
+            2,
             {
               range: true,
               min: 1,
@@ -67,6 +67,7 @@ storiesOf('react-graph-editor/ScrollBar', module)
             'scale'
           )}
           orientation={orientation}
+          overflow={select('Overflow', { auto: 'Auto', scroll: 'Scroll' }, 'auto', 'overflow')}
           style={{ [orientation === 'vertical' ? 'height' : 'width']: '400px', margin: '25vh' }}
         />
       </ThemeProvider>
