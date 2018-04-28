@@ -4,9 +4,11 @@ cache:
   directories:
     - node_modules
 before_script:
+  - echo -e "machine github.com\n  login $GITHUB_TOKEN" >> ~/.netrc
   - yarn global add codecov
   - yarn bootstrap
 script:
   - yarn type-check
   - yarn test --coverage --bail --runInBand --silent
   - codecov --token=$CODECOV_TOKEN
+  - if [ $TRAVIS_BRANCH == 'master' ]; then yarn storybook:deploy --ci --host-token-env-variable=$GITHUB_TOKEN; fi
