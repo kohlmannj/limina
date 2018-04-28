@@ -29,24 +29,10 @@ function handleExit(code, errorCallback) {
 
 function tscfy(options = {}) {
   const { watch = false, silent = true, errorCallback } = options;
-  const tsConfigFile = 'tsconfig.json';
   const tsDtsConfigFile = 'tsconfig.dts.json';
-
-  if (!fs.existsSync(tsConfigFile)) {
-    if (!silent) console.log(`No ${tsConfigFile}`);
-    return;
-  }
 
   if (!fs.existsSync(tsDtsConfigFile)) {
     if (!silent) console.log(`No ${tsDtsConfigFile}`);
-    return;
-  }
-
-  const content = fs.readFileSync(tsConfigFile);
-  const tsConfig = JSON.parse(content);
-
-  if (tsConfig && tsConfig.lerna && tsConfig.lerna.disabled === true) {
-    if (!silent) console.log('Lerna disabled');
     return;
   }
 
