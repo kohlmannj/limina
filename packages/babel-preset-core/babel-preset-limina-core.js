@@ -1,16 +1,10 @@
 /* eslint-env node */
-const presetTypescript = require('@babel/preset-typescript');
-const presetStage1 = require('@babel/preset-stage-1');
-const presetEnv = require('@babel/preset-env');
-const emotionPlugin = require('babel-plugin-emotion');
-const exportDefaultFromPlugin = require('@babel/plugin-proposal-export-default-from');
-
 const env = process.env.BABEL_ENV || process.env.NODE_ENV;
 
 module.exports = () => ({
   presets: [
     [
-      presetEnv,
+      '@babel/preset-env',
       {
         modules: 'umd',
         targets: {
@@ -18,11 +12,14 @@ module.exports = () => ({
         },
       },
     ],
-    [presetStage1, { decoratorsLegacy: true }],
-    presetTypescript,
+    ['@babel/preset-stage-1', { decoratorsLegacy: true }],
+    '@babel/preset-typescript',
   ],
   plugins: [
-    exportDefaultFromPlugin,
-    [emotionPlugin, env === 'production' ? { hoist: true } : { sourceMap: true, autoLabel: true }],
+    '@babel/plugin-proposal-export-default-from',
+    [
+      'babel-plugin-emotion',
+      env === 'production' ? { hoist: true } : { sourceMap: true, autoLabel: true },
+    ],
   ],
 });
