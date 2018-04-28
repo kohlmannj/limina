@@ -1,8 +1,8 @@
 import { _Interpolation1 } from 'emotion';
-import { IBreakpointTuple } from '../BreakpointTuple/BreakpointTuple.d';
+import { ICSSValueRetargetingOptions, IReduceToCSSOptions } from '..';
+import { IBreakpointTuple } from '../BreakpointTuple';
 import createLinearRegressionMediaQuery from './createLinearRegressionMediaQuery';
 import defaultOptions from './cssValueRetargetingDefaultOptions';
-import { ICSSValueRetargetingOptions, IReduceToCSSOptions } from './index';
 
 export const reduceBreakpointTuplesToCSS = (options: ICSSValueRetargetingOptions) => (
   { prevTuple, css }: IReduceToCSSOptions,

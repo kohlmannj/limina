@@ -1,6 +1,6 @@
 import merge from 'lodash.merge';
-import { IBreakpointTuple } from './BreakpointTuple/BreakpointTuple.d';
-import { CSSPropertyValueTuple } from './index.d';
+import { CSSPropertyValueTuple } from '.';
+import { IBreakpointTuple } from './BreakpointTuple';
 import { retargetCSSPropertyValue } from './utils/retargetCSSPropertyValue';
 
 const liminaNeue = (styles: Record<string, IBreakpointTuple[]>) =>

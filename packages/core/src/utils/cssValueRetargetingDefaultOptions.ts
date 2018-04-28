@@ -1,4 +1,4 @@
-import { ICSSValueRetargetingDefaultOptions } from './index.d';
+import { ICSSValueRetargetingDefaultOptions } from '..';
 
 const cssValueRetargetingDefaultOptions: ICSSValueRetargetingDefaultOptions = {
   dynamicUnit: 'vw',
