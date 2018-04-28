@@ -1,190 +1,50 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`react-graph-editor/PolyLineSVG with points 1`] = `
-ShallowWrapper {
-  "length": 1,
-  Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <StyledPolyLineSVG
-    points={
-      Array [
-        Array [
-          320,
-          320,
-        ],
-        Array [
-          480,
-          0,
-        ],
-        Array [
-          1280,
-          1160,
-        ],
-      ]
-    }
-  />,
-  Symbol(enzyme.__renderer__): Object {
-    "batchedUpdates": [Function],
-    "getNode": [Function],
-    "render": [Function],
-    "simulateEvent": [Function],
-    "unmount": [Function],
-  },
-  Symbol(enzyme.__node__): Object {
-    "instance": null,
-    "key": undefined,
-    "nodeType": "function",
-    "props": Object {
-      "className": "css-1ykebe6-StyledPolyLineSVG elt0msu0",
-      "points": Array [
-        Array [
-          320,
-          320,
-        ],
-        Array [
-          480,
-          0,
-        ],
-        Array [
-          1280,
-          1160,
-        ],
-      ],
-    },
-    "ref": null,
-    "rendered": null,
-    "type": [Function],
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "function",
-      "props": Object {
-        "className": "css-1ykebe6-StyledPolyLineSVG elt0msu0",
-        "points": Array [
-          Array [
-            320,
-            320,
-          ],
-          Array [
-            480,
-            0,
-          ],
-          Array [
-            1280,
-            1160,
-          ],
-        ],
-      },
-      "ref": null,
-      "rendered": null,
-      "type": [Function],
-    },
-  ],
-  Symbol(enzyme.__options__): Object {
-    "adapter": ReactSixteenAdapter {
-      "options": Object {
-        "enableComponentDidUpdateOnSetState": true,
-      },
-    },
-  },
+.emotion-0 {
+  fill: none;
+  stroke: #000;
+  stroke-width: 2px;
 }
+
+<PolyLineSVG
+  className="emotion-0 emotion-1"
+  points={
+    Array [
+      Array [
+        320,
+        320,
+      ],
+      Array [
+        480,
+        0,
+      ],
+      Array [
+        1280,
+        1160,
+      ],
+    ]
+  }
+/>
 `;
 
 exports[`react-graph-editor/PolyLineSVG with theme 1`] = `
-ShallowWrapper {
-  "length": 1,
-  Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <ThemeProvider
-    theme={
-      Object {
-        "color": "red",
-        "thickness": 4,
-      }
-    }
-  >
-    <StyledPolyLineSVG
-      points={
-        Array [
-          Array [
-            320,
-            320,
-          ],
-          Array [
-            480,
-            0,
-          ],
-          Array [
-            1280,
-            1160,
-          ],
-        ]
-      }
-    />
-  </ThemeProvider>,
-  Symbol(enzyme.__renderer__): Object {
-    "batchedUpdates": [Function],
-    "getNode": [Function],
-    "render": [Function],
-    "simulateEvent": [Function],
-    "unmount": [Function],
-  },
-  Symbol(enzyme.__node__): Object {
-    "instance": null,
-    "key": undefined,
-    "nodeType": "class",
-    "props": Object {
-      "points": Array [
-        Array [
-          320,
-          320,
-        ],
-        Array [
-          480,
-          0,
-        ],
-        Array [
-          1280,
-          1160,
-        ],
+<StyledPolyLineSVG
+  points={
+    Array [
+      Array [
+        320,
+        320,
       ],
-    },
-    "ref": null,
-    "rendered": null,
-    "type": [Function],
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "class",
-      "props": Object {
-        "points": Array [
-          Array [
-            320,
-            320,
-          ],
-          Array [
-            480,
-            0,
-          ],
-          Array [
-            1280,
-            1160,
-          ],
-        ],
-      },
-      "ref": null,
-      "rendered": null,
-      "type": [Function],
-    },
-  ],
-  Symbol(enzyme.__options__): Object {
-    "adapter": ReactSixteenAdapter {
-      "options": Object {
-        "enableComponentDidUpdateOnSetState": true,
-      },
-    },
-  },
-}
+      Array [
+        480,
+        0,
+      ],
+      Array [
+        1280,
+        1160,
+      ],
+    ]
+  }
+/>
 `;
