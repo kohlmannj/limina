@@ -946,7 +946,7 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
-"@storybook/addon-info@^4.0.0-alpha.3":
+"@storybook/addon-info@^4.0.0-alpha.4":
   version "4.0.0-alpha.4"
   resolved "https://registry.yarnpkg.com/@storybook/addon-info/-/addon-info-4.0.0-alpha.4.tgz#2425722f197006f4b3cce960f6c425da0d684bc9"
   dependencies:
@@ -964,7 +964,7 @@
     react-lifecycles-compat "^3.0.2"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-knobs@^4.0.0-alpha.3":
+"@storybook/addon-knobs@^4.0.0-alpha.4":
   version "4.0.0-alpha.4"
   resolved "https://registry.yarnpkg.com/@storybook/addon-knobs/-/addon-knobs-4.0.0-alpha.4.tgz#d15e3b8532317aadc513554eba0b7c7cdf3273a1"
   dependencies:
@@ -984,7 +984,7 @@
     react-textarea-autosize "^6.1.0"
     util-deprecate "^1.0.2"
 
-"@storybook/addons@4.0.0-alpha.4", "@storybook/addons@^4.0.0-alpha.3":
+"@storybook/addons@4.0.0-alpha.4", "@storybook/addons@^4.0.0-alpha.4":
   version "4.0.0-alpha.4"
   resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-4.0.0-alpha.4.tgz#0da1b5aa7f6d98392341be323c8283a0993e428d"
   dependencies:
@@ -1124,7 +1124,7 @@
   dependencies:
     babel-runtime "^6.5.0"
 
-"@storybook/react@^4.0.0-alpha.3":
+"@storybook/react@^4.0.0-alpha.4":
   version "4.0.0-alpha.4"
   resolved "https://registry.yarnpkg.com/@storybook/react/-/react-4.0.0-alpha.4.tgz#310eb92d3f8b40c712d01effdebfb5059a383899"
   dependencies:
@@ -1228,7 +1228,7 @@
   dependencies:
     csstype "^2.2.0"
 
-"@types/recompose@^0.26.0":
+"@types/recompose@^0.26.1":
   version "0.26.1"
   resolved "https://registry.yarnpkg.com/@types/recompose/-/recompose-0.26.1.tgz#a21c5728dea223551882b763335cb1bc641bf1d0"
   dependencies:
