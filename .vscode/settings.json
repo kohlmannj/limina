@@ -3,5 +3,9 @@
     "**/node_modules": true,
     "**/lib": true
   },
-  "workbench.colorTheme": "Atom One Dark"
+  "workbench.colorTheme": "Atom One Dark",
+  "stylelint.additionalDocumentSelectors": [
+    "javascriptreact",
+    "typescriptreact"
+  ]
 }

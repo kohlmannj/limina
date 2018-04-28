@@ -1,15 +1,14 @@
 module.exports = {
   processors: ['stylelint-processor-styled-components'],
   extends: [
-    'stylelint-config-standard',
     'stylelint-config-idiomatic-order',
+    'stylelint-config-standard',
     'stylelint-config-styled-components',
   ],
   rules: {
-    'declaration-colon-space-after': null,
-    'declaration-empty-line-before': 'never',
+    indentation: 2,
     'order/properties-alphabetical-order': null,
     'selector-max-compound-selectors': 4,
-    indentation: 2,
+    'value-list-max-empty-lines': null,
   },
 };
