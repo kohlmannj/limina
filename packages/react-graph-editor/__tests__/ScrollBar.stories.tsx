@@ -4,6 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { ThemeProvider } from 'emotion-theming';
 import React from 'react';
 import ScrollBar from '../src/components/ScrollBar';
+import { defaultTheme } from '../src/theme';
 
 storiesOf('react-graph-editor/ScrollBar', module)
   .add('with knobs', () => {
@@ -17,11 +18,11 @@ storiesOf('react-graph-editor/ScrollBar', module)
     return (
       <ThemeProvider
         theme={{
-          thumbColor: color('Thumb Color', '#666', 'thumbColor'),
-          trackColor: color('Track Color', '#efefef', 'trackColor'),
+          thumbColor: color('Thumb Color', defaultTheme.thumbColor, 'thumbColor'),
+          trackColor: color('Track Color', defaultTheme.trackColor, 'trackColor'),
           thumbWidth: number(
             'Thumb Width',
-            15,
+            defaultTheme.thumbWidth,
             {
               range: true,
               min: 0,
@@ -32,7 +33,7 @@ storiesOf('react-graph-editor/ScrollBar', module)
           ),
           trackWidth: number(
             'Track Width',
-            15,
+            defaultTheme.trackWidth,
             {
               range: true,
               min: 0,
