@@ -4,6 +4,7 @@ import { OverflowMode } from './index';
 import ScrollBar from './ScrollBar';
 
 export interface IScrollViewProps {
+  className?: string;
   dangerouslySetInnerHTML?: {
     __html: string;
   };
@@ -74,6 +75,7 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
   public render() {
     const {
       children,
+      className,
       dangerouslySetInnerHTML,
       overflow,
       overflowX,
@@ -88,6 +90,8 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
         innerRef={e => {
           this.root = e;
         }}
+        className={className}
+        style={style}
         {...rest}
       >
         <ScrollViewOverflowContainer

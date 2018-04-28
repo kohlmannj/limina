@@ -2,6 +2,7 @@ import React, { Component, CSSProperties, SFC } from 'react';
 import styled, { css } from 'react-emotion';
 import { withProps } from 'recompose';
 import Graph, { IGraphProps } from './Graph';
+import ScrollView from './ScrollView';
 
 export interface IScrollGraphProps extends IGraphProps {
   scaleX?: number;
@@ -49,18 +50,17 @@ const GraphTrack = styled.div`
 `;
 
 const ScrollGraph: SFC<IScrollGraphProps> = ({ className, scaleX, scaleY, style, ...rest }) => (
-  <GraphContainer className={className} style={style}>
-    <GraphTrack
+  <ScrollView className={className} style={style}>
+    <Graph
       className={css({
         width: `${scaleX! * 100}%`,
         height: `${scaleY! * 100}%`,
       })}
-    >
-      <Graph {...rest} />
-    </GraphTrack>
+      {...rest}
+    />
     <HorizontalRange type="range" value={scaleX} min={1} max={10} />
     <VerticalRange type="range" value={scaleY} min={1} max={10} />
-  </GraphContainer>
+  </ScrollView>
 );
 
 ScrollGraph.defaultProps = {
