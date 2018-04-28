@@ -4,9 +4,11 @@ const path = require('path');
 const shell = require('shelljs');
 
 function getCommand(watch) {
-  const babel = path.join(__dirname, '..', 'node_modules', '.bin', 'babel');
+  const babelPath = path.join(__dirname, '..', 'node_modules', '.bin', 'babel');
+  const configPath = path.join(__dirname, '..', 'babel.config.js');
 
   const args = [
+    `--config-file ${configPath}`,
     '--ignore __mocks__/,__stubs__,tests/*,__tests__/,**.test.js,**.test.ts,stories/,**.story.js,**.story.jsx,**.story.ts,**.story.tsx,**.stories.js,**.stories.jsx,**.stories.ts,**.stories.tsx,**.d.ts,__snapshots__',
     './src',
     '--out-dir ./lib',
@@ -18,7 +20,7 @@ function getCommand(watch) {
     args.push('-w');
   }
 
-  const command = `${babel} ${args.join(' ')}`;
+  const command = `${babelPath} ${args.join(' ')}`;
   console.log(command);
   return command;
 }
