@@ -2,6 +2,7 @@
 module.exports = {
   collectCoverageFrom: [
     '<rootDir>/packages/**/*.{js,jsx,ts,tsx}',
+    '!**/__stubs__/**',
     '!**/node_modules/**',
     '!**/vendor/**',
   ],

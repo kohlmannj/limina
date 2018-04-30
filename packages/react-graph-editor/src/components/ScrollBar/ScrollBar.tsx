@@ -1,9 +1,8 @@
-import React, { CSSProperties, SFC } from 'react';
-import styled, { css, StyledComponent } from 'react-emotion';
+import React, { CSSProperties, FocusEventHandler, MouseEventHandler, SFC } from 'react';
 import { OverflowMode, ScrollBarOrientation } from '../..';
 import { IScrollBarTheme } from '../../theme';
-import Thumb from './components/Thumb';
 import ThumbContainer from './components/ThumbContainer';
+import ThumbSegment, { IThumbSegmentProps } from './components/ThumbSegment';
 import Track from './components/Track';
 
 export interface IScrollBarProps {
@@ -13,6 +12,9 @@ export interface IScrollBarProps {
   progress?: number;
   scale?: number;
   style?: CSSProperties;
+  thumbEndProps?: IThumbSegmentProps;
+  thumbMiddleProps?: IThumbSegmentProps;
+  thumbStartProps?: IThumbSegmentProps;
 }
 
 export interface IStyledScrollBarProps extends IScrollBarProps {
@@ -26,12 +28,24 @@ export const ScrollBar: SFC<IScrollBarProps> = ({
   progress,
   scale,
   style,
+  thumbEndProps,
+  thumbMiddleProps,
+  thumbStartProps,
 }) => (
   <Track className={className} orientation={orientation} progress={progress} style={style}>
-    <ThumbContainer orientation={orientation} progress={progress} scale={scale}>
-      {typeof scale === 'number' &&
-        (scale > 1 || (scale <= 1 && overflow === 'scroll')) && <Thumb orientation={orientation} />}
-    </ThumbContainer>
+    {typeof scale !== 'undefined' &&
+      (scale > 1 || (scale <= 1 && overflow === 'scroll')) && (
+        <ThumbContainer orientation={orientation} progress={progress} scale={scale}>
+          <ThumbSegment
+            dragSignifier
+            position="start"
+            orientation={orientation}
+            {...thumbStartProps}
+          />
+          <ThumbSegment position="middle" orientation={orientation} {...thumbMiddleProps} />
+          <ThumbSegment dragSignifier position="end" orientation={orientation} {...thumbEndProps} />
+        </ThumbContainer>
+      )}
   </Track>
 );
 

@@ -1,13 +1,83 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`react-graph-editor/ScrollView with x and y overflow 1`] = `
+.emotion-0 {
+  position: absolute;
+  z-index: 1;
+}
+
+.emotion-1 {
+  position: absolute;
+  z-index: 1;
+}
+
+<ScrollViewContainer
+  innerRef={[Function]}
+  style={
+    Object {
+      "background": "gray",
+      "height": "50vh",
+      "margin": "50px auto",
+      "width": "50vw",
+    }
+  }
+>
+  <ScrollViewOverflowContainer
+    innerRef={[Function]}
+  >
+    <div
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus metus lectus, dapibus at ornare id, facilisis sit amet ex. Sed sodales bibendum congue. Donec elementum commodo magna eu mattis. Morbi at ligula id tellus pellentesque pulvinar. Curabitur lacinia sollicitudin erat, eget convallis augue aliquam at. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque nec luctus nisi. Fusce nulla massa, molestie quis mollis nec, consectetur at nunc. Nulla blandit metus id est malesuada pellentesque. Nulla in mauris venenatis, aliquam orci vitae, commodo erat. Ut dignissim felis leo, id sagittis nunc vehicula ut. Maecenas sagittis mi ligula.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dictum mi eget orci bibendum vulputate. Maecenas pharetra ex ex, tempor dignissim ipsum sagittis quis. Vivamus ultricies faucibus tortor id viverra. Phasellus a lacinia nibh, ut facilisis eros. Donec dapibus auctor hendrerit. In iaculis blandit maximus. Proin quis volutpat urna.</p>
+<p>Suspendisse imperdiet venenatis arcu, sed eleifend nunc ullamcorper vel. Mauris varius ligula sit amet mauris efficitur tincidunt. Sed ac velit felis. Nam varius, purus et viverra congue, purus leo tempus orci, vel imperdiet libero augue quis ipsum. Aliquam pharetra libero ante. Etiam tristique consectetur tortor, rutrum maximus felis placerat euismod. Mauris volutpat, quam vel suscipit eleifend, lorem tellus pharetra massa, quis consequat mauris sem nec sem. Ut non lorem in lorem cursus condimentum at quis felis. Suspendisse molestie rutrum nisi at sollicitudin. Nam interdum diam justo, sed sollicitudin purus faucibus non. Praesent nunc mi, fermentum non libero nec, accumsan consectetur tortor. Nullam feugiat suscipit lacus, et vulputate felis cursus vel. Integer sollicitudin placerat varius. Etiam at ultricies ex.</p>
+<p>Nunc consectetur risus ac ex dapibus, vel pretium odio mollis. Donec malesuada, nisl eget ultrices aliquam, libero neque auctor dolor, ornare iaculis sem enim vitae mauris. Praesent augue magna, tempor eu augue commodo, efficitur fringilla lectus. Morbi neque eros, bibendum sed dui sed, iaculis sagittis nibh. Aenean maximus, risus id lobortis ultricies, turpis sapien pharetra turpis, efficitur blandit mi tortor finibus odio. Curabitur eleifend pellentesque feugiat. Donec eget lobortis diam. In vestibulum neque quis ullamcorper porttitor. Mauris convallis scelerisque justo non ullamcorper. Donec congue fringilla eros, a posuere orci auctor ac. Maecenas eleifend tellus magna, elementum pellentesque ipsum lacinia vestibulum. Fusce eu ultrices nunc. Sed vel malesuada arcu. Maecenas finibus mi nunc, non fermentum sem gravida id. Etiam justo risus, viverra nec vestibulum fringilla, sodales non nunc. Aenean ac arcu a enim accumsan iaculis.</p>
+<p>Aliquam nec pharetra leo. Aliquam eget leo turpis. Donec et pellentesque dui. Aenean sit amet dolor vitae ante iaculis varius venenatis euismod augue. Proin hendrerit, nisl nec pharetra rhoncus, arcu dui volutpat est, eget efficitur tortor enim nec odio. Curabitur quis gravida ipsum. Nam pretium mauris ut rhoncus interdum. Nulla non tortor ipsum. Integer eget leo id purus tincidunt blandit. Maecenas sit amet vestibulum nibh. Cras et ante ut ante bibendum dapibus. Ut ac lectus non ante fermentum lacinia aliquam ut sapien.</p>
+<p>Nullam finibus vitae metus ut sodales. Nulla luctus molestie risus sit amet interdum. Integer mi enim, eleifend eget porttitor in, dapibus id magna. Maecenas facilisis mauris eget lorem efficitur dignissim. Vestibulum ac lectus massa. Fusce nec nisl vel lacus finibus pharetra id in lorem. Vivamus nec eros sed velit efficitur dapibus quis at nibh. Donec dolor eros, fermentum a vestibulum quis, dapibus vitae metus. Donec aliquam lorem non volutpat pulvinar.</p>
+<p>Etiam luctus mattis tortor a sollicitudin. Ut risus magna, venenatis id ipsum ut, lobortis ultricies magna. Nunc porta nunc at mi gravida, eu volutpat ligula bibendum. Phasellus consequat malesuada justo a hendrerit. Nunc non aliquam urna. Morbi in ligula justo. Nullam vitae mattis augue. Praesent hendrerit ac elit ac iaculis. Suspendisse sed nulla dapibus, malesuada ligula eu, fringilla ipsum. Sed elementum cursus aliquet. Aliquam egestas augue ut justo euismod tristique. Integer id maximus velit. Sed id lacus nibh. Sed et orci tempus est accumsan laoreet pulvinar sit amet nisi.</p>
+<p>Nunc id interdum nibh, ac finibus tortor. Vivamus posuere, elit at pellentesque auctor, tellus ligula accumsan nunc, eu euismod elit turpis a nibh. Morbi tellus lorem, tempus at pharetra at, maximus quis nisl. Praesent tempor imperdiet dolor, quis tempus neque fringilla pulvinar. Pellentesque id ultricies erat. Etiam at est augue. Mauris neque urna, posuere id aliquet ac, vestibulum ut felis. Sed aliquet risus egestas libero congue pharetra. Cras sit amet nisi lorem. Morbi sollicitudin luctus risus. In quis hendrerit risus. Etiam efficitur, magna quis molestie placerat, enim neque eleifend nibh, eu vestibulum mauris felis at lacus.</p>
+<p>Etiam volutpat tristique tortor lacinia pulvinar. Quisque quis sapien vel ante egestas ornare. Maecenas et volutpat ipsum. Vestibulum eu rutrum mauris, sit amet sagittis elit. Suspendisse ultricies, justo in tristique volutpat, nisl magna aliquam nibh, in tincidunt turpis est elementum felis. Mauris tempor eleifend turpis nec venenatis. In luctus, eros eu mattis laoreet, justo lacus facilisis mauris, ac egestas nisi enim sit amet ex. Morbi feugiat nibh ut lobortis venenatis. Aenean ac placerat orci. Quisque condimentum erat lacus, a bibendum mi consectetur nec. Praesent enim turpis, egestas sed luctus ornare, efficitur iaculis erat. Nulla libero ex, aliquet congue porta vel, vulputate quis augue. Etiam pretium, tellus eu lobortis vulputate, magna urna placerat tortor, in maximus massa justo vel risus. Integer lobortis efficitur ex, et ornare augue pharetra ut. Maecenas euismod ante justo, sit amet efficitur felis vehicula at.</p>
+<p>Donec dictum tempus viverra. Etiam ut neque eget velit varius tristique. Cras risus enim, tincidunt at vehicula eget, cursus sed lectus. Sed molestie pretium libero quis elementum. Maecenas commodo nisi sagittis purus ultrices convallis. Nunc cursus euismod sem, a cursus nunc euismod quis. Nam nulla ante, rutrum id mi dignissim, condimentum gravida lorem. Sed vehicula ligula quis pulvinar euismod. Nam ac sollicitudin augue, aliquet feugiat elit. Donec eget lacus nec lectus lacinia tincidunt eu eu tortor. Cras porta tristique libero et auctor. Nunc pellentesque facilisis nunc, et bibendum tellus feugiat elementum. Proin rutrum aliquam finibus. Pellentesque vitae dolor eget nisl sollicitudin laoreet condimentum vel nisl.</p>
+<p>Nam consectetur faucibus commodo. Donec sed sem at nibh facilisis consequat vitae eu est. Fusce non leo nec nulla tincidunt rutrum. Quisque aliquet auctor est, eu ornare urna placerat euismod. Nunc rutrum ligula eu consequat ultricies. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis malesuada at nisl sed rhoncus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Praesent ut urna nec tortor eleifend tristique. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla imperdiet dictum purus, in vestibulum justo faucibus vel. Morbi elementum nulla sed nisi convallis commodo. Integer sagittis pellentesque eros ac sagittis. Aliquam gravida blandit accumsan. Maecenas consectetur odio eget leo ullamcorper, non ultricies eros faucibus. Fusce diam tellus, placerat vitae lacus sed, rhoncus scelerisque lacus.</p>
+<p>Mauris porta ex vel lacus auctor, in sodales enim tempus. Aliquam erat volutpat. Nullam ante dolor, finibus ut eleifend nec, tincidunt iaculis augue. Nullam vel congue nibh. Vestibulum fringilla ligula arcu, eget posuere urna mollis vel. Praesent et mauris ut est vulputate feugiat. Vestibulum auctor, dolor sed tempor accumsan, elit justo scelerisque massa, eleifend rutrum odio felis sit amet augue. Integer sollicitudin, orci in convallis viverra, velit magna ornare leo, ac molestie est quam a erat. Phasellus ultrices metus viverra massa consequat, eu ultrices erat tempus. Aenean et erat non quam consectetur congue. Aliquam euismod ipsum sit amet mauris posuere, vitae mattis quam viverra. Nulla condimentum nulla ut risus maximus pharetra. Fusce nec lobortis nulla.</p>
+<p>Quisque condimentum pharetra elit, ut interdum tortor lobortis ut. Sed convallis feugiat enim. Donec vel mauris commodo, tempus turpis sed, elementum sapien. Proin at blandit felis. Nam enim nulla, mollis eget purus eget, condimentum efficitur neque. Duis convallis massa justo, vel porttitor ante maximus sit amet. Suspendisse vitae dui facilisis, vestibulum nulla id, vestibulum mauris. Vestibulum sed euismod nibh. In tincidunt scelerisque ligula, vel consectetur magna vehicula eget. Pellentesque suscipit feugiat dolor et faucibus. Nullam euismod viverra mi, in pharetra orci egestas non.</p>
+<p>Quisque feugiat tempus ipsum, nec pharetra ligula faucibus a. Praesent accumsan lorem eget consequat posuere. Morbi ornare in dui eget vestibulum. Aliquam volutpat lacus eu aliquam scelerisque. Suspendisse interdum eros et risus condimentum luctus. Nunc quis porttitor neque. Integer ultricies metus vel pulvinar scelerisque. Vivamus dapibus nec erat id tristique. Suspendisse tempor sed nisi quis tincidunt. Suspendisse pretium, purus quis lacinia consequat, arcu ante varius lacus, in varius tellus erat at nisi.</p>
+<p>Quisque ultricies luctus nulla, ac lacinia leo lobortis non. Morbi tellus ipsum, tristique nec rutrum at, sagittis sit amet metus. Integer malesuada congue eros vel bibendum. Nullam vitae orci a ante ullamcorper blandit sit amet vel velit. Phasellus elementum dolor lacinia sapien aliquet, non porttitor augue consectetur. Nulla tempus erat tortor, vitae mollis lorem feugiat vel. Maecenas arcu nulla, malesuada in purus nec, lacinia rhoncus quam. Ut mauris sapien, accumsan nec ultrices a, auctor at nulla. Sed vitae est enim. Morbi ac augue porta, ultricies erat ut, ornare urna. Maecenas lobortis pulvinar magna ut pellentesque. Mauris varius lacus ligula, quis luctus erat tincidunt a. Cras ac dui at est interdum tempus. Nulla venenatis varius venenatis. Nullam eget lacinia dolor, ut egestas mi.</p>
+",
+        }
+      }
+      style={
+        Object {
+          "width": "200%",
+        }
+      }
+    />
+  </ScrollViewOverflowContainer>
+  <ScrollBar
+    className="emotion-0"
+    orientation="horizontal"
+    overflow="auto"
+    progress={0}
+    scale={1}
+  />
+  <ScrollBar
+    className="emotion-1"
+    orientation="vertical"
+    overflow="auto"
+    progress={0}
+    scale={1}
+  />
+  <ScrollBarCorner />
+</ScrollViewContainer>
+`;
+
+exports[`react-graph-editor/ScrollView with x and y overflow and custom theme 1`] = `
 <ScrollView
   style={
     Object {
       "background": "gray",
       "height": "50vh",
       "margin": "50px auto",
-      "outline": "2px solid rebeccapurple",
       "width": "50vw",
     }
   }
@@ -43,10 +113,31 @@ exports[`react-graph-editor/ScrollView with x and y overflow 1`] = `
 `;
 
 exports[`react-graph-editor/ScrollView with y overflow 1`] = `
-<ScrollView
-  dangerouslySetInnerHTML={
+.emotion-0 {
+  position: absolute;
+  z-index: 1;
+}
+
+.emotion-1 {
+  position: absolute;
+  z-index: 1;
+}
+
+<ScrollViewContainer
+  innerRef={[Function]}
+  style={
     Object {
-      "__html": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus metus lectus, dapibus at ornare id, facilisis sit amet ex. Sed sodales bibendum congue. Donec elementum commodo magna eu mattis. Morbi at ligula id tellus pellentesque pulvinar. Curabitur lacinia sollicitudin erat, eget convallis augue aliquam at. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque nec luctus nisi. Fusce nulla massa, molestie quis mollis nec, consectetur at nunc. Nulla blandit metus id est malesuada pellentesque. Nulla in mauris venenatis, aliquam orci vitae, commodo erat. Ut dignissim felis leo, id sagittis nunc vehicula ut. Maecenas sagittis mi ligula.</p>
+      "background": "gray",
+      "height": "50vh",
+      "margin": "50px auto",
+      "width": "50vw",
+    }
+  }
+>
+  <ScrollViewOverflowContainer
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus metus lectus, dapibus at ornare id, facilisis sit amet ex. Sed sodales bibendum congue. Donec elementum commodo magna eu mattis. Morbi at ligula id tellus pellentesque pulvinar. Curabitur lacinia sollicitudin erat, eget convallis augue aliquam at. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque nec luctus nisi. Fusce nulla massa, molestie quis mollis nec, consectetur at nunc. Nulla blandit metus id est malesuada pellentesque. Nulla in mauris venenatis, aliquam orci vitae, commodo erat. Ut dignissim felis leo, id sagittis nunc vehicula ut. Maecenas sagittis mi ligula.</p>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dictum mi eget orci bibendum vulputate. Maecenas pharetra ex ex, tempor dignissim ipsum sagittis quis. Vivamus ultricies faucibus tortor id viverra. Phasellus a lacinia nibh, ut facilisis eros. Donec dapibus auctor hendrerit. In iaculis blandit maximus. Proin quis volutpat urna.</p>
 <p>Suspendisse imperdiet venenatis arcu, sed eleifend nunc ullamcorper vel. Mauris varius ligula sit amet mauris efficitur tincidunt. Sed ac velit felis. Nam varius, purus et viverra congue, purus leo tempus orci, vel imperdiet libero augue quis ipsum. Aliquam pharetra libero ante. Etiam tristique consectetur tortor, rutrum maximus felis placerat euismod. Mauris volutpat, quam vel suscipit eleifend, lorem tellus pharetra massa, quis consequat mauris sem nec sem. Ut non lorem in lorem cursus condimentum at quis felis. Suspendisse molestie rutrum nisi at sollicitudin. Nam interdum diam justo, sed sollicitudin purus faucibus non. Praesent nunc mi, fermentum non libero nec, accumsan consectetur tortor. Nullam feugiat suscipit lacus, et vulputate felis cursus vel. Integer sollicitudin placerat varius. Etiam at ultricies ex.</p>
 <p>Nunc consectetur risus ac ex dapibus, vel pretium odio mollis. Donec malesuada, nisl eget ultrices aliquam, libero neque auctor dolor, ornare iaculis sem enim vitae mauris. Praesent augue magna, tempor eu augue commodo, efficitur fringilla lectus. Morbi neque eros, bibendum sed dui sed, iaculis sagittis nibh. Aenean maximus, risus id lobortis ultricies, turpis sapien pharetra turpis, efficitur blandit mi tortor finibus odio. Curabitur eleifend pellentesque feugiat. Donec eget lobortis diam. In vestibulum neque quis ullamcorper porttitor. Mauris convallis scelerisque justo non ullamcorper. Donec congue fringilla eros, a posuere orci auctor ac. Maecenas eleifend tellus magna, elementum pellentesque ipsum lacinia vestibulum. Fusce eu ultrices nunc. Sed vel malesuada arcu. Maecenas finibus mi nunc, non fermentum sem gravida id. Etiam justo risus, viverra nec vestibulum fringilla, sodales non nunc. Aenean ac arcu a enim accumsan iaculis.</p>
@@ -62,16 +153,24 @@ exports[`react-graph-editor/ScrollView with y overflow 1`] = `
 <p>Quisque feugiat tempus ipsum, nec pharetra ligula faucibus a. Praesent accumsan lorem eget consequat posuere. Morbi ornare in dui eget vestibulum. Aliquam volutpat lacus eu aliquam scelerisque. Suspendisse interdum eros et risus condimentum luctus. Nunc quis porttitor neque. Integer ultricies metus vel pulvinar scelerisque. Vivamus dapibus nec erat id tristique. Suspendisse tempor sed nisi quis tincidunt. Suspendisse pretium, purus quis lacinia consequat, arcu ante varius lacus, in varius tellus erat at nisi.</p>
 <p>Quisque ultricies luctus nulla, ac lacinia leo lobortis non. Morbi tellus ipsum, tristique nec rutrum at, sagittis sit amet metus. Integer malesuada congue eros vel bibendum. Nullam vitae orci a ante ullamcorper blandit sit amet vel velit. Phasellus elementum dolor lacinia sapien aliquet, non porttitor augue consectetur. Nulla tempus erat tortor, vitae mollis lorem feugiat vel. Maecenas arcu nulla, malesuada in purus nec, lacinia rhoncus quam. Ut mauris sapien, accumsan nec ultrices a, auctor at nulla. Sed vitae est enim. Morbi ac augue porta, ultricies erat ut, ornare urna. Maecenas lobortis pulvinar magna ut pellentesque. Mauris varius lacus ligula, quis luctus erat tincidunt a. Cras ac dui at est interdum tempus. Nulla venenatis varius venenatis. Nullam eget lacinia dolor, ut egestas mi.</p>
 ",
+      }
     }
-  }
-  style={
-    Object {
-      "background": "gray",
-      "height": "50vh",
-      "margin": "50px auto",
-      "outline": "2px solid rebeccapurple",
-      "width": "50vw",
-    }
-  }
-/>
+    innerRef={[Function]}
+  />
+  <ScrollBar
+    className="emotion-0"
+    orientation="horizontal"
+    overflow="auto"
+    progress={0}
+    scale={1}
+  />
+  <ScrollBar
+    className="emotion-1"
+    orientation="vertical"
+    overflow="auto"
+    progress={0}
+    scale={1}
+  />
+  <ScrollBarCorner />
+</ScrollViewContainer>
 `;

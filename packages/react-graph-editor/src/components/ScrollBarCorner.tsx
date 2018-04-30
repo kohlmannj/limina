@@ -10,6 +10,7 @@ const ScrollBarCorner = styled.div`
   width: ${props => props.theme.trackWidth || defaultTheme.trackWidth}px;
   height: ${props => props.theme.trackWidth || defaultTheme.trackWidth}px;
   background: ${props => props.theme.trackColor || defaultTheme.trackColor};
+  ${props => props.theme.trackClassName};
 `;
 
 export default ScrollBarCorner;

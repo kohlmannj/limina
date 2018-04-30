@@ -3,8 +3,15 @@ import styled, { css, cx, Interpolation, StyledComponent } from 'react-emotion';
 import { IThemeProps, PointTuple } from '../index';
 import { getDimensionsForPoints } from '../utils';
 
+export type InterpolationKeyword = 'linear' | 'ease-in-out' | 'ease-in' | 'ease-out';
+
+export type InterpolationFunction = (x: number) => number;
+
+export type InterpolationKeywordOrFunction = InterpolationKeyword | InterpolationFunction;
+
 export interface IPolyLineSVG {
   className?: string;
+  interpolation?: InterpolationKeywordOrFunction;
   label?: string;
   points: PointTuple[];
 }

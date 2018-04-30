@@ -1,6 +1,7 @@
 import React, { Component, CSSProperties } from 'react';
 import styled, { css } from 'react-emotion';
 import { OverflowMode } from '..';
+import { defaultTheme } from '../theme';
 import ScrollBar from './ScrollBar';
 import ScrollBarCorner from './ScrollBarCorner';
 
@@ -31,11 +32,15 @@ const ScrollViewOverflowContainer = styled.div`
   overflow: auto;
   width: ${props =>
     `calc(100% - ${
-      props.theme && typeof props.theme.trackWidth === 'number' ? props.theme.trackWidth : 15
+      props.theme && typeof props.theme.trackWidth !== 'undefined'
+        ? props.theme.trackWidth
+        : defaultTheme.trackWidth
     }px)`};
   height: ${props =>
     `calc(100% - ${
-      props.theme && typeof props.theme.trackWidth === 'number' ? props.theme.trackWidth : 15
+      props.theme && typeof props.theme.trackWidth !== 'undefined'
+        ? props.theme.trackWidth
+        : defaultTheme.trackWidth
     }px)`};
 
   ::-webkit-scrollbar {

@@ -8,12 +8,7 @@ exports[`react-graph-editor/ScrollBar with default props 1`] = `
       "height": "100vh",
     }
   }
->
-  <ThumbContainer
-    orientation="vertical"
-    scale={1}
-  />
-</Track>
+/>
 `;
 
 exports[`react-graph-editor/ScrollBar with knobs 1`] = `
@@ -44,8 +39,19 @@ exports[`react-graph-editor/ScrollBar/Vertical/Scale 2 with progress 0 1`] = `
     orientation="vertical"
     scale={2}
   >
-    <Thumb
+    <ThumbSegment
+      dragSignifier={true}
       orientation="vertical"
+      position="start"
+    />
+    <ThumbSegment
+      orientation="vertical"
+      position="middle"
+    />
+    <ThumbSegment
+      dragSignifier={true}
+      orientation="vertical"
+      position="end"
     />
   </ThumbContainer>
 </Track>
@@ -66,8 +72,19 @@ exports[`react-graph-editor/ScrollBar/Vertical/Scale 2 with progress 0.5 1`] = `
     progress={0.5}
     scale={2}
   >
-    <Thumb
+    <ThumbSegment
+      dragSignifier={true}
       orientation="vertical"
+      position="start"
+    />
+    <ThumbSegment
+      orientation="vertical"
+      position="middle"
+    />
+    <ThumbSegment
+      dragSignifier={true}
+      orientation="vertical"
+      position="end"
     />
   </ThumbContainer>
 </Track>
@@ -88,8 +105,19 @@ exports[`react-graph-editor/ScrollBar/Vertical/Scale 2 with progress 0.25 1`] = 
     progress={0.25}
     scale={2}
   >
-    <Thumb
+    <ThumbSegment
+      dragSignifier={true}
       orientation="vertical"
+      position="start"
+    />
+    <ThumbSegment
+      orientation="vertical"
+      position="middle"
+    />
+    <ThumbSegment
+      dragSignifier={true}
+      orientation="vertical"
+      position="end"
     />
   </ThumbContainer>
 </Track>
@@ -110,8 +138,19 @@ exports[`react-graph-editor/ScrollBar/Vertical/Scale 2 with progress 0.75 1`] = 
     progress={0.75}
     scale={2}
   >
-    <Thumb
+    <ThumbSegment
+      dragSignifier={true}
       orientation="vertical"
+      position="start"
+    />
+    <ThumbSegment
+      orientation="vertical"
+      position="middle"
+    />
+    <ThumbSegment
+      dragSignifier={true}
+      orientation="vertical"
+      position="end"
     />
   </ThumbContainer>
 </Track>
@@ -132,8 +171,19 @@ exports[`react-graph-editor/ScrollBar/Vertical/Scale 2 with progress 1 1`] = `
     progress={1}
     scale={2}
   >
-    <Thumb
+    <ThumbSegment
+      dragSignifier={true}
       orientation="vertical"
+      position="start"
+    />
+    <ThumbSegment
+      orientation="vertical"
+      position="middle"
+    />
+    <ThumbSegment
+      dragSignifier={true}
+      orientation="vertical"
+      position="end"
     />
   </ThumbContainer>
 </Track>
@@ -152,8 +202,19 @@ exports[`react-graph-editor/ScrollBar/Vertical/Scale 10 with progress 0 1`] = `
     orientation="vertical"
     scale={10}
   >
-    <Thumb
+    <ThumbSegment
+      dragSignifier={true}
       orientation="vertical"
+      position="start"
+    />
+    <ThumbSegment
+      orientation="vertical"
+      position="middle"
+    />
+    <ThumbSegment
+      dragSignifier={true}
+      orientation="vertical"
+      position="end"
     />
   </ThumbContainer>
 </Track>
@@ -174,8 +235,19 @@ exports[`react-graph-editor/ScrollBar/Vertical/Scale 10 with progress 0.5 1`] = 
     progress={0.5}
     scale={10}
   >
-    <Thumb
+    <ThumbSegment
+      dragSignifier={true}
       orientation="vertical"
+      position="start"
+    />
+    <ThumbSegment
+      orientation="vertical"
+      position="middle"
+    />
+    <ThumbSegment
+      dragSignifier={true}
+      orientation="vertical"
+      position="end"
     />
   </ThumbContainer>
 </Track>
@@ -196,8 +268,19 @@ exports[`react-graph-editor/ScrollBar/Vertical/Scale 10 with progress 0.25 1`] =
     progress={0.25}
     scale={10}
   >
-    <Thumb
+    <ThumbSegment
+      dragSignifier={true}
       orientation="vertical"
+      position="start"
+    />
+    <ThumbSegment
+      orientation="vertical"
+      position="middle"
+    />
+    <ThumbSegment
+      dragSignifier={true}
+      orientation="vertical"
+      position="end"
     />
   </ThumbContainer>
 </Track>
@@ -218,8 +301,19 @@ exports[`react-graph-editor/ScrollBar/Vertical/Scale 10 with progress 0.75 1`] =
     progress={0.75}
     scale={10}
   >
-    <Thumb
+    <ThumbSegment
+      dragSignifier={true}
       orientation="vertical"
+      position="start"
+    />
+    <ThumbSegment
+      orientation="vertical"
+      position="middle"
+    />
+    <ThumbSegment
+      dragSignifier={true}
+      orientation="vertical"
+      position="end"
     />
   </ThumbContainer>
 </Track>
@@ -240,8 +334,19 @@ exports[`react-graph-editor/ScrollBar/Vertical/Scale 10 with progress 1 1`] = `
     progress={1}
     scale={10}
   >
-    <Thumb
+    <ThumbSegment
+      dragSignifier={true}
       orientation="vertical"
+      position="start"
+    />
+    <ThumbSegment
+      orientation="vertical"
+      position="middle"
+    />
+    <ThumbSegment
+      dragSignifier={true}
+      orientation="vertical"
+      position="end"
     />
   </ThumbContainer>
 </Track>
