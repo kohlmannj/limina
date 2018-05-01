@@ -12,9 +12,9 @@ export interface IScrollBarProps {
   progress?: number;
   scale?: number;
   style?: CSSProperties;
-  thumbEndProps?: IThumbSegmentProps;
-  thumbMiddleProps?: IThumbSegmentProps;
   thumbStartProps?: IThumbSegmentProps;
+  thumbMiddleProps?: IThumbSegmentProps;
+  thumbEndProps?: IThumbSegmentProps;
 }
 
 export interface IStyledScrollBarProps extends IScrollBarProps {

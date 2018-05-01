@@ -1,4 +1,4 @@
-import React, { Component, CSSProperties, SFC } from 'react';
+import React, { CSSProperties, SFC } from 'react';
 import styled, { css } from 'react-emotion';
 import { withProps } from 'recompose';
 import Graph, { IGraphProps } from './Graph';
@@ -9,32 +9,6 @@ export interface IScrollGraphProps extends IGraphProps {
   scaleY?: number;
   style?: CSSProperties;
 }
-
-const HorizontalRange = styled('input')`
-  position: absolute;
-  z-index: 1;
-  bottom: 0;
-  left: 0;
-  width: 150px;
-  height: 15px;
-  margin: 0;
-  opacity: 0;
-  transition: 0.25s opacity ease-in-out;
-
-  &:hover,
-  &:focus {
-    opacity: 1;
-  }
-`;
-
-const VerticalRange = styled(HorizontalRange)`
-  top: 0;
-  right: -135px;
-  bottom: auto;
-  left: auto;
-  transform: rotate(90deg);
-  transform-origin: 7.5px 50%;
-`;
 
 const GraphContainer = styled.div`
   overflow: auto;
@@ -52,14 +26,12 @@ const GraphTrack = styled.div`
 const ScrollGraph: SFC<IScrollGraphProps> = ({ className, scaleX, scaleY, style, ...rest }) => (
   <ScrollView className={className} style={style}>
     <Graph
-      className={css({
-        width: `${scaleX! * 100}%`,
-        height: `${scaleY! * 100}%`,
-      })}
+      className={css`
+        width: ${(scaleX || 1) * 100}%;
+        height: ${(scaleY || 1) * 100}%;
+      `}
       {...rest}
     />
-    <HorizontalRange type="range" value={scaleX} min={1} max={10} />
-    <VerticalRange type="range" value={scaleY} min={1} max={10} />
   </ScrollView>
 );
 

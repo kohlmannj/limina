@@ -3,6 +3,7 @@ import styled, { css } from 'react-emotion';
 import { OverflowMode } from '..';
 import { defaultTheme } from '../theme';
 import ScrollBar from './ScrollBar';
+import { IThumbSegmentProps } from './ScrollBar/components/ThumbSegment';
 import ScrollBarCorner from './ScrollBarCorner';
 
 export interface IScrollViewProps {
@@ -14,6 +15,12 @@ export interface IScrollViewProps {
   overflowX?: OverflowMode;
   overflowY?: OverflowMode;
   style?: CSSProperties;
+  thumbXStartProps?: IThumbSegmentProps;
+  thumbXMiddleProps?: IThumbSegmentProps;
+  thumbXEndProps?: IThumbSegmentProps;
+  thumbYStartProps?: IThumbSegmentProps;
+  thumbYMiddleProps?: IThumbSegmentProps;
+  thumbYEndProps?: IThumbSegmentProps;
 }
 
 export interface IScrollViewState {
@@ -48,6 +55,11 @@ const ScrollViewOverflowContainer = styled.div`
   }
 `;
 
+export const absolutelyPositioned = css`
+  position: absolute;
+  z-index: 1;
+`;
+
 export default class ScrollView extends Component<IScrollViewProps, IScrollViewState> {
   public state: IScrollViewState = {
     progressX: 0,
@@ -77,6 +89,12 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
       overflowX,
       overflowY,
       style,
+      thumbXStartProps,
+      thumbXMiddleProps,
+      thumbXEndProps,
+      thumbYStartProps,
+      thumbYMiddleProps,
+      thumbYEndProps,
       ...rest
     } = this.props;
     const { progressX, progressY, scaleX, scaleY } = this.state;
@@ -99,24 +117,24 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
           {children}
         </ScrollViewOverflowContainer>
         <ScrollBar
-          className={css`
-            position: absolute;
-            z-index: 1;
-          `}
+          className={absolutelyPositioned}
           orientation="horizontal"
           overflow={overflowX || overflow}
           progress={progressX}
           scale={scaleX}
+          thumbStartProps={thumbXStartProps}
+          thumbMiddleProps={thumbXMiddleProps}
+          thumbEndProps={thumbXEndProps}
         />
         <ScrollBar
-          className={css`
-            position: absolute;
-            z-index: 1;
-          `}
+          className={absolutelyPositioned}
           orientation="vertical"
           overflow={overflowY || overflow}
           progress={progressY}
           scale={scaleY}
+          thumbStartProps={thumbXStartProps}
+          thumbMiddleProps={thumbXMiddleProps}
+          thumbEndProps={thumbXEndProps}
         />
         <ScrollBarCorner />
       </ScrollViewContainer>

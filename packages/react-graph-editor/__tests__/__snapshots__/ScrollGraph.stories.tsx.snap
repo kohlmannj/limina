@@ -72,18 +72,6 @@ exports[`react-graph-editor/ScrollGraph with default scales 1`] = `
       ]
     }
   />
-  <HorizontalRange
-    max={10}
-    min={1}
-    type="range"
-    value={1}
-  />
-  <VerticalRange
-    max={10}
-    min={1}
-    type="range"
-    value={1}
-  />
 </ScrollView>
 `;
 
@@ -158,18 +146,6 @@ exports[`react-graph-editor/ScrollGraph with scaleX = 2 1`] = `
         },
       ]
     }
-  />
-  <HorizontalRange
-    max={10}
-    min={1}
-    type="range"
-    value={2}
-  />
-  <VerticalRange
-    max={10}
-    min={1}
-    type="range"
-    value={1}
   />
 </ScrollView>
 `;
@@ -246,18 +222,6 @@ exports[`react-graph-editor/ScrollGraph with scaleX = 10 1`] = `
       ]
     }
   />
-  <HorizontalRange
-    max={10}
-    min={1}
-    type="range"
-    value={10}
-  />
-  <VerticalRange
-    max={10}
-    min={1}
-    type="range"
-    value={1}
-  />
 </ScrollView>
 `;
 
@@ -332,18 +296,6 @@ exports[`react-graph-editor/ScrollGraph with scaleX = scaleY = 2 1`] = `
         },
       ]
     }
-  />
-  <HorizontalRange
-    max={10}
-    min={1}
-    type="range"
-    value={2}
-  />
-  <VerticalRange
-    max={10}
-    min={1}
-    type="range"
-    value={2}
   />
 </ScrollView>
 `;
@@ -420,18 +372,6 @@ exports[`react-graph-editor/ScrollGraph with scaleX = scaleY = 10 1`] = `
       ]
     }
   />
-  <HorizontalRange
-    max={10}
-    min={1}
-    type="range"
-    value={10}
-  />
-  <VerticalRange
-    max={10}
-    min={1}
-    type="range"
-    value={10}
-  />
 </ScrollView>
 `;
 
@@ -507,18 +447,6 @@ exports[`react-graph-editor/ScrollGraph with scaleY = 2 1`] = `
       ]
     }
   />
-  <HorizontalRange
-    max={10}
-    min={1}
-    type="range"
-    value={1}
-  />
-  <VerticalRange
-    max={10}
-    min={1}
-    type="range"
-    value={2}
-  />
 </ScrollView>
 `;
 
@@ -593,18 +521,6 @@ exports[`react-graph-editor/ScrollGraph with scaleY = 10 1`] = `
         },
       ]
     }
-  />
-  <HorizontalRange
-    max={10}
-    min={1}
-    type="range"
-    value={1}
-  />
-  <VerticalRange
-    max={10}
-    min={1}
-    type="range"
-    value={10}
   />
 </ScrollView>
 `;
