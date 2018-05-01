@@ -16,7 +16,6 @@ module.exports = () => ({
     '@babel/preset-typescript',
   ],
   plugins: [
-    '@babel/plugin-proposal-export-default-from',
     [
       'babel-plugin-emotion',
       env === 'production' ? { hoist: true } : { sourceMap: true, autoLabel: true },
