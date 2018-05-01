@@ -17,7 +17,7 @@ module.exports = {
   testMatch: ['**/__tests__/**/*.(j|t)s?(x)', '**/?(*.)(spec|test|story|stories).(j|t)s?(x)'],
   testPathIgnorePatterns: ['__old__', '/node_modules/'],
   transform: {
-    '^.+\\.(j|t)sx?$': 'babel-jest',
+    '^.+\\.(j|t)sx?$': 'babel-7-jest',
     '^.+\\.md?$': 'markdown-loader-jest',
   },
 };
