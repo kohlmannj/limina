@@ -1,7 +1,6 @@
 import SLR from 'ml-regression-simple-linear';
-import units from 'units-css';
 import { ICSSValueRetargetingOptions } from '..';
-import BreakpointTuple, { IBreakpointTuple } from '../BreakpointTuple';
+import { IBreakpointTuple } from '../BreakpointTuple';
 import defaultOptions from './cssValueRetargetingDefaultOptions';
 
 const createLinearRegressionMediaQuery = (options: ICSSValueRetargetingOptions) => (

@@ -2,7 +2,7 @@ import { IDomainRange, IViewBox, PointTuple } from './index.d';
 
 export const getExtentsForPoints = (points: PointTuple[]): IDomainRange => {
   const xVals = points.map(([x]) => x);
-  const yVals = points.map(([x, y]) => y);
+  const yVals = points.map(point => point[1]);
 
   return {
     domain: [Math.min(...xVals), Math.max(...xVals)],
@@ -24,7 +24,7 @@ export const getViewBoxForPoints = (points: PointTuple[], padding = 0): IViewBox
 };
 
 export const getDimensionsForPoints = (points: PointTuple[], padding = 0) => {
-  const { minX, minY, width, height } = getViewBoxForPoints(points, padding);
+  const { width, height } = getViewBoxForPoints(points, padding);
   return { width, height };
 };
 

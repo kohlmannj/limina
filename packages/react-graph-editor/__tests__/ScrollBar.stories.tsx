@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { ThemeProvider } from 'emotion-theming';
 import React from 'react';
 import ScrollBar from '../src/components/ScrollBar';
-import { defaultTheme } from '../src/theme';
+import defaultTheme from '../src/theme';
 
 storiesOf('react-graph-editor/ScrollBar', module)
   .add('with knobs', () => {

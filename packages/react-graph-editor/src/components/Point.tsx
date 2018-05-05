@@ -1,6 +1,6 @@
-import React, { CSSProperties, SFC } from 'react';
-import styled, { css, cx, StyledComponent } from 'react-emotion';
-import { IThemeProps, IViewBox, OriginDirection, PointShape, PointTuple } from '../index';
+import React, { SFC } from 'react';
+import styled, { css, StyledComponent } from 'react-emotion';
+import { IThemeProps, IViewBox, OriginDirection, PointShape } from '../index';
 import ViewBoxContext from './ViewBoxContext';
 
 export interface IPointProps {
@@ -75,13 +75,11 @@ const StyledButton: StyledComponent<IStyledButtonProps, IThemeProps, {}> = style
   text-indent: 100%;
 `;
 
-export const Point: SFC<IPointProps> = props => {
-  return (
-    <ViewBoxContext.Consumer>
-      {(viewBox: IViewBox) => <StyledButton {...props} {...viewBox} />}
-    </ViewBoxContext.Consumer>
-  );
-};
+export const Point: SFC<IPointProps> = props => (
+  <ViewBoxContext.Consumer>
+    {(viewBox: IViewBox) => <StyledButton {...props} {...viewBox} />}
+  </ViewBoxContext.Consumer>
+);
 
 Point.defaultProps = {
   selected: false,

@@ -15,7 +15,10 @@ export interface IReduceToCSSOptions {
   css: _Interpolation1;
 }
 
-export type CSSPropertyValueTuple = [string, IBreakpointTuple[]];
+export interface ICSSPropertyValueTuple extends Array<string | IBreakpointTuple[]> {
+  0: string;
+  1: IBreakpointTuple[];
+}
 
 export type CSSValue = number | string;
 

@@ -1,4 +1,4 @@
-import units, { ParsedCSSValue } from 'units-css';
+import units from 'units-css';
 import { CSSValue } from '.';
 import { Breakpoint, IBreakpoint } from './Breakpoint';
 

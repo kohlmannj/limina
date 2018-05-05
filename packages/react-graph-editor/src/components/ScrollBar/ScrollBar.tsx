@@ -1,4 +1,4 @@
-import React, { CSSProperties, FocusEventHandler, MouseEventHandler, SFC } from 'react';
+import React, { CSSProperties, SFC } from 'react';
 import { OverflowMode, ScrollBarOrientation } from '../..';
 import { IScrollBarTheme } from '../../theme';
 import ThumbContainer from './components/ThumbContainer';

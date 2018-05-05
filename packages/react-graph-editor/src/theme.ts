@@ -7,9 +7,11 @@ export interface IScrollBarTheme {
   trackWidth?: number;
 }
 
-export const defaultTheme = {
+const defaultTheme = {
   thumbColor: '#ccc',
   thumbWidth: 12,
   trackColor: '#333',
   trackWidth: 16,
 };
+
+export default defaultTheme;

@@ -1,5 +1,12 @@
 {
   "extends": [
     "@limina/tslint-config"
-  ]
+  ],
+  "linterOptions": {
+    "exclude": [
+      "__old__",
+      "coverage",
+      "lib"
+    ]
+  }
 }

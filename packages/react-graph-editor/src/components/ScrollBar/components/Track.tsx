@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css, StyledComponent } from 'react-emotion';
 import { IScrollBarProps, IStyledScrollBarProps } from '..';
-import { defaultTheme } from '../../../theme';
+import defaultTheme from '../../../theme';
 
 export const positionForOrientation = (props: IStyledScrollBarProps) => css`
   top: ${!props.orientation || props.orientation === 'vertical' ? 0 : 'auto'};
@@ -22,7 +22,18 @@ export const positionForOrientation = (props: IStyledScrollBarProps) => css`
   left: ${!props.orientation || props.orientation === 'vertical' ? 'auto' : 0};
 `;
 
-const Track = styled<IScrollBarProps, 'div'>('div')`
+const Track: StyledComponent<
+  IScrollBarProps,
+  any,
+  React.ClassAttributes<HTMLDivElement> &
+    React.HTMLAttributes<HTMLDivElement> & {
+      innerRef?:
+        | string
+        | ((instance: HTMLDivElement | null) => any)
+        | React.RefObject<HTMLDivElement>
+        | undefined;
+    }
+> = styled<IScrollBarProps, 'div'>('div')`
   display: flex;
   flex-direction: ${props =>
     !props.orientation || props.orientation === 'vertical' ? 'column' : 'row'};

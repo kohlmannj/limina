@@ -14,33 +14,60 @@
     "prettier"
   ],
   "rules": {
-    "import/no-extraneous-dependencies": ["error", {
-      "devDependencies": [
-        "scripts/**",
-        "test/**",
-        "tests/**",
-        "spec/**",
-        "**/__tests__/**",
-        "test.js",
-        "test-*.js",
-        "**/*.test.js",
-        "**/*.spec.js",
-        "**/webpack.config.js",
-        "**/webpack.config.*.js",
-        "**/rollup.config.js",
-        "**/gulpfile.js",
-        "**/gulpfile.*.js",
-        "**/Gruntfile"
-      ],
-      "optionalDependencies": false,
-      "peerDependencies": true
-    }],
-    "prettier/prettier": ["error", {
-      "bracketSpacing": true,
-      "printWidth": 100,
-      "singleQuote": true,
-      "tabWidth": 2,
-      "trailingComma": "es5"
-    }]
+    "import/extensions": [
+      ".js",
+      ".mjs",
+      ".jsx",
+      ".ts",
+      ".tsx"
+    ],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "scripts/**",
+          "test/**",
+          "tests/**",
+          "spec/**",
+          "**/__tests__/**",
+          "test.js",
+          "test-*.js",
+          "**/*.test.js",
+          "**/*.spec.js",
+          "**/webpack.config.js",
+          "**/webpack.config.*.js",
+          "**/rollup.config.js",
+          "**/gulpfile.js",
+          "**/gulpfile.*.js",
+          "**/Gruntfile"
+        ],
+        "optionalDependencies": false,
+        "peerDependencies": true
+      }
+    ],
+    "prettier/prettier": [
+      "error",
+      {
+        "bracketSpacing": true,
+        "printWidth": 100,
+        "singleQuote": true,
+        "tabWidth": 2,
+        "trailingComma": "es5"
+      }
+    ],
+    "react/jsx-filename-extension": [1, { "extensions": [".jsx", ".tsx"] }]
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
+          ".js",
+          ".mjs",
+          ".jsx",
+          ".ts",
+          ".tsx"
+        ]
+      }
+    }
   }
 }

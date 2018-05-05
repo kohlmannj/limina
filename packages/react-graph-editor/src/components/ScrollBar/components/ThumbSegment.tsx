@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css, StyledComponent } from 'react-emotion';
 import { IScrollBarProps, IStyledScrollBarProps } from '..';
-import { defaultTheme } from '../../../theme';
+import defaultTheme from '../../../theme';
 import { getSingleBorderRadiusValue, getSingleMarginValue } from './ThumbContainer';
 
 export interface IThumbSegmentAdditionalProps {
@@ -85,7 +85,18 @@ export const getFlex = (props: IStyledThumbSegmentProps) => {
   }
 };
 
-const ThumbSegment = styled<IThumbSegmentProps, 'button'>('button')`
+const ThumbSegment: StyledComponent<
+  IThumbSegmentProps,
+  any,
+  React.ClassAttributes<HTMLButtonElement> &
+    React.ButtonHTMLAttributes<HTMLButtonElement> & {
+      innerRef?:
+        | string
+        | ((instance: HTMLButtonElement | null) => any)
+        | React.RefObject<HTMLButtonElement>
+        | undefined;
+    }
+> = styled<IThumbSegmentProps, 'button'>('button')`
   position: relative;
   flex: ${getFlex};
   padding: ${getSingleMarginValue};

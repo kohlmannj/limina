@@ -1,5 +1,5 @@
 import React, { SFC } from 'react';
-import styled, { css, cx, Interpolation, StyledComponent } from 'react-emotion';
+import styled, { StyledComponent } from 'react-emotion';
 import { IThemeProps, PointTuple } from '../index';
 import { getDimensionsForPoints } from '../utils';
 

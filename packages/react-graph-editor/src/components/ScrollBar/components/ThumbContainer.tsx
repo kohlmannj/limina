@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css, StyledComponent } from 'react-emotion';
 import { IScrollBarProps, IStyledScrollBarProps } from '..';
-import { defaultTheme } from '../../../theme';
+import defaultTheme from '../../../theme';
 
 export const getOvershootFactor = (progress = 0, min = 0, max = 1): number => {
   let overshoot;
@@ -61,7 +61,18 @@ export const getSingleMarginValue = (props: IStyledScrollBarProps) =>
       : defaultTheme.thumbWidth)) /
   2;
 
-const ThumbContainer = styled<IScrollBarProps, 'div'>('div')`
+const ThumbContainer: StyledComponent<
+  IScrollBarProps,
+  any,
+  React.ClassAttributes<HTMLDivElement> &
+    React.HTMLAttributes<HTMLDivElement> & {
+      innerRef?:
+        | string
+        | ((instance: HTMLDivElement | null) => any)
+        | React.RefObject<HTMLDivElement>
+        | undefined;
+    }
+> = styled<IScrollBarProps, 'div'>('div')`
   position: relative;
   display: flex;
   flex-direction: inherit;

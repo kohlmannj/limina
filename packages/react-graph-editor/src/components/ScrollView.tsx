@@ -1,7 +1,7 @@
 import React, { Component, CSSProperties } from 'react';
 import styled, { css } from 'react-emotion';
 import { OverflowMode } from '..';
-import { defaultTheme } from '../theme';
+import defaultTheme from '../theme';
 import ScrollBar from './ScrollBar';
 import { IThumbSegmentProps } from './ScrollBar/components/ThumbSegment';
 import ScrollBarCorner from './ScrollBarCorner';
@@ -68,8 +68,6 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
     scaleY: 1,
   };
 
-  private root?: HTMLDivElement | null;
-
   private content?: HTMLDivElement | null;
 
   public componentDidMount() {
@@ -100,14 +98,7 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
     const { progressX, progressY, scaleX, scaleY } = this.state;
 
     return (
-      <ScrollViewContainer
-        innerRef={e => {
-          this.root = e;
-        }}
-        className={className}
-        style={style}
-        {...rest}
-      >
+      <ScrollViewContainer className={className} style={style} {...rest}>
         <ScrollViewOverflowContainer
           innerRef={e => {
             this.content = e;

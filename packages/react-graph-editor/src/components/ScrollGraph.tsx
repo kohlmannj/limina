@@ -1,6 +1,5 @@
 import React, { CSSProperties, SFC } from 'react';
-import styled, { css } from 'react-emotion';
-import { withProps } from 'recompose';
+import { css } from 'react-emotion';
 import Graph, { IGraphProps } from './Graph';
 import ScrollView from './ScrollView';
 
@@ -9,19 +8,6 @@ export interface IScrollGraphProps extends IGraphProps {
   scaleY?: number;
   style?: CSSProperties;
 }
-
-const GraphContainer = styled.div`
-  overflow: auto;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.25);
-`;
-
-const GraphTrack = styled.div`
-  box-sizing: border-box;
-  padding-right: 15px;
-  padding-bottom: 15px;
-`;
 
 const ScrollGraph: SFC<IScrollGraphProps> = ({ className, scaleX, scaleY, style, ...rest }) => (
   <ScrollView className={className} style={style}>

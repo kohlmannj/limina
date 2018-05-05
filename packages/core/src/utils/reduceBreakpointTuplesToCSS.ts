@@ -4,7 +4,7 @@ import { IBreakpointTuple } from '../BreakpointTuple';
 import createLinearRegressionMediaQuery from './createLinearRegressionMediaQuery';
 import defaultOptions from './cssValueRetargetingDefaultOptions';
 
-export const reduceBreakpointTuplesToCSS = (options: ICSSValueRetargetingOptions) => (
+const reduceBreakpointTuplesToCSS = (options: ICSSValueRetargetingOptions) => (
   { prevTuple, css }: IReduceToCSSOptions,
   tuple: IBreakpointTuple
 ) => {
@@ -29,3 +29,5 @@ export const reduceBreakpointTuplesToCSS = (options: ICSSValueRetargetingOptions
 
   return { prevTuple: tuple, css: nextCSS };
 };
+
+export default reduceBreakpointTuplesToCSS;

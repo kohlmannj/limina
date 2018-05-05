@@ -1,6 +1,6 @@
 /* tslint:disable no-implicit-dependencies */
 import { shallow } from 'enzyme';
-import React, { ReactElement } from 'react';
+import { ReactElement } from 'react';
 
 export class StoriesOf {
   private suiteName: string;
@@ -9,7 +9,7 @@ export class StoriesOf {
     this.suiteName = name;
   }
 
-  public add(description: string, getElement: () => ReactElement<{}>) {
+  public add(description: string, getElement: () => ReactElement<any>) {
     describe(this.suiteName, () => {
       it(description, () => {
         const element = getElement();

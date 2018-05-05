@@ -1,8 +1,19 @@
 import React from 'react';
 import styled, { StyledComponent } from 'react-emotion';
-import { defaultTheme } from '../theme';
+import defaultTheme from '../theme';
 
-const ScrollBarCorner = styled.div`
+const ScrollBarCorner: StyledComponent<
+  {},
+  any,
+  React.ClassAttributes<HTMLDivElement> &
+    React.HTMLAttributes<HTMLDivElement> & {
+      innerRef?:
+        | string
+        | ((instance: HTMLDivElement | null) => any)
+        | React.RefObject<HTMLDivElement>
+        | undefined;
+    }
+> = styled.div`
   position: absolute;
   z-index: 9999;
   right: 0;

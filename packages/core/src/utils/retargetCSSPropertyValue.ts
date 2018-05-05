@@ -1,12 +1,9 @@
 import { _Interpolation1 } from 'emotion';
-import { CSSPropertyValueTuple, ICSSValueRetargetingOptions, IReduceToCSSOptions } from '..';
-import { IBreakpointTuple } from '../BreakpointTuple';
-import createLinearRegressionMediaQuery from './createLinearRegressionMediaQuery';
-import defaultOptions from './cssValueRetargetingDefaultOptions';
-import { reduceBreakpointTuplesToCSS } from './reduceBreakpointTuplesToCSS';
+import { ICSSPropertyValueTuple, IReduceToCSSOptions } from '..';
+import reduceBreakpointTuplesToCSS from './reduceBreakpointTuplesToCSS';
 import sortValuesByBreakpointWidth from './sortValuesByBreakpointWidth';
 
-export const retargetCSSPropertyValue = (tuple: CSSPropertyValueTuple) => {
+export const retargetCSSPropertyValue = (tuple: ICSSPropertyValueTuple): _Interpolation1 => {
   const [property, value] = tuple;
   const initialValue: IReduceToCSSOptions = { css: {} };
 
