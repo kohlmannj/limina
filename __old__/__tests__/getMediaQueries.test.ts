@@ -4,7 +4,7 @@ import getMediaQueries from '../src/getMediaQueries';
 describe('getMediaQueries', () => {
   it('returns an array of `min-width` media queries', () => {
     const mediaQueries = getMediaQueries(testMediaQueries);
-    expect(mediaQueries.length).toEqual(testMediaQueries.length);
+    expect(mediaQueries).toHaveLength(testMediaQueries.length);
 
     expect(mediaQueries).toEqual(
       expect.arrayContaining(
@@ -17,7 +17,7 @@ describe('getMediaQueries', () => {
 
   it('returns an array of `max-width` media queries', () => {
     const mediaQueries = getMediaQueries(testMediaQueries, 'max-width');
-    expect(mediaQueries.length).toEqual(testMediaQueries.length);
+    expect(mediaQueries).toHaveLength(testMediaQueries.length);
 
     expect(mediaQueries).toEqual(
       expect.arrayContaining(
