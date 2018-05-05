@@ -94,7 +94,6 @@
     "prettier": "^1.12.1",
     "react": "^16.3.2",
     "react-docgen-typescript-loader": "^2.0.3",
-    "react-docgen-typescript-webpack-plugin": "^1.1.0",
     "react-dom": "^16.3.2",
     "remark": "^9.0.0",
     "remark-cli": "^5.0.0",
@@ -103,7 +102,7 @@
     "rimraf": "^2.6.2",
     "shelljs": "^0.8.1",
     "typescript": "^2.8.3",
-    "webpack": "^4.6.0",
+    "webpack": "^4.7.0",
     "webpack-merge": "^4.1.2"
   }
 }

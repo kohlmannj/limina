@@ -7,7 +7,6 @@ exports[`react-graph-editor/ScrollView with x and y overflow 1`] = `
 }
 
 <ScrollViewContainer
-  innerRef={[Function]}
   style={
     Object {
       "background": "gray",
@@ -114,7 +113,6 @@ exports[`react-graph-editor/ScrollView with y overflow 1`] = `
 }
 
 <ScrollViewContainer
-  innerRef={[Function]}
   style={
     Object {
       "background": "gray",
