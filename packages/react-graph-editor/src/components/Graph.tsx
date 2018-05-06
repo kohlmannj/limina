@@ -1,6 +1,6 @@
 import chroma from 'chroma-js';
 import { ThemeProvider } from 'emotion-theming';
-import React, { SFC } from 'react';
+import React, { CSSProperties, SFC } from 'react';
 import styled, { StyledComponent } from 'react-emotion';
 import { IThemeProps, OriginDirection, PointTuple } from '../index';
 import { getViewBoxForPoints } from '../utils';
@@ -19,6 +19,7 @@ export interface IGraphProps {
   maxY?: number;
   originX?: OriginDirection;
   originY?: OriginDirection;
+  style?: CSSProperties;
 }
 
 const Graph: SFC<IGraphProps> = ({
@@ -84,8 +85,8 @@ const StyledGraph: StyledComponent<IGraphProps, IThemeProps, {}> = styled(Graph)
   height: 100%;
 `;
 
-const GraphContainer: SFC<IGraphProps> = ({ className, ...rest }) => (
-  <div className={className}>
+const GraphContainer: SFC<IGraphProps> = ({ className, style, ...rest }) => (
+  <div className={className} style={style}>
     <StyledGraph {...rest} />
   </div>
 );
