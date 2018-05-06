@@ -20,7 +20,7 @@ export interface IStyledThumbSegmentProps extends IThumbSegmentProps, IStyledScr
 
 export const dragSignifier = (props: IStyledThumbSegmentProps) =>
   css({
-    cursor: `${!props.orientation || props.orientation === 'vertical' ? 'ns' : 'ew'}-resize`,
+    cursor: `${!props.orientation || props.orientation === 'vertical' ? 'row' : 'col'}-resize`,
 
     '&::after': {
       position: 'absolute',
