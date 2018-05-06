@@ -1,5 +1,5 @@
 import { storiesOf } from '@storybook/react';
-import { ThemeProvider } from 'emotion-theming';
+// import { ThemeProvider } from 'emotion-theming';
 import React from 'react';
 import { css } from 'react-emotion';
 import textContent from '../../../__stubs__/lipsum.md';
@@ -32,34 +32,34 @@ storiesOf('react-graph-editor/ScrollView', module)
       <div style={{ width: '200%' }} dangerouslySetInnerHTML={{ __html: textContent }} />
     </ScrollView>
   ))
-  .add('with x and y overflow and custom theme', () => (
-    <ThemeProvider
-      theme={{
-        trackClassName: css`
-          background: navy;
-        `,
-        trackWidth: 20,
-        thumbWidth: 20,
-        thumbClassName: css`
-          background: crimson;
-          border-radius: 0;
-        `,
-      }}
-    >
-      <ScrollView
-        style={{
-          width: '50vw',
-          height: '50vh',
-          margin: '50px auto',
-          background: 'gray',
-        }}
-        scaleX="auto"
-        scaleY="auto"
-      >
-        <div style={{ width: '200%' }} dangerouslySetInnerHTML={{ __html: textContent }} />
-      </ScrollView>
-    </ThemeProvider>
-  ))
+  // .add('with x and y overflow and custom theme', () => (
+  //   <ThemeProvider
+  //     theme={{
+  //       trackClassName: css`
+  //         background: navy;
+  //       `,
+  //       trackWidth: 20,
+  //       thumbWidth: 20,
+  //       thumbClassName: css`
+  //         background: crimson;
+  //         border-radius: 0;
+  //       `,
+  //     }}
+  //   >
+  //     <ScrollView
+  //       style={{
+  //         width: '50vw',
+  //         height: '50vh',
+  //         margin: '50px auto',
+  //         background: 'gray',
+  //       }}
+  //       scaleX="auto"
+  //       scaleY="auto"
+  //     >
+  //       <div style={{ width: '200%' }} dangerouslySetInnerHTML={{ __html: textContent }} />
+  //     </ScrollView>
+  //   </ThemeProvider>
+  // ))
   .add('with resizeable kitten', () => (
     <ScrollView style={{ width: '100%', height: '100vh' }}>
       <div
