@@ -1,55 +1,54 @@
-import React from 'react';
-import styled, { css, StyledComponent } from 'react-emotion';
+import { css } from 'emotion';
+import React, { SFC } from 'react';
 import { IScrollBarProps, IStyledScrollBarProps } from '..';
 import defaultTheme from '../../../theme';
 
-export const positionForOrientation = (props: IStyledScrollBarProps) => css`
-  top: ${!props.orientation || props.orientation === 'vertical' ? 0 : 'auto'};
-  right: ${!props.orientation || props.orientation === 'vertical'
+export const positionForOrientation = ({ orientation, theme }: IStyledScrollBarProps) => css`
+  top: ${!orientation || orientation === 'vertical' ? 0 : 'auto'};
+  right: ${!orientation || orientation === 'vertical'
     ? 0
     : `${
-        props.theme && typeof props.theme.trackWidth !== 'undefined'
-          ? props.theme.trackWidth
+        theme && typeof theme.trackWidth !== 'undefined'
+          ? theme.trackWidth
           : defaultTheme.trackWidth
       }px`};
-  bottom: ${!props.orientation || props.orientation === 'vertical'
+  bottom: ${!orientation || orientation === 'vertical'
     ? `${
-        props.theme && typeof props.theme.trackWidth !== 'undefined'
-          ? props.theme.trackWidth
+        theme && typeof theme.trackWidth !== 'undefined'
+          ? theme.trackWidth
           : defaultTheme.trackWidth
       }px`
     : 0};
-  left: ${!props.orientation || props.orientation === 'vertical' ? 'auto' : 0};
+  left: ${!orientation || orientation === 'vertical' ? 'auto' : 0};
 `;
 
-const Track: StyledComponent<
-  IScrollBarProps,
-  any,
-  React.ClassAttributes<HTMLDivElement> &
-    React.HTMLAttributes<HTMLDivElement> & {
-      innerRef?:
-        | string
-        | ((instance: HTMLDivElement | null) => any)
-        | React.RefObject<HTMLDivElement>
-        | undefined;
-    }
-> = styled<IScrollBarProps, 'div'>('div')`
+const trackStyles = ({ orientation, theme }: IStyledScrollBarProps) => css`
   display: flex;
-  flex-direction: ${props =>
-    !props.orientation || props.orientation === 'vertical' ? 'column' : 'row'};
+  flex-direction: ${!orientation || orientation === 'vertical' ? 'column' : 'row'};
   align-items: center;
-  justify-content: ${props =>
-    typeof props.progress === 'number' && props.progress > 0.5 ? 'flex-end' : 'flex-start'};
-  background: ${props => props.theme.trackColor || defaultTheme.trackColor};
-  ${props =>
-    !props.orientation || props.orientation === 'vertical' ? 'width' : 'height'}: ${props =>
-    `${
-      typeof props.theme.trackWidth !== 'undefined'
-        ? props.theme.trackWidth
-        : defaultTheme.trackWidth
-    }px`};
-  ${positionForOrientation};
-  ${props => props.theme.trackClassName};
+  background: ${theme && theme.trackColor ? theme.trackColor : defaultTheme.trackColor};
+  ${!orientation || orientation === 'vertical' ? 'width' : 'height'}: ${theme &&
+  typeof theme.trackWidth !== 'undefined'
+    ? theme.trackWidth
+    : defaultTheme.trackWidth}px;
+  ${positionForOrientation({ orientation, theme })};
+  ${theme && theme.trackClassName};
 `;
+
+const trackClassNames = {
+  horizontal: trackStyles({ orientation: 'horizontal' }),
+  vertical: trackStyles({ orientation: 'vertical' }),
+};
+
+const Track: SFC<IScrollBarProps> = ({ className, orientation, progress, style, ...rest }) => (
+  <div
+    className={`${className} ${trackClassNames[orientation || 'vertical']}`}
+    style={{
+      ...style,
+      justifyContent: typeof progress === 'number' && progress > 0.5 ? 'flex-end' : 'flex-start',
+    }}
+    {...rest}
+  />
+);
 
 export default Track;

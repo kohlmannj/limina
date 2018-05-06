@@ -8,7 +8,27 @@ exports[`react-graph-editor/ScrollBar with default props 1`] = `
       "height": "100vh",
     }
   }
-/>
+>
+  <ThumbContainer
+    orientation="vertical"
+    scale={1}
+  >
+    <ThumbSegment
+      dragSignifier={true}
+      orientation="vertical"
+      position="start"
+    />
+    <ThumbSegment
+      orientation="vertical"
+      position="middle"
+    />
+    <ThumbSegment
+      dragSignifier={true}
+      orientation="vertical"
+      position="end"
+    />
+  </ThumbContainer>
+</Track>
 `;
 
 exports[`react-graph-editor/ScrollBar with knobs 1`] = `

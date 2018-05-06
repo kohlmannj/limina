@@ -1,12 +1,14 @@
-import React, { ButtonHTMLAttributes } from 'react';
-import styled, { css, StyledComponent } from 'react-emotion';
+import { css } from 'emotion';
+import React, { ButtonHTMLAttributes, SFC } from 'react';
 import { IScrollBarProps, IStyledScrollBarProps } from '..';
 import defaultTheme from '../../../theme';
 import { getSingleBorderRadiusValue, getSingleMarginValue } from './ThumbContainer';
 
+export type ThumbSegmentPosition = 'start' | 'middle' | 'end';
+
 export interface IThumbSegmentAdditionalProps {
   dragSignifier?: boolean;
-  position: 'start' | 'middle' | 'end';
+  position: ThumbSegmentPosition;
 }
 
 export interface IThumbSegmentProps
@@ -51,20 +53,24 @@ export const dragSignifier = (props: IStyledThumbSegmentProps) =>
     },
   });
 
-export const getBorderRadiusValue = (props: IStyledThumbSegmentProps) => {
-  const radius = getSingleBorderRadiusValue(props);
+export const getBorderRadiusValue = ({
+  orientation,
+  position,
+  theme,
+}: IStyledThumbSegmentProps) => {
+  const radius = getSingleBorderRadiusValue({ theme });
   let borderRadiusValue = '0';
 
-  if (!props.orientation || props.orientation === 'vertical') {
-    if (props.position === 'start') {
+  if (!orientation || orientation === 'vertical') {
+    if (position === 'start') {
       borderRadiusValue = `${radius} ${radius} 0 0`;
-    } else if (props.position === 'end') {
+    } else if (position === 'end') {
       borderRadiusValue = `0 0 ${radius} ${radius}`;
     }
   } else {
-    if (props.position === 'start') {
+    if (position === 'start') {
       borderRadiusValue = `${radius} 0 0 ${radius}`;
-    } else if (props.position === 'end') {
+    } else if (position === 'end') {
       borderRadiusValue = `0 ${radius} ${radius} 0`;
     }
   }
@@ -86,15 +92,54 @@ export const getFlex = (props: IStyledThumbSegmentProps) => {
   }
 };
 
-const ThumbSegment = styled<IThumbSegmentProps, 'button'>('button')`
+const thumbSegment = ({ position, theme }: IStyledThumbSegmentProps) => css`
   position: relative;
-  flex: ${getFlex};
-  padding: ${getSingleMarginValue};
+  flex: ${getFlex({ position, theme })};
+  padding: ${getSingleMarginValue({ theme })};
   border: 0;
   margin: 0;
   background: transparent;
-  border-radius: ${getBorderRadiusValue}px;
-  ${props => props.dragSignifier && dragSignifier(props)};
+  border-radius: ${getBorderRadiusValue({ position, theme })}px;
 `;
+
+const thumbSegmentClassNames = {
+  start: thumbSegment({ position: 'start' }),
+  middle: thumbSegment({ position: 'middle' }),
+  end: thumbSegment({ position: 'end' }),
+};
+
+const dragSignifierClassNames = {
+  start: {
+    horizontal: dragSignifier({ position: 'start', orientation: 'horizontal' }),
+    vertical: dragSignifier({ position: 'start', orientation: 'vertical' }),
+  },
+  middle: {
+    horizontal: dragSignifier({ position: 'middle', orientation: 'horizontal' }),
+    vertical: dragSignifier({ position: 'middle', orientation: 'vertical' }),
+  },
+  end: {
+    horizontal: dragSignifier({ position: 'end', orientation: 'horizontal' }),
+    vertical: dragSignifier({ position: 'end', orientation: 'vertical' }),
+  },
+};
+
+const ThumbSegment: SFC<IThumbSegmentProps> = ({
+  className,
+  dragSignifier: dragSignifierProp,
+  orientation,
+  position,
+  ...rest
+}) => (
+  <button
+    className={[
+      className,
+      thumbSegmentClassNames[position],
+      dragSignifierProp && dragSignifierClassNames[position][orientation || 'vertical'],
+    ]
+      .filter(Boolean)
+      .join(' ')}
+    {...rest}
+  />
+);
 
 export default ThumbSegment;

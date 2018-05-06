@@ -1,12 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`react-graph-editor/ScrollGraph with default scales 1`] = `
-.emotion-0 {
-  width: 100%;
-  height: 100%;
-}
-
 <ScrollView
+  scaleX={1}
+  scaleY={1}
   style={
     Object {
       "height": "100vh",
@@ -15,7 +12,6 @@ exports[`react-graph-editor/ScrollGraph with default scales 1`] = `
   }
 >
   <StyledGraphContainer
-    className="emotion-0"
     lines={
       Array [
         Object {
@@ -70,18 +66,21 @@ exports[`react-graph-editor/ScrollGraph with default scales 1`] = `
           ],
         },
       ]
+    }
+    style={
+      Object {
+        "height": "100%",
+        "width": "100%",
+      }
     }
   />
 </ScrollView>
 `;
 
 exports[`react-graph-editor/ScrollGraph with scaleX = 2 1`] = `
-.emotion-0 {
-  width: 200%;
-  height: 100%;
-}
-
 <ScrollView
+  scaleX={2}
+  scaleY={1}
   style={
     Object {
       "height": "100vh",
@@ -90,7 +89,6 @@ exports[`react-graph-editor/ScrollGraph with scaleX = 2 1`] = `
   }
 >
   <StyledGraphContainer
-    className="emotion-0"
     lines={
       Array [
         Object {
@@ -145,18 +143,21 @@ exports[`react-graph-editor/ScrollGraph with scaleX = 2 1`] = `
           ],
         },
       ]
+    }
+    style={
+      Object {
+        "height": "100%",
+        "width": "200%",
+      }
     }
   />
 </ScrollView>
 `;
 
 exports[`react-graph-editor/ScrollGraph with scaleX = 10 1`] = `
-.emotion-0 {
-  width: 1000%;
-  height: 100%;
-}
-
 <ScrollView
+  scaleX={10}
+  scaleY={1}
   style={
     Object {
       "height": "100vh",
@@ -165,7 +166,6 @@ exports[`react-graph-editor/ScrollGraph with scaleX = 10 1`] = `
   }
 >
   <StyledGraphContainer
-    className="emotion-0"
     lines={
       Array [
         Object {
@@ -220,18 +220,21 @@ exports[`react-graph-editor/ScrollGraph with scaleX = 10 1`] = `
           ],
         },
       ]
+    }
+    style={
+      Object {
+        "height": "100%",
+        "width": "1000%",
+      }
     }
   />
 </ScrollView>
 `;
 
 exports[`react-graph-editor/ScrollGraph with scaleX = scaleY = 2 1`] = `
-.emotion-0 {
-  width: 200%;
-  height: 200%;
-}
-
 <ScrollView
+  scaleX={2}
+  scaleY={2}
   style={
     Object {
       "height": "100vh",
@@ -240,7 +243,6 @@ exports[`react-graph-editor/ScrollGraph with scaleX = scaleY = 2 1`] = `
   }
 >
   <StyledGraphContainer
-    className="emotion-0"
     lines={
       Array [
         Object {
@@ -295,18 +297,21 @@ exports[`react-graph-editor/ScrollGraph with scaleX = scaleY = 2 1`] = `
           ],
         },
       ]
+    }
+    style={
+      Object {
+        "height": "200%",
+        "width": "200%",
+      }
     }
   />
 </ScrollView>
 `;
 
 exports[`react-graph-editor/ScrollGraph with scaleX = scaleY = 10 1`] = `
-.emotion-0 {
-  width: 1000%;
-  height: 1000%;
-}
-
 <ScrollView
+  scaleX={10}
+  scaleY={10}
   style={
     Object {
       "height": "100vh",
@@ -315,7 +320,6 @@ exports[`react-graph-editor/ScrollGraph with scaleX = scaleY = 10 1`] = `
   }
 >
   <StyledGraphContainer
-    className="emotion-0"
     lines={
       Array [
         Object {
@@ -370,18 +374,21 @@ exports[`react-graph-editor/ScrollGraph with scaleX = scaleY = 10 1`] = `
           ],
         },
       ]
+    }
+    style={
+      Object {
+        "height": "1000%",
+        "width": "1000%",
+      }
     }
   />
 </ScrollView>
 `;
 
 exports[`react-graph-editor/ScrollGraph with scaleY = 2 1`] = `
-.emotion-0 {
-  width: 100%;
-  height: 200%;
-}
-
 <ScrollView
+  scaleX={1}
+  scaleY={2}
   style={
     Object {
       "height": "100vh",
@@ -390,7 +397,6 @@ exports[`react-graph-editor/ScrollGraph with scaleY = 2 1`] = `
   }
 >
   <StyledGraphContainer
-    className="emotion-0"
     lines={
       Array [
         Object {
@@ -445,18 +451,21 @@ exports[`react-graph-editor/ScrollGraph with scaleY = 2 1`] = `
           ],
         },
       ]
+    }
+    style={
+      Object {
+        "height": "200%",
+        "width": "100%",
+      }
     }
   />
 </ScrollView>
 `;
 
 exports[`react-graph-editor/ScrollGraph with scaleY = 10 1`] = `
-.emotion-0 {
-  width: 100%;
-  height: 1000%;
-}
-
 <ScrollView
+  scaleX={1}
+  scaleY={10}
   style={
     Object {
       "height": "100vh",
@@ -465,7 +474,6 @@ exports[`react-graph-editor/ScrollGraph with scaleY = 10 1`] = `
   }
 >
   <StyledGraphContainer
-    className="emotion-0"
     lines={
       Array [
         Object {
@@ -520,6 +528,12 @@ exports[`react-graph-editor/ScrollGraph with scaleY = 10 1`] = `
           ],
         },
       ]
+    }
+    style={
+      Object {
+        "height": "1000%",
+        "width": "100%",
+      }
     }
   />
 </ScrollView>
