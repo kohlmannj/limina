@@ -1,7 +1,7 @@
 import React, { CSSProperties, SFC } from 'react';
 import { css } from 'react-emotion';
 import Graph, { IGraphProps } from './Graph';
-import ScrollView from './ScrollView';
+import ScalingScrollView from './ScalingScrollView';
 
 export interface IScrollGraphProps extends IGraphProps {
   scaleX?: number;
@@ -10,7 +10,7 @@ export interface IScrollGraphProps extends IGraphProps {
 }
 
 const ScrollGraph: SFC<IScrollGraphProps> = ({ className, scaleX, scaleY, style, ...rest }) => (
-  <ScrollView className={className} style={style}>
+  <ScalingScrollView scaleX={scaleX} scaleY={scaleY} className={className} style={style}>
     <Graph
       className={css`
         width: ${(scaleX || 1) * 100}%;
@@ -18,7 +18,7 @@ const ScrollGraph: SFC<IScrollGraphProps> = ({ className, scaleX, scaleY, style,
       `}
       {...rest}
     />
-  </ScrollView>
+  </ScalingScrollView>
 );
 
 ScrollGraph.defaultProps = {

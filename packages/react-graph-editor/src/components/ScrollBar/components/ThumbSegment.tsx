@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ButtonHTMLAttributes } from 'react';
 import styled, { css, StyledComponent } from 'react-emotion';
 import { IScrollBarProps, IStyledScrollBarProps } from '..';
 import defaultTheme from '../../../theme';
@@ -9,11 +9,12 @@ export interface IThumbSegmentAdditionalProps {
   position: 'start' | 'middle' | 'end';
 }
 
-export interface IThumbSegmentProps extends IThumbSegmentAdditionalProps, IScrollBarProps {}
+export interface IThumbSegmentProps
+  extends ButtonHTMLAttributes<HTMLButtonElement>,
+    IThumbSegmentAdditionalProps,
+    IScrollBarProps {}
 
-export interface IStyledThumbSegmentProps
-  extends IThumbSegmentAdditionalProps,
-    IStyledScrollBarProps {}
+export interface IStyledThumbSegmentProps extends IThumbSegmentProps, IStyledScrollBarProps {}
 
 export const dragSignifier = (props: IStyledThumbSegmentProps) =>
   css({
@@ -85,18 +86,7 @@ export const getFlex = (props: IStyledThumbSegmentProps) => {
   }
 };
 
-const ThumbSegment: StyledComponent<
-  IThumbSegmentProps,
-  any,
-  React.ClassAttributes<HTMLButtonElement> &
-    React.ButtonHTMLAttributes<HTMLButtonElement> & {
-      innerRef?:
-        | string
-        | ((instance: HTMLButtonElement | null) => any)
-        | React.RefObject<HTMLButtonElement>
-        | undefined;
-    }
-> = styled<IThumbSegmentProps, 'button'>('button')`
+const ThumbSegment = styled<IThumbSegmentProps, 'button'>('button')`
   position: relative;
   flex: ${getFlex};
   padding: ${getSingleMarginValue};

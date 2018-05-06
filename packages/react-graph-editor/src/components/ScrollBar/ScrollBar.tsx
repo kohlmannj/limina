@@ -2,7 +2,7 @@ import React, { CSSProperties, SFC } from 'react';
 import { OverflowMode, ScrollBarOrientation } from '../..';
 import { IScrollBarTheme } from '../../theme';
 import ThumbContainer from './components/ThumbContainer';
-import ThumbSegment, { IThumbSegmentProps } from './components/ThumbSegment';
+import ThumbSegment, { IStyledThumbSegmentProps } from './components/ThumbSegment';
 import Track from './components/Track';
 
 export interface IScrollBarProps {
@@ -12,9 +12,9 @@ export interface IScrollBarProps {
   progress?: number;
   scale?: number;
   style?: CSSProperties;
-  thumbStartProps?: IThumbSegmentProps;
-  thumbMiddleProps?: IThumbSegmentProps;
-  thumbEndProps?: IThumbSegmentProps;
+  thumbStartProps?: Partial<IStyledThumbSegmentProps>;
+  thumbMiddleProps?: Partial<IStyledThumbSegmentProps>;
+  thumbEndProps?: Partial<IStyledThumbSegmentProps>;
 }
 
 export interface IStyledScrollBarProps extends IScrollBarProps {
@@ -51,7 +51,7 @@ export const ScrollBar: SFC<IScrollBarProps> = ({
 
 ScrollBar.defaultProps = {
   orientation: 'vertical',
-  overflow: 'auto',
+  overflow: 'scroll',
   scale: 1,
 };
 

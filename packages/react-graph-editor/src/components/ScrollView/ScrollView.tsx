@@ -1,26 +1,30 @@
 import React, { Component, CSSProperties } from 'react';
 import styled, { css } from 'react-emotion';
-import { OverflowMode } from '..';
-import defaultTheme from '../theme';
-import ScrollBar from './ScrollBar';
-import { IThumbSegmentProps } from './ScrollBar/components/ThumbSegment';
-import ScrollBarCorner from './ScrollBarCorner';
+import { OverflowMode } from '../..';
+import ScrollBar from '../ScrollBar';
+import { IStyledThumbSegmentProps } from '../ScrollBar/components/ThumbSegment';
+import ScrollBarCorner from '../ScrollBarCorner';
+import ScrollViewOverflowWrapper from './components/ScrollViewOverflowContainer';
 
 export interface IScrollViewProps {
   className?: string;
+  contentClassName?: string;
   dangerouslySetInnerHTML?: {
     __html: string;
   };
   overflow?: OverflowMode;
   overflowX?: OverflowMode;
   overflowY?: OverflowMode;
+  scaleX?: number;
+  scaleY?: number;
   style?: CSSProperties;
-  thumbXStartProps?: IThumbSegmentProps;
-  thumbXMiddleProps?: IThumbSegmentProps;
-  thumbXEndProps?: IThumbSegmentProps;
-  thumbYStartProps?: IThumbSegmentProps;
-  thumbYMiddleProps?: IThumbSegmentProps;
-  thumbYEndProps?: IThumbSegmentProps;
+  contentStyle?: CSSProperties;
+  thumbXStartProps?: Partial<IStyledThumbSegmentProps>;
+  thumbXMiddleProps?: Partial<IStyledThumbSegmentProps>;
+  thumbXEndProps?: Partial<IStyledThumbSegmentProps>;
+  thumbYStartProps?: Partial<IStyledThumbSegmentProps>;
+  thumbYMiddleProps?: Partial<IStyledThumbSegmentProps>;
+  thumbYEndProps?: Partial<IStyledThumbSegmentProps>;
 }
 
 export interface IScrollViewState {
@@ -35,43 +39,38 @@ const ScrollViewContainer = styled.div`
   overflow: hidden;
 `;
 
-const ScrollViewOverflowContainer = styled.div`
-  overflow: auto;
-  width: ${props =>
-    `calc(100% - ${
-      props.theme && typeof props.theme.trackWidth !== 'undefined'
-        ? props.theme.trackWidth
-        : defaultTheme.trackWidth
-    }px)`};
-  height: ${props =>
-    `calc(100% - ${
-      props.theme && typeof props.theme.trackWidth !== 'undefined'
-        ? props.theme.trackWidth
-        : defaultTheme.trackWidth
-    }px)`};
-
-  ::-webkit-scrollbar {
-    display: none;
-  }
-`;
-
 export const absolutelyPositioned = css`
   position: absolute;
   z-index: 1;
 `;
 
 export default class ScrollView extends Component<IScrollViewProps, IScrollViewState> {
+  public static defaultProps = {
+    scaleX: 1,
+    scaleY: 1,
+  };
+
   public state: IScrollViewState = {
     progressX: 0,
     progressY: 0,
-    scaleX: 1,
-    scaleY: 1,
+    scaleX: this.props.scaleX || 1,
+    scaleY: this.props.scaleY || 1,
   };
 
   private content?: HTMLDivElement | null;
 
   public componentDidMount() {
     this.startListening();
+  }
+
+  public componentWillReceiveProps(nextProps: IScrollViewProps) {
+    if (nextProps.scaleX !== this.props.scaleX && typeof nextProps.scaleX !== 'undefined') {
+      this.setState({ scaleX: nextProps.scaleX });
+    }
+
+    if (nextProps.scaleY !== this.props.scaleY && typeof nextProps.scaleY !== 'undefined') {
+      this.setState({ scaleY: nextProps.scaleY });
+    }
   }
 
   public componentWillUnmount() {
@@ -82,6 +81,8 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
     const {
       children,
       className,
+      contentClassName,
+      contentStyle,
       dangerouslySetInnerHTML,
       overflow,
       overflowX,
@@ -99,14 +100,19 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
 
     return (
       <ScrollViewContainer className={className} style={style} {...rest}>
-        <ScrollViewOverflowContainer
+        <ScrollViewOverflowWrapper
           innerRef={e => {
             this.content = e;
           }}
-          dangerouslySetInnerHTML={dangerouslySetInnerHTML}
         >
-          {children}
-        </ScrollViewOverflowContainer>
+          <div
+            className={contentClassName}
+            dangerouslySetInnerHTML={dangerouslySetInnerHTML}
+            style={contentStyle}
+          >
+            {children}
+          </div>
+        </ScrollViewOverflowWrapper>
         <ScrollBar
           className={absolutelyPositioned}
           orientation="horizontal"
@@ -123,9 +129,9 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
           overflow={overflowY || overflow}
           progress={progressY}
           scale={scaleY}
-          thumbStartProps={thumbXStartProps}
-          thumbMiddleProps={thumbXMiddleProps}
-          thumbEndProps={thumbXEndProps}
+          thumbStartProps={thumbYStartProps}
+          thumbMiddleProps={thumbYMiddleProps}
+          thumbEndProps={thumbYEndProps}
         />
         <ScrollBarCorner />
       </ScrollViewContainer>
@@ -140,12 +146,28 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
     const { width, height } = this.content.getBoundingClientRect();
     const { scrollTop, scrollHeight, scrollLeft, scrollWidth } = this.content;
 
-    this.setState({
-      progressX: scrollLeft / (scrollWidth - width),
-      progressY: scrollTop / (scrollHeight - height),
-      scaleX: Math.max(scrollWidth / Math.round(width), 1),
-      scaleY: Math.max(scrollHeight / Math.round(height), 1),
-    });
+    const progressX = scrollLeft / (scrollWidth - width);
+    const progressY = scrollTop / (scrollHeight - height);
+
+    if (!isNaN(progressX)) {
+      this.setState({ progressX });
+    }
+
+    if (!isNaN(progressY)) {
+      this.setState({ progressY });
+    }
+
+    if (typeof this.props.scaleX === 'undefined') {
+      this.setState({
+        scaleX: Math.max(scrollWidth / Math.round(width), 1),
+      });
+    }
+
+    if (typeof this.props.scaleY === 'undefined') {
+      this.setState({
+        scaleY: Math.max(scrollHeight / Math.round(height), 1),
+      });
+    }
   };
 
   private startListening = () => {
