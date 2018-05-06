@@ -7,7 +7,7 @@ import {
   ThumbSegmentPosition,
 } from '../ScrollBar/components/ThumbSegment';
 import ScrollBarCorner from '../ScrollBarCorner';
-import ScrollViewOverflowWrapper from './components/ScrollViewOverflowContainer';
+import ScrollViewOverflowContainer from './components/ScrollViewOverflowContainer';
 
 export interface IScrollViewProps {
   className?: string;
@@ -77,7 +77,7 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
   private content?: HTMLDivElement | null;
 
   public componentDidMount() {
-    this.startListening();
+    this.startListeningToWindowEvents();
   }
 
   public componentWillReceiveProps(nextProps: IScrollViewProps) {
@@ -91,10 +91,7 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
   }
 
   public componentWillUnmount() {
-    this.stopListening();
-
-    window.removeEventListener('mousemove', this.onChangeScale);
-    window.removeEventListener('mouseup', this.onStopScale);
+    this.stopListeningToWindowEvents();
   }
 
   public render() {
@@ -132,7 +129,8 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
 
     return (
       <ScrollViewContainer className={className} style={style} {...rest}>
-        <ScrollViewOverflowWrapper
+        <ScrollViewOverflowContainer
+          onScroll={this.onScroll}
           innerRef={e => {
             this.content = e;
           }}
@@ -144,7 +142,7 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
           >
             {children}
           </div>
-        </ScrollViewOverflowWrapper>
+        </ScrollViewOverflowContainer>
         <ScrollBar
           className={absolutelyPositioned}
           orientation="horizontal"
@@ -171,12 +169,12 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
           progress={progressY}
           scale={scaleY}
           thumbStartProps={{
-            // dragSignifier: scaleYProp !== 'auto',
+            dragSignifier: scaleYProp !== 'auto',
             onMouseDown: this.onStartScale({ dragOrientation: 'vertical', dragPosition: 'start' }),
           }}
           thumbMiddleProps={thumbYMiddleProps}
           thumbEndProps={{
-            // dragSignifier: scaleYProp !== 'auto',
+            dragSignifier: scaleYProp !== 'auto',
             onMouseDown: this.onStartScale({ dragOrientation: 'vertical', dragPosition: 'end' }),
           }}
         />
@@ -217,19 +215,17 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
     }
   };
 
-  private startListening = () => {
+  private startListeningToWindowEvents = () => {
+    window.addEventListener('resize', this.onScroll);
     if (this.content) {
-      this.content.addEventListener('scroll', this.onScroll);
-      this.content.addEventListener('resize', this.onScroll);
       this.onScroll();
     }
   };
 
-  private stopListening = () => {
-    if (this.content) {
-      this.content.removeEventListener('scroll', this.onScroll);
-      this.content.removeEventListener('resize', this.onScroll);
-    }
+  private stopListeningToWindowEvents = () => {
+    window.removeEventListener('resize', this.onScroll);
+    window.removeEventListener('mousemove', this.onChangeScale);
+    window.removeEventListener('mouseup', this.onStopScale);
   };
 
   private onStartScale = ({ dragOrientation, dragPosition }: IScaleEventHandlerOptions) => ({
