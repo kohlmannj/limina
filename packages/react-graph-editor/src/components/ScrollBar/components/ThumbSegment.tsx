@@ -95,7 +95,7 @@ export const getFlex = (props: IStyledThumbSegmentProps) => {
 const thumbSegment = ({ position, theme }: IStyledThumbSegmentProps) => css`
   position: relative;
   flex: ${getFlex({ position, theme })};
-  padding: ${getSingleMarginValue({ theme })};
+  padding: ${getSingleMarginValue({ theme })}px;
   border: 0;
   margin: 0;
   background: transparent;
