@@ -15,6 +15,7 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
     maxScaleY: 10,
     minScaleX: 1,
     minScaleY: 1,
+    scaleIncrement: 0.01,
     scaleX: 1,
     scaleY: 1,
   };
@@ -108,6 +109,7 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
       overflowX,
       overflowY,
       proportional,
+      scaleIncrement,
       scaleX: scaleXProp,
       scaleY: scaleYProp,
       style,
@@ -301,7 +303,7 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
     const { touches } = e as TouchEvent;
     const { clientX, clientY } = touches ? touches[0] : (e as MouseEvent);
 
-    const { minScaleX, maxScaleX, minScaleY, maxScaleY } = this.props;
+    const { minScaleX, maxScaleX, minScaleY, maxScaleY, scaleIncrement } = this.props;
     const {
       dragBeginX,
       dragBeginY,
@@ -311,8 +313,12 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
       dragTrackLength,
     } = this.state;
 
-    const dX = clientX - dragBeginX!;
-    const dY = clientY - dragBeginY!;
+    if (!dragBeginX || !dragBeginY) {
+      return;
+    }
+
+    const dX = clientX - dragBeginX;
+    const dY = clientY - dragBeginY;
 
     let dLength;
     let minScale;
@@ -329,8 +335,13 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
     }
 
     const nextThumbLength = dragThumbLength && dLength && dragThumbLength + dLength;
-    const nextScale =
+    let nextScale =
       dragTrackLength && nextThumbLength ? dragTrackLength / nextThumbLength : undefined;
+
+    // Round nextScale to the nearest increment
+    if (nextScale && scaleIncrement) {
+      nextScale = Math.round(nextScale * 1 / scaleIncrement) / (1 / scaleIncrement);
+    }
 
     if (nextScale && minScale && maxScale && nextScale >= minScale && nextScale <= maxScale) {
       if (dragAxis === 'horizontal') {

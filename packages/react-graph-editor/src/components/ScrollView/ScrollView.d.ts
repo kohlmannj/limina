@@ -20,6 +20,7 @@ export interface IScrollViewProps {
   overflowX?: OverflowMode;
   overflowY?: OverflowMode;
   proportional?: boolean;
+  scaleIncrement?: number;
   scaleX?: number | 'auto';
   scaleY?: number | 'auto';
   style?: CSSProperties;
