@@ -1,80 +1,35 @@
 import React, { Component, CSSProperties } from 'react';
-import styled, { css } from 'react-emotion';
-import { OverflowMode, ScrollBarOrientation } from '../..';
 import ScrollBar from '../ScrollBar';
-import {
-  IStyledThumbSegmentProps,
-  ThumbSegmentPosition,
-} from '../ScrollBar/components/ThumbSegment';
 import ScrollBarCorner from '../ScrollBarCorner';
-import ScrollViewOverflowContainer from './components/ScrollViewOverflowContainer';
-
-export interface IScrollViewProps {
-  className?: string;
-  contentClassName?: string;
-  contentStyle?: CSSProperties;
-  dangerouslySetInnerHTML?: {
-    __html: string;
-  };
-  overflow?: OverflowMode;
-  overflowX?: OverflowMode;
-  overflowY?: OverflowMode;
-  proportional?: boolean;
-  scaleX?: number | 'auto';
-  scaleY?: number | 'auto';
-  style?: CSSProperties;
-  thumbXEndProps?: Partial<IStyledThumbSegmentProps>;
-  thumbXMiddleProps?: Partial<IStyledThumbSegmentProps>;
-  thumbXStartProps?: Partial<IStyledThumbSegmentProps>;
-  thumbYEndProps?: Partial<IStyledThumbSegmentProps>;
-  thumbYMiddleProps?: Partial<IStyledThumbSegmentProps>;
-  thumbYStartProps?: Partial<IStyledThumbSegmentProps>;
-}
-
-export interface IScrollViewState {
-  dragMouseStartX?: number;
-  dragMouseStartY?: number;
-  dragOrientation?: ScrollBarOrientation;
-  dragPosition?: ThumbSegmentPosition;
-  dragThumbLength?: number;
-  dragTrackLength?: number;
-  progressX: number;
-  progressY: number;
-  scaleX: number;
-  scaleY: number;
-}
-
-export interface IScaleEventHandlerOptions {
-  dragOrientation: ScrollBarOrientation;
-  dragPosition: ThumbSegmentPosition;
-}
-
-export type MouseEventListener = (event: MouseEvent) => void;
-
-const ScrollViewContainer = styled.div`
-  position: relative;
-  overflow: hidden;
-`;
-
-export const absolutelyPositioned = css`
-  position: absolute;
-  z-index: 1;
-`;
+import {
+  IScaleEventHandlerOptions,
+  IScrollViewProps,
+  IScrollViewState,
+  ReactMouseOrTouchEvent,
+} from './ScrollView.d';
+import { absolutelyPositioned, overflowContainer, root } from './styles';
 
 export default class ScrollView extends Component<IScrollViewProps, IScrollViewState> {
   public static defaultProps = {
+    maxScaleX: 10,
+    maxScaleY: 10,
+    minScaleX: 1,
+    minScaleY: 1,
     scaleX: 1,
     scaleY: 1,
   };
 
   public state: IScrollViewState = {
-    progressX: 0,
-    progressY: 0,
+    dragging: false,
+    progressX:
+      (this.props.scaleX && this.props.scaleX !== 'auto' ? this.props.scaleX : 1) === 1 ? 0.5 : 0,
+    progressY:
+      (this.props.scaleY && this.props.scaleY !== 'auto' ? this.props.scaleY : 1) === 1 ? 0.5 : 0,
     scaleX: this.props.scaleX && this.props.scaleX !== 'auto' ? this.props.scaleX : 1,
     scaleY: this.props.scaleY && this.props.scaleY !== 'auto' ? this.props.scaleY : 1,
   };
 
-  private content?: HTMLDivElement | null;
+  private overflowContainer?: HTMLDivElement | null;
 
   public componentDidMount() {
     this.startListeningToWindowEvents();
@@ -87,6 +42,50 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
 
     if (nextProps.scaleY !== this.props.scaleY && typeof nextProps.scaleY === 'number') {
       this.setState({ scaleY: nextProps.scaleY });
+    }
+
+    if (
+      (nextProps.scaleX === 'auto' || nextProps.scaleY === 'auto') &&
+      this.props.scaleX !== 'auto' &&
+      this.props.scaleY !== 'auto'
+    ) {
+      window.addEventListener('resize', this.onScroll);
+    } else if (
+      nextProps.scaleX !== 'auto' &&
+      nextProps.scaleY !== 'auto' &&
+      (this.props.scaleX === 'auto' || this.props.scaleY === 'auto')
+    ) {
+      window.removeEventListener('resize', this.onScroll);
+    }
+  }
+
+  public componentDidUpdate(prevProps: IScrollViewProps, prevState: IScrollViewState) {
+    const { dragging, dragAxis, progressX, progressY, scaleX, scaleY } = this.state;
+    if (!this.overflowContainer) {
+      return;
+    }
+
+    // While dragging: recalculate scrollLeft and scrollTop positions after scale changes
+    if (dragging) {
+      const { width, height } = this.overflowContainer.getBoundingClientRect();
+
+      if (
+        dragAxis === 'horizontal' &&
+        scaleX !== prevState.scaleX &&
+        progressX > 0 &&
+        progressX < 1
+      ) {
+        const nextScrollLeft = (this.overflowContainer.scrollWidth - width) * progressX;
+        this.overflowContainer.scrollLeft = nextScrollLeft;
+      } else if (
+        dragAxis === 'vertical' &&
+        scaleY !== prevState.scaleY &&
+        progressY > 0 &&
+        progressY < 1
+      ) {
+        const nextScrollTop = (this.overflowContainer.scrollHeight - height) * progressY;
+        this.overflowContainer.scrollTop = nextScrollTop;
+      }
     }
   }
 
@@ -101,6 +100,10 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
       contentClassName,
       contentStyle: contentStyleProp,
       dangerouslySetInnerHTML,
+      maxScaleX,
+      maxScaleY,
+      minScaleX,
+      minScaleY,
       overflow,
       overflowX,
       overflowY,
@@ -127,12 +130,19 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
       contentStyle.height = `${scaleY * 100}%`;
     }
 
+    // Generate event handlers
+    const onBeginScaleXStart = this.onBeginScale({ dragAxis: 'horizontal', dragPosition: 'start' });
+    const onBeginScaleXEnd = this.onBeginScale({ dragAxis: 'horizontal', dragPosition: 'end' });
+    const onBeginScaleYStart = this.onBeginScale({ dragAxis: 'vertical', dragPosition: 'start' });
+    const onBeginScaleYEnd = this.onBeginScale({ dragAxis: 'vertical', dragPosition: 'end' });
+
     return (
-      <ScrollViewContainer className={className} style={style} {...rest}>
-        <ScrollViewOverflowContainer
+      <div className={[className, root].filter(Boolean).join(' ')} style={style} {...rest}>
+        <div
+          className={overflowContainer({})}
           onScroll={this.onScroll}
-          innerRef={e => {
-            this.content = e;
+          ref={e => {
+            this.overflowContainer = e;
           }}
         >
           <div
@@ -142,7 +152,7 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
           >
             {children}
           </div>
-        </ScrollViewOverflowContainer>
+        </div>
         <ScrollBar
           className={absolutelyPositioned}
           orientation="horizontal"
@@ -151,15 +161,14 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
           scale={scaleX}
           thumbStartProps={{
             dragSignifier: scaleXProp !== 'auto',
-            onMouseDown: this.onStartScale({
-              dragOrientation: 'horizontal',
-              dragPosition: 'start',
-            }),
+            onMouseDown: onBeginScaleXStart,
+            onTouchStart: onBeginScaleXStart,
           }}
           thumbMiddleProps={thumbXMiddleProps}
           thumbEndProps={{
             dragSignifier: scaleXProp !== 'auto',
-            onMouseDown: this.onStartScale({ dragOrientation: 'horizontal', dragPosition: 'end' }),
+            onMouseDown: onBeginScaleXEnd,
+            onTouchStart: onBeginScaleXEnd,
           }}
         />
         <ScrollBar
@@ -170,26 +179,28 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
           scale={scaleY}
           thumbStartProps={{
             dragSignifier: scaleYProp !== 'auto',
-            onMouseDown: this.onStartScale({ dragOrientation: 'vertical', dragPosition: 'start' }),
+            onMouseDown: onBeginScaleYStart,
+            onTouchStart: onBeginScaleYStart,
           }}
           thumbMiddleProps={thumbYMiddleProps}
           thumbEndProps={{
             dragSignifier: scaleYProp !== 'auto',
-            onMouseDown: this.onStartScale({ dragOrientation: 'vertical', dragPosition: 'end' }),
+            onMouseDown: onBeginScaleYEnd,
+            onTouchStart: onBeginScaleYEnd,
           }}
         />
         <ScrollBarCorner />
-      </ScrollViewContainer>
+      </div>
     );
   }
 
   private onScroll = (): void => {
-    if (!this.content) {
+    if (!this.overflowContainer || this.state.dragging) {
       return;
     }
 
-    const { width, height } = this.content.getBoundingClientRect();
-    const { scrollTop, scrollHeight, scrollLeft, scrollWidth } = this.content;
+    const { width, height } = this.overflowContainer.getBoundingClientRect();
+    const { scrollTop, scrollHeight, scrollLeft, scrollWidth } = this.overflowContainer;
 
     const progressX = scrollLeft / (scrollWidth - width);
     const progressY = scrollTop / (scrollHeight - height);
@@ -216,23 +227,34 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
   };
 
   private startListeningToWindowEvents = () => {
-    window.addEventListener('resize', this.onScroll);
-    if (this.content) {
+    if (this.props.scaleX === 'auto' || this.props.scaleY === 'auto') {
+      window.addEventListener('resize', this.onScroll);
+    }
+
+    if (this.overflowContainer) {
       this.onScroll();
     }
   };
 
   private stopListeningToWindowEvents = () => {
-    window.removeEventListener('resize', this.onScroll);
+    if (this.props.scaleX === 'auto' || this.props.scaleY === 'auto') {
+      window.removeEventListener('resize', this.onScroll);
+    }
+
     window.removeEventListener('mousemove', this.onChangeScale);
-    window.removeEventListener('mouseup', this.onStopScale);
+    window.removeEventListener('mouseup', this.onEndScale);
+    window.removeEventListener('touchmove', this.onChangeScale);
+    window.removeEventListener('touchend', this.onEndScale);
   };
 
-  private onStartScale = ({ dragOrientation, dragPosition }: IScaleEventHandlerOptions) => ({
-    clientX: dragMouseStartX,
-    clientY: dragMouseStartY,
-    target,
-  }: React.MouseEvent<HTMLButtonElement>): void => {
+  private onBeginScale = ({ dragAxis, dragPosition }: IScaleEventHandlerOptions) => (
+    e: ReactMouseOrTouchEvent<HTMLButtonElement>
+  ): void => {
+    const { target, touches } = e as React.TouchEvent<HTMLButtonElement>;
+    const { clientX: dragBeginX, clientY: dragBeginY } = touches
+      ? touches[0]
+      : (e as React.MouseEvent<HTMLButtonElement>);
+
     const thumb: HTMLElement | null = (target as HTMLButtonElement).parentElement;
     const track: HTMLElement | null = thumb ? (thumb as HTMLDivElement).parentElement : null;
 
@@ -242,9 +264,9 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
     if (thumb) {
       const { width, height } = thumb.getBoundingClientRect();
 
-      if (dragOrientation === 'horizontal') {
+      if (dragAxis === 'horizontal') {
         dragThumbLength = width;
-      } else if (dragOrientation === 'vertical') {
+      } else if (dragAxis === 'vertical') {
         dragThumbLength = height;
       }
     }
@@ -252,71 +274,94 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
     if (track) {
       const { width, height } = track.getBoundingClientRect();
 
-      if (dragOrientation === 'horizontal') {
+      if (dragAxis === 'horizontal') {
         dragTrackLength = width;
-      } else if (dragOrientation === 'vertical') {
+      } else if (dragAxis === 'vertical') {
         dragTrackLength = height;
       }
     }
 
     this.setState({
-      dragMouseStartX,
-      dragMouseStartY,
-      dragOrientation,
+      dragAxis,
+      dragBeginX,
+      dragBeginY,
+      dragging: true,
       dragPosition,
       dragThumbLength,
       dragTrackLength,
     });
 
-    window.addEventListener('mousemove', this.onChangeScale);
-    window.addEventListener('mouseup', this.onStopScale, {
+    window.addEventListener(touches ? 'touchmove' : 'mousemove', this.onChangeScale);
+    window.addEventListener(touches ? 'touchend' : 'mouseup', this.onEndScale, {
       once: true,
     });
   };
 
-  private onChangeScale = (e: MouseEvent): void => {
+  private onChangeScale = (e: MouseEvent | TouchEvent): void => {
+    const { touches } = e as TouchEvent;
+    const { clientX, clientY } = touches ? touches[0] : (e as MouseEvent);
+
+    const { minScaleX, maxScaleX, minScaleY, maxScaleY } = this.props;
     const {
-      dragMouseStartX,
-      dragMouseStartY,
-      dragOrientation,
+      dragBeginX,
+      dragBeginY,
+      dragAxis,
       dragPosition,
       dragThumbLength,
       dragTrackLength,
     } = this.state;
 
-    const dX = e.clientX - dragMouseStartX!;
-    const dY = e.clientY - dragMouseStartY!;
+    const dX = clientX - dragBeginX!;
+    const dY = clientY - dragBeginY!;
 
     let dLength;
+    let minScale;
+    let maxScale;
 
-    if (dragOrientation === 'horizontal') {
+    if (dragAxis === 'horizontal') {
       dLength = dragPosition === 'start' ? -dX : dX;
-    } else if (dragOrientation === 'vertical') {
+      minScale = minScaleX;
+      maxScale = maxScaleX;
+    } else if (dragAxis === 'vertical') {
       dLength = dragPosition === 'start' ? -dY : dY;
+      minScale = minScaleY;
+      maxScale = maxScaleY;
     }
 
     const nextThumbLength = dragThumbLength && dLength && dragThumbLength + dLength;
-    const rawNextScale =
+    const nextScale =
       dragTrackLength && nextThumbLength ? dragTrackLength / nextThumbLength : undefined;
-    const nextScale = Math.min(Math.max(rawNextScale || 1, 1), 10);
 
-    if (dragOrientation === 'horizontal') {
-      this.setState({ scaleX: nextScale });
-    } else if (dragOrientation === 'vertical') {
-      this.setState({ scaleY: nextScale });
+    if (nextScale && minScale && maxScale && nextScale >= minScale && nextScale <= maxScale) {
+      if (dragAxis === 'horizontal') {
+        this.setState({ scaleX: nextScale });
+
+        if (nextScale === 1) {
+          this.setState({ progressX: 0.5 });
+        }
+      } else if (dragAxis === 'vertical') {
+        this.setState({ scaleY: nextScale });
+
+        if (nextScale === 1) {
+          this.setState({ progressY: 0.5 });
+        }
+      }
     }
   };
 
-  private onStopScale = (e: MouseEvent): void => {
+  private onEndScale = (e: MouseEvent | TouchEvent): void => {
+    const { touches } = e as TouchEvent;
+
     this.setState({
-      dragMouseStartX: undefined,
-      dragMouseStartY: undefined,
-      dragOrientation: undefined,
+      dragging: false,
+      dragBeginX: undefined,
+      dragBeginY: undefined,
+      dragAxis: undefined,
       dragPosition: undefined,
       dragThumbLength: undefined,
       dragTrackLength: undefined,
     });
 
-    window.removeEventListener('mousemove', this.onChangeScale);
+    window.removeEventListener(touches ? 'touchmove' : 'mousemove', this.onChangeScale);
   };
 }
