@@ -2,7 +2,7 @@
 
 exports[`react-graph-editor/ScrollBar with default props 1`] = `
 <Track
-  orientation="vertical"
+  axis="y"
   style={
     Object {
       "height": "100vh",
@@ -10,21 +10,21 @@ exports[`react-graph-editor/ScrollBar with default props 1`] = `
   }
 >
   <ThumbContainer
-    orientation="vertical"
+    axis="y"
     scale={1}
   >
     <ThumbSegment
+      axis="y"
       dragSignifier={true}
-      orientation="vertical"
       position="start"
     />
     <ThumbSegment
-      orientation="vertical"
+      axis="y"
       position="middle"
     />
     <ThumbSegment
+      axis="y"
       dragSignifier={true}
-      orientation="vertical"
       position="end"
     />
   </ThumbContainer>
@@ -33,7 +33,7 @@ exports[`react-graph-editor/ScrollBar with default props 1`] = `
 
 exports[`react-graph-editor/ScrollBar with knobs 1`] = `
 <ScrollBar
-  orientation="vertical"
+  axis="y"
   overflow="auto"
   progress={0}
   scale={2}
@@ -46,9 +46,9 @@ exports[`react-graph-editor/ScrollBar with knobs 1`] = `
 />
 `;
 
-exports[`react-graph-editor/ScrollBar/Vertical/Scale 2 with progress 0 1`] = `
+exports[`react-graph-editor/ScrollBar/Y-Axis/Scale 2 with progress 0 1`] = `
 <Track
-  orientation="vertical"
+  axis="y"
   style={
     Object {
       "height": "100vh",
@@ -56,30 +56,30 @@ exports[`react-graph-editor/ScrollBar/Vertical/Scale 2 with progress 0 1`] = `
   }
 >
   <ThumbContainer
-    orientation="vertical"
+    axis="y"
     scale={2}
   >
     <ThumbSegment
+      axis="y"
       dragSignifier={true}
-      orientation="vertical"
       position="start"
     />
     <ThumbSegment
-      orientation="vertical"
+      axis="y"
       position="middle"
     />
     <ThumbSegment
+      axis="y"
       dragSignifier={true}
-      orientation="vertical"
       position="end"
     />
   </ThumbContainer>
 </Track>
 `;
 
-exports[`react-graph-editor/ScrollBar/Vertical/Scale 2 with progress 0.5 1`] = `
+exports[`react-graph-editor/ScrollBar/Y-Axis/Scale 2 with progress 0.5 1`] = `
 <Track
-  orientation="vertical"
+  axis="y"
   progress={0.5}
   style={
     Object {
@@ -88,31 +88,31 @@ exports[`react-graph-editor/ScrollBar/Vertical/Scale 2 with progress 0.5 1`] = `
   }
 >
   <ThumbContainer
-    orientation="vertical"
+    axis="y"
     progress={0.5}
     scale={2}
   >
     <ThumbSegment
+      axis="y"
       dragSignifier={true}
-      orientation="vertical"
       position="start"
     />
     <ThumbSegment
-      orientation="vertical"
+      axis="y"
       position="middle"
     />
     <ThumbSegment
+      axis="y"
       dragSignifier={true}
-      orientation="vertical"
       position="end"
     />
   </ThumbContainer>
 </Track>
 `;
 
-exports[`react-graph-editor/ScrollBar/Vertical/Scale 2 with progress 0.25 1`] = `
+exports[`react-graph-editor/ScrollBar/Y-Axis/Scale 2 with progress 0.25 1`] = `
 <Track
-  orientation="vertical"
+  axis="y"
   progress={0.25}
   style={
     Object {
@@ -121,31 +121,31 @@ exports[`react-graph-editor/ScrollBar/Vertical/Scale 2 with progress 0.25 1`] = 
   }
 >
   <ThumbContainer
-    orientation="vertical"
+    axis="y"
     progress={0.25}
     scale={2}
   >
     <ThumbSegment
+      axis="y"
       dragSignifier={true}
-      orientation="vertical"
       position="start"
     />
     <ThumbSegment
-      orientation="vertical"
+      axis="y"
       position="middle"
     />
     <ThumbSegment
+      axis="y"
       dragSignifier={true}
-      orientation="vertical"
       position="end"
     />
   </ThumbContainer>
 </Track>
 `;
 
-exports[`react-graph-editor/ScrollBar/Vertical/Scale 2 with progress 0.75 1`] = `
+exports[`react-graph-editor/ScrollBar/Y-Axis/Scale 2 with progress 0.75 1`] = `
 <Track
-  orientation="vertical"
+  axis="y"
   progress={0.75}
   style={
     Object {
@@ -154,31 +154,31 @@ exports[`react-graph-editor/ScrollBar/Vertical/Scale 2 with progress 0.75 1`] = 
   }
 >
   <ThumbContainer
-    orientation="vertical"
+    axis="y"
     progress={0.75}
     scale={2}
   >
     <ThumbSegment
+      axis="y"
       dragSignifier={true}
-      orientation="vertical"
       position="start"
     />
     <ThumbSegment
-      orientation="vertical"
+      axis="y"
       position="middle"
     />
     <ThumbSegment
+      axis="y"
       dragSignifier={true}
-      orientation="vertical"
       position="end"
     />
   </ThumbContainer>
 </Track>
 `;
 
-exports[`react-graph-editor/ScrollBar/Vertical/Scale 2 with progress 1 1`] = `
+exports[`react-graph-editor/ScrollBar/Y-Axis/Scale 2 with progress 1 1`] = `
 <Track
-  orientation="vertical"
+  axis="y"
   progress={1}
   style={
     Object {
@@ -187,31 +187,31 @@ exports[`react-graph-editor/ScrollBar/Vertical/Scale 2 with progress 1 1`] = `
   }
 >
   <ThumbContainer
-    orientation="vertical"
+    axis="y"
     progress={1}
     scale={2}
   >
     <ThumbSegment
+      axis="y"
       dragSignifier={true}
-      orientation="vertical"
       position="start"
     />
     <ThumbSegment
-      orientation="vertical"
+      axis="y"
       position="middle"
     />
     <ThumbSegment
+      axis="y"
       dragSignifier={true}
-      orientation="vertical"
       position="end"
     />
   </ThumbContainer>
 </Track>
 `;
 
-exports[`react-graph-editor/ScrollBar/Vertical/Scale 10 with progress 0 1`] = `
+exports[`react-graph-editor/ScrollBar/Y-Axis/Scale 10 with progress 0 1`] = `
 <Track
-  orientation="vertical"
+  axis="y"
   style={
     Object {
       "height": "100vh",
@@ -219,30 +219,30 @@ exports[`react-graph-editor/ScrollBar/Vertical/Scale 10 with progress 0 1`] = `
   }
 >
   <ThumbContainer
-    orientation="vertical"
+    axis="y"
     scale={10}
   >
     <ThumbSegment
+      axis="y"
       dragSignifier={true}
-      orientation="vertical"
       position="start"
     />
     <ThumbSegment
-      orientation="vertical"
+      axis="y"
       position="middle"
     />
     <ThumbSegment
+      axis="y"
       dragSignifier={true}
-      orientation="vertical"
       position="end"
     />
   </ThumbContainer>
 </Track>
 `;
 
-exports[`react-graph-editor/ScrollBar/Vertical/Scale 10 with progress 0.5 1`] = `
+exports[`react-graph-editor/ScrollBar/Y-Axis/Scale 10 with progress 0.5 1`] = `
 <Track
-  orientation="vertical"
+  axis="y"
   progress={0.5}
   style={
     Object {
@@ -251,31 +251,31 @@ exports[`react-graph-editor/ScrollBar/Vertical/Scale 10 with progress 0.5 1`] = 
   }
 >
   <ThumbContainer
-    orientation="vertical"
+    axis="y"
     progress={0.5}
     scale={10}
   >
     <ThumbSegment
+      axis="y"
       dragSignifier={true}
-      orientation="vertical"
       position="start"
     />
     <ThumbSegment
-      orientation="vertical"
+      axis="y"
       position="middle"
     />
     <ThumbSegment
+      axis="y"
       dragSignifier={true}
-      orientation="vertical"
       position="end"
     />
   </ThumbContainer>
 </Track>
 `;
 
-exports[`react-graph-editor/ScrollBar/Vertical/Scale 10 with progress 0.25 1`] = `
+exports[`react-graph-editor/ScrollBar/Y-Axis/Scale 10 with progress 0.25 1`] = `
 <Track
-  orientation="vertical"
+  axis="y"
   progress={0.25}
   style={
     Object {
@@ -284,31 +284,31 @@ exports[`react-graph-editor/ScrollBar/Vertical/Scale 10 with progress 0.25 1`] =
   }
 >
   <ThumbContainer
-    orientation="vertical"
+    axis="y"
     progress={0.25}
     scale={10}
   >
     <ThumbSegment
+      axis="y"
       dragSignifier={true}
-      orientation="vertical"
       position="start"
     />
     <ThumbSegment
-      orientation="vertical"
+      axis="y"
       position="middle"
     />
     <ThumbSegment
+      axis="y"
       dragSignifier={true}
-      orientation="vertical"
       position="end"
     />
   </ThumbContainer>
 </Track>
 `;
 
-exports[`react-graph-editor/ScrollBar/Vertical/Scale 10 with progress 0.75 1`] = `
+exports[`react-graph-editor/ScrollBar/Y-Axis/Scale 10 with progress 0.75 1`] = `
 <Track
-  orientation="vertical"
+  axis="y"
   progress={0.75}
   style={
     Object {
@@ -317,31 +317,31 @@ exports[`react-graph-editor/ScrollBar/Vertical/Scale 10 with progress 0.75 1`] =
   }
 >
   <ThumbContainer
-    orientation="vertical"
+    axis="y"
     progress={0.75}
     scale={10}
   >
     <ThumbSegment
+      axis="y"
       dragSignifier={true}
-      orientation="vertical"
       position="start"
     />
     <ThumbSegment
-      orientation="vertical"
+      axis="y"
       position="middle"
     />
     <ThumbSegment
+      axis="y"
       dragSignifier={true}
-      orientation="vertical"
       position="end"
     />
   </ThumbContainer>
 </Track>
 `;
 
-exports[`react-graph-editor/ScrollBar/Vertical/Scale 10 with progress 1 1`] = `
+exports[`react-graph-editor/ScrollBar/Y-Axis/Scale 10 with progress 1 1`] = `
 <Track
-  orientation="vertical"
+  axis="y"
   progress={1}
   style={
     Object {
@@ -350,22 +350,22 @@ exports[`react-graph-editor/ScrollBar/Vertical/Scale 10 with progress 1 1`] = `
   }
 >
   <ThumbContainer
-    orientation="vertical"
+    axis="y"
     progress={1}
     scale={10}
   >
     <ThumbSegment
+      axis="y"
       dragSignifier={true}
-      orientation="vertical"
       position="start"
     />
     <ThumbSegment
-      orientation="vertical"
+      axis="y"
       position="middle"
     />
     <ThumbSegment
+      axis="y"
       dragSignifier={true}
-      orientation="vertical"
       position="end"
     />
   </ThumbContainer>

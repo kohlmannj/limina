@@ -1,9 +1,11 @@
 import React, { CSSProperties } from 'react';
-import { OverflowMode, ScrollBarOrientation } from '../..';
+import { OverflowMode, ScrollBarAxis } from '../..';
 import {
   IStyledThumbSegmentProps,
   ThumbSegmentPosition,
 } from '../ScrollBar/components/ThumbSegment';
+
+export type DragType = 'progress' | 'scale';
 
 export interface IScrollViewProps {
   className?: string;
@@ -33,13 +35,13 @@ export interface IScrollViewProps {
 }
 
 export interface IScrollViewState {
-  dragging: boolean;
+  dragAxis?: ScrollBarAxis;
   dragBeginX?: number;
   dragBeginY?: number;
-  dragAxis?: ScrollBarOrientation;
   dragPosition?: ThumbSegmentPosition;
   dragThumbLength?: number;
   dragTrackLength?: number;
+  dragType?: DragType;
   progressX: number;
   progressY: number;
   scaleX: number;
@@ -47,8 +49,9 @@ export interface IScrollViewState {
 }
 
 export interface IScaleEventHandlerOptions {
-  dragAxis: ScrollBarOrientation;
-  dragPosition: ThumbSegmentPosition;
+  axis: ScrollBarAxis;
+  pos: ThumbSegmentPosition;
+  type: DragType;
 }
 
 // export type MouseOrTouchEventListener = (event: MouseEvent | TouchEvent) => void;

@@ -1,20 +1,20 @@
 import React, { CSSProperties, SFC } from 'react';
-import { OverflowMode, ScrollBarOrientation } from '../..';
+import { OverflowMode, ScrollBarAxis } from '../..';
 import { IScrollBarTheme } from '../../theme';
 import ThumbContainer from './components/ThumbContainer';
 import ThumbSegment, { IStyledThumbSegmentProps } from './components/ThumbSegment';
 import Track from './components/Track';
 
 export interface IScrollBarProps {
+  axis?: ScrollBarAxis;
   className?: string;
-  orientation?: ScrollBarOrientation;
   overflow?: OverflowMode;
   progress?: number;
   scale?: number;
   style?: CSSProperties;
-  thumbStartProps?: Partial<IStyledThumbSegmentProps>;
-  thumbMiddleProps?: Partial<IStyledThumbSegmentProps>;
   thumbEndProps?: Partial<IStyledThumbSegmentProps>;
+  thumbMiddleProps?: Partial<IStyledThumbSegmentProps>;
+  thumbStartProps?: Partial<IStyledThumbSegmentProps>;
 }
 
 export interface IStyledScrollBarProps extends IScrollBarProps {
@@ -22,8 +22,8 @@ export interface IStyledScrollBarProps extends IScrollBarProps {
 }
 
 export const ScrollBar: SFC<IScrollBarProps> = ({
+  axis,
   className,
-  orientation,
   overflow,
   progress,
   scale,
@@ -32,25 +32,20 @@ export const ScrollBar: SFC<IScrollBarProps> = ({
   thumbMiddleProps,
   thumbStartProps,
 }) => (
-  <Track className={className} orientation={orientation} progress={progress} style={style}>
+  <Track className={className} axis={axis} progress={progress} style={style}>
     {typeof scale !== 'undefined' &&
       (scale > 1 || (scale <= 1 && overflow === 'scroll')) && (
-        <ThumbContainer orientation={orientation} progress={progress} scale={scale}>
-          <ThumbSegment
-            dragSignifier
-            position="start"
-            orientation={orientation}
-            {...thumbStartProps}
-          />
-          <ThumbSegment position="middle" orientation={orientation} {...thumbMiddleProps} />
-          <ThumbSegment dragSignifier position="end" orientation={orientation} {...thumbEndProps} />
+        <ThumbContainer axis={axis} progress={progress} scale={scale}>
+          <ThumbSegment dragSignifier axis={axis} position="start" {...thumbStartProps} />
+          <ThumbSegment axis={axis} position="middle" {...thumbMiddleProps} />
+          <ThumbSegment dragSignifier axis={axis} position="end" {...thumbEndProps} />
         </ThumbContainer>
       )}
   </Track>
 );
 
 ScrollBar.defaultProps = {
-  orientation: 'vertical',
+  axis: 'y',
   overflow: 'scroll',
   scale: 1,
 };

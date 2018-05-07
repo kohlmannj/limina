@@ -8,12 +8,7 @@ import defaultTheme from '../src/theme';
 
 storiesOf('react-graph-editor/ScrollBar', module)
   .add('with knobs', () => {
-    const orientation = select(
-      'Orientation',
-      { vertical: 'Vertical', horizontal: 'Horizontal' },
-      'vertical',
-      'orientation'
-    );
+    const axis = select('Axis', { y: 'Y (Vertical)', x: 'X (Horizontal)' }, 'y', 'axi');
 
     return (
       <ThemeProvider
@@ -67,16 +62,16 @@ storiesOf('react-graph-editor/ScrollBar', module)
             },
             'scale'
           )}
-          orientation={orientation}
+          axis={axis}
           overflow={select('Overflow', { auto: 'Auto', scroll: 'Scroll' }, 'auto', 'overflow')}
-          style={{ [orientation === 'vertical' ? 'height' : 'width']: '400px', margin: '25vh' }}
+          style={{ [axis === 'y' ? 'height' : 'width']: '400px', margin: '25vh' }}
         />
       </ThemeProvider>
     );
   })
   .add('with default props', () => <ScrollBar style={{ height: '100vh' }} />);
 
-storiesOf('react-graph-editor/ScrollBar/Vertical/Scale 2', module)
+storiesOf('react-graph-editor/ScrollBar/Y-Axis/Scale 2', module)
   .add('with progress 0', () => <ScrollBar scale={2} style={{ height: '100vh' }} />)
   .add('with progress 0.25', () => (
     <ScrollBar progress={0.25} scale={2} style={{ height: '100vh' }} />
@@ -89,7 +84,7 @@ storiesOf('react-graph-editor/ScrollBar/Vertical/Scale 2', module)
   ))
   .add('with progress 1', () => <ScrollBar progress={1} scale={2} style={{ height: '100vh' }} />);
 
-storiesOf('react-graph-editor/ScrollBar/Vertical/Scale 10', module)
+storiesOf('react-graph-editor/ScrollBar/Y-Axis/Scale 10', module)
   .add('with progress 0', () => <ScrollBar scale={10} style={{ height: '100vh' }} />)
   .add('with progress 0.25', () => (
     <ScrollBar progress={0.25} scale={10} style={{ height: '100vh' }} />

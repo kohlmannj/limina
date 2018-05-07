@@ -4,7 +4,7 @@ export type PointShape = 'circle' | 'diamond' | 'square';
 
 export type OriginDirection = 'top' | 'bottom' | 'left' | 'right';
 
-export type ScrollBarOrientation = 'horizontal' | 'vertical';
+export type ScrollBarAxis = 'x' | 'y';
 
 export type OverflowMode = 'scroll' | 'auto';
 

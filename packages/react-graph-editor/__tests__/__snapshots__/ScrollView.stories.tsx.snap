@@ -70,8 +70,8 @@ exports[`react-graph-editor/ScrollView with auto scale and x and y overflow 1`] 
     </div>
   </div>
   <ScrollBar
+    axis="x"
     className="emotion-1"
-    orientation="horizontal"
     overflow="scroll"
     progress={0.5}
     scale={1}
@@ -91,8 +91,8 @@ exports[`react-graph-editor/ScrollView with auto scale and x and y overflow 1`] 
     }
   />
   <ScrollBar
+    axis="y"
     className="emotion-1"
-    orientation="vertical"
     overflow="scroll"
     progress={0.5}
     scale={1}
@@ -181,8 +181,8 @@ exports[`react-graph-editor/ScrollView with auto scale and y overflow 1`] = `
     />
   </div>
   <ScrollBar
+    axis="x"
     className="emotion-1"
-    orientation="horizontal"
     overflow="scroll"
     progress={0.5}
     scale={1}
@@ -202,8 +202,8 @@ exports[`react-graph-editor/ScrollView with auto scale and y overflow 1`] = `
     }
   />
   <ScrollBar
+    axis="y"
     className="emotion-1"
-    orientation="vertical"
     overflow="scroll"
     progress={0.5}
     scale={1}
@@ -282,8 +282,8 @@ exports[`react-graph-editor/ScrollView with resizeable kitten 1`] = `
     </div>
   </div>
   <ScrollBar
+    axis="x"
     className="emotion-2"
-    orientation="horizontal"
     overflow="scroll"
     progress={0.5}
     scale={1}
@@ -303,8 +303,8 @@ exports[`react-graph-editor/ScrollView with resizeable kitten 1`] = `
     }
   />
   <ScrollBar
+    axis="y"
     className="emotion-2"
-    orientation="vertical"
     overflow="scroll"
     progress={0.5}
     scale={1}

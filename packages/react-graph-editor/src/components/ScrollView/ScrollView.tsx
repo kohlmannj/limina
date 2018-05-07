@@ -21,7 +21,6 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
   };
 
   public state: IScrollViewState = {
-    dragging: false,
     progressX:
       (this.props.scaleX && this.props.scaleX !== 'auto' ? this.props.scaleX : 1) === 1 ? 0.5 : 0,
     progressY:
@@ -61,25 +60,20 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
   }
 
   public componentDidUpdate(prevProps: IScrollViewProps, prevState: IScrollViewState) {
-    const { dragging, dragAxis, progressX, progressY, scaleX, scaleY } = this.state;
+    const { dragAxis, dragType, progressX, progressY, scaleX, scaleY } = this.state;
     if (!this.overflowContainer) {
       return;
     }
 
     // While dragging: recalculate scrollLeft and scrollTop positions after scale changes
-    if (dragging) {
+    if (dragType === 'scale') {
       const { width, height } = this.overflowContainer.getBoundingClientRect();
 
-      if (
-        dragAxis === 'horizontal' &&
-        scaleX !== prevState.scaleX &&
-        progressX > 0 &&
-        progressX < 1
-      ) {
+      if (dragAxis === 'x' && scaleX !== prevState.scaleX && progressX > 0 && progressX < 1) {
         const nextScrollLeft = (this.overflowContainer.scrollWidth - width) * progressX;
         this.overflowContainer.scrollLeft = nextScrollLeft;
       } else if (
-        dragAxis === 'vertical' &&
+        dragAxis === 'y' &&
         scaleY !== prevState.scaleY &&
         progressY > 0 &&
         progressY < 1
@@ -133,10 +127,12 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
     }
 
     // Generate event handlers
-    const onBeginScaleXStart = this.onBeginScale({ dragAxis: 'horizontal', dragPosition: 'start' });
-    const onBeginScaleXEnd = this.onBeginScale({ dragAxis: 'horizontal', dragPosition: 'end' });
-    const onBeginScaleYStart = this.onBeginScale({ dragAxis: 'vertical', dragPosition: 'start' });
-    const onBeginScaleYEnd = this.onBeginScale({ dragAxis: 'vertical', dragPosition: 'end' });
+    const onBeginDragXSrt = this.onBeginDrag({ axis: 'x', pos: 'start', type: 'scale' });
+    const onBeginDragXMid = this.onBeginDrag({ axis: 'x', pos: 'middle', type: 'progress' });
+    const onBeginDragXEnd = this.onBeginDrag({ axis: 'x', pos: 'end', type: 'scale' });
+    const onBeginDragYSrt = this.onBeginDrag({ axis: 'y', pos: 'start', type: 'scale' });
+    const onBeginDragYMid = this.onBeginDrag({ axis: 'y', pos: 'middle', type: 'progress' });
+    const onBeginDragYEnd = this.onBeginDrag({ axis: 'y', pos: 'end', type: 'scale' });
 
     return (
       <div className={[className, root].filter(Boolean).join(' ')} style={style} {...rest}>
@@ -156,39 +152,49 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
           </div>
         </div>
         <ScrollBar
+          axis="x"
           className={absolutelyPositioned}
-          orientation="horizontal"
           overflow={overflowX || overflow}
           progress={progressX}
           scale={scaleX}
           thumbStartProps={{
             dragSignifier: scaleXProp !== 'auto',
-            onMouseDown: onBeginScaleXStart,
-            onTouchStart: onBeginScaleXStart,
+            onMouseDown: onBeginDragXSrt,
+            onTouchStart: onBeginDragXSrt,
           }}
-          thumbMiddleProps={thumbXMiddleProps}
+          thumbMiddleProps={
+            {
+              // onMouseDown: onBeginDragXMid,
+              // onTouchStart: onBeginDragXMid,
+            }
+          }
           thumbEndProps={{
             dragSignifier: scaleXProp !== 'auto',
-            onMouseDown: onBeginScaleXEnd,
-            onTouchStart: onBeginScaleXEnd,
+            onMouseDown: onBeginDragXEnd,
+            onTouchStart: onBeginDragXEnd,
           }}
         />
         <ScrollBar
+          axis="y"
           className={absolutelyPositioned}
-          orientation="vertical"
           overflow={overflowY || overflow}
           progress={progressY}
           scale={scaleY}
           thumbStartProps={{
             dragSignifier: scaleYProp !== 'auto',
-            onMouseDown: onBeginScaleYStart,
-            onTouchStart: onBeginScaleYStart,
+            onMouseDown: onBeginDragYSrt,
+            onTouchStart: onBeginDragYSrt,
           }}
-          thumbMiddleProps={thumbYMiddleProps}
+          thumbMiddleProps={
+            {
+              // onMouseDown: onBeginDragYMid,
+              // onTouchStart: onBeginDragYMid,
+            }
+          }
           thumbEndProps={{
             dragSignifier: scaleYProp !== 'auto',
-            onMouseDown: onBeginScaleYEnd,
-            onTouchStart: onBeginScaleYEnd,
+            onMouseDown: onBeginDragYEnd,
+            onTouchStart: onBeginDragYEnd,
           }}
         />
         <ScrollBarCorner />
@@ -197,7 +203,7 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
   }
 
   private onScroll = (): void => {
-    if (!this.overflowContainer || this.state.dragging) {
+    if (!this.overflowContainer || typeof this.state.dragType !== 'undefined') {
       return;
     }
 
@@ -243,15 +249,19 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
       window.removeEventListener('resize', this.onScroll);
     }
 
-    window.removeEventListener('mousemove', this.onChangeScale);
-    window.removeEventListener('mouseup', this.onEndScale);
-    window.removeEventListener('touchmove', this.onChangeScale);
-    window.removeEventListener('touchend', this.onEndScale);
+    if (typeof this.state.dragType !== 'undefined') {
+      window.removeEventListener('mousemove', this.onMoveDrag);
+      window.removeEventListener('mouseup', this.onEndDrag);
+      window.removeEventListener('touchmove', this.onMoveDrag);
+      window.removeEventListener('touchend', this.onEndDrag);
+    }
   };
 
-  private onBeginScale = ({ dragAxis, dragPosition }: IScaleEventHandlerOptions) => (
-    e: ReactMouseOrTouchEvent<HTMLButtonElement>
-  ): void => {
+  private onBeginDrag = ({
+    axis: dragAxis,
+    pos: dragPosition,
+    type: dragType,
+  }: IScaleEventHandlerOptions) => (e: ReactMouseOrTouchEvent<HTMLButtonElement>): void => {
     const { target, touches } = e as React.TouchEvent<HTMLButtonElement>;
     const { clientX: dragBeginX, clientY: dragBeginY } = touches
       ? touches[0]
@@ -266,9 +276,9 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
     if (thumb) {
       const { width, height } = thumb.getBoundingClientRect();
 
-      if (dragAxis === 'horizontal') {
+      if (dragAxis === 'x') {
         dragThumbLength = width;
-      } else if (dragAxis === 'vertical') {
+      } else if (dragAxis === 'y') {
         dragThumbLength = height;
       }
     }
@@ -276,9 +286,9 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
     if (track) {
       const { width, height } = track.getBoundingClientRect();
 
-      if (dragAxis === 'horizontal') {
+      if (dragAxis === 'x') {
         dragTrackLength = width;
-      } else if (dragAxis === 'vertical') {
+      } else if (dragAxis === 'y') {
         dragTrackLength = height;
       }
     }
@@ -287,19 +297,19 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
       dragAxis,
       dragBeginX,
       dragBeginY,
-      dragging: true,
       dragPosition,
       dragThumbLength,
       dragTrackLength,
+      dragType,
     });
 
-    window.addEventListener(touches ? 'touchmove' : 'mousemove', this.onChangeScale);
-    window.addEventListener(touches ? 'touchend' : 'mouseup', this.onEndScale, {
+    window.addEventListener(touches ? 'touchmove' : 'mousemove', this.onMoveDrag);
+    window.addEventListener(touches ? 'touchend' : 'mouseup', this.onEndDrag, {
       once: true,
     });
   };
 
-  private onChangeScale = (e: MouseEvent | TouchEvent): void => {
+  private onMoveDrag = (e: MouseEvent | TouchEvent): void => {
     const { touches } = e as TouchEvent;
     const { clientX, clientY } = touches ? touches[0] : (e as MouseEvent);
 
@@ -311,6 +321,7 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
       dragPosition,
       dragThumbLength,
       dragTrackLength,
+      dragType,
       progressX,
       progressY,
     } = this.state;
@@ -325,63 +336,83 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
     let dLength;
     let minScale;
     let maxScale;
+    let dLengthScaleFactor = 1;
 
-    if (dragAxis === 'horizontal') {
+    if (dragAxis === 'x') {
       dLength = dragPosition === 'start' ? -dX : dX;
       minScale = minScaleX;
       maxScale = maxScaleX;
       if (progressX > 0 && progressX < 1) {
-        dLength /= dragPosition === 'start' ? progressX : 1 - progressX;
+        if (dragPosition === 'start') {
+          dLengthScaleFactor = 1 / progressX;
+        } else if (dragPosition === 'end') {
+          dLengthScaleFactor = 1 / (1 - progressX);
+        }
       }
-    } else if (dragAxis === 'vertical') {
+    } else if (dragAxis === 'y') {
       dLength = dragPosition === 'start' ? -dY : dY;
       minScale = minScaleY;
       maxScale = maxScaleY;
       if (progressY > 0 && progressY < 1) {
-        dLength /= dragPosition === 'start' ? progressY : 1 - progressY;
+        if (dragPosition === 'start') {
+          dLengthScaleFactor = 1 / progressY;
+        } else if (dragPosition === 'end') {
+          dLengthScaleFactor = 1 / (1 - progressY);
+        }
       }
     }
 
-    const nextThumbLength = dragThumbLength && dLength && dragThumbLength + dLength;
-    let nextScale =
-      dragTrackLength && nextThumbLength ? dragTrackLength / nextThumbLength : undefined;
+    if (dragType === 'scale') {
+      const nextThumbLength =
+        dragThumbLength &&
+        dLength &&
+        dLengthScaleFactor &&
+        dragThumbLength + dLength * dLengthScaleFactor;
 
-    // Round nextScale to the nearest increment
-    if (nextScale && scaleIncrement) {
-      nextScale = Math.round(nextScale * 1 / scaleIncrement) / (1 / scaleIncrement);
-    }
+      let nextScale =
+        dragTrackLength && nextThumbLength ? dragTrackLength / nextThumbLength : undefined;
 
-    if (nextScale && minScale && maxScale && nextScale >= minScale && nextScale <= maxScale) {
-      if (dragAxis === 'horizontal') {
-        this.setState({ scaleX: nextScale });
-      } else if (dragAxis === 'vertical') {
-        this.setState({ scaleY: nextScale });
+      // Round nextScale to the nearest increment
+      if (nextScale && scaleIncrement) {
+        nextScale = Math.round(nextScale * 1 / scaleIncrement) / (1 / scaleIncrement);
       }
+
+      if (nextScale && minScale && maxScale && nextScale >= minScale && nextScale <= maxScale) {
+        if (dragAxis === 'x') {
+          this.setState({ scaleX: nextScale });
+        } else if (dragAxis === 'y') {
+          this.setState({ scaleY: nextScale });
+        }
+      }
+    } else if (dragType === 'progress') {
+      // TODO
     }
   };
 
-  private onEndScale = (e: MouseEvent | TouchEvent): void => {
+  private onEndDrag = (e: MouseEvent | TouchEvent): void => {
     const { touches } = e as TouchEvent;
-    const { scaleX, scaleY } = this.state;
+    const { dragType, scaleX, scaleY } = this.state;
 
-    window.removeEventListener(touches ? 'touchmove' : 'mousemove', this.onChangeScale);
+    if (dragType === 'scale') {
+      if (scaleX === 1) {
+        this.setState({ progressX: 0.5 });
+      }
 
-    if (scaleX === 1) {
-      this.setState({ progressX: 0.5 });
+      if (scaleY === 1) {
+        this.setState({ progressY: 0.5 });
+      }
     }
 
-    if (scaleY === 1) {
-      this.setState({ progressY: 0.5 });
-    }
+    window.removeEventListener(touches ? 'touchmove' : 'mousemove', this.onMoveDrag);
 
     this.setState({
-      dragging: false,
+      dragAxis: undefined,
       dragBeginX: undefined,
       dragBeginY: undefined,
-      dragAxis: undefined,
       dragPosition: undefined,
       dragThumbLength: undefined,
       dragTrackLength: undefined,
+      dragType: undefined,
     });
   };
 }

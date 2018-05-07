@@ -20,7 +20,7 @@ export interface IStyledThumbSegmentProps extends IThumbSegmentProps, IStyledScr
 
 export const dragSignifier = (props: IStyledThumbSegmentProps) =>
   css({
-    cursor: `${!props.orientation || props.orientation === 'vertical' ? 'row' : 'col'}-resize`,
+    cursor: `${!props.axis || props.axis === 'y' ? 'row' : 'col'}-resize`,
 
     '&::after': {
       position: 'absolute',
@@ -30,38 +30,28 @@ export const dragSignifier = (props: IStyledThumbSegmentProps) =>
       left: 0,
       boxSizing: 'border-box',
       margin: 'auto',
-      [!props.orientation || props.orientation === 'vertical'
-        ? 'border-top'
-        : 'border-left']: '1px solid',
-      [!props.orientation || props.orientation === 'vertical'
-        ? 'border-bottom'
-        : 'border-right']: '1px solid',
+      [!props.axis || props.axis === 'y' ? 'border-top' : 'border-left']: '1px solid',
+      [!props.axis || props.axis === 'y' ? 'border-bottom' : 'border-right']: '1px solid',
       borderColor:
         props.theme && props.theme.trackColor ? props.theme.trackColor : defaultTheme.trackColor,
-      [!props.orientation || props.orientation === 'vertical'
-        ? 'width'
-        : 'height']: `${(props.theme && typeof props.theme.thumbWidth !== 'undefined'
+      [!props.axis || props.axis === 'y' ? 'width' : 'height']: `${(props.theme &&
+      typeof props.theme.thumbWidth !== 'undefined'
         ? props.theme.thumbWidth
         : defaultTheme.thumbWidth) / 2}px`,
-      [!props.orientation || props.orientation === 'vertical'
-        ? 'height'
-        : 'width']: `${(props.theme && typeof props.theme.thumbWidth !== 'undefined'
+      [!props.axis || props.axis === 'y' ? 'height' : 'width']: `${(props.theme &&
+      typeof props.theme.thumbWidth !== 'undefined'
         ? props.theme.thumbWidth
         : defaultTheme.thumbWidth) / 4}px`,
-      [!props.orientation || props.orientation === 'vertical' ? 'min-height' : 'min-width']: '3px',
+      [!props.axis || props.axis === 'y' ? 'min-height' : 'min-width']: '3px',
       content: "''",
     },
   });
 
-export const getBorderRadiusValue = ({
-  orientation,
-  position,
-  theme,
-}: IStyledThumbSegmentProps) => {
+export const getBorderRadiusValue = ({ axis, position, theme }: IStyledThumbSegmentProps) => {
   const radius = getSingleBorderRadiusValue({ theme });
   let borderRadiusValue = '0';
 
-  if (!orientation || orientation === 'vertical') {
+  if (!axis || axis === 'y') {
     if (position === 'start') {
       borderRadiusValue = `${radius} ${radius} 0 0`;
     } else if (position === 'end') {
@@ -109,24 +99,22 @@ const thumbSegmentClassNames = {
 };
 
 const dragSignifierClassNames = {
-  start: {
-    horizontal: dragSignifier({ position: 'start', orientation: 'horizontal' }),
-    vertical: dragSignifier({ position: 'start', orientation: 'vertical' }),
+  x: {
+    start: dragSignifier({ axis: 'x', position: 'start' }),
+    middle: dragSignifier({ axis: 'x', position: 'middle' }),
+    end: dragSignifier({ axis: 'x', position: 'end' }),
   },
-  middle: {
-    horizontal: dragSignifier({ position: 'middle', orientation: 'horizontal' }),
-    vertical: dragSignifier({ position: 'middle', orientation: 'vertical' }),
-  },
-  end: {
-    horizontal: dragSignifier({ position: 'end', orientation: 'horizontal' }),
-    vertical: dragSignifier({ position: 'end', orientation: 'vertical' }),
+  y: {
+    start: dragSignifier({ axis: 'y', position: 'start' }),
+    middle: dragSignifier({ axis: 'y', position: 'middle' }),
+    end: dragSignifier({ axis: 'y', position: 'end' }),
   },
 };
 
 const ThumbSegment: SFC<IThumbSegmentProps> = ({
   className,
   dragSignifier: dragSignifierProp,
-  orientation,
+  axis,
   position,
   ...rest
 }) => (
@@ -134,7 +122,7 @@ const ThumbSegment: SFC<IThumbSegmentProps> = ({
     className={[
       className,
       thumbSegmentClassNames[position],
-      dragSignifierProp && dragSignifierClassNames[position][orientation || 'vertical'],
+      dragSignifierProp && dragSignifierClassNames[axis || 'y'][position],
     ]
       .filter(Boolean)
       .join(' ')}

@@ -24,12 +24,12 @@ export const getTranslateFactor = ({ progress, scale }: IScrollBarProps) => {
   return (cappedProgress + halfwayAddend) * scaleMultiplier;
 };
 
-export const getMainAxisLength = ({ orientation }: IScrollBarProps) => ({
-  [!orientation || orientation === 'vertical' ? 'width' : 'height']: '100%',
+export const getMainAxisLength = ({ axis }: IScrollBarProps) => ({
+  [!axis || axis === 'y' ? 'width' : 'height']: '100%',
 });
 
-export const getCrossAxisLength = ({ orientation, progress, scale }: IScrollBarProps) => {
-  const crossAxisProperty = !orientation || orientation === 'vertical' ? 'height' : 'width';
+export const getCrossAxisLength = ({ axis, progress, scale }: IScrollBarProps) => {
+  const crossAxisProperty = !axis || axis === 'y' ? 'height' : 'width';
   // const minCrossAxisProperty = `min${crossAxisProperty}`;
 
   return {
@@ -41,10 +41,11 @@ export const getSingleBorderRadiusValue = ({ theme }: IStyledScrollBarProps) =>
   (theme && typeof theme.thumbWidth !== 'undefined' ? theme.thumbWidth : defaultTheme.thumbWidth) /
   2;
 
-export const getTransform = ({ orientation, progress, scale }: IScrollBarProps) => ({
-  transform: `translate${
-    !orientation || orientation === 'vertical' ? 'Y' : 'X'
-  }(${getTranslateFactor({ progress, scale }) * 100}%)`,
+export const getTransform = ({ axis, progress, scale }: IScrollBarProps) => ({
+  transform: `translate${(axis || 'y').toUpperCase()}(${getTranslateFactor({
+    progress,
+    scale,
+  }) * 100}%)`,
 });
 
 export const getSingleMarginValue = ({ theme }: IStyledScrollBarProps) =>
@@ -78,7 +79,7 @@ const thumbStyles = css`
 
 const ThumbContainer: SFC<IScrollBarProps> = ({
   className,
-  orientation,
+  axis,
   progress,
   scale,
   style,
@@ -88,9 +89,9 @@ const ThumbContainer: SFC<IScrollBarProps> = ({
     className={`${className} ${thumbStyles}`}
     style={{
       ...style,
-      ...getMainAxisLength({ orientation }),
-      ...getCrossAxisLength({ orientation, progress, scale }),
-      ...getTransform({ orientation, progress, scale }),
+      ...getMainAxisLength({ axis }),
+      ...getCrossAxisLength({ axis, progress, scale }),
+      ...getTransform({ axis, progress, scale }),
     }}
     {...rest}
   />
