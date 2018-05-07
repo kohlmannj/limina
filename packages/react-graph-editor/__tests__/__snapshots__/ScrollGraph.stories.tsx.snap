@@ -2,6 +2,11 @@
 
 exports[`react-graph-editor/ScrollGraph with default scales 1`] = `
 <ScrollView
+  maxScaleX={10}
+  maxScaleY={10}
+  minScaleX={1}
+  minScaleY={1}
+  scaleIncrement={0.01}
   scaleX={1}
   scaleY={1}
   style={
@@ -79,6 +84,11 @@ exports[`react-graph-editor/ScrollGraph with default scales 1`] = `
 
 exports[`react-graph-editor/ScrollGraph with scaleX = 2 1`] = `
 <ScrollView
+  maxScaleX={10}
+  maxScaleY={10}
+  minScaleX={1}
+  minScaleY={1}
+  scaleIncrement={0.01}
   scaleX={2}
   scaleY={1}
   style={
@@ -156,6 +166,11 @@ exports[`react-graph-editor/ScrollGraph with scaleX = 2 1`] = `
 
 exports[`react-graph-editor/ScrollGraph with scaleX = 10 1`] = `
 <ScrollView
+  maxScaleX={10}
+  maxScaleY={10}
+  minScaleX={1}
+  minScaleY={1}
+  scaleIncrement={0.01}
   scaleX={10}
   scaleY={1}
   style={
@@ -233,6 +248,11 @@ exports[`react-graph-editor/ScrollGraph with scaleX = 10 1`] = `
 
 exports[`react-graph-editor/ScrollGraph with scaleX = scaleY = 2 1`] = `
 <ScrollView
+  maxScaleX={10}
+  maxScaleY={10}
+  minScaleX={1}
+  minScaleY={1}
+  scaleIncrement={0.01}
   scaleX={2}
   scaleY={2}
   style={
@@ -310,6 +330,11 @@ exports[`react-graph-editor/ScrollGraph with scaleX = scaleY = 2 1`] = `
 
 exports[`react-graph-editor/ScrollGraph with scaleX = scaleY = 10 1`] = `
 <ScrollView
+  maxScaleX={10}
+  maxScaleY={10}
+  minScaleX={1}
+  minScaleY={1}
+  scaleIncrement={0.01}
   scaleX={10}
   scaleY={10}
   style={
@@ -387,6 +412,11 @@ exports[`react-graph-editor/ScrollGraph with scaleX = scaleY = 10 1`] = `
 
 exports[`react-graph-editor/ScrollGraph with scaleY = 2 1`] = `
 <ScrollView
+  maxScaleX={10}
+  maxScaleY={10}
+  minScaleX={1}
+  minScaleY={1}
+  scaleIncrement={0.01}
   scaleX={1}
   scaleY={2}
   style={
@@ -464,6 +494,11 @@ exports[`react-graph-editor/ScrollGraph with scaleY = 2 1`] = `
 
 exports[`react-graph-editor/ScrollGraph with scaleY = 10 1`] = `
 <ScrollView
+  maxScaleX={10}
+  maxScaleY={10}
+  minScaleX={1}
+  minScaleY={1}
+  scaleIncrement={0.01}
   scaleX={1}
   scaleY={10}
   style={

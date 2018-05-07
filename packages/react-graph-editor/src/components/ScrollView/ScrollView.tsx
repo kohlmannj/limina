@@ -311,6 +311,8 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
       dragPosition,
       dragThumbLength,
       dragTrackLength,
+      progressX,
+      progressY,
     } = this.state;
 
     if (!dragBeginX || !dragBeginY) {
@@ -328,10 +330,16 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
       dLength = dragPosition === 'start' ? -dX : dX;
       minScale = minScaleX;
       maxScale = maxScaleX;
+      if (progressX > 0 && progressX < 1) {
+        dLength /= dragPosition === 'start' ? progressX : 1 - progressX;
+      }
     } else if (dragAxis === 'vertical') {
       dLength = dragPosition === 'start' ? -dY : dY;
       minScale = minScaleY;
       maxScale = maxScaleY;
+      if (progressY > 0 && progressY < 1) {
+        dLength /= dragPosition === 'start' ? progressY : 1 - progressY;
+      }
     }
 
     const nextThumbLength = dragThumbLength && dLength && dragThumbLength + dLength;
@@ -346,22 +354,25 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
     if (nextScale && minScale && maxScale && nextScale >= minScale && nextScale <= maxScale) {
       if (dragAxis === 'horizontal') {
         this.setState({ scaleX: nextScale });
-
-        if (nextScale === 1) {
-          this.setState({ progressX: 0.5 });
-        }
       } else if (dragAxis === 'vertical') {
         this.setState({ scaleY: nextScale });
-
-        if (nextScale === 1) {
-          this.setState({ progressY: 0.5 });
-        }
       }
     }
   };
 
   private onEndScale = (e: MouseEvent | TouchEvent): void => {
     const { touches } = e as TouchEvent;
+    const { scaleX, scaleY } = this.state;
+
+    window.removeEventListener(touches ? 'touchmove' : 'mousemove', this.onChangeScale);
+
+    if (scaleX === 1) {
+      this.setState({ progressX: 0.5 });
+    }
+
+    if (scaleY === 1) {
+      this.setState({ progressY: 0.5 });
+    }
 
     this.setState({
       dragging: false,
@@ -372,7 +383,5 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
       dragThumbLength: undefined,
       dragTrackLength: undefined,
     });
-
-    window.removeEventListener(touches ? 'touchmove' : 'mousemove', this.onChangeScale);
   };
 }

@@ -1,12 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`react-graph-editor/ScrollView with auto scale and x and y overflow 1`] = `
-.emotion-0 {
+.emotion-3 {
+  position: relative;
+  overflow: hidden;
+}
+
+.emotion-1 {
   position: absolute;
   z-index: 1;
 }
 
-<ScrollViewContainer
+.emotion-0 {
+  overflow: auto;
+  width: calc(100% - 16px);
+  height: calc(100% - 16px);
+  -webkit-overflow-scrolling: touch;
+}
+
+.emotion-0::-webkit-scrollbar {
+  display: none;
+}
+
+<div
+  className="emotion-3"
   style={
     Object {
       "background": "gray",
@@ -16,8 +33,8 @@ exports[`react-graph-editor/ScrollView with auto scale and x and y overflow 1`] 
     }
   }
 >
-  <ScrollViewOverflowContainer
-    innerRef={[Function]}
+  <div
+    className="emotion-0"
     onScroll={[Function]}
   >
     <div
@@ -51,56 +68,77 @@ exports[`react-graph-editor/ScrollView with auto scale and x and y overflow 1`] 
         }
       />
     </div>
-  </ScrollViewOverflowContainer>
+  </div>
   <ScrollBar
-    className="emotion-0"
+    className="emotion-1"
     orientation="horizontal"
     overflow="scroll"
-    progress={0}
+    progress={0.5}
     scale={1}
     thumbEndProps={
       Object {
         "dragSignifier": false,
         "onMouseDown": [Function],
+        "onTouchStart": [Function],
       }
     }
     thumbStartProps={
       Object {
         "dragSignifier": false,
         "onMouseDown": [Function],
+        "onTouchStart": [Function],
       }
     }
   />
   <ScrollBar
-    className="emotion-0"
+    className="emotion-1"
     orientation="vertical"
     overflow="scroll"
-    progress={0}
+    progress={0.5}
     scale={1}
     thumbEndProps={
       Object {
         "dragSignifier": false,
         "onMouseDown": [Function],
+        "onTouchStart": [Function],
       }
     }
     thumbStartProps={
       Object {
         "dragSignifier": false,
         "onMouseDown": [Function],
+        "onTouchStart": [Function],
       }
     }
   />
   <ScrollBarCorner />
-</ScrollViewContainer>
+</div>
 `;
 
 exports[`react-graph-editor/ScrollView with auto scale and y overflow 1`] = `
-.emotion-0 {
+.emotion-3 {
+  position: relative;
+  overflow: hidden;
+}
+
+.emotion-1 {
   position: absolute;
   z-index: 1;
 }
 
-<ScrollViewContainer
+.emotion-0 {
+  overflow: auto;
+  width: calc(100% - 16px);
+  height: calc(100% - 16px);
+  -webkit-overflow-scrolling: touch;
+}
+
+.emotion-0::-webkit-scrollbar {
+  display: none;
+}
+
+<div
+  className="emotion-3"
   style={
     Object {
       "background": "gray",
@@ -110,8 +148,8 @@ exports[`react-graph-editor/ScrollView with auto scale and y overflow 1`] = `
     }
   }
 >
-  <ScrollViewOverflowContainer
-    innerRef={[Function]}
+  <div
+    className="emotion-0"
     onScroll={[Function]}
   >
     <div
@@ -141,53 +179,73 @@ exports[`react-graph-editor/ScrollView with auto scale and y overflow 1`] = `
         }
       }
     />
-  </ScrollViewOverflowContainer>
+  </div>
   <ScrollBar
-    className="emotion-0"
+    className="emotion-1"
     orientation="horizontal"
     overflow="scroll"
-    progress={0}
+    progress={0.5}
     scale={1}
     thumbEndProps={
       Object {
         "dragSignifier": true,
         "onMouseDown": [Function],
+        "onTouchStart": [Function],
       }
     }
     thumbStartProps={
       Object {
         "dragSignifier": true,
         "onMouseDown": [Function],
+        "onTouchStart": [Function],
       }
     }
   />
   <ScrollBar
-    className="emotion-0"
+    className="emotion-1"
     orientation="vertical"
     overflow="scroll"
-    progress={0}
+    progress={0.5}
     scale={1}
     thumbEndProps={
       Object {
         "dragSignifier": false,
         "onMouseDown": [Function],
+        "onTouchStart": [Function],
       }
     }
     thumbStartProps={
       Object {
         "dragSignifier": false,
         "onMouseDown": [Function],
+        "onTouchStart": [Function],
       }
     }
   />
   <ScrollBarCorner />
-</ScrollViewContainer>
+</div>
 `;
 
 exports[`react-graph-editor/ScrollView with resizeable kitten 1`] = `
-.emotion-1 {
+.emotion-4 {
+  position: relative;
+  overflow: hidden;
+}
+
+.emotion-2 {
   position: absolute;
   z-index: 1;
+}
+
+.emotion-1 {
+  overflow: auto;
+  width: calc(100% - 16px);
+  height: calc(100% - 16px);
+  -webkit-overflow-scrolling: touch;
+}
+
+.emotion-1::-webkit-scrollbar {
+  display: none;
 }
 
 .emotion-0 {
@@ -197,7 +255,8 @@ exports[`react-graph-editor/ScrollView with resizeable kitten 1`] = `
   background-size: 100% 100%;
 }
 
-<ScrollViewContainer
+<div
+  className="emotion-4"
   style={
     Object {
       "height": "100vh",
@@ -205,8 +264,8 @@ exports[`react-graph-editor/ScrollView with resizeable kitten 1`] = `
     }
   }
 >
-  <ScrollViewOverflowContainer
-    innerRef={[Function]}
+  <div
+    className="emotion-1"
     onScroll={[Function]}
   >
     <div
@@ -221,45 +280,49 @@ exports[`react-graph-editor/ScrollView with resizeable kitten 1`] = `
         className="emotion-0"
       />
     </div>
-  </ScrollViewOverflowContainer>
+  </div>
   <ScrollBar
-    className="emotion-1"
+    className="emotion-2"
     orientation="horizontal"
     overflow="scroll"
-    progress={0}
+    progress={0.5}
     scale={1}
     thumbEndProps={
       Object {
         "dragSignifier": true,
         "onMouseDown": [Function],
+        "onTouchStart": [Function],
       }
     }
     thumbStartProps={
       Object {
         "dragSignifier": true,
         "onMouseDown": [Function],
+        "onTouchStart": [Function],
       }
     }
   />
   <ScrollBar
-    className="emotion-1"
+    className="emotion-2"
     orientation="vertical"
     overflow="scroll"
-    progress={0}
+    progress={0.5}
     scale={1}
     thumbEndProps={
       Object {
         "dragSignifier": true,
         "onMouseDown": [Function],
+        "onTouchStart": [Function],
       }
     }
     thumbStartProps={
       Object {
         "dragSignifier": true,
         "onMouseDown": [Function],
+        "onTouchStart": [Function],
       }
     }
   />
   <ScrollBarCorner />
-</ScrollViewContainer>
+</div>
 `;
