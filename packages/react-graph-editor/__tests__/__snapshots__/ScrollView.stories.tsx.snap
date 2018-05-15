@@ -82,6 +82,7 @@ exports[`react-graph-editor/ScrollView with auto scale and x and y overflow 1`] 
         "onTouchStart": [Function],
       }
     }
+    thumbMiddleProps={Object {}}
     thumbStartProps={
       Object {
         "dragSignifier": false,
@@ -103,6 +104,7 @@ exports[`react-graph-editor/ScrollView with auto scale and x and y overflow 1`] 
         "onTouchStart": [Function],
       }
     }
+    thumbMiddleProps={Object {}}
     thumbStartProps={
       Object {
         "dragSignifier": false,
@@ -193,6 +195,7 @@ exports[`react-graph-editor/ScrollView with auto scale and y overflow 1`] = `
         "onTouchStart": [Function],
       }
     }
+    thumbMiddleProps={Object {}}
     thumbStartProps={
       Object {
         "dragSignifier": true,
@@ -214,6 +217,7 @@ exports[`react-graph-editor/ScrollView with auto scale and y overflow 1`] = `
         "onTouchStart": [Function],
       }
     }
+    thumbMiddleProps={Object {}}
     thumbStartProps={
       Object {
         "dragSignifier": false,
@@ -294,6 +298,7 @@ exports[`react-graph-editor/ScrollView with resizeable kitten 1`] = `
         "onTouchStart": [Function],
       }
     }
+    thumbMiddleProps={Object {}}
     thumbStartProps={
       Object {
         "dragSignifier": true,
@@ -315,6 +320,7 @@ exports[`react-graph-editor/ScrollView with resizeable kitten 1`] = `
         "onTouchStart": [Function],
       }
     }
+    thumbMiddleProps={Object {}}
     thumbStartProps={
       Object {
         "dragSignifier": true,
