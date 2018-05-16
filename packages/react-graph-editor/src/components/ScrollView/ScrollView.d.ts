@@ -39,6 +39,7 @@ export interface IScrollViewState {
   dragBeginX?: number;
   dragBeginY?: number;
   dragPosition?: ThumbSegmentPosition;
+  dragStartProgress?: number;
   dragThumbLength?: number;
   dragTrackLength?: number;
   dragType?: DragType;
