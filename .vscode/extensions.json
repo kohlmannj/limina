@@ -4,6 +4,6 @@
 	"recommendations": [
 		"eg2.tslint",
     "dbaeumer.vscode-eslint",
-    "raphx.stylelint"
+    "shinnn.stylelint"
 	]
 }
