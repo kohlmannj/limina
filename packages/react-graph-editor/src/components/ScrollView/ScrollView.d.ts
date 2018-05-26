@@ -23,8 +23,6 @@ export interface IScrollViewProps {
   overflowY?: OverflowMode;
   proportional?: boolean;
   scaleIncrement?: number;
-  scaleX?: number | 'auto';
-  scaleY?: number | 'auto';
   style?: CSSProperties;
   thumbXEndProps?: Partial<IStyledThumbSegmentProps>;
   thumbXMiddleProps?: Partial<IStyledThumbSegmentProps>;

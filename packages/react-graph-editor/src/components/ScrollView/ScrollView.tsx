@@ -21,25 +21,11 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
     scaleY: 1,
   };
 
-  public static getDerivedStateFromProps(nextProps: IScrollViewProps, prevState: IScrollViewState) {
-    if (nextProps.scaleX !== prevState.scaleX && typeof nextProps.scaleX === 'number') {
-      return { scaleX: nextProps.scaleX };
-    }
-
-    if (nextProps.scaleY !== prevState.scaleY && typeof nextProps.scaleY === 'number') {
-      return { scaleY: nextProps.scaleY };
-    }
-
-    return null;
-  }
-
   public state: IScrollViewState = {
-    progressX:
-      (this.props.scaleX && this.props.scaleX !== 'auto' ? this.props.scaleX : 1) === 1 ? 0.5 : 0,
-    progressY:
-      (this.props.scaleY && this.props.scaleY !== 'auto' ? this.props.scaleY : 1) === 1 ? 0.5 : 0,
-    scaleX: this.props.scaleX && this.props.scaleX !== 'auto' ? this.props.scaleX : 1,
-    scaleY: this.props.scaleY && this.props.scaleY !== 'auto' ? this.props.scaleY : 1,
+    progressX: 0.5,
+    progressY: 0.5,
+    scaleX: 1,
+    scaleY: 1,
   };
 
   private overflowContainer?: HTMLDivElement | null;
@@ -77,20 +63,6 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
         this.overflowContainer.scrollTop = nextScrollTop;
       }
     }
-
-    if (
-      (this.props.scaleX === 'auto' || this.props.scaleY === 'auto') &&
-      prevProps.scaleX !== 'auto' &&
-      prevProps.scaleY !== 'auto'
-    ) {
-      window.addEventListener('resize', this.onScroll);
-    } else if (
-      this.props.scaleX !== 'auto' &&
-      this.props.scaleY !== 'auto' &&
-      (prevProps.scaleX === 'auto' || prevProps.scaleY === 'auto')
-    ) {
-      window.removeEventListener('resize', this.onScroll);
-    }
   }
 
   public componentWillUnmount() {
@@ -113,8 +85,6 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
       overflowY,
       proportional,
       scaleIncrement,
-      scaleX: scaleXProp,
-      scaleY: scaleYProp,
       style,
       thumbXStartProps,
       thumbXMiddleProps,
@@ -126,14 +96,11 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
     } = this.props;
     const { progressX, progressY, scaleX, scaleY } = this.state;
 
-    const contentStyle: CSSProperties = { ...contentStyleProp };
-
-    if (scaleXProp !== 'auto') {
-      contentStyle.width = `${scaleX * 100}%`;
-    }
-    if (scaleYProp !== 'auto') {
-      contentStyle.height = `${scaleY * 100}%`;
-    }
+    const contentStyle: CSSProperties = {
+      ...contentStyleProp,
+      width: `${scaleX * 100}%`,
+      height: `${scaleY * 100}%`,
+    };
 
     // Generate event handlers
     const onBeginDragXSrt = this.onBeginDrag({ axis: 'x', pos: 'start', type: 'scale' });
@@ -167,7 +134,7 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
           progress={progressX}
           scale={scaleX}
           thumbStartProps={{
-            dragSignifier: scaleXProp !== 'auto',
+            dragSignifier: true,
             onMouseDown: onBeginDragXSrt,
             onTouchStart: onBeginDragXSrt,
           }}
@@ -176,7 +143,7 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
             onTouchStart: onBeginDragXMid,
           }}
           thumbEndProps={{
-            dragSignifier: scaleXProp !== 'auto',
+            dragSignifier: true,
             onMouseDown: onBeginDragXEnd,
             onTouchStart: onBeginDragXEnd,
           }}
@@ -188,7 +155,7 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
           progress={progressY}
           scale={scaleY}
           thumbStartProps={{
-            dragSignifier: scaleYProp !== 'auto',
+            dragSignifier: true,
             onMouseDown: onBeginDragYSrt,
             onTouchStart: onBeginDragYSrt,
           }}
@@ -197,7 +164,7 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
             onTouchStart: onBeginDragYMid,
           }}
           thumbEndProps={{
-            dragSignifier: scaleYProp !== 'auto',
+            dragSignifier: true,
             onMouseDown: onBeginDragYEnd,
             onTouchStart: onBeginDragYEnd,
           }}
@@ -226,23 +193,14 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
       this.setState({ progressY });
     }
 
-    if (this.props.scaleX === 'auto') {
-      this.setState({
-        scaleX: Math.max(scrollWidth / Math.round(width), 1),
-      });
-    }
-
-    if (this.props.scaleY === 'auto') {
-      this.setState({
-        scaleY: Math.max(scrollHeight / Math.round(height), 1),
-      });
-    }
+    this.setState({
+      scaleX: Math.max(scrollWidth / Math.round(width), 1),
+      scaleY: Math.max(scrollHeight / Math.round(height), 1),
+    });
   };
 
   private startListeningToWindowEvents = () => {
-    if (this.props.scaleX === 'auto' || this.props.scaleY === 'auto') {
-      window.addEventListener('resize', this.onScroll);
-    }
+    window.addEventListener('resize', this.onScroll);
 
     if (this.overflowContainer) {
       this.onScroll();
@@ -250,9 +208,7 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
   };
 
   private stopListeningToWindowEvents = () => {
-    if (this.props.scaleX === 'auto' || this.props.scaleY === 'auto') {
-      window.removeEventListener('resize', this.onScroll);
-    }
+    window.removeEventListener('resize', this.onScroll);
 
     if (typeof this.state.dragType !== 'undefined') {
       window.removeEventListener('mousemove', this.onMoveDrag);
