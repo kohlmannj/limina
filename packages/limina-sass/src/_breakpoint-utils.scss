@@ -55,7 +55,7 @@
 
 }
 
-@mixin limina-breakpoint($breakpoint) {
+@mixin create-limina-breakpoint($breakpoint) {
   @if $breakpoint == null {
     @content;
   } @else {

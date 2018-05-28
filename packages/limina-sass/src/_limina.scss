@@ -1,11 +1,17 @@
 @import './_create-limina.scss';
 
-$limina-default-breakpoints: (
-  compact: (max-width: 540px),
-  medium:  (min-width: 854px),
-  regular: (min-width: 1280px)
+$limina-breakpoints: (
+  compact: (max-width: 539px),
+  medium:  (min-width: 540px) 'and' (max-width: 853px),
+  regular: (min-width: 854px) 'and' (min-width: 1280px)
 );
 
 @mixin limina($props) {
-  @include create-limina($limina-default-breakpoints, null, $props);
+  @include create-limina($limina-breakpoints, null, $props);
+}
+
+@mixin limina-breakpoint($breakpoint-name) {
+  @include create-limina-breakpoint(map-get($limina-breakpoints, $breakpoint-name)) {
+    @content;
+  }
 }

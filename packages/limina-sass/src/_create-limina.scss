@@ -19,7 +19,22 @@
   $props-by-breakpoint: ();
   $props-without-breakpoint: ();
 
-  @each $prop, $value in $props {
+  @each $prop, $value-arg in $props {
+    $value: null;
+
+    @if type-of($value-arg) == list and is-bracketed($value-arg) {
+      $value: ();
+      $breakpoint-names: map-keys($breakpoints);
+
+      @for $i from 1 through length($value-arg) {
+        $breakpoint-name: nth($breakpoint-names, $i);
+        $breakpoint-value: nth($value-arg, $i);
+        $value: _set($value, $breakpoint-name, $breakpoint-value);
+      }
+    } @else {
+      $value: $value-arg;
+    }
+
     @if type-of($value) == map {
       @each $breakpoint-name, $breakpoint-value in $value {
         @if not map-has-key($breakpoints, $breakpoint-name) {
@@ -64,7 +79,7 @@
     @debug $breakpoint;
     @debug $breakpoint-props;
 
-    @include limina-breakpoint($breakpoint) {
+    @include create-limina-breakpoint($breakpoint) {
       @include _declare($breakpoint-props);
     }
   }
