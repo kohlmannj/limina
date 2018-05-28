@@ -1,0 +1,61 @@
+@import '../../../node_modules/sassdash/_index.scss';
+@import './_render-utils.scss';
+@import './_get-props-by-breakpoint.scss';
+
+@mixin limina-create-breakpoint($breakpoints, $default-breakpoint, $breakpoint, $props: null) {
+  $breakpoint-list-or-string: null;
+
+  @if $breakpoint != null {
+    $breakpoint-list-or-string: $breakpoint;
+  } @else {
+    $breakpoint-list-or-string: $default-breakpoint;
+  }
+
+  @if type-of($breakpoint-list-or-string) == string and map-has-key($breakpoints, $breakpoint-list-or-string) {
+    $breakpoint-list-or-string: map-get($breakpoints, $breakpoint-list-or-string);
+  }
+
+  @debug $breakpoint-list-or-string;
+
+  @include limina-render-breakpoint($breakpoint-list-or-string) {
+    @if type-of($props) == map {
+      @include _declare($props);
+    }
+
+    @content;
+  }
+}
+
+@mixin limina-create-ordered-breakpoints($ordered-breakpoints, $default-breakpoint-index, $props) {
+
+}
+
+@mixin limina-create-named-breakpoints($breakpoints, $default-breakpoint, $props) {
+  $organized-props: limina-get-props-by-breakpoint($breakpoints, $default-breakpoint, $props);
+  $props-by-breakpoint: map-get($organized-props, props-by-breakpoint);
+  $props-without-breakpoint: map-get($organized-props, props-without-breakpoint);
+
+  @include _declare($props-without-breakpoint);
+
+  @each $breakpoint-name, $breakpoint-props in $props-by-breakpoint {
+    @include limina-create-breakpoint($breakpoints, $default-breakpoint, $breakpoint-name, $breakpoint-props);
+  }
+}
+
+@mixin limina-create($breakpoints, $default-breakpoint, $props) {
+  @if type-of($breakpoints) == map {
+    @include limina-create-named-breakpoints(
+      $breakpoints,
+      $default-breakpoint,
+      $props
+    );
+  } @else if type-of($breakpoints) == list {
+    @include limina-create-ordered-breakpoints(
+      $breakpoints,
+      $default-breakpoint,
+      $props
+    );
+  } @else {
+    @error '$breakpoints argument must be either a map or a list';
+  }
+}

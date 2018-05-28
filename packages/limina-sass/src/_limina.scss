@@ -1,4 +1,23 @@
-@import './_create-limina.scss';
+@import '../../../node_modules/sassdash/_index.scss';
+@import './_limina-create.scss';
+
+$limina-artboards: (
+  compact: (
+    width: 375px,
+    height: 667px,
+    breakpoint: (max-width: 539px)
+  ),
+  tablet:  (
+    width: 768px,
+    height: 1024px,
+    breakpoint: (min-width: 540px) 'and' (max-width: 853px)
+  ),
+  regular: (
+    width: 1280px,
+    height: 800px,
+    breakpoint: (min-width: 854px) 'and' (min-width: 1280px)
+  )
+);
 
 $limina-breakpoints: (
   compact: (max-width: 539px),
@@ -6,12 +25,14 @@ $limina-breakpoints: (
   regular: (min-width: 854px) 'and' (min-width: 1280px)
 );
 
+$limina-default-breakpoint: null;
+
 @mixin limina($props) {
-  @include create-limina($limina-breakpoints, null, $props);
+  @include limina-create($limina-breakpoints, $limina-default-breakpoint, $props);
 }
 
-@mixin limina-breakpoint($breakpoint-name) {
-  @include create-limina-breakpoint(map-get($limina-breakpoints, $breakpoint-name)) {
+@mixin limina-breakpoint($breakpoint, $props: null) {
+  @include limina-create-breakpoint($limina-breakpoints, $limina-default-breakpoint, $breakpoint, $props) {
     @content;
   }
 }

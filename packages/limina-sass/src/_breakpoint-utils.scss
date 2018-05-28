@@ -55,11 +55,20 @@
 
 }
 
-@mixin create-limina-breakpoint($breakpoint) {
-  @if $breakpoint == null {
+@mixin limina-render-breakpoint($breakpoint) {
+  $breakpoint-string: null;
+  @if type-of($breakpoint) == string {
+    $breakpoint-string: $breakpoint;
+  } @else if type-of($breakpoint) == list or type-of($breakpoint) == map {
+    $breakpoint-string: limina-get-media-query-list($breakpoint);
+  } @else if $breakpoint != null {
+    @error '$breakpoint is an unsupported type (' + type-of($breakpoint) + ')';
+  }
+
+  @if $breakpoint-string == null {
     @content;
   } @else {
-    @media #{limina-get-media-query-list($breakpoint)} {
+    @media #{$breakpoint-string} {
       @content;
     }
   }
