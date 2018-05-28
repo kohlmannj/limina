@@ -1,0 +1,26 @@
+@import './_breakpoint-utils.scss';
+
+@mixin limina-render-value($breakpoint, $prop, $value) {
+  @include limina-breakpoint($breakpoint) {
+    #{$prop}: $value;
+  }
+}
+
+@mixin limina-render-map($breakpoints, $default-breakpoint-name, $prop, $value-map) {
+  @each $breakpoint-name, $value in $value-map {
+    $breakpoint-value: map-get($breakpoints, $breakpoint-name);
+
+    @include limina-render-value($breakpoint-value, $prop, $value);
+  }
+}
+
+@mixin limina-render-list($named-breakpoints, $default-breakpoint-name, $prop, $value-list) {
+  $breakpoints: map-values($named-breakpoints);
+
+  @for $i from 1 through length($value-list) {
+    $breakpoint: nth($breakpoints, $i);
+    $value: nth($value-list, $i);
+
+    @include limina-render-value($breakpoint, $prop, $value);
+  }
+}

@@ -1,0 +1,66 @@
+@import '../../../node_modules/sassdash/_index.scss';
+
+@function limina-map-to-str($map, $a: null, $b: null) {
+  @if type-of($map) == map {
+    @return '(' + _(
+      $map,
+      _pairs,
+      _reduce _str-concat,
+      _join ': '
+    ) + ')';
+  }
+
+  @return $map;
+}
+
+@function limina-get-media-query-list($breakpoint) {
+  @if $breakpoint == null {
+    @return null;
+  }
+
+  @if type-of($breakpoint) == map {
+    @return limina-map-to-str($breakpoint);
+  }
+
+  @if type-of($breakpoint) == list {
+    @return _(
+      $breakpoint,
+      _map limina-map-to-str,
+      _join ' '
+    );
+  }
+}
+
+@function limina-invert-breakpoint($breakpoint) {
+  $inverted-breakpoint: ();
+
+  @each $prop, $value in $breakpoint {
+    @if $prop == min-width {
+      $inverted-breakpoint: map-merge(
+        $inverted-breakpoint,
+        (max-width: $value - 1)
+      );
+    } @else if $prop == max-width {
+      $inverted-breakpoint: map-merge(
+        $inverted-breakpoint,
+        (min-width: $value + 1)
+      );
+    }
+  }
+
+  @return $inverted-breakpoint;
+}
+
+@function limina-create-interpolated-breakpoint-map($left, $right) {
+
+}
+
+@mixin limina-breakpoint($breakpoint) {
+  @if $breakpoint == null {
+    @content;
+  } @else {
+    @media #{limina-get-media-query-list($breakpoint)} {
+      @content;
+    }
+  }
+}

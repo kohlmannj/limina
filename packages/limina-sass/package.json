@@ -1,0 +1,21 @@
+{
+  "name": "@limina/limina-sass",
+  "version": "0.2.3",
+  "description": "A Sass implementation of @limina/core",
+  "main": "index.js",
+  "repository": "https://github.com/kohlmannj/limina/packages/limina-sass",
+  "author": "Joseph Kohlmann <joseph.kohlmann@nytimes.com>",
+  "license": "Apache-2.0",
+  "private": false,
+  "eyeglass": {
+    "exports": "eyeglass-exports.js",
+    "needs": "*"
+  },
+  "devDependencies": {
+    "node-sass": "^4.9.0",
+    "sass": "^1.3.2"
+  },
+  "dependencies": {
+    "sassdash": "^0.9.0"
+  }
+}
