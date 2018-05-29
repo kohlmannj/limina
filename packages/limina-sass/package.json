@@ -8,8 +8,8 @@
   "license": "Apache-2.0",
   "private": false,
   "scripts": {
-    "build": "sass ./src/test.scss ./dist/test.css",
-    "watch": "node-sass --watch --recursive --precision=10 src --output dist --output-style=expanded"
+    "build": "sass ./src/test.scss ./lib/test.css",
+    "watch": "node-sass --watch --recursive --precision=10 src --output lib --output-style=expanded"
   },
   "eyeglass": {
     "exports": "eyeglass-exports.js",
