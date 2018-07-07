@@ -24,6 +24,8 @@ exports[`react-graph-editor/ScrollView with auto scale and x and y overflow 1`] 
 
 <div
   className="emotion-3"
+  scaleX={1}
+  scaleY={1}
   style={
     Object {
       "background": "gray",
@@ -38,7 +40,12 @@ exports[`react-graph-editor/ScrollView with auto scale and x and y overflow 1`] 
     onScroll={[Function]}
   >
     <div
-      style={Object {}}
+      style={
+        Object {
+          "height": "100%",
+          "width": "100%",
+        }
+      }
     >
       <div
         dangerouslySetInnerHTML={
@@ -77,7 +84,7 @@ exports[`react-graph-editor/ScrollView with auto scale and x and y overflow 1`] 
     scale={1}
     thumbEndProps={
       Object {
-        "dragSignifier": false,
+        "dragSignifier": true,
         "onMouseDown": [Function],
         "onTouchStart": [Function],
       }
@@ -90,7 +97,7 @@ exports[`react-graph-editor/ScrollView with auto scale and x and y overflow 1`] 
     }
     thumbStartProps={
       Object {
-        "dragSignifier": false,
+        "dragSignifier": true,
         "onMouseDown": [Function],
         "onTouchStart": [Function],
       }
@@ -104,7 +111,7 @@ exports[`react-graph-editor/ScrollView with auto scale and x and y overflow 1`] 
     scale={1}
     thumbEndProps={
       Object {
-        "dragSignifier": false,
+        "dragSignifier": true,
         "onMouseDown": [Function],
         "onTouchStart": [Function],
       }
@@ -117,7 +124,7 @@ exports[`react-graph-editor/ScrollView with auto scale and x and y overflow 1`] 
     }
     thumbStartProps={
       Object {
-        "dragSignifier": false,
+        "dragSignifier": true,
         "onMouseDown": [Function],
         "onTouchStart": [Function],
       }
@@ -151,6 +158,8 @@ exports[`react-graph-editor/ScrollView with auto scale and y overflow 1`] = `
 
 <div
   className="emotion-3"
+  scaleX={1}
+  scaleY={1}
   style={
     Object {
       "background": "gray",
@@ -187,6 +196,7 @@ exports[`react-graph-editor/ScrollView with auto scale and y overflow 1`] = `
       }
       style={
         Object {
+          "height": "100%",
           "width": "100%",
         }
       }
@@ -227,7 +237,7 @@ exports[`react-graph-editor/ScrollView with auto scale and y overflow 1`] = `
     scale={1}
     thumbEndProps={
       Object {
-        "dragSignifier": false,
+        "dragSignifier": true,
         "onMouseDown": [Function],
         "onTouchStart": [Function],
       }
@@ -240,7 +250,7 @@ exports[`react-graph-editor/ScrollView with auto scale and y overflow 1`] = `
     }
     thumbStartProps={
       Object {
-        "dragSignifier": false,
+        "dragSignifier": true,
         "onMouseDown": [Function],
         "onTouchStart": [Function],
       }
@@ -281,6 +291,8 @@ exports[`react-graph-editor/ScrollView with resizeable kitten 1`] = `
 
 <div
   className="emotion-4"
+  scaleX={1}
+  scaleY={1}
   style={
     Object {
       "height": "100vh",
