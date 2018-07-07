@@ -1,26 +1,12 @@
 {
   "parser": "babel-eslint",
-  "extends": [
-    "airbnb",
-    "prettier",
-    "plugin:jest/recommended"
-  ],
+  "extends": ["airbnb", "prettier", "plugin:jest/recommended"],
   "env": {
     "jest": true
   },
-  "plugins": [
-    "jest",
-    "json",
-    "prettier"
-  ],
+  "plugins": ["jest", "json"],
   "rules": {
-    "import/extensions": [
-      ".js",
-      ".mjs",
-      ".jsx",
-      ".ts",
-      ".tsx"
-    ],
+    "import/extensions": [".js", ".mjs", ".jsx", ".ts", ".tsx"],
     "import/no-extraneous-dependencies": [
       "error",
       {
@@ -45,28 +31,12 @@
         "peerDependencies": true
       }
     ],
-    "prettier/prettier": [
-      "error",
-      {
-        "bracketSpacing": true,
-        "printWidth": 100,
-        "singleQuote": true,
-        "tabWidth": 2,
-        "trailingComma": "es5"
-      }
-    ],
     "react/jsx-filename-extension": [1, { "extensions": [".jsx", ".tsx"] }]
   },
   "settings": {
     "import/resolver": {
       "node": {
-        "extensions": [
-          ".js",
-          ".mjs",
-          ".jsx",
-          ".ts",
-          ".tsx"
-        ]
+        "extensions": [".js", ".mjs", ".jsx", ".ts", ".tsx"]
       }
     }
   }

@@ -6,7 +6,7 @@ module.exports = (baseConfig, env, config) => {
     exclude: /node_modules/,
     use: [
       {
-        loader: require.resolve('babel-loader'),
+        loader: 'babel-loader',
         options: { extends: path.join(__dirname, '.babelrc') },
       },
       { loader: 'react-docgen-typescript-loader' },

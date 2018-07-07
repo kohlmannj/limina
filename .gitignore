@@ -1,3 +1,4 @@
+.awcache
 .cache
 coverage
 lerna-debug.log

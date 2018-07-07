@@ -12,8 +12,8 @@ module.exports = () => ({
         },
       },
     ],
-    ['@babel/preset-stage-1', { decoratorsLegacy: true }],
     '@babel/preset-typescript',
+    ['@babel/preset-stage-2', { decoratorsLegacy: true }],
   ],
   plugins: [
     [
