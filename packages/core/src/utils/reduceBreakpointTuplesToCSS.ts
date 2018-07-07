@@ -1,4 +1,4 @@
-import { _Interpolation1 } from 'emotion';
+import { Interpolation } from 'emotion';
 import { ICSSValueRetargetingOptions, IReduceToCSSOptions } from '..';
 import { IBreakpointTuple } from '../BreakpointTuple';
 import createLinearRegressionMediaQuery from './createLinearRegressionMediaQuery';
@@ -17,15 +17,17 @@ const reduceBreakpointTuplesToCSS = (options: ICSSValueRetargetingOptions) => (
     tupleBreakpointString = tupleBreakpointString.replace('min-width', 'max-width');
   }
 
-  const nextCSS: _Interpolation1 = {
-    ...css,
-    ...(typeof prevTuple === 'object' && prevTuple !== null
-      ? createLinearRegressionMediaQuery({ property, dynamicUnit })(prevTuple, tuple)
-      : undefined),
-    [tupleBreakpointString]: {
-      [property]: `${value / breakpoint.props.width * 100}${dynamicUnit}`,
+  const nextCSS: Interpolation = [
+    css,
+    {
+      ...(typeof prevTuple === 'object' && prevTuple !== null
+        ? createLinearRegressionMediaQuery({ property, dynamicUnit })(prevTuple, tuple)
+        : undefined),
+      [tupleBreakpointString]: {
+        [property]: `${(value / breakpoint.props.width) * 100}${dynamicUnit}`,
+      },
     },
-  };
+  ];
 
   return { prevTuple: tuple, css: nextCSS };
 };

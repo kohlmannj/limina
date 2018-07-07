@@ -1,6 +1,6 @@
 import React, { SFC } from 'react';
-import styled, { StyledComponent } from 'react-emotion';
-import { IThemeProps, PointTuple } from '../index';
+import styled from '../styled';
+import { PointTuple } from '../types';
 import { getDimensionsForPoints } from '../utils';
 
 export type InterpolationKeyword = 'linear' | 'ease-in-out' | 'ease-in' | 'ease-out';
@@ -32,7 +32,7 @@ export const PolyLineSVG: SFC<IPolyLineSVG> = ({
   </svg>
 );
 
-const StyledPolyLineSVG: StyledComponent<IPolyLineSVG, IThemeProps, {}> = styled(PolyLineSVG)`
+const StyledPolyLineSVG = styled(PolyLineSVG)`
   fill: none;
   stroke: ${props => props.theme.color || '#000'};
   stroke-width: ${props => `${props.theme.thickness / 4 || 2}px`};

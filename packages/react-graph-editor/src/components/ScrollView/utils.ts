@@ -1,6 +1,6 @@
 import { MouseEvent as ReactMouseEvent, TouchEvent as ReactTouchEvent, TouchList } from 'react';
-import { ScrollBarAxis } from '../..';
-import { ReactMouseOrTouchEvent } from './ScrollView.d';
+import { ScrollBarAxis } from '../../types';
+import { ReactMouseOrTouchEvent } from './ScrollView';
 
 export interface INormalizedDragEventData<T> {
   clientX: number;

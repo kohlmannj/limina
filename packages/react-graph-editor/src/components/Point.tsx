@@ -1,6 +1,7 @@
+import { css } from 'emotion';
 import React, { SFC } from 'react';
-import styled, { css, StyledComponent } from 'react-emotion';
-import { IThemeProps, IViewBox, OriginDirection, PointShape } from '../index';
+import styled from '../styled';
+import { IThemeProps, IViewBox, OriginDirection, PointShape } from '../types';
 import ViewBoxContext from './ViewBoxContext';
 
 export interface IPointProps {
@@ -41,8 +42,8 @@ const translate = (props: IStyledButtonProps) =>
 
 const position = (props: IStyledButtonProps) => css`
   position: absolute;
-  ${props.originX && `${props.originX}: ${(props.x - props.minX) / props.width * 100}%;`}
-  ${props.originY && `${props.originY}: ${(props.y - props.minY) / props.height * 100}%;`}
+  ${props.originX && `${props.originX}: ${((props.x - props.minX) / props.width) * 100}%;`}
+  ${props.originY && `${props.originY}: ${((props.y - props.minY) / props.height) * 100}%;`}
   transform: ${translate(props)} ${
   props.theme && props.theme.shape === 'diamond' ? 'rotate(45deg)' : ''
 };
@@ -57,7 +58,7 @@ const Button: SFC<IStyledButtonProps> = ({ className, selected, x, y, ...rest })
   />
 );
 
-const StyledButton: StyledComponent<IStyledButtonProps, IThemeProps, {}> = styled(Button)`
+const StyledButton = styled(Button)`
   width: ${props => `${props.theme.thickness || 8}px`};
   height: ${props => `${props.theme.thickness || 8}px`};
   box-sizing: border-box;

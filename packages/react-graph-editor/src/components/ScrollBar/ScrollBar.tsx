@@ -1,6 +1,6 @@
 import React, { CSSProperties, SFC } from 'react';
-import { OverflowMode, ScrollBarAxis } from '../..';
 import { IScrollBarTheme } from '../../theme';
+import { OverflowMode, ScrollBarAxis } from '../../types';
 import ThumbContainer from './components/ThumbContainer';
 import ThumbSegment, { IStyledThumbSegmentProps } from './components/ThumbSegment';
 import Track from './components/Track';

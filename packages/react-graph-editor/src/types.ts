@@ -1,3 +1,5 @@
+import { IScrollBarTheme } from './theme';
+
 export type PointTuple = [number, number];
 
 export type PointShape = 'circle' | 'diamond' | 'square';
@@ -24,7 +26,7 @@ export interface IDomainRange {
   range: PointTuple;
 }
 
-export interface IThemeProps {
+export interface IThemeProps extends IScrollBarTheme {
   color: string;
   thickness: number;
   shape: PointShape;

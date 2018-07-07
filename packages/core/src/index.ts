@@ -1,4 +1,4 @@
-import { _Interpolation1 } from 'emotion';
+import { Interpolation } from 'emotion';
 import { IBreakpointTuple } from './BreakpointTuple';
 
 export interface ICSSValueRetargetingDefaultOptions {
@@ -12,7 +12,7 @@ export interface ICSSValueRetargetingOptions {
 
 export interface IReduceToCSSOptions {
   prevTuple?: IBreakpointTuple;
-  css: _Interpolation1;
+  css: Interpolation;
 }
 
 export interface ICSSPropertyValueTuple extends Array<string | IBreakpointTuple[]> {

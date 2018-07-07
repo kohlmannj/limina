@@ -1,5 +1,5 @@
+import { css } from 'emotion';
 import React, { SFC } from 'react';
-import { css } from 'react-emotion';
 import { IScrollBarProps, IStyledScrollBarProps } from '..';
 import defaultTheme from '../../../theme';
 
@@ -33,7 +33,7 @@ export const getCrossAxisLength = ({ axis, progress, scale }: IScrollBarProps) =
   // const minCrossAxisProperty = `min${crossAxisProperty}`;
 
   return {
-    [crossAxisProperty]: `${1 / (scale || 1) * getOvershootFactor(progress) * 100}%`,
+    [crossAxisProperty]: `${(1 / (scale || 1)) * getOvershootFactor(progress) * 100}%`,
   };
 };
 

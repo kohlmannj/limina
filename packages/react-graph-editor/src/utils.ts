@@ -1,4 +1,4 @@
-import { IDomainRange, IViewBox, PointTuple } from './index.d';
+import { IDomainRange, IViewBox, PointTuple } from './types';
 
 export const getExtentsForPoints = (points: PointTuple[]): IDomainRange => {
   const xVals = points.map(([x]) => x);

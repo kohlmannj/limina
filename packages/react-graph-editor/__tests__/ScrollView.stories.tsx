@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/react';
+import { css } from 'emotion';
 // import { ThemeProvider } from 'emotion-theming';
 import React from 'react';
-import { css } from 'react-emotion';
 import textContent from '../../../__stubs__/lipsum.md';
 import ScrollView from '../src/components/ScrollView';
 
@@ -14,7 +14,6 @@ storiesOf('react-graph-editor/ScrollView', module)
         margin: '50px auto',
         background: 'gray',
       }}
-      scaleY="auto"
       dangerouslySetInnerHTML={{ __html: textContent }}
     />
   ))
@@ -26,8 +25,6 @@ storiesOf('react-graph-editor/ScrollView', module)
         margin: '50px auto',
         background: 'gray',
       }}
-      scaleX="auto"
-      scaleY="auto"
     >
       <div style={{ width: '200%' }} dangerouslySetInnerHTML={{ __html: textContent }} />
     </ScrollView>

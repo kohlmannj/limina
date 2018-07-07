@@ -1,8 +1,8 @@
 import chroma from 'chroma-js';
 import { ThemeProvider } from 'emotion-theming';
 import React, { CSSProperties, SFC } from 'react';
-import styled, { StyledComponent } from 'react-emotion';
-import { IThemeProps, OriginDirection, PointTuple } from '../index';
+import styled from '../styled';
+import { OriginDirection, PointTuple } from '../types';
 import { getViewBoxForPoints } from '../utils';
 import Point, { shapes } from './Point';
 import { IPolyLineSVG } from './PolyLineSVG';
@@ -79,7 +79,7 @@ Graph.defaultProps = {
   originY: 'bottom',
 };
 
-const StyledGraph: StyledComponent<IGraphProps, IThemeProps, {}> = styled(Graph)`
+const StyledGraph = styled(Graph)`
   position: relative;
   width: 100%;
   height: 100%;
