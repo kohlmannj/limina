@@ -5,16 +5,12 @@ module.exports = api => ({
       '@babel/preset-env',
       {
         modules: false,
-        target: {
-          browsers: ['last 2 versions'],
-        },
         useBuiltIns: 'entry',
       },
     ],
     '@babel/preset-typescript',
   ],
   plugins: [
-    '@babel/plugin-transform-runtime',
     [
       'babel-plugin-emotion',
       api.env('production') ? { hoist: true } : { sourceMap: true, autoLabel: true },
