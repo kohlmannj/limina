@@ -17,9 +17,11 @@
     "stylelint-processor-styled-components": "^1.5.2"
   },
   "peerDependencies": {
-    "stylelint": "^9.10.1"
+    "stylelint": "^9.10.1",
+    "stylelint-scss": "^3.5.1"
   },
   "devDependencies": {
-    "stylelint": "^9.10.1"
+    "stylelint": "^9.10.1",
+    "stylelint-scss": "^3.5.1"
   }
 }

@@ -9,7 +9,7 @@
   "private": false,
   "scripts": {
     "build": "sass ./src/test.scss ./lib/test.css",
-    "watch": "node-sass --watch --recursive --precision=10 src --output lib --output-style=expanded"
+    "watch": "npm run build -- --watch"
   },
   "eyeglass": {
     "exports": "eyeglass-exports.js",
@@ -19,7 +19,6 @@
     "sassdash": "^0.9.0"
   },
   "devDependencies": {
-    "node-sass": "^4.9.0",
-    "sass": "^1.3.2"
+    "sass": "^1.16.1"
   }
 }

@@ -1,0 +1,3 @@
+{
+  "extends": ["@limina/stylelint-config/scss"]
+}
