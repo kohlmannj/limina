@@ -1,6 +1,6 @@
 {
   "name": "@limina/limina-sass",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "description": "A Sass implementation of @limina/core",
   "main": "index.js",
   "repository": "https://github.com/kohlmannj/limina/packages/limina-sass",

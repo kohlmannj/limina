@@ -1,6 +1,6 @@
 {
   "name": "@limina/react-graph-editor",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "A general-purpose React graph editor component",
   "module": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -25,7 +25,7 @@
     "react": "^16.8.6"
   },
   "devDependencies": {
-    "@storybook/react": "^5.0.11",
-    "@storybook/addon-knobs": "^5.0.11"
+    "@storybook/addon-knobs": "^5.0.11",
+    "@storybook/react": "^5.0.11"
   }
 }
