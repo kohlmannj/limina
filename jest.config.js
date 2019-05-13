@@ -18,7 +18,6 @@ module.exports = {
     '@storybook/react': '<rootDir>/__mocks__/storybook-react.js',
   },
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
-  testEnvironment: 'node',
   testRegex: '(/__tests__/.*|(\\.|/)(test|spec|stories))\\.[jt]sx?$',
   testPathIgnorePatterns: ['/node_modules/', '/lib/'],
   transform: {

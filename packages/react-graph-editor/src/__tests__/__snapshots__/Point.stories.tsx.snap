@@ -1,61 +1,267 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`react-graph-editor/Point with default appearance 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
+.emotion-0 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #000;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  outline: 0;
+  text-indent: 100%;
+}
+
+<button
+  aria-label="Point (0, 0)"
+  class="emotion-0"
+  height="0"
+  maxx="0"
+  maxy="0"
+  minx="0"
+  miny="0"
+  title="(0, 0)"
+  type="button"
+  width="0"
+/>
 `;
 
 exports[`react-graph-editor/Point with diamond appearance 1`] = `
-<Component
-  selected={false}
-  x={0}
-  y={0}
+.emotion-0 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #000;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  outline: 0;
+  text-indent: 100%;
+}
+
+<button
+  aria-label="Point (0, 0)"
+  class="emotion-0"
+  height="0"
+  maxx="0"
+  maxy="0"
+  minx="0"
+  miny="0"
+  title="(0, 0)"
+  type="button"
+  width="0"
 />
 `;
 
 exports[`react-graph-editor/Point with diamond, selected appearance 1`] = `
-<Component
-  selected={true}
-  x={0}
-  y={0}
+.emotion-0 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #000;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  border-color: #000;
+  background: #fff;
+  box-shadow: 0 0 5px 2px rgba(59,153,252,0.75);
+  position: absolute;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  outline: 0;
+  text-indent: 100%;
+}
+
+<button
+  aria-label="Point (0, 0)"
+  class="emotion-0"
+  height="0"
+  maxx="0"
+  maxy="0"
+  minx="0"
+  miny="0"
+  title="(0, 0)"
+  type="button"
+  width="0"
 />
 `;
 
 exports[`react-graph-editor/Point with selected appearance 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
+.emotion-0 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #000;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  border-color: #000;
+  background: #fff;
+  box-shadow: 0 0 5px 2px rgba(59,153,252,0.75);
+  position: absolute;
+  outline: 0;
+  text-indent: 100%;
+}
+
+<button
+  aria-label="Point (0, 0)"
+  class="emotion-0"
+  height="0"
+  maxx="0"
+  maxy="0"
+  minx="0"
+  miny="0"
+  title="(0, 0)"
+  type="button"
+  width="0"
+/>
 `;
 
 exports[`react-graph-editor/Point with square appearance 1`] = `
-<Component
-  selected={false}
-  x={0}
-  y={0}
+.emotion-0 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #000;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  outline: 0;
+  text-indent: 100%;
+}
+
+<button
+  aria-label="Point (0, 0)"
+  class="emotion-0"
+  height="0"
+  maxx="0"
+  maxy="0"
+  minx="0"
+  miny="0"
+  title="(0, 0)"
+  type="button"
+  width="0"
 />
 `;
 
 exports[`react-graph-editor/Point with square, selected appearance 1`] = `
-<Component
-  selected={true}
-  x={0}
-  y={0}
+.emotion-0 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #000;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  border-color: #000;
+  background: #fff;
+  box-shadow: 0 0 5px 2px rgba(59,153,252,0.75);
+  position: absolute;
+  outline: 0;
+  text-indent: 100%;
+}
+
+<button
+  aria-label="Point (0, 0)"
+  class="emotion-0"
+  height="0"
+  maxx="0"
+  maxy="0"
+  minx="0"
+  miny="0"
+  title="(0, 0)"
+  type="button"
+  width="0"
 />
 `;
 
 exports[`react-graph-editor/Point with theme 1`] = `
-<Component
-  selected={false}
-  x={0}
-  y={0}
+.emotion-0 {
+  width: 16px;
+  height: 16px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: red;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  outline: 0;
+  text-indent: 100%;
+}
+
+<button
+  aria-label="Point (0, 0)"
+  class="emotion-0"
+  height="0"
+  maxx="0"
+  maxy="0"
+  minx="0"
+  miny="0"
+  title="(0, 0)"
+  type="button"
+  width="0"
 />
 `;
 
 exports[`react-graph-editor/Point with theme and selected appearance 1`] = `
-<Component
-  selected={true}
-  x={0}
-  y={0}
+.emotion-0 {
+  width: 16px;
+  height: 16px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: red;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  border-color: red;
+  background: #fff;
+  box-shadow: 0 0 5px 2px rgba(59,153,252,0.75);
+  position: absolute;
+  outline: 0;
+  text-indent: 100%;
+}
+
+<button
+  aria-label="Point (0, 0)"
+  class="emotion-0"
+  height="0"
+  maxx="0"
+  maxy="0"
+  minx="0"
+  miny="0"
+  title="(0, 0)"
+  type="button"
+  width="0"
 />
 `;

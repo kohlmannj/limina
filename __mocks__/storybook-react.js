@@ -1,4 +1,4 @@
-const { shallow } = require('enzyme');
+const { render } = require('enzyme');
 
 exports.StoriesOf = class {
   constructor(name) {
@@ -9,7 +9,7 @@ exports.StoriesOf = class {
     describe(`${this.suiteName}`, () => {
       it(description, () => {
         const element = getElement();
-        const wrapper = shallow(element);
+        const wrapper = render(element);
         expect(wrapper).toMatchSnapshot();
       });
     });

@@ -1,575 +1,4446 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`react-graph-editor/ScrollGraph with default scales 1`] = `
-<ScrollView
-  maxScaleX={10}
-  maxScaleY={10}
-  minScaleX={1}
-  minScaleY={1}
-  scaleIncrement={0.01}
-  scaleX={1}
-  scaleY={1}
-  style={
-    Object {
-      "height": "100vh",
-      "width": "100%",
-    }
-  }
+.emotion-11 {
+  overflow: auto;
+  width: calc(100% - 16px);
+  height: calc(100% - 16px);
+  -webkit-overflow-scrolling: touch;
+}
+
+.emotion-11::-webkit-scrollbar {
+  display: none;
+}
+
+.emotion-10 {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 4px;
+}
+
+.emotion-9 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.emotion-0 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #e41a1c;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  border-radius: 50%;
+  position: absolute;
+  left: 0%;
+  bottom: 0%;
+  -webkit-transform: translate(-50%,50%);
+  -ms-transform: translate(-50%,50%);
+  transform: translate(-50%,50%);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-1 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #e41a1c;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  border-radius: 50%;
+  position: absolute;
+  left: 22.916666666666664%;
+  bottom: 0.34843205574912894%;
+  -webkit-transform: translate(-50%,50%);
+  -ms-transform: translate(-50%,50%);
+  transform: translate(-50%,50%);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-2 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #e41a1c;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  border-radius: 50%;
+  position: absolute;
+  left: 100%;
+  bottom: 1.0452961672473868%;
+  -webkit-transform: translate(-50%,50%);
+  -ms-transform: translate(-50%,50%);
+  transform: translate(-50%,50%);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-3 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #377eb8;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  left: 0%;
+  bottom: 26.82926829268293%;
+  -webkit-transform: translate(-50%,50%) rotate(45deg);
+  -ms-transform: translate(-50%,50%) rotate(45deg);
+  transform: translate(-50%,50%) rotate(45deg);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-4 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #377eb8;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  left: 22.916666666666664%;
+  bottom: 40.76655052264808%;
+  -webkit-transform: translate(-50%,50%) rotate(45deg);
+  -ms-transform: translate(-50%,50%) rotate(45deg);
+  transform: translate(-50%,50%) rotate(45deg);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-5 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #377eb8;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  left: 100%;
+  bottom: 100%;
+  -webkit-transform: translate(-50%,50%) rotate(45deg);
+  -ms-transform: translate(-50%,50%) rotate(45deg);
+  transform: translate(-50%,50%) rotate(45deg);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-6 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #4daf4a;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  left: 0%;
+  bottom: 26.82926829268293%;
+  -webkit-transform: translate(-50%,50%);
+  -ms-transform: translate(-50%,50%);
+  transform: translate(-50%,50%);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-7 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #4daf4a;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  left: 22.916666666666664%;
+  bottom: 34.23344947735192%;
+  -webkit-transform: translate(-50%,50%);
+  -ms-transform: translate(-50%,50%);
+  transform: translate(-50%,50%);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-8 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #4daf4a;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  left: 100%;
+  bottom: 55.79268292682927%;
+  -webkit-transform: translate(-50%,50%);
+  -ms-transform: translate(-50%,50%);
+  transform: translate(-50%,50%);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #333;
+  height: 16px;
+  top: auto;
+  right: 16px;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.emotion-15 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  -webkit-flex-direction: inherit;
+  -ms-flex-direction: inherit;
+  flex-direction: inherit;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.emotion-15::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 2px;
+  background: #ccc;
+  border-radius: 6px;
+  content: '';
+}
+
+.emotion-12 {
+  position: relative;
+  -webkit-flex: 0 0 16px;
+  -ms-flex: 0 0 16px;
+  flex: 0 0 16px;
+  padding: 2px;
+  border: 0;
+  margin: 0;
+  background: transparent;
+  border-radius: 6 6 0 0px;
+  cursor: col-resize;
+}
+
+.emotion-12::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+  margin: auto;
+  border-left: 1px solid;
+  border-right: 1px solid;
+  border-color: #333;
+  height: 6px;
+  width: 3px;
+  min-width: 3px;
+  content: '';
+}
+
+.emotion-13 {
+  position: relative;
+  -webkit-flex: 0 1 100%;
+  -ms-flex: 0 1 100%;
+  flex: 0 1 100%;
+  padding: 2px;
+  border: 0;
+  margin: 0;
+  background: transparent;
+  border-radius: 0px;
+}
+
+.emotion-14 {
+  position: relative;
+  -webkit-flex: 0 0 16px;
+  -ms-flex: 0 0 16px;
+  flex: 0 0 16px;
+  padding: 2px;
+  border: 0;
+  margin: 0;
+  background: transparent;
+  border-radius: 0 0 6 6px;
+  cursor: col-resize;
+}
+
+.emotion-14::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+  margin: auto;
+  border-left: 1px solid;
+  border-right: 1px solid;
+  border-color: #333;
+  height: 6px;
+  width: 3px;
+  min-width: 3px;
+  content: '';
+}
+
+.emotion-21 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #333;
+  width: 16px;
+  top: 0;
+  right: 0;
+  bottom: 16px;
+  left: auto;
+  position: absolute;
+  z-index: 1;
+}
+
+.emotion-17 {
+  position: relative;
+  -webkit-flex: 0 0 16px;
+  -ms-flex: 0 0 16px;
+  flex: 0 0 16px;
+  padding: 2px;
+  border: 0;
+  margin: 0;
+  background: transparent;
+  border-radius: 6 6 0 0px;
+  cursor: row-resize;
+}
+
+.emotion-17::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+  margin: auto;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  border-color: #333;
+  width: 6px;
+  height: 3px;
+  min-height: 3px;
+  content: '';
+}
+
+.emotion-19 {
+  position: relative;
+  -webkit-flex: 0 0 16px;
+  -ms-flex: 0 0 16px;
+  flex: 0 0 16px;
+  padding: 2px;
+  border: 0;
+  margin: 0;
+  background: transparent;
+  border-radius: 0 0 6 6px;
+  cursor: row-resize;
+}
+
+.emotion-19::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+  margin: auto;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  border-color: #333;
+  width: 6px;
+  height: 3px;
+  min-height: 3px;
+  content: '';
+}
+
+.emotion-22 {
+  position: absolute;
+  z-index: 9999;
+  right: 0;
+  bottom: 0;
+  width: 16px;
+  height: 16px;
+  background: #333;
+}
+
+<div
+  class="[object Object]"
+  scalex="1"
+  scaley="1"
+  style="width:100%;height:100vh"
 >
-  <Styled(GraphContainer)
-    lines={
-      Array [
-        Object {
-          "label": "fontSize",
-          "points": Array [
-            Array [
-              320,
-              12,
-            ],
-            Array [
-              540,
-              16,
-            ],
-            Array [
-              1280,
-              24,
-            ],
-          ],
-        },
-        Object {
-          "label": "width",
-          "points": Array [
-            Array [
-              320,
-              320,
-            ],
-            Array [
-              540,
-              480,
-            ],
-            Array [
-              1280,
-              1160,
-            ],
-          ],
-        },
-        Object {
-          "label": "height",
-          "points": Array [
-            Array [
-              320,
-              320,
-            ],
-            Array [
-              540,
-              405,
-            ],
-            Array [
-              1280,
-              652.5,
-            ],
-          ],
-        },
-      ]
-    }
-    style={
-      Object {
-        "height": "100%",
-        "width": "100%",
-      }
-    }
+  <div
+    class="emotion-11"
+  >
+    <div
+      style="width:100%;height:100%"
+    >
+      <div
+        class="emotion-10"
+        style="width:100%;height:100%"
+      >
+        <div
+          class="emotion-9"
+        >
+          <button
+            aria-label="Point (320, 12)"
+            class="emotion-0"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(320, 12)"
+            type="button"
+            width="960"
+          />
+          <button
+            aria-label="Point (540, 16)"
+            class="emotion-1"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(540, 16)"
+            type="button"
+            width="960"
+          />
+          <button
+            aria-label="Point (1280, 24)"
+            class="emotion-2"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(1280, 24)"
+            type="button"
+            width="960"
+          />
+          <button
+            aria-label="Point (320, 320)"
+            class="emotion-3"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(320, 320)"
+            type="button"
+            width="960"
+          />
+          <button
+            aria-label="Point (540, 480)"
+            class="emotion-4"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(540, 480)"
+            type="button"
+            width="960"
+          />
+          <button
+            aria-label="Point (1280, 1160)"
+            class="emotion-5"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(1280, 1160)"
+            type="button"
+            width="960"
+          />
+          <button
+            aria-label="Point (320, 320)"
+            class="emotion-6"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(320, 320)"
+            type="button"
+            width="960"
+          />
+          <button
+            aria-label="Point (540, 405)"
+            class="emotion-7"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(540, 405)"
+            type="button"
+            width="960"
+          />
+          <button
+            aria-label="Point (1280, 652.5)"
+            class="emotion-8"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(1280, 652.5)"
+            type="button"
+            width="960"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="emotion-16"
+    style="justify-content:flex-start"
+  >
+    <div
+      class="emotion-15"
+      style="height:100%;width:100%;transform:translateX(0%)"
+    >
+      <button
+        class="emotion-12"
+        type="button"
+      />
+      <button
+        class="emotion-13"
+        type="button"
+      />
+      <button
+        class="emotion-14"
+        type="button"
+      />
+    </div>
+  </div>
+  <div
+    class="emotion-21"
+    style="justify-content:flex-start"
+  >
+    <div
+      class="emotion-15"
+      style="width:100%;height:100%;transform:translateY(0%)"
+    >
+      <button
+        class="emotion-17"
+        type="button"
+      />
+      <button
+        class="emotion-13"
+        type="button"
+      />
+      <button
+        class="emotion-19"
+        type="button"
+      />
+    </div>
+  </div>
+  <div
+    class="emotion-22"
   />
-</ScrollView>
+</div>
 `;
 
 exports[`react-graph-editor/ScrollGraph with scaleX = 2 1`] = `
-<ScrollView
-  maxScaleX={10}
-  maxScaleY={10}
-  minScaleX={1}
-  minScaleY={1}
-  scaleIncrement={0.01}
-  scaleX={2}
-  scaleY={1}
-  style={
-    Object {
-      "height": "100vh",
-      "width": "100%",
-    }
-  }
+.emotion-11 {
+  overflow: auto;
+  width: calc(100% - 16px);
+  height: calc(100% - 16px);
+  -webkit-overflow-scrolling: touch;
+}
+
+.emotion-11::-webkit-scrollbar {
+  display: none;
+}
+
+.emotion-10 {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 4px;
+}
+
+.emotion-9 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.emotion-0 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #e41a1c;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  border-radius: 50%;
+  position: absolute;
+  left: 0%;
+  bottom: 0%;
+  -webkit-transform: translate(-50%,50%);
+  -ms-transform: translate(-50%,50%);
+  transform: translate(-50%,50%);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-1 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #e41a1c;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  border-radius: 50%;
+  position: absolute;
+  left: 22.916666666666664%;
+  bottom: 0.34843205574912894%;
+  -webkit-transform: translate(-50%,50%);
+  -ms-transform: translate(-50%,50%);
+  transform: translate(-50%,50%);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-2 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #e41a1c;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  border-radius: 50%;
+  position: absolute;
+  left: 100%;
+  bottom: 1.0452961672473868%;
+  -webkit-transform: translate(-50%,50%);
+  -ms-transform: translate(-50%,50%);
+  transform: translate(-50%,50%);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-3 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #377eb8;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  left: 0%;
+  bottom: 26.82926829268293%;
+  -webkit-transform: translate(-50%,50%) rotate(45deg);
+  -ms-transform: translate(-50%,50%) rotate(45deg);
+  transform: translate(-50%,50%) rotate(45deg);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-4 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #377eb8;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  left: 22.916666666666664%;
+  bottom: 40.76655052264808%;
+  -webkit-transform: translate(-50%,50%) rotate(45deg);
+  -ms-transform: translate(-50%,50%) rotate(45deg);
+  transform: translate(-50%,50%) rotate(45deg);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-5 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #377eb8;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  left: 100%;
+  bottom: 100%;
+  -webkit-transform: translate(-50%,50%) rotate(45deg);
+  -ms-transform: translate(-50%,50%) rotate(45deg);
+  transform: translate(-50%,50%) rotate(45deg);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-6 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #4daf4a;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  left: 0%;
+  bottom: 26.82926829268293%;
+  -webkit-transform: translate(-50%,50%);
+  -ms-transform: translate(-50%,50%);
+  transform: translate(-50%,50%);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-7 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #4daf4a;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  left: 22.916666666666664%;
+  bottom: 34.23344947735192%;
+  -webkit-transform: translate(-50%,50%);
+  -ms-transform: translate(-50%,50%);
+  transform: translate(-50%,50%);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-8 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #4daf4a;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  left: 100%;
+  bottom: 55.79268292682927%;
+  -webkit-transform: translate(-50%,50%);
+  -ms-transform: translate(-50%,50%);
+  transform: translate(-50%,50%);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #333;
+  height: 16px;
+  top: auto;
+  right: 16px;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.emotion-15 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  -webkit-flex-direction: inherit;
+  -ms-flex-direction: inherit;
+  flex-direction: inherit;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.emotion-15::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 2px;
+  background: #ccc;
+  border-radius: 6px;
+  content: '';
+}
+
+.emotion-12 {
+  position: relative;
+  -webkit-flex: 0 0 16px;
+  -ms-flex: 0 0 16px;
+  flex: 0 0 16px;
+  padding: 2px;
+  border: 0;
+  margin: 0;
+  background: transparent;
+  border-radius: 6 6 0 0px;
+  cursor: col-resize;
+}
+
+.emotion-12::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+  margin: auto;
+  border-left: 1px solid;
+  border-right: 1px solid;
+  border-color: #333;
+  height: 6px;
+  width: 3px;
+  min-width: 3px;
+  content: '';
+}
+
+.emotion-13 {
+  position: relative;
+  -webkit-flex: 0 1 100%;
+  -ms-flex: 0 1 100%;
+  flex: 0 1 100%;
+  padding: 2px;
+  border: 0;
+  margin: 0;
+  background: transparent;
+  border-radius: 0px;
+}
+
+.emotion-14 {
+  position: relative;
+  -webkit-flex: 0 0 16px;
+  -ms-flex: 0 0 16px;
+  flex: 0 0 16px;
+  padding: 2px;
+  border: 0;
+  margin: 0;
+  background: transparent;
+  border-radius: 0 0 6 6px;
+  cursor: col-resize;
+}
+
+.emotion-14::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+  margin: auto;
+  border-left: 1px solid;
+  border-right: 1px solid;
+  border-color: #333;
+  height: 6px;
+  width: 3px;
+  min-width: 3px;
+  content: '';
+}
+
+.emotion-21 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #333;
+  width: 16px;
+  top: 0;
+  right: 0;
+  bottom: 16px;
+  left: auto;
+  position: absolute;
+  z-index: 1;
+}
+
+.emotion-17 {
+  position: relative;
+  -webkit-flex: 0 0 16px;
+  -ms-flex: 0 0 16px;
+  flex: 0 0 16px;
+  padding: 2px;
+  border: 0;
+  margin: 0;
+  background: transparent;
+  border-radius: 6 6 0 0px;
+  cursor: row-resize;
+}
+
+.emotion-17::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+  margin: auto;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  border-color: #333;
+  width: 6px;
+  height: 3px;
+  min-height: 3px;
+  content: '';
+}
+
+.emotion-19 {
+  position: relative;
+  -webkit-flex: 0 0 16px;
+  -ms-flex: 0 0 16px;
+  flex: 0 0 16px;
+  padding: 2px;
+  border: 0;
+  margin: 0;
+  background: transparent;
+  border-radius: 0 0 6 6px;
+  cursor: row-resize;
+}
+
+.emotion-19::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+  margin: auto;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  border-color: #333;
+  width: 6px;
+  height: 3px;
+  min-height: 3px;
+  content: '';
+}
+
+.emotion-22 {
+  position: absolute;
+  z-index: 9999;
+  right: 0;
+  bottom: 0;
+  width: 16px;
+  height: 16px;
+  background: #333;
+}
+
+<div
+  class="[object Object]"
+  scalex="2"
+  scaley="1"
+  style="width:100%;height:100vh"
 >
-  <Styled(GraphContainer)
-    lines={
-      Array [
-        Object {
-          "label": "fontSize",
-          "points": Array [
-            Array [
-              320,
-              12,
-            ],
-            Array [
-              540,
-              16,
-            ],
-            Array [
-              1280,
-              24,
-            ],
-          ],
-        },
-        Object {
-          "label": "width",
-          "points": Array [
-            Array [
-              320,
-              320,
-            ],
-            Array [
-              540,
-              480,
-            ],
-            Array [
-              1280,
-              1160,
-            ],
-          ],
-        },
-        Object {
-          "label": "height",
-          "points": Array [
-            Array [
-              320,
-              320,
-            ],
-            Array [
-              540,
-              405,
-            ],
-            Array [
-              1280,
-              652.5,
-            ],
-          ],
-        },
-      ]
-    }
-    style={
-      Object {
-        "height": "100%",
-        "width": "200%",
-      }
-    }
+  <div
+    class="emotion-11"
+  >
+    <div
+      style="width:100%;height:100%"
+    >
+      <div
+        class="emotion-10"
+        style="width:200%;height:100%"
+      >
+        <div
+          class="emotion-9"
+        >
+          <button
+            aria-label="Point (320, 12)"
+            class="emotion-0"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(320, 12)"
+            type="button"
+            width="960"
+          />
+          <button
+            aria-label="Point (540, 16)"
+            class="emotion-1"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(540, 16)"
+            type="button"
+            width="960"
+          />
+          <button
+            aria-label="Point (1280, 24)"
+            class="emotion-2"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(1280, 24)"
+            type="button"
+            width="960"
+          />
+          <button
+            aria-label="Point (320, 320)"
+            class="emotion-3"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(320, 320)"
+            type="button"
+            width="960"
+          />
+          <button
+            aria-label="Point (540, 480)"
+            class="emotion-4"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(540, 480)"
+            type="button"
+            width="960"
+          />
+          <button
+            aria-label="Point (1280, 1160)"
+            class="emotion-5"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(1280, 1160)"
+            type="button"
+            width="960"
+          />
+          <button
+            aria-label="Point (320, 320)"
+            class="emotion-6"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(320, 320)"
+            type="button"
+            width="960"
+          />
+          <button
+            aria-label="Point (540, 405)"
+            class="emotion-7"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(540, 405)"
+            type="button"
+            width="960"
+          />
+          <button
+            aria-label="Point (1280, 652.5)"
+            class="emotion-8"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(1280, 652.5)"
+            type="button"
+            width="960"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="emotion-16"
+    style="justify-content:flex-start"
+  >
+    <div
+      class="emotion-15"
+      style="height:100%;width:100%;transform:translateX(0%)"
+    >
+      <button
+        class="emotion-12"
+        type="button"
+      />
+      <button
+        class="emotion-13"
+        type="button"
+      />
+      <button
+        class="emotion-14"
+        type="button"
+      />
+    </div>
+  </div>
+  <div
+    class="emotion-21"
+    style="justify-content:flex-start"
+  >
+    <div
+      class="emotion-15"
+      style="width:100%;height:100%;transform:translateY(0%)"
+    >
+      <button
+        class="emotion-17"
+        type="button"
+      />
+      <button
+        class="emotion-13"
+        type="button"
+      />
+      <button
+        class="emotion-19"
+        type="button"
+      />
+    </div>
+  </div>
+  <div
+    class="emotion-22"
   />
-</ScrollView>
+</div>
 `;
 
 exports[`react-graph-editor/ScrollGraph with scaleX = 10 1`] = `
-<ScrollView
-  maxScaleX={10}
-  maxScaleY={10}
-  minScaleX={1}
-  minScaleY={1}
-  scaleIncrement={0.01}
-  scaleX={10}
-  scaleY={1}
-  style={
-    Object {
-      "height": "100vh",
-      "width": "100%",
-    }
-  }
+.emotion-11 {
+  overflow: auto;
+  width: calc(100% - 16px);
+  height: calc(100% - 16px);
+  -webkit-overflow-scrolling: touch;
+}
+
+.emotion-11::-webkit-scrollbar {
+  display: none;
+}
+
+.emotion-10 {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 4px;
+}
+
+.emotion-9 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.emotion-0 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #e41a1c;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  border-radius: 50%;
+  position: absolute;
+  left: 0%;
+  bottom: 0%;
+  -webkit-transform: translate(-50%,50%);
+  -ms-transform: translate(-50%,50%);
+  transform: translate(-50%,50%);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-1 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #e41a1c;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  border-radius: 50%;
+  position: absolute;
+  left: 22.916666666666664%;
+  bottom: 0.34843205574912894%;
+  -webkit-transform: translate(-50%,50%);
+  -ms-transform: translate(-50%,50%);
+  transform: translate(-50%,50%);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-2 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #e41a1c;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  border-radius: 50%;
+  position: absolute;
+  left: 100%;
+  bottom: 1.0452961672473868%;
+  -webkit-transform: translate(-50%,50%);
+  -ms-transform: translate(-50%,50%);
+  transform: translate(-50%,50%);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-3 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #377eb8;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  left: 0%;
+  bottom: 26.82926829268293%;
+  -webkit-transform: translate(-50%,50%) rotate(45deg);
+  -ms-transform: translate(-50%,50%) rotate(45deg);
+  transform: translate(-50%,50%) rotate(45deg);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-4 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #377eb8;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  left: 22.916666666666664%;
+  bottom: 40.76655052264808%;
+  -webkit-transform: translate(-50%,50%) rotate(45deg);
+  -ms-transform: translate(-50%,50%) rotate(45deg);
+  transform: translate(-50%,50%) rotate(45deg);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-5 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #377eb8;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  left: 100%;
+  bottom: 100%;
+  -webkit-transform: translate(-50%,50%) rotate(45deg);
+  -ms-transform: translate(-50%,50%) rotate(45deg);
+  transform: translate(-50%,50%) rotate(45deg);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-6 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #4daf4a;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  left: 0%;
+  bottom: 26.82926829268293%;
+  -webkit-transform: translate(-50%,50%);
+  -ms-transform: translate(-50%,50%);
+  transform: translate(-50%,50%);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-7 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #4daf4a;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  left: 22.916666666666664%;
+  bottom: 34.23344947735192%;
+  -webkit-transform: translate(-50%,50%);
+  -ms-transform: translate(-50%,50%);
+  transform: translate(-50%,50%);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-8 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #4daf4a;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  left: 100%;
+  bottom: 55.79268292682927%;
+  -webkit-transform: translate(-50%,50%);
+  -ms-transform: translate(-50%,50%);
+  transform: translate(-50%,50%);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #333;
+  height: 16px;
+  top: auto;
+  right: 16px;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.emotion-15 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  -webkit-flex-direction: inherit;
+  -ms-flex-direction: inherit;
+  flex-direction: inherit;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.emotion-15::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 2px;
+  background: #ccc;
+  border-radius: 6px;
+  content: '';
+}
+
+.emotion-12 {
+  position: relative;
+  -webkit-flex: 0 0 16px;
+  -ms-flex: 0 0 16px;
+  flex: 0 0 16px;
+  padding: 2px;
+  border: 0;
+  margin: 0;
+  background: transparent;
+  border-radius: 6 6 0 0px;
+  cursor: col-resize;
+}
+
+.emotion-12::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+  margin: auto;
+  border-left: 1px solid;
+  border-right: 1px solid;
+  border-color: #333;
+  height: 6px;
+  width: 3px;
+  min-width: 3px;
+  content: '';
+}
+
+.emotion-13 {
+  position: relative;
+  -webkit-flex: 0 1 100%;
+  -ms-flex: 0 1 100%;
+  flex: 0 1 100%;
+  padding: 2px;
+  border: 0;
+  margin: 0;
+  background: transparent;
+  border-radius: 0px;
+}
+
+.emotion-14 {
+  position: relative;
+  -webkit-flex: 0 0 16px;
+  -ms-flex: 0 0 16px;
+  flex: 0 0 16px;
+  padding: 2px;
+  border: 0;
+  margin: 0;
+  background: transparent;
+  border-radius: 0 0 6 6px;
+  cursor: col-resize;
+}
+
+.emotion-14::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+  margin: auto;
+  border-left: 1px solid;
+  border-right: 1px solid;
+  border-color: #333;
+  height: 6px;
+  width: 3px;
+  min-width: 3px;
+  content: '';
+}
+
+.emotion-21 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #333;
+  width: 16px;
+  top: 0;
+  right: 0;
+  bottom: 16px;
+  left: auto;
+  position: absolute;
+  z-index: 1;
+}
+
+.emotion-17 {
+  position: relative;
+  -webkit-flex: 0 0 16px;
+  -ms-flex: 0 0 16px;
+  flex: 0 0 16px;
+  padding: 2px;
+  border: 0;
+  margin: 0;
+  background: transparent;
+  border-radius: 6 6 0 0px;
+  cursor: row-resize;
+}
+
+.emotion-17::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+  margin: auto;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  border-color: #333;
+  width: 6px;
+  height: 3px;
+  min-height: 3px;
+  content: '';
+}
+
+.emotion-19 {
+  position: relative;
+  -webkit-flex: 0 0 16px;
+  -ms-flex: 0 0 16px;
+  flex: 0 0 16px;
+  padding: 2px;
+  border: 0;
+  margin: 0;
+  background: transparent;
+  border-radius: 0 0 6 6px;
+  cursor: row-resize;
+}
+
+.emotion-19::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+  margin: auto;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  border-color: #333;
+  width: 6px;
+  height: 3px;
+  min-height: 3px;
+  content: '';
+}
+
+.emotion-22 {
+  position: absolute;
+  z-index: 9999;
+  right: 0;
+  bottom: 0;
+  width: 16px;
+  height: 16px;
+  background: #333;
+}
+
+<div
+  class="[object Object]"
+  scalex="10"
+  scaley="1"
+  style="width:100%;height:100vh"
 >
-  <Styled(GraphContainer)
-    lines={
-      Array [
-        Object {
-          "label": "fontSize",
-          "points": Array [
-            Array [
-              320,
-              12,
-            ],
-            Array [
-              540,
-              16,
-            ],
-            Array [
-              1280,
-              24,
-            ],
-          ],
-        },
-        Object {
-          "label": "width",
-          "points": Array [
-            Array [
-              320,
-              320,
-            ],
-            Array [
-              540,
-              480,
-            ],
-            Array [
-              1280,
-              1160,
-            ],
-          ],
-        },
-        Object {
-          "label": "height",
-          "points": Array [
-            Array [
-              320,
-              320,
-            ],
-            Array [
-              540,
-              405,
-            ],
-            Array [
-              1280,
-              652.5,
-            ],
-          ],
-        },
-      ]
-    }
-    style={
-      Object {
-        "height": "100%",
-        "width": "1000%",
-      }
-    }
+  <div
+    class="emotion-11"
+  >
+    <div
+      style="width:100%;height:100%"
+    >
+      <div
+        class="emotion-10"
+        style="width:1000%;height:100%"
+      >
+        <div
+          class="emotion-9"
+        >
+          <button
+            aria-label="Point (320, 12)"
+            class="emotion-0"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(320, 12)"
+            type="button"
+            width="960"
+          />
+          <button
+            aria-label="Point (540, 16)"
+            class="emotion-1"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(540, 16)"
+            type="button"
+            width="960"
+          />
+          <button
+            aria-label="Point (1280, 24)"
+            class="emotion-2"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(1280, 24)"
+            type="button"
+            width="960"
+          />
+          <button
+            aria-label="Point (320, 320)"
+            class="emotion-3"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(320, 320)"
+            type="button"
+            width="960"
+          />
+          <button
+            aria-label="Point (540, 480)"
+            class="emotion-4"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(540, 480)"
+            type="button"
+            width="960"
+          />
+          <button
+            aria-label="Point (1280, 1160)"
+            class="emotion-5"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(1280, 1160)"
+            type="button"
+            width="960"
+          />
+          <button
+            aria-label="Point (320, 320)"
+            class="emotion-6"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(320, 320)"
+            type="button"
+            width="960"
+          />
+          <button
+            aria-label="Point (540, 405)"
+            class="emotion-7"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(540, 405)"
+            type="button"
+            width="960"
+          />
+          <button
+            aria-label="Point (1280, 652.5)"
+            class="emotion-8"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(1280, 652.5)"
+            type="button"
+            width="960"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="emotion-16"
+    style="justify-content:flex-start"
+  >
+    <div
+      class="emotion-15"
+      style="height:100%;width:100%;transform:translateX(0%)"
+    >
+      <button
+        class="emotion-12"
+        type="button"
+      />
+      <button
+        class="emotion-13"
+        type="button"
+      />
+      <button
+        class="emotion-14"
+        type="button"
+      />
+    </div>
+  </div>
+  <div
+    class="emotion-21"
+    style="justify-content:flex-start"
+  >
+    <div
+      class="emotion-15"
+      style="width:100%;height:100%;transform:translateY(0%)"
+    >
+      <button
+        class="emotion-17"
+        type="button"
+      />
+      <button
+        class="emotion-13"
+        type="button"
+      />
+      <button
+        class="emotion-19"
+        type="button"
+      />
+    </div>
+  </div>
+  <div
+    class="emotion-22"
   />
-</ScrollView>
+</div>
 `;
 
 exports[`react-graph-editor/ScrollGraph with scaleX = scaleY = 2 1`] = `
-<ScrollView
-  maxScaleX={10}
-  maxScaleY={10}
-  minScaleX={1}
-  minScaleY={1}
-  scaleIncrement={0.01}
-  scaleX={2}
-  scaleY={2}
-  style={
-    Object {
-      "height": "100vh",
-      "width": "100%",
-    }
-  }
+.emotion-11 {
+  overflow: auto;
+  width: calc(100% - 16px);
+  height: calc(100% - 16px);
+  -webkit-overflow-scrolling: touch;
+}
+
+.emotion-11::-webkit-scrollbar {
+  display: none;
+}
+
+.emotion-10 {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 4px;
+}
+
+.emotion-9 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.emotion-0 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #e41a1c;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  border-radius: 50%;
+  position: absolute;
+  left: 0%;
+  bottom: 0%;
+  -webkit-transform: translate(-50%,50%);
+  -ms-transform: translate(-50%,50%);
+  transform: translate(-50%,50%);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-1 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #e41a1c;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  border-radius: 50%;
+  position: absolute;
+  left: 22.916666666666664%;
+  bottom: 0.34843205574912894%;
+  -webkit-transform: translate(-50%,50%);
+  -ms-transform: translate(-50%,50%);
+  transform: translate(-50%,50%);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-2 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #e41a1c;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  border-radius: 50%;
+  position: absolute;
+  left: 100%;
+  bottom: 1.0452961672473868%;
+  -webkit-transform: translate(-50%,50%);
+  -ms-transform: translate(-50%,50%);
+  transform: translate(-50%,50%);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-3 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #377eb8;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  left: 0%;
+  bottom: 26.82926829268293%;
+  -webkit-transform: translate(-50%,50%) rotate(45deg);
+  -ms-transform: translate(-50%,50%) rotate(45deg);
+  transform: translate(-50%,50%) rotate(45deg);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-4 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #377eb8;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  left: 22.916666666666664%;
+  bottom: 40.76655052264808%;
+  -webkit-transform: translate(-50%,50%) rotate(45deg);
+  -ms-transform: translate(-50%,50%) rotate(45deg);
+  transform: translate(-50%,50%) rotate(45deg);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-5 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #377eb8;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  left: 100%;
+  bottom: 100%;
+  -webkit-transform: translate(-50%,50%) rotate(45deg);
+  -ms-transform: translate(-50%,50%) rotate(45deg);
+  transform: translate(-50%,50%) rotate(45deg);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-6 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #4daf4a;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  left: 0%;
+  bottom: 26.82926829268293%;
+  -webkit-transform: translate(-50%,50%);
+  -ms-transform: translate(-50%,50%);
+  transform: translate(-50%,50%);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-7 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #4daf4a;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  left: 22.916666666666664%;
+  bottom: 34.23344947735192%;
+  -webkit-transform: translate(-50%,50%);
+  -ms-transform: translate(-50%,50%);
+  transform: translate(-50%,50%);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-8 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #4daf4a;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  left: 100%;
+  bottom: 55.79268292682927%;
+  -webkit-transform: translate(-50%,50%);
+  -ms-transform: translate(-50%,50%);
+  transform: translate(-50%,50%);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #333;
+  height: 16px;
+  top: auto;
+  right: 16px;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.emotion-15 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  -webkit-flex-direction: inherit;
+  -ms-flex-direction: inherit;
+  flex-direction: inherit;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.emotion-15::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 2px;
+  background: #ccc;
+  border-radius: 6px;
+  content: '';
+}
+
+.emotion-12 {
+  position: relative;
+  -webkit-flex: 0 0 16px;
+  -ms-flex: 0 0 16px;
+  flex: 0 0 16px;
+  padding: 2px;
+  border: 0;
+  margin: 0;
+  background: transparent;
+  border-radius: 6 6 0 0px;
+  cursor: col-resize;
+}
+
+.emotion-12::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+  margin: auto;
+  border-left: 1px solid;
+  border-right: 1px solid;
+  border-color: #333;
+  height: 6px;
+  width: 3px;
+  min-width: 3px;
+  content: '';
+}
+
+.emotion-13 {
+  position: relative;
+  -webkit-flex: 0 1 100%;
+  -ms-flex: 0 1 100%;
+  flex: 0 1 100%;
+  padding: 2px;
+  border: 0;
+  margin: 0;
+  background: transparent;
+  border-radius: 0px;
+}
+
+.emotion-14 {
+  position: relative;
+  -webkit-flex: 0 0 16px;
+  -ms-flex: 0 0 16px;
+  flex: 0 0 16px;
+  padding: 2px;
+  border: 0;
+  margin: 0;
+  background: transparent;
+  border-radius: 0 0 6 6px;
+  cursor: col-resize;
+}
+
+.emotion-14::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+  margin: auto;
+  border-left: 1px solid;
+  border-right: 1px solid;
+  border-color: #333;
+  height: 6px;
+  width: 3px;
+  min-width: 3px;
+  content: '';
+}
+
+.emotion-21 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #333;
+  width: 16px;
+  top: 0;
+  right: 0;
+  bottom: 16px;
+  left: auto;
+  position: absolute;
+  z-index: 1;
+}
+
+.emotion-17 {
+  position: relative;
+  -webkit-flex: 0 0 16px;
+  -ms-flex: 0 0 16px;
+  flex: 0 0 16px;
+  padding: 2px;
+  border: 0;
+  margin: 0;
+  background: transparent;
+  border-radius: 6 6 0 0px;
+  cursor: row-resize;
+}
+
+.emotion-17::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+  margin: auto;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  border-color: #333;
+  width: 6px;
+  height: 3px;
+  min-height: 3px;
+  content: '';
+}
+
+.emotion-19 {
+  position: relative;
+  -webkit-flex: 0 0 16px;
+  -ms-flex: 0 0 16px;
+  flex: 0 0 16px;
+  padding: 2px;
+  border: 0;
+  margin: 0;
+  background: transparent;
+  border-radius: 0 0 6 6px;
+  cursor: row-resize;
+}
+
+.emotion-19::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+  margin: auto;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  border-color: #333;
+  width: 6px;
+  height: 3px;
+  min-height: 3px;
+  content: '';
+}
+
+.emotion-22 {
+  position: absolute;
+  z-index: 9999;
+  right: 0;
+  bottom: 0;
+  width: 16px;
+  height: 16px;
+  background: #333;
+}
+
+<div
+  class="[object Object]"
+  scalex="2"
+  scaley="2"
+  style="width:100%;height:100vh"
 >
-  <Styled(GraphContainer)
-    lines={
-      Array [
-        Object {
-          "label": "fontSize",
-          "points": Array [
-            Array [
-              320,
-              12,
-            ],
-            Array [
-              540,
-              16,
-            ],
-            Array [
-              1280,
-              24,
-            ],
-          ],
-        },
-        Object {
-          "label": "width",
-          "points": Array [
-            Array [
-              320,
-              320,
-            ],
-            Array [
-              540,
-              480,
-            ],
-            Array [
-              1280,
-              1160,
-            ],
-          ],
-        },
-        Object {
-          "label": "height",
-          "points": Array [
-            Array [
-              320,
-              320,
-            ],
-            Array [
-              540,
-              405,
-            ],
-            Array [
-              1280,
-              652.5,
-            ],
-          ],
-        },
-      ]
-    }
-    style={
-      Object {
-        "height": "200%",
-        "width": "200%",
-      }
-    }
+  <div
+    class="emotion-11"
+  >
+    <div
+      style="width:100%;height:100%"
+    >
+      <div
+        class="emotion-10"
+        style="width:200%;height:200%"
+      >
+        <div
+          class="emotion-9"
+        >
+          <button
+            aria-label="Point (320, 12)"
+            class="emotion-0"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(320, 12)"
+            type="button"
+            width="960"
+          />
+          <button
+            aria-label="Point (540, 16)"
+            class="emotion-1"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(540, 16)"
+            type="button"
+            width="960"
+          />
+          <button
+            aria-label="Point (1280, 24)"
+            class="emotion-2"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(1280, 24)"
+            type="button"
+            width="960"
+          />
+          <button
+            aria-label="Point (320, 320)"
+            class="emotion-3"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(320, 320)"
+            type="button"
+            width="960"
+          />
+          <button
+            aria-label="Point (540, 480)"
+            class="emotion-4"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(540, 480)"
+            type="button"
+            width="960"
+          />
+          <button
+            aria-label="Point (1280, 1160)"
+            class="emotion-5"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(1280, 1160)"
+            type="button"
+            width="960"
+          />
+          <button
+            aria-label="Point (320, 320)"
+            class="emotion-6"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(320, 320)"
+            type="button"
+            width="960"
+          />
+          <button
+            aria-label="Point (540, 405)"
+            class="emotion-7"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(540, 405)"
+            type="button"
+            width="960"
+          />
+          <button
+            aria-label="Point (1280, 652.5)"
+            class="emotion-8"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(1280, 652.5)"
+            type="button"
+            width="960"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="emotion-16"
+    style="justify-content:flex-start"
+  >
+    <div
+      class="emotion-15"
+      style="height:100%;width:100%;transform:translateX(0%)"
+    >
+      <button
+        class="emotion-12"
+        type="button"
+      />
+      <button
+        class="emotion-13"
+        type="button"
+      />
+      <button
+        class="emotion-14"
+        type="button"
+      />
+    </div>
+  </div>
+  <div
+    class="emotion-21"
+    style="justify-content:flex-start"
+  >
+    <div
+      class="emotion-15"
+      style="width:100%;height:100%;transform:translateY(0%)"
+    >
+      <button
+        class="emotion-17"
+        type="button"
+      />
+      <button
+        class="emotion-13"
+        type="button"
+      />
+      <button
+        class="emotion-19"
+        type="button"
+      />
+    </div>
+  </div>
+  <div
+    class="emotion-22"
   />
-</ScrollView>
+</div>
 `;
 
 exports[`react-graph-editor/ScrollGraph with scaleX = scaleY = 10 1`] = `
-<ScrollView
-  maxScaleX={10}
-  maxScaleY={10}
-  minScaleX={1}
-  minScaleY={1}
-  scaleIncrement={0.01}
-  scaleX={10}
-  scaleY={10}
-  style={
-    Object {
-      "height": "100vh",
-      "width": "100%",
-    }
-  }
+.emotion-11 {
+  overflow: auto;
+  width: calc(100% - 16px);
+  height: calc(100% - 16px);
+  -webkit-overflow-scrolling: touch;
+}
+
+.emotion-11::-webkit-scrollbar {
+  display: none;
+}
+
+.emotion-10 {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 4px;
+}
+
+.emotion-9 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.emotion-0 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #e41a1c;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  border-radius: 50%;
+  position: absolute;
+  left: 0%;
+  bottom: 0%;
+  -webkit-transform: translate(-50%,50%);
+  -ms-transform: translate(-50%,50%);
+  transform: translate(-50%,50%);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-1 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #e41a1c;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  border-radius: 50%;
+  position: absolute;
+  left: 22.916666666666664%;
+  bottom: 0.34843205574912894%;
+  -webkit-transform: translate(-50%,50%);
+  -ms-transform: translate(-50%,50%);
+  transform: translate(-50%,50%);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-2 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #e41a1c;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  border-radius: 50%;
+  position: absolute;
+  left: 100%;
+  bottom: 1.0452961672473868%;
+  -webkit-transform: translate(-50%,50%);
+  -ms-transform: translate(-50%,50%);
+  transform: translate(-50%,50%);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-3 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #377eb8;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  left: 0%;
+  bottom: 26.82926829268293%;
+  -webkit-transform: translate(-50%,50%) rotate(45deg);
+  -ms-transform: translate(-50%,50%) rotate(45deg);
+  transform: translate(-50%,50%) rotate(45deg);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-4 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #377eb8;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  left: 22.916666666666664%;
+  bottom: 40.76655052264808%;
+  -webkit-transform: translate(-50%,50%) rotate(45deg);
+  -ms-transform: translate(-50%,50%) rotate(45deg);
+  transform: translate(-50%,50%) rotate(45deg);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-5 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #377eb8;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  left: 100%;
+  bottom: 100%;
+  -webkit-transform: translate(-50%,50%) rotate(45deg);
+  -ms-transform: translate(-50%,50%) rotate(45deg);
+  transform: translate(-50%,50%) rotate(45deg);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-6 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #4daf4a;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  left: 0%;
+  bottom: 26.82926829268293%;
+  -webkit-transform: translate(-50%,50%);
+  -ms-transform: translate(-50%,50%);
+  transform: translate(-50%,50%);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-7 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #4daf4a;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  left: 22.916666666666664%;
+  bottom: 34.23344947735192%;
+  -webkit-transform: translate(-50%,50%);
+  -ms-transform: translate(-50%,50%);
+  transform: translate(-50%,50%);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-8 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #4daf4a;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  left: 100%;
+  bottom: 55.79268292682927%;
+  -webkit-transform: translate(-50%,50%);
+  -ms-transform: translate(-50%,50%);
+  transform: translate(-50%,50%);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #333;
+  height: 16px;
+  top: auto;
+  right: 16px;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.emotion-15 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  -webkit-flex-direction: inherit;
+  -ms-flex-direction: inherit;
+  flex-direction: inherit;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.emotion-15::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 2px;
+  background: #ccc;
+  border-radius: 6px;
+  content: '';
+}
+
+.emotion-12 {
+  position: relative;
+  -webkit-flex: 0 0 16px;
+  -ms-flex: 0 0 16px;
+  flex: 0 0 16px;
+  padding: 2px;
+  border: 0;
+  margin: 0;
+  background: transparent;
+  border-radius: 6 6 0 0px;
+  cursor: col-resize;
+}
+
+.emotion-12::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+  margin: auto;
+  border-left: 1px solid;
+  border-right: 1px solid;
+  border-color: #333;
+  height: 6px;
+  width: 3px;
+  min-width: 3px;
+  content: '';
+}
+
+.emotion-13 {
+  position: relative;
+  -webkit-flex: 0 1 100%;
+  -ms-flex: 0 1 100%;
+  flex: 0 1 100%;
+  padding: 2px;
+  border: 0;
+  margin: 0;
+  background: transparent;
+  border-radius: 0px;
+}
+
+.emotion-14 {
+  position: relative;
+  -webkit-flex: 0 0 16px;
+  -ms-flex: 0 0 16px;
+  flex: 0 0 16px;
+  padding: 2px;
+  border: 0;
+  margin: 0;
+  background: transparent;
+  border-radius: 0 0 6 6px;
+  cursor: col-resize;
+}
+
+.emotion-14::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+  margin: auto;
+  border-left: 1px solid;
+  border-right: 1px solid;
+  border-color: #333;
+  height: 6px;
+  width: 3px;
+  min-width: 3px;
+  content: '';
+}
+
+.emotion-21 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #333;
+  width: 16px;
+  top: 0;
+  right: 0;
+  bottom: 16px;
+  left: auto;
+  position: absolute;
+  z-index: 1;
+}
+
+.emotion-17 {
+  position: relative;
+  -webkit-flex: 0 0 16px;
+  -ms-flex: 0 0 16px;
+  flex: 0 0 16px;
+  padding: 2px;
+  border: 0;
+  margin: 0;
+  background: transparent;
+  border-radius: 6 6 0 0px;
+  cursor: row-resize;
+}
+
+.emotion-17::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+  margin: auto;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  border-color: #333;
+  width: 6px;
+  height: 3px;
+  min-height: 3px;
+  content: '';
+}
+
+.emotion-19 {
+  position: relative;
+  -webkit-flex: 0 0 16px;
+  -ms-flex: 0 0 16px;
+  flex: 0 0 16px;
+  padding: 2px;
+  border: 0;
+  margin: 0;
+  background: transparent;
+  border-radius: 0 0 6 6px;
+  cursor: row-resize;
+}
+
+.emotion-19::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+  margin: auto;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  border-color: #333;
+  width: 6px;
+  height: 3px;
+  min-height: 3px;
+  content: '';
+}
+
+.emotion-22 {
+  position: absolute;
+  z-index: 9999;
+  right: 0;
+  bottom: 0;
+  width: 16px;
+  height: 16px;
+  background: #333;
+}
+
+<div
+  class="[object Object]"
+  scalex="10"
+  scaley="10"
+  style="width:100%;height:100vh"
 >
-  <Styled(GraphContainer)
-    lines={
-      Array [
-        Object {
-          "label": "fontSize",
-          "points": Array [
-            Array [
-              320,
-              12,
-            ],
-            Array [
-              540,
-              16,
-            ],
-            Array [
-              1280,
-              24,
-            ],
-          ],
-        },
-        Object {
-          "label": "width",
-          "points": Array [
-            Array [
-              320,
-              320,
-            ],
-            Array [
-              540,
-              480,
-            ],
-            Array [
-              1280,
-              1160,
-            ],
-          ],
-        },
-        Object {
-          "label": "height",
-          "points": Array [
-            Array [
-              320,
-              320,
-            ],
-            Array [
-              540,
-              405,
-            ],
-            Array [
-              1280,
-              652.5,
-            ],
-          ],
-        },
-      ]
-    }
-    style={
-      Object {
-        "height": "1000%",
-        "width": "1000%",
-      }
-    }
+  <div
+    class="emotion-11"
+  >
+    <div
+      style="width:100%;height:100%"
+    >
+      <div
+        class="emotion-10"
+        style="width:1000%;height:1000%"
+      >
+        <div
+          class="emotion-9"
+        >
+          <button
+            aria-label="Point (320, 12)"
+            class="emotion-0"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(320, 12)"
+            type="button"
+            width="960"
+          />
+          <button
+            aria-label="Point (540, 16)"
+            class="emotion-1"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(540, 16)"
+            type="button"
+            width="960"
+          />
+          <button
+            aria-label="Point (1280, 24)"
+            class="emotion-2"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(1280, 24)"
+            type="button"
+            width="960"
+          />
+          <button
+            aria-label="Point (320, 320)"
+            class="emotion-3"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(320, 320)"
+            type="button"
+            width="960"
+          />
+          <button
+            aria-label="Point (540, 480)"
+            class="emotion-4"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(540, 480)"
+            type="button"
+            width="960"
+          />
+          <button
+            aria-label="Point (1280, 1160)"
+            class="emotion-5"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(1280, 1160)"
+            type="button"
+            width="960"
+          />
+          <button
+            aria-label="Point (320, 320)"
+            class="emotion-6"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(320, 320)"
+            type="button"
+            width="960"
+          />
+          <button
+            aria-label="Point (540, 405)"
+            class="emotion-7"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(540, 405)"
+            type="button"
+            width="960"
+          />
+          <button
+            aria-label="Point (1280, 652.5)"
+            class="emotion-8"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(1280, 652.5)"
+            type="button"
+            width="960"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="emotion-16"
+    style="justify-content:flex-start"
+  >
+    <div
+      class="emotion-15"
+      style="height:100%;width:100%;transform:translateX(0%)"
+    >
+      <button
+        class="emotion-12"
+        type="button"
+      />
+      <button
+        class="emotion-13"
+        type="button"
+      />
+      <button
+        class="emotion-14"
+        type="button"
+      />
+    </div>
+  </div>
+  <div
+    class="emotion-21"
+    style="justify-content:flex-start"
+  >
+    <div
+      class="emotion-15"
+      style="width:100%;height:100%;transform:translateY(0%)"
+    >
+      <button
+        class="emotion-17"
+        type="button"
+      />
+      <button
+        class="emotion-13"
+        type="button"
+      />
+      <button
+        class="emotion-19"
+        type="button"
+      />
+    </div>
+  </div>
+  <div
+    class="emotion-22"
   />
-</ScrollView>
+</div>
 `;
 
 exports[`react-graph-editor/ScrollGraph with scaleY = 2 1`] = `
-<ScrollView
-  maxScaleX={10}
-  maxScaleY={10}
-  minScaleX={1}
-  minScaleY={1}
-  scaleIncrement={0.01}
-  scaleX={1}
-  scaleY={2}
-  style={
-    Object {
-      "height": "100vh",
-      "width": "100%",
-    }
-  }
+.emotion-11 {
+  overflow: auto;
+  width: calc(100% - 16px);
+  height: calc(100% - 16px);
+  -webkit-overflow-scrolling: touch;
+}
+
+.emotion-11::-webkit-scrollbar {
+  display: none;
+}
+
+.emotion-10 {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 4px;
+}
+
+.emotion-9 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.emotion-0 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #e41a1c;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  border-radius: 50%;
+  position: absolute;
+  left: 0%;
+  bottom: 0%;
+  -webkit-transform: translate(-50%,50%);
+  -ms-transform: translate(-50%,50%);
+  transform: translate(-50%,50%);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-1 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #e41a1c;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  border-radius: 50%;
+  position: absolute;
+  left: 22.916666666666664%;
+  bottom: 0.34843205574912894%;
+  -webkit-transform: translate(-50%,50%);
+  -ms-transform: translate(-50%,50%);
+  transform: translate(-50%,50%);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-2 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #e41a1c;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  border-radius: 50%;
+  position: absolute;
+  left: 100%;
+  bottom: 1.0452961672473868%;
+  -webkit-transform: translate(-50%,50%);
+  -ms-transform: translate(-50%,50%);
+  transform: translate(-50%,50%);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-3 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #377eb8;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  left: 0%;
+  bottom: 26.82926829268293%;
+  -webkit-transform: translate(-50%,50%) rotate(45deg);
+  -ms-transform: translate(-50%,50%) rotate(45deg);
+  transform: translate(-50%,50%) rotate(45deg);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-4 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #377eb8;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  left: 22.916666666666664%;
+  bottom: 40.76655052264808%;
+  -webkit-transform: translate(-50%,50%) rotate(45deg);
+  -ms-transform: translate(-50%,50%) rotate(45deg);
+  transform: translate(-50%,50%) rotate(45deg);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-5 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #377eb8;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  left: 100%;
+  bottom: 100%;
+  -webkit-transform: translate(-50%,50%) rotate(45deg);
+  -ms-transform: translate(-50%,50%) rotate(45deg);
+  transform: translate(-50%,50%) rotate(45deg);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-6 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #4daf4a;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  left: 0%;
+  bottom: 26.82926829268293%;
+  -webkit-transform: translate(-50%,50%);
+  -ms-transform: translate(-50%,50%);
+  transform: translate(-50%,50%);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-7 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #4daf4a;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  left: 22.916666666666664%;
+  bottom: 34.23344947735192%;
+  -webkit-transform: translate(-50%,50%);
+  -ms-transform: translate(-50%,50%);
+  transform: translate(-50%,50%);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-8 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #4daf4a;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  left: 100%;
+  bottom: 55.79268292682927%;
+  -webkit-transform: translate(-50%,50%);
+  -ms-transform: translate(-50%,50%);
+  transform: translate(-50%,50%);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #333;
+  height: 16px;
+  top: auto;
+  right: 16px;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.emotion-15 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  -webkit-flex-direction: inherit;
+  -ms-flex-direction: inherit;
+  flex-direction: inherit;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.emotion-15::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 2px;
+  background: #ccc;
+  border-radius: 6px;
+  content: '';
+}
+
+.emotion-12 {
+  position: relative;
+  -webkit-flex: 0 0 16px;
+  -ms-flex: 0 0 16px;
+  flex: 0 0 16px;
+  padding: 2px;
+  border: 0;
+  margin: 0;
+  background: transparent;
+  border-radius: 6 6 0 0px;
+  cursor: col-resize;
+}
+
+.emotion-12::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+  margin: auto;
+  border-left: 1px solid;
+  border-right: 1px solid;
+  border-color: #333;
+  height: 6px;
+  width: 3px;
+  min-width: 3px;
+  content: '';
+}
+
+.emotion-13 {
+  position: relative;
+  -webkit-flex: 0 1 100%;
+  -ms-flex: 0 1 100%;
+  flex: 0 1 100%;
+  padding: 2px;
+  border: 0;
+  margin: 0;
+  background: transparent;
+  border-radius: 0px;
+}
+
+.emotion-14 {
+  position: relative;
+  -webkit-flex: 0 0 16px;
+  -ms-flex: 0 0 16px;
+  flex: 0 0 16px;
+  padding: 2px;
+  border: 0;
+  margin: 0;
+  background: transparent;
+  border-radius: 0 0 6 6px;
+  cursor: col-resize;
+}
+
+.emotion-14::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+  margin: auto;
+  border-left: 1px solid;
+  border-right: 1px solid;
+  border-color: #333;
+  height: 6px;
+  width: 3px;
+  min-width: 3px;
+  content: '';
+}
+
+.emotion-21 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #333;
+  width: 16px;
+  top: 0;
+  right: 0;
+  bottom: 16px;
+  left: auto;
+  position: absolute;
+  z-index: 1;
+}
+
+.emotion-17 {
+  position: relative;
+  -webkit-flex: 0 0 16px;
+  -ms-flex: 0 0 16px;
+  flex: 0 0 16px;
+  padding: 2px;
+  border: 0;
+  margin: 0;
+  background: transparent;
+  border-radius: 6 6 0 0px;
+  cursor: row-resize;
+}
+
+.emotion-17::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+  margin: auto;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  border-color: #333;
+  width: 6px;
+  height: 3px;
+  min-height: 3px;
+  content: '';
+}
+
+.emotion-19 {
+  position: relative;
+  -webkit-flex: 0 0 16px;
+  -ms-flex: 0 0 16px;
+  flex: 0 0 16px;
+  padding: 2px;
+  border: 0;
+  margin: 0;
+  background: transparent;
+  border-radius: 0 0 6 6px;
+  cursor: row-resize;
+}
+
+.emotion-19::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+  margin: auto;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  border-color: #333;
+  width: 6px;
+  height: 3px;
+  min-height: 3px;
+  content: '';
+}
+
+.emotion-22 {
+  position: absolute;
+  z-index: 9999;
+  right: 0;
+  bottom: 0;
+  width: 16px;
+  height: 16px;
+  background: #333;
+}
+
+<div
+  class="[object Object]"
+  scalex="1"
+  scaley="2"
+  style="width:100%;height:100vh"
 >
-  <Styled(GraphContainer)
-    lines={
-      Array [
-        Object {
-          "label": "fontSize",
-          "points": Array [
-            Array [
-              320,
-              12,
-            ],
-            Array [
-              540,
-              16,
-            ],
-            Array [
-              1280,
-              24,
-            ],
-          ],
-        },
-        Object {
-          "label": "width",
-          "points": Array [
-            Array [
-              320,
-              320,
-            ],
-            Array [
-              540,
-              480,
-            ],
-            Array [
-              1280,
-              1160,
-            ],
-          ],
-        },
-        Object {
-          "label": "height",
-          "points": Array [
-            Array [
-              320,
-              320,
-            ],
-            Array [
-              540,
-              405,
-            ],
-            Array [
-              1280,
-              652.5,
-            ],
-          ],
-        },
-      ]
-    }
-    style={
-      Object {
-        "height": "200%",
-        "width": "100%",
-      }
-    }
+  <div
+    class="emotion-11"
+  >
+    <div
+      style="width:100%;height:100%"
+    >
+      <div
+        class="emotion-10"
+        style="width:100%;height:200%"
+      >
+        <div
+          class="emotion-9"
+        >
+          <button
+            aria-label="Point (320, 12)"
+            class="emotion-0"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(320, 12)"
+            type="button"
+            width="960"
+          />
+          <button
+            aria-label="Point (540, 16)"
+            class="emotion-1"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(540, 16)"
+            type="button"
+            width="960"
+          />
+          <button
+            aria-label="Point (1280, 24)"
+            class="emotion-2"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(1280, 24)"
+            type="button"
+            width="960"
+          />
+          <button
+            aria-label="Point (320, 320)"
+            class="emotion-3"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(320, 320)"
+            type="button"
+            width="960"
+          />
+          <button
+            aria-label="Point (540, 480)"
+            class="emotion-4"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(540, 480)"
+            type="button"
+            width="960"
+          />
+          <button
+            aria-label="Point (1280, 1160)"
+            class="emotion-5"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(1280, 1160)"
+            type="button"
+            width="960"
+          />
+          <button
+            aria-label="Point (320, 320)"
+            class="emotion-6"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(320, 320)"
+            type="button"
+            width="960"
+          />
+          <button
+            aria-label="Point (540, 405)"
+            class="emotion-7"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(540, 405)"
+            type="button"
+            width="960"
+          />
+          <button
+            aria-label="Point (1280, 652.5)"
+            class="emotion-8"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(1280, 652.5)"
+            type="button"
+            width="960"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="emotion-16"
+    style="justify-content:flex-start"
+  >
+    <div
+      class="emotion-15"
+      style="height:100%;width:100%;transform:translateX(0%)"
+    >
+      <button
+        class="emotion-12"
+        type="button"
+      />
+      <button
+        class="emotion-13"
+        type="button"
+      />
+      <button
+        class="emotion-14"
+        type="button"
+      />
+    </div>
+  </div>
+  <div
+    class="emotion-21"
+    style="justify-content:flex-start"
+  >
+    <div
+      class="emotion-15"
+      style="width:100%;height:100%;transform:translateY(0%)"
+    >
+      <button
+        class="emotion-17"
+        type="button"
+      />
+      <button
+        class="emotion-13"
+        type="button"
+      />
+      <button
+        class="emotion-19"
+        type="button"
+      />
+    </div>
+  </div>
+  <div
+    class="emotion-22"
   />
-</ScrollView>
+</div>
 `;
 
 exports[`react-graph-editor/ScrollGraph with scaleY = 10 1`] = `
-<ScrollView
-  maxScaleX={10}
-  maxScaleY={10}
-  minScaleX={1}
-  minScaleY={1}
-  scaleIncrement={0.01}
-  scaleX={1}
-  scaleY={10}
-  style={
-    Object {
-      "height": "100vh",
-      "width": "100%",
-    }
-  }
+.emotion-11 {
+  overflow: auto;
+  width: calc(100% - 16px);
+  height: calc(100% - 16px);
+  -webkit-overflow-scrolling: touch;
+}
+
+.emotion-11::-webkit-scrollbar {
+  display: none;
+}
+
+.emotion-10 {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 4px;
+}
+
+.emotion-9 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.emotion-0 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #e41a1c;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  border-radius: 50%;
+  position: absolute;
+  left: 0%;
+  bottom: 0%;
+  -webkit-transform: translate(-50%,50%);
+  -ms-transform: translate(-50%,50%);
+  transform: translate(-50%,50%);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-1 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #e41a1c;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  border-radius: 50%;
+  position: absolute;
+  left: 22.916666666666664%;
+  bottom: 0.34843205574912894%;
+  -webkit-transform: translate(-50%,50%);
+  -ms-transform: translate(-50%,50%);
+  transform: translate(-50%,50%);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-2 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #e41a1c;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  border-radius: 50%;
+  position: absolute;
+  left: 100%;
+  bottom: 1.0452961672473868%;
+  -webkit-transform: translate(-50%,50%);
+  -ms-transform: translate(-50%,50%);
+  transform: translate(-50%,50%);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-3 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #377eb8;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  left: 0%;
+  bottom: 26.82926829268293%;
+  -webkit-transform: translate(-50%,50%) rotate(45deg);
+  -ms-transform: translate(-50%,50%) rotate(45deg);
+  transform: translate(-50%,50%) rotate(45deg);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-4 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #377eb8;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  left: 22.916666666666664%;
+  bottom: 40.76655052264808%;
+  -webkit-transform: translate(-50%,50%) rotate(45deg);
+  -ms-transform: translate(-50%,50%) rotate(45deg);
+  transform: translate(-50%,50%) rotate(45deg);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-5 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #377eb8;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  left: 100%;
+  bottom: 100%;
+  -webkit-transform: translate(-50%,50%) rotate(45deg);
+  -ms-transform: translate(-50%,50%) rotate(45deg);
+  transform: translate(-50%,50%) rotate(45deg);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-6 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #4daf4a;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  left: 0%;
+  bottom: 26.82926829268293%;
+  -webkit-transform: translate(-50%,50%);
+  -ms-transform: translate(-50%,50%);
+  transform: translate(-50%,50%);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-7 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #4daf4a;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  left: 22.916666666666664%;
+  bottom: 34.23344947735192%;
+  -webkit-transform: translate(-50%,50%);
+  -ms-transform: translate(-50%,50%);
+  transform: translate(-50%,50%);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-8 {
+  width: 8px;
+  height: 8px;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid transparent;
+  background: #4daf4a;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.15);
+  cursor: move;
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  left: 100%;
+  bottom: 55.79268292682927%;
+  -webkit-transform: translate(-50%,50%);
+  -ms-transform: translate(-50%,50%);
+  transform: translate(-50%,50%);
+  outline: 0;
+  text-indent: 100%;
+}
+
+.emotion-16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #333;
+  height: 16px;
+  top: auto;
+  right: 16px;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.emotion-15 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  -webkit-flex-direction: inherit;
+  -ms-flex-direction: inherit;
+  flex-direction: inherit;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.emotion-15::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 2px;
+  background: #ccc;
+  border-radius: 6px;
+  content: '';
+}
+
+.emotion-12 {
+  position: relative;
+  -webkit-flex: 0 0 16px;
+  -ms-flex: 0 0 16px;
+  flex: 0 0 16px;
+  padding: 2px;
+  border: 0;
+  margin: 0;
+  background: transparent;
+  border-radius: 6 6 0 0px;
+  cursor: col-resize;
+}
+
+.emotion-12::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+  margin: auto;
+  border-left: 1px solid;
+  border-right: 1px solid;
+  border-color: #333;
+  height: 6px;
+  width: 3px;
+  min-width: 3px;
+  content: '';
+}
+
+.emotion-13 {
+  position: relative;
+  -webkit-flex: 0 1 100%;
+  -ms-flex: 0 1 100%;
+  flex: 0 1 100%;
+  padding: 2px;
+  border: 0;
+  margin: 0;
+  background: transparent;
+  border-radius: 0px;
+}
+
+.emotion-14 {
+  position: relative;
+  -webkit-flex: 0 0 16px;
+  -ms-flex: 0 0 16px;
+  flex: 0 0 16px;
+  padding: 2px;
+  border: 0;
+  margin: 0;
+  background: transparent;
+  border-radius: 0 0 6 6px;
+  cursor: col-resize;
+}
+
+.emotion-14::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+  margin: auto;
+  border-left: 1px solid;
+  border-right: 1px solid;
+  border-color: #333;
+  height: 6px;
+  width: 3px;
+  min-width: 3px;
+  content: '';
+}
+
+.emotion-21 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #333;
+  width: 16px;
+  top: 0;
+  right: 0;
+  bottom: 16px;
+  left: auto;
+  position: absolute;
+  z-index: 1;
+}
+
+.emotion-17 {
+  position: relative;
+  -webkit-flex: 0 0 16px;
+  -ms-flex: 0 0 16px;
+  flex: 0 0 16px;
+  padding: 2px;
+  border: 0;
+  margin: 0;
+  background: transparent;
+  border-radius: 6 6 0 0px;
+  cursor: row-resize;
+}
+
+.emotion-17::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+  margin: auto;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  border-color: #333;
+  width: 6px;
+  height: 3px;
+  min-height: 3px;
+  content: '';
+}
+
+.emotion-19 {
+  position: relative;
+  -webkit-flex: 0 0 16px;
+  -ms-flex: 0 0 16px;
+  flex: 0 0 16px;
+  padding: 2px;
+  border: 0;
+  margin: 0;
+  background: transparent;
+  border-radius: 0 0 6 6px;
+  cursor: row-resize;
+}
+
+.emotion-19::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+  margin: auto;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  border-color: #333;
+  width: 6px;
+  height: 3px;
+  min-height: 3px;
+  content: '';
+}
+
+.emotion-22 {
+  position: absolute;
+  z-index: 9999;
+  right: 0;
+  bottom: 0;
+  width: 16px;
+  height: 16px;
+  background: #333;
+}
+
+<div
+  class="[object Object]"
+  scalex="1"
+  scaley="10"
+  style="width:100%;height:100vh"
 >
-  <Styled(GraphContainer)
-    lines={
-      Array [
-        Object {
-          "label": "fontSize",
-          "points": Array [
-            Array [
-              320,
-              12,
-            ],
-            Array [
-              540,
-              16,
-            ],
-            Array [
-              1280,
-              24,
-            ],
-          ],
-        },
-        Object {
-          "label": "width",
-          "points": Array [
-            Array [
-              320,
-              320,
-            ],
-            Array [
-              540,
-              480,
-            ],
-            Array [
-              1280,
-              1160,
-            ],
-          ],
-        },
-        Object {
-          "label": "height",
-          "points": Array [
-            Array [
-              320,
-              320,
-            ],
-            Array [
-              540,
-              405,
-            ],
-            Array [
-              1280,
-              652.5,
-            ],
-          ],
-        },
-      ]
-    }
-    style={
-      Object {
-        "height": "1000%",
-        "width": "100%",
-      }
-    }
+  <div
+    class="emotion-11"
+  >
+    <div
+      style="width:100%;height:100%"
+    >
+      <div
+        class="emotion-10"
+        style="width:100%;height:1000%"
+      >
+        <div
+          class="emotion-9"
+        >
+          <button
+            aria-label="Point (320, 12)"
+            class="emotion-0"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(320, 12)"
+            type="button"
+            width="960"
+          />
+          <button
+            aria-label="Point (540, 16)"
+            class="emotion-1"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(540, 16)"
+            type="button"
+            width="960"
+          />
+          <button
+            aria-label="Point (1280, 24)"
+            class="emotion-2"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(1280, 24)"
+            type="button"
+            width="960"
+          />
+          <button
+            aria-label="Point (320, 320)"
+            class="emotion-3"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(320, 320)"
+            type="button"
+            width="960"
+          />
+          <button
+            aria-label="Point (540, 480)"
+            class="emotion-4"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(540, 480)"
+            type="button"
+            width="960"
+          />
+          <button
+            aria-label="Point (1280, 1160)"
+            class="emotion-5"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(1280, 1160)"
+            type="button"
+            width="960"
+          />
+          <button
+            aria-label="Point (320, 320)"
+            class="emotion-6"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(320, 320)"
+            type="button"
+            width="960"
+          />
+          <button
+            aria-label="Point (540, 405)"
+            class="emotion-7"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(540, 405)"
+            type="button"
+            width="960"
+          />
+          <button
+            aria-label="Point (1280, 652.5)"
+            class="emotion-8"
+            height="1148"
+            maxx="1280"
+            maxy="1160"
+            minx="320"
+            miny="12"
+            originx="left"
+            originy="bottom"
+            title="(1280, 652.5)"
+            type="button"
+            width="960"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="emotion-16"
+    style="justify-content:flex-start"
+  >
+    <div
+      class="emotion-15"
+      style="height:100%;width:100%;transform:translateX(0%)"
+    >
+      <button
+        class="emotion-12"
+        type="button"
+      />
+      <button
+        class="emotion-13"
+        type="button"
+      />
+      <button
+        class="emotion-14"
+        type="button"
+      />
+    </div>
+  </div>
+  <div
+    class="emotion-21"
+    style="justify-content:flex-start"
+  >
+    <div
+      class="emotion-15"
+      style="width:100%;height:100%;transform:translateY(0%)"
+    >
+      <button
+        class="emotion-17"
+        type="button"
+      />
+      <button
+        class="emotion-13"
+        type="button"
+      />
+      <button
+        class="emotion-19"
+        type="button"
+      />
+    </div>
+  </div>
+  <div
+    class="emotion-22"
   />
-</ScrollView>
+</div>
 `;
