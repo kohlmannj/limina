@@ -5,24 +5,52 @@ $limina-artboards: (
   compact: (
     width: 375px,
     height: 667px,
-    breakpoint: (max-width: 539px)
+    breakpoint: (
+      max-width: 539px,
+    ),
   ),
-  tablet:  (
+  tablet: (
     width: 768px,
     height: 1024px,
-    breakpoint: (min-width: 540px) 'and' (max-width: 853px)
+    breakpoint: (
+      min-width: 540px,
+    )
+    'and'
+    (
+      max-width: 853px,
+    ),
   ),
   regular: (
     width: 1280px,
     height: 800px,
-    breakpoint: (min-width: 854px) 'and' (min-width: 1280px)
-  )
+    breakpoint: (
+      min-width: 854px,
+    )
+    'and'
+    (
+      min-width: 1280px,
+    ),
+  ),
 );
 
 $limina-breakpoints: (
-  compact: (max-width: 539px),
-  medium:  (min-width: 540px) 'and' (max-width: 853px),
-  regular: (min-width: 854px) 'and' (min-width: 1280px)
+  compact: (
+    max-width: 539px,
+  ),
+  medium: (
+    min-width: 540px,
+  )
+  'and'
+  (
+    max-width: 853px,
+  ),
+  regular: (
+    min-width: 854px,
+  )
+  'and'
+  (
+    min-width: 1280px,
+  ),
 );
 
 $limina-default-breakpoint: null;
@@ -32,7 +60,12 @@ $limina-default-breakpoint: null;
 }
 
 @mixin limina-breakpoint($breakpoint, $props: null) {
-  @include limina-create-breakpoint($limina-breakpoints, $limina-default-breakpoint, $breakpoint, $props) {
+  @include limina-create-breakpoint(
+    $limina-breakpoints,
+    $limina-default-breakpoint,
+    $breakpoint,
+    $props
+  ) {
     @content;
   }
 }

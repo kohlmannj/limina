@@ -1,0 +1,114 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`react-graph-editor/ScrollView with resizeable kitten 1`] = `
+.emotion-4 {
+  position: relative;
+  overflow: hidden;
+}
+
+.emotion-2 {
+  position: absolute;
+  z-index: 1;
+}
+
+.emotion-0 {
+  width: 100%;
+  height: 100%;
+  background-image: url('https://placekitten.com/g/1600/1600');
+  background-size: 100% 100%;
+}
+
+.emotion-1 {
+  overflow: auto;
+  width: calc(100% - 16px);
+  height: calc(100% - 16px);
+  -webkit-overflow-scrolling: touch;
+}
+
+.emotion-1::-webkit-scrollbar {
+  display: none;
+}
+
+<div
+  className="emotion-4"
+  scaleX={1}
+  scaleY={1}
+  style={
+    Object {
+      "height": "100vh",
+      "width": "100%",
+    }
+  }
+>
+  <div
+    className="emotion-1"
+    onScroll={[Function]}
+  >
+    <div
+      style={
+        Object {
+          "height": "100%",
+          "width": "100%",
+        }
+      }
+    >
+      <div
+        className="emotion-0"
+      />
+    </div>
+  </div>
+  <Component
+    axis="x"
+    className="emotion-2"
+    progress={0.5}
+    scale={1}
+    thumbEndProps={
+      Object {
+        "dragSignifier": true,
+        "onMouseDown": [Function],
+        "onTouchStart": [Function],
+      }
+    }
+    thumbMiddleProps={
+      Object {
+        "onMouseDown": [Function],
+        "onTouchStart": [Function],
+      }
+    }
+    thumbStartProps={
+      Object {
+        "dragSignifier": true,
+        "onMouseDown": [Function],
+        "onTouchStart": [Function],
+      }
+    }
+  />
+  <Component
+    axis="y"
+    className="emotion-2"
+    progress={0.5}
+    scale={1}
+    thumbEndProps={
+      Object {
+        "dragSignifier": true,
+        "onMouseDown": [Function],
+        "onTouchStart": [Function],
+      }
+    }
+    thumbMiddleProps={
+      Object {
+        "onMouseDown": [Function],
+        "onTouchStart": [Function],
+      }
+    }
+    thumbStartProps={
+      Object {
+        "dragSignifier": true,
+        "onMouseDown": [Function],
+        "onTouchStart": [Function],
+      }
+    }
+  />
+  <Styled(div) />
+</div>
+`;

@@ -1,11 +1,11 @@
 import SLR from 'ml-regression-simple-linear';
-import { ICSSValueRetargetingOptions } from '..';
-import { IBreakpointTuple } from '../BreakpointTuple';
-import defaultOptions from './cssValueRetargetingDefaultOptions';
+import { CSSValueRetargetingOptions } from '..';
+import { BreakpointTupleable } from '../BreakpointTuple';
+import { cssValueRetargetingDefaultOptions as defaultOptions } from './cssValueRetargetingDefaultOptions';
 
-const createLinearRegressionMediaQuery = (options: ICSSValueRetargetingOptions) => (
-  leftTuple: IBreakpointTuple,
-  rightTuple: IBreakpointTuple
+export const createLinearRegressionMediaQuery = (options: CSSValueRetargetingOptions) => (
+  leftTuple: BreakpointTupleable,
+  rightTuple: BreakpointTupleable
 ) => {
   const { dynamicUnit, property } = { ...defaultOptions, ...options };
 
@@ -68,5 +68,3 @@ const createLinearRegressionMediaQuery = (options: ICSSValueRetargetingOptions) 
     },
   };
 };
-
-export default createLinearRegressionMediaQuery;

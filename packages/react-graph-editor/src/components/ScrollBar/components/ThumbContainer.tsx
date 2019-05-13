@@ -1,7 +1,8 @@
-import React, { SFC } from 'react';
-import { css } from 'react-emotion';
-import { IScrollBarProps, IStyledScrollBarProps } from '..';
-import defaultTheme from '../../../theme';
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core';
+import { FunctionComponent } from 'react';
+import { ScrollBarProps, StyledScrollBarProps } from '..';
+import { defaults } from '../../../scrollBarTheme';
 
 export const getOvershootFactor = (progress = 0, min = 0, max = 1): number => {
   let overshoot;
@@ -17,45 +18,42 @@ export const getOvershootFactor = (progress = 0, min = 0, max = 1): number => {
   return overshoot;
 };
 
-export const getTranslateFactor = ({ progress, scale }: IScrollBarProps) => {
+export const getTranslateFactor = ({ progress, scale }: ScrollBarProps) => {
   const cappedProgress = Math.min(Math.max(progress || 0, 0), 1);
   const halfwayAddend = typeof progress !== 'undefined' && progress > 0.5 ? -1 : 0;
   const scaleMultiplier = (scale || 1) - 1;
   return (cappedProgress + halfwayAddend) * scaleMultiplier;
 };
 
-export const getMainAxisLength = ({ axis }: IScrollBarProps) => ({
+export const getMainAxisLength = ({ axis }: ScrollBarProps) => ({
   [!axis || axis === 'y' ? 'width' : 'height']: '100%',
 });
 
-export const getCrossAxisLength = ({ axis, progress, scale }: IScrollBarProps) => {
+export const getCrossAxisLength = ({ axis, progress, scale }: ScrollBarProps) => {
   const crossAxisProperty = !axis || axis === 'y' ? 'height' : 'width';
   // const minCrossAxisProperty = `min${crossAxisProperty}`;
 
   return {
-    [crossAxisProperty]: `${1 / (scale || 1) * getOvershootFactor(progress) * 100}%`,
+    [crossAxisProperty]: `${(1 / (scale || 1)) * getOvershootFactor(progress) * 100}%`,
   };
 };
 
-export const getSingleBorderRadiusValue = ({ theme }: IStyledScrollBarProps) =>
-  (theme && typeof theme.thumbWidth !== 'undefined' ? theme.thumbWidth : defaultTheme.thumbWidth) /
-  2;
+export const getSingleBorderRadiusValue = ({ theme }: StyledScrollBarProps) =>
+  (theme && typeof theme.thumbWidth !== 'undefined' ? theme.thumbWidth : defaults.thumbWidth) / 2;
 
-export const getTransform = ({ axis, progress, scale }: IScrollBarProps) => ({
+export const getTransform = ({ axis, progress, scale }: ScrollBarProps) => ({
   transform: `translate${(axis || 'y').toUpperCase()}(${getTranslateFactor({
     progress,
     scale,
   }) * 100}%)`,
 });
 
-export const getSingleMarginValue = ({ theme }: IStyledScrollBarProps) =>
-  ((theme && typeof theme.trackWidth !== 'undefined' ? theme.trackWidth : defaultTheme.trackWidth) -
-    (theme && typeof theme.thumbWidth !== 'undefined'
-      ? theme.thumbWidth
-      : defaultTheme.thumbWidth)) /
+export const getSingleMarginValue = ({ theme }: StyledScrollBarProps) =>
+  ((theme && typeof theme.trackWidth !== 'undefined' ? theme.trackWidth : defaults.trackWidth) -
+    (theme && typeof theme.thumbWidth !== 'undefined' ? theme.thumbWidth : defaults.thumbWidth)) /
   2;
 
-const thumbStyles = css`
+const thumbCss = css`
   position: relative;
   display: flex;
   width: 100%;
@@ -71,14 +69,13 @@ const thumbStyles = css`
     bottom: 0;
     left: 0;
     margin: ${getSingleMarginValue({})}px;
-    background: ${defaultTheme.thumbColor};
+    background: ${defaults.thumbColor};
     border-radius: ${getSingleBorderRadiusValue({})}px;
     content: '';
   }
 `;
 
-const ThumbContainer: SFC<IScrollBarProps> = ({
-  className,
+export const ThumbContainer: FunctionComponent<ScrollBarProps> = ({
   axis,
   progress,
   scale,
@@ -86,7 +83,7 @@ const ThumbContainer: SFC<IScrollBarProps> = ({
   ...rest
 }) => (
   <div
-    className={`${className} ${thumbStyles}`}
+    css={thumbCss}
     style={{
       ...style,
       ...getMainAxisLength({ axis }),
@@ -96,5 +93,3 @@ const ThumbContainer: SFC<IScrollBarProps> = ({
     {...rest}
   />
 );
-
-export default ThumbContainer;

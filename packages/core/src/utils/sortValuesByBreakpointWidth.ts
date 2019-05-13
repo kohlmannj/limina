@@ -1,6 +1,6 @@
-import { IBreakpointTuple } from '../BreakpointTuple';
+import { BreakpointTupleable } from '../BreakpointTuple';
 
-const sortValuesByBreakpointWidth = (l: IBreakpointTuple, r: IBreakpointTuple) => {
+export const sortValuesByBreakpointWidth = (l: BreakpointTupleable, r: BreakpointTupleable) => {
   const leftWidth = l.breakpoint.props.width;
   const rightWidth = r.breakpoint.props.width;
 
@@ -12,5 +12,3 @@ const sortValuesByBreakpointWidth = (l: IBreakpointTuple, r: IBreakpointTuple) =
   }
   return 0;
 };
-
-export default sortValuesByBreakpointWidth;

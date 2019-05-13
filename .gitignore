@@ -1,7 +1,10 @@
 .cache
+.jest_cache
 coverage
+dist
 lerna-debug.log
 lib
 node_modules
 yarn-error.log
 packages/**/LICENSE
+*.tsbuildinfo

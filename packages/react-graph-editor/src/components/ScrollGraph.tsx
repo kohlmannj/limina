@@ -1,16 +1,25 @@
-import React, { CSSProperties, SFC } from 'react';
-import Graph, { IGraphProps } from './Graph';
-import ScrollView from './ScrollView';
+/** @jsx jsx */
+import { jsx } from '@emotion/core';
+import { CSSProperties, FunctionComponent } from 'react';
+import { StyledGraphContainer, GraphProps } from './Graph';
+import { ScrollView } from './ScrollView';
 
-export interface IScrollGraphProps extends IGraphProps {
+export interface ScrollGraphProps extends GraphProps {
+  className?: string;
   scaleX?: number;
   scaleY?: number;
   style?: CSSProperties;
 }
 
-const ScrollGraph: SFC<IScrollGraphProps> = ({ className, scaleX, scaleY, style, ...rest }) => (
+export const ScrollGraph: FunctionComponent<ScrollGraphProps> = ({
+  className,
+  scaleX,
+  scaleY,
+  style,
+  ...rest
+}) => (
   <ScrollView scaleX={scaleX} scaleY={scaleY} className={className} style={style}>
-    <Graph
+    <StyledGraphContainer
       style={{
         width: `${(scaleX || 1) * 100}%`,
         height: `${(scaleY || 1) * 100}%`,
@@ -24,5 +33,3 @@ ScrollGraph.defaultProps = {
   scaleX: 1,
   scaleY: 1,
 };
-
-export default ScrollGraph;

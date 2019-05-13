@@ -3,6 +3,7 @@ module.exports = {
     'stylelint-config-idiomatic-order',
     'stylelint-config-standard',
     'stylelint-config-styled-components',
+    'stylelint-prettier/recommended',
   ],
   rules: {
     'declaration-empty-line-before': null,

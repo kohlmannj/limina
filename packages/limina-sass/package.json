@@ -17,8 +17,5 @@
   },
   "dependencies": {
     "sassdash": "^0.9.0"
-  },
-  "devDependencies": {
-    "sass": "^1.16.1"
   }
 }

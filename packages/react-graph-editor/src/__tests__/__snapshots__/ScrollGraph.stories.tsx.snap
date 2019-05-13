@@ -1,0 +1,575 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`react-graph-editor/ScrollGraph with default scales 1`] = `
+<ScrollView
+  maxScaleX={10}
+  maxScaleY={10}
+  minScaleX={1}
+  minScaleY={1}
+  scaleIncrement={0.01}
+  scaleX={1}
+  scaleY={1}
+  style={
+    Object {
+      "height": "100vh",
+      "width": "100%",
+    }
+  }
+>
+  <Styled(GraphContainer)
+    lines={
+      Array [
+        Object {
+          "label": "fontSize",
+          "points": Array [
+            Array [
+              320,
+              12,
+            ],
+            Array [
+              540,
+              16,
+            ],
+            Array [
+              1280,
+              24,
+            ],
+          ],
+        },
+        Object {
+          "label": "width",
+          "points": Array [
+            Array [
+              320,
+              320,
+            ],
+            Array [
+              540,
+              480,
+            ],
+            Array [
+              1280,
+              1160,
+            ],
+          ],
+        },
+        Object {
+          "label": "height",
+          "points": Array [
+            Array [
+              320,
+              320,
+            ],
+            Array [
+              540,
+              405,
+            ],
+            Array [
+              1280,
+              652.5,
+            ],
+          ],
+        },
+      ]
+    }
+    style={
+      Object {
+        "height": "100%",
+        "width": "100%",
+      }
+    }
+  />
+</ScrollView>
+`;
+
+exports[`react-graph-editor/ScrollGraph with scaleX = 2 1`] = `
+<ScrollView
+  maxScaleX={10}
+  maxScaleY={10}
+  minScaleX={1}
+  minScaleY={1}
+  scaleIncrement={0.01}
+  scaleX={2}
+  scaleY={1}
+  style={
+    Object {
+      "height": "100vh",
+      "width": "100%",
+    }
+  }
+>
+  <Styled(GraphContainer)
+    lines={
+      Array [
+        Object {
+          "label": "fontSize",
+          "points": Array [
+            Array [
+              320,
+              12,
+            ],
+            Array [
+              540,
+              16,
+            ],
+            Array [
+              1280,
+              24,
+            ],
+          ],
+        },
+        Object {
+          "label": "width",
+          "points": Array [
+            Array [
+              320,
+              320,
+            ],
+            Array [
+              540,
+              480,
+            ],
+            Array [
+              1280,
+              1160,
+            ],
+          ],
+        },
+        Object {
+          "label": "height",
+          "points": Array [
+            Array [
+              320,
+              320,
+            ],
+            Array [
+              540,
+              405,
+            ],
+            Array [
+              1280,
+              652.5,
+            ],
+          ],
+        },
+      ]
+    }
+    style={
+      Object {
+        "height": "100%",
+        "width": "200%",
+      }
+    }
+  />
+</ScrollView>
+`;
+
+exports[`react-graph-editor/ScrollGraph with scaleX = 10 1`] = `
+<ScrollView
+  maxScaleX={10}
+  maxScaleY={10}
+  minScaleX={1}
+  minScaleY={1}
+  scaleIncrement={0.01}
+  scaleX={10}
+  scaleY={1}
+  style={
+    Object {
+      "height": "100vh",
+      "width": "100%",
+    }
+  }
+>
+  <Styled(GraphContainer)
+    lines={
+      Array [
+        Object {
+          "label": "fontSize",
+          "points": Array [
+            Array [
+              320,
+              12,
+            ],
+            Array [
+              540,
+              16,
+            ],
+            Array [
+              1280,
+              24,
+            ],
+          ],
+        },
+        Object {
+          "label": "width",
+          "points": Array [
+            Array [
+              320,
+              320,
+            ],
+            Array [
+              540,
+              480,
+            ],
+            Array [
+              1280,
+              1160,
+            ],
+          ],
+        },
+        Object {
+          "label": "height",
+          "points": Array [
+            Array [
+              320,
+              320,
+            ],
+            Array [
+              540,
+              405,
+            ],
+            Array [
+              1280,
+              652.5,
+            ],
+          ],
+        },
+      ]
+    }
+    style={
+      Object {
+        "height": "100%",
+        "width": "1000%",
+      }
+    }
+  />
+</ScrollView>
+`;
+
+exports[`react-graph-editor/ScrollGraph with scaleX = scaleY = 2 1`] = `
+<ScrollView
+  maxScaleX={10}
+  maxScaleY={10}
+  minScaleX={1}
+  minScaleY={1}
+  scaleIncrement={0.01}
+  scaleX={2}
+  scaleY={2}
+  style={
+    Object {
+      "height": "100vh",
+      "width": "100%",
+    }
+  }
+>
+  <Styled(GraphContainer)
+    lines={
+      Array [
+        Object {
+          "label": "fontSize",
+          "points": Array [
+            Array [
+              320,
+              12,
+            ],
+            Array [
+              540,
+              16,
+            ],
+            Array [
+              1280,
+              24,
+            ],
+          ],
+        },
+        Object {
+          "label": "width",
+          "points": Array [
+            Array [
+              320,
+              320,
+            ],
+            Array [
+              540,
+              480,
+            ],
+            Array [
+              1280,
+              1160,
+            ],
+          ],
+        },
+        Object {
+          "label": "height",
+          "points": Array [
+            Array [
+              320,
+              320,
+            ],
+            Array [
+              540,
+              405,
+            ],
+            Array [
+              1280,
+              652.5,
+            ],
+          ],
+        },
+      ]
+    }
+    style={
+      Object {
+        "height": "200%",
+        "width": "200%",
+      }
+    }
+  />
+</ScrollView>
+`;
+
+exports[`react-graph-editor/ScrollGraph with scaleX = scaleY = 10 1`] = `
+<ScrollView
+  maxScaleX={10}
+  maxScaleY={10}
+  minScaleX={1}
+  minScaleY={1}
+  scaleIncrement={0.01}
+  scaleX={10}
+  scaleY={10}
+  style={
+    Object {
+      "height": "100vh",
+      "width": "100%",
+    }
+  }
+>
+  <Styled(GraphContainer)
+    lines={
+      Array [
+        Object {
+          "label": "fontSize",
+          "points": Array [
+            Array [
+              320,
+              12,
+            ],
+            Array [
+              540,
+              16,
+            ],
+            Array [
+              1280,
+              24,
+            ],
+          ],
+        },
+        Object {
+          "label": "width",
+          "points": Array [
+            Array [
+              320,
+              320,
+            ],
+            Array [
+              540,
+              480,
+            ],
+            Array [
+              1280,
+              1160,
+            ],
+          ],
+        },
+        Object {
+          "label": "height",
+          "points": Array [
+            Array [
+              320,
+              320,
+            ],
+            Array [
+              540,
+              405,
+            ],
+            Array [
+              1280,
+              652.5,
+            ],
+          ],
+        },
+      ]
+    }
+    style={
+      Object {
+        "height": "1000%",
+        "width": "1000%",
+      }
+    }
+  />
+</ScrollView>
+`;
+
+exports[`react-graph-editor/ScrollGraph with scaleY = 2 1`] = `
+<ScrollView
+  maxScaleX={10}
+  maxScaleY={10}
+  minScaleX={1}
+  minScaleY={1}
+  scaleIncrement={0.01}
+  scaleX={1}
+  scaleY={2}
+  style={
+    Object {
+      "height": "100vh",
+      "width": "100%",
+    }
+  }
+>
+  <Styled(GraphContainer)
+    lines={
+      Array [
+        Object {
+          "label": "fontSize",
+          "points": Array [
+            Array [
+              320,
+              12,
+            ],
+            Array [
+              540,
+              16,
+            ],
+            Array [
+              1280,
+              24,
+            ],
+          ],
+        },
+        Object {
+          "label": "width",
+          "points": Array [
+            Array [
+              320,
+              320,
+            ],
+            Array [
+              540,
+              480,
+            ],
+            Array [
+              1280,
+              1160,
+            ],
+          ],
+        },
+        Object {
+          "label": "height",
+          "points": Array [
+            Array [
+              320,
+              320,
+            ],
+            Array [
+              540,
+              405,
+            ],
+            Array [
+              1280,
+              652.5,
+            ],
+          ],
+        },
+      ]
+    }
+    style={
+      Object {
+        "height": "200%",
+        "width": "100%",
+      }
+    }
+  />
+</ScrollView>
+`;
+
+exports[`react-graph-editor/ScrollGraph with scaleY = 10 1`] = `
+<ScrollView
+  maxScaleX={10}
+  maxScaleY={10}
+  minScaleX={1}
+  minScaleY={1}
+  scaleIncrement={0.01}
+  scaleX={1}
+  scaleY={10}
+  style={
+    Object {
+      "height": "100vh",
+      "width": "100%",
+    }
+  }
+>
+  <Styled(GraphContainer)
+    lines={
+      Array [
+        Object {
+          "label": "fontSize",
+          "points": Array [
+            Array [
+              320,
+              12,
+            ],
+            Array [
+              540,
+              16,
+            ],
+            Array [
+              1280,
+              24,
+            ],
+          ],
+        },
+        Object {
+          "label": "width",
+          "points": Array [
+            Array [
+              320,
+              320,
+            ],
+            Array [
+              540,
+              480,
+            ],
+            Array [
+              1280,
+              1160,
+            ],
+          ],
+        },
+        Object {
+          "label": "height",
+          "points": Array [
+            Array [
+              320,
+              320,
+            ],
+            Array [
+              540,
+              405,
+            ],
+            Array [
+              1280,
+              652.5,
+            ],
+          ],
+        },
+      ]
+    }
+    style={
+      Object {
+        "height": "1000%",
+        "width": "100%",
+      }
+    }
+  />
+</ScrollView>
+`;

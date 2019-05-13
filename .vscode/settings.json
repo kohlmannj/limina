@@ -1,12 +1,20 @@
 {
   "search.exclude": {
+    ".cache": true,
+    ".jest_cache": true,
+    "**/dist": true,
+    "**/lib": true,
     "**/node_modules": true,
-    "**/lib": true
   },
-  "workbench.colorTheme": "Atom One Dark",
-  "stylelint.additionalDocumentSelectors": [
+  "editor.formatOnSave": false,
+  "eslint.autoFixOnSave": true,
+  /** @see https://github.com/Microsoft/vscode-eslint/issues/284#issuecomment-325913370 */
+  "eslint.validate": [
+    "javascript",
     "javascriptreact",
-    "typescriptreact"
+    { "language": "typescript", "autoFix": true },
+    { "language": "typescriptreact", "autoFix": true }
   ],
-  "typescript.tsdk": "node_modules\\typescript\\lib"
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "eslint.enable": true
 }

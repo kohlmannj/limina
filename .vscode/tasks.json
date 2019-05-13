@@ -1,0 +1,57 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "npm",
+      "script": "build",
+      "problemMatcher": ["$tsc"]
+    },
+    {
+      "type": "npm",
+      "script": "lint:js",
+      "problemMatcher": ["$eslint-stylish"]
+    },
+    {
+      "label": "watch:dist",
+      "type": "npm",
+      "script": "watch:dist",
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
+      "label": "watch:lib",
+      "type": "npm",
+      "script": "watch:lib",
+      "isBackground": true,
+      "problemMatcher": ["$tsc-watch"]
+    },
+    {
+      "label": "watch:lint:js",
+      "type": "npm",
+      "script": "watch:lint:js",
+      "isBackground": true,
+      "problemMatcher": ["$eslint-stylish"]
+    },
+    {
+      "label": "watch",
+      "isBackground": true,
+      "dependsOn": ["watch:dist", "watch:lib", "watch:lint:js"],
+      "problemMatcher": []
+    },
+    {
+      "label": "npm:storybook-server",
+      "type": "npm",
+      "script": "storybook-server",
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
+      "label": "Storybook",
+      "isBackground": true,
+      "dependsOn": ["npm:storybook-server", "watch:lib"],
+      "problemMatcher": []
+    }
+  ]
+}

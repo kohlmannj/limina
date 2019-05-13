@@ -1,7 +1,6 @@
 !.storybook
-*.ts
-*.tsx
 build
 coverage
+dist
 lib
 node_modules

@@ -1,0 +1,314 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`react-graph-editor/Graph with lines 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "rgba(0,0,0,0.25)",
+      "height": "100vh",
+      "width": "100%",
+    }
+  }
+>
+  <Styled(GraphContainer)
+    lines={
+      Array [
+        Object {
+          "label": "fontSize",
+          "points": Array [
+            Array [
+              320,
+              12,
+            ],
+            Array [
+              540,
+              16,
+            ],
+            Array [
+              1280,
+              24,
+            ],
+          ],
+        },
+        Object {
+          "label": "width",
+          "points": Array [
+            Array [
+              320,
+              320,
+            ],
+            Array [
+              540,
+              480,
+            ],
+            Array [
+              1280,
+              1160,
+            ],
+          ],
+        },
+        Object {
+          "label": "height",
+          "points": Array [
+            Array [
+              320,
+              320,
+            ],
+            Array [
+              540,
+              405,
+            ],
+            Array [
+              1280,
+              652.5,
+            ],
+          ],
+        },
+      ]
+    }
+  />
+</div>
+`;
+
+exports[`react-graph-editor/Graph with lines and theme 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "rgba(0,0,0,0.25)",
+      "boxSizing": "border-box",
+      "height": "100vh",
+      "width": "100%",
+    }
+  }
+>
+  <ThemeProvider
+    theme={
+      Object {
+        "thickness": 16,
+      }
+    }
+  >
+    <Styled(GraphContainer)
+      lines={
+        Array [
+          Object {
+            "label": "fontSize",
+            "points": Array [
+              Array [
+                320,
+                12,
+              ],
+              Array [
+                540,
+                16,
+              ],
+              Array [
+                1280,
+                24,
+              ],
+            ],
+          },
+          Object {
+            "label": "width",
+            "points": Array [
+              Array [
+                320,
+                320,
+              ],
+              Array [
+                540,
+                480,
+              ],
+              Array [
+                1280,
+                1160,
+              ],
+            ],
+          },
+          Object {
+            "label": "height",
+            "points": Array [
+              Array [
+                320,
+                320,
+              ],
+              Array [
+                540,
+                405,
+              ],
+              Array [
+                1280,
+                652.5,
+              ],
+            ],
+          },
+        ]
+      }
+    />
+  </ThemeProvider>
+</div>
+`;
+
+exports[`react-graph-editor/Graph with lines and theme and custom bounds 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "rgba(0,0,0,0.25)",
+      "boxSizing": "border-box",
+      "height": "100vh",
+      "width": "100%",
+    }
+  }
+>
+  <ThemeProvider
+    theme={
+      Object {
+        "thickness": 16,
+      }
+    }
+  >
+    <Styled(GraphContainer)
+      lines={
+        Array [
+          Object {
+            "label": "fontSize",
+            "points": Array [
+              Array [
+                320,
+                12,
+              ],
+              Array [
+                540,
+                16,
+              ],
+              Array [
+                1280,
+                24,
+              ],
+            ],
+          },
+          Object {
+            "label": "width",
+            "points": Array [
+              Array [
+                320,
+                320,
+              ],
+              Array [
+                540,
+                480,
+              ],
+              Array [
+                1280,
+                1160,
+              ],
+            ],
+          },
+          Object {
+            "label": "height",
+            "points": Array [
+              Array [
+                320,
+                320,
+              ],
+              Array [
+                540,
+                405,
+              ],
+              Array [
+                1280,
+                652.5,
+              ],
+            ],
+          },
+        ]
+      }
+      maxX={1605}
+      maxY={1605}
+      minX={-1000}
+      minY={-1000}
+    />
+  </ThemeProvider>
+</div>
+`;
+
+exports[`react-graph-editor/Graph with lines and theme and zero point 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "rgba(0,0,0,0.25)",
+      "boxSizing": "border-box",
+      "height": "100vh",
+      "width": "100%",
+    }
+  }
+>
+  <ThemeProvider
+    theme={
+      Object {
+        "thickness": 16,
+      }
+    }
+  >
+    <Styled(GraphContainer)
+      lines={
+        Array [
+          Object {
+            "label": "fontSize",
+            "points": Array [
+              Array [
+                320,
+                12,
+              ],
+              Array [
+                540,
+                16,
+              ],
+              Array [
+                1280,
+                24,
+              ],
+            ],
+          },
+          Object {
+            "label": "width",
+            "points": Array [
+              Array [
+                320,
+                320,
+              ],
+              Array [
+                540,
+                480,
+              ],
+              Array [
+                1280,
+                1160,
+              ],
+            ],
+          },
+          Object {
+            "label": "height",
+            "points": Array [
+              Array [
+                320,
+                320,
+              ],
+              Array [
+                540,
+                405,
+              ],
+              Array [
+                1280,
+                652.5,
+              ],
+            ],
+          },
+        ]
+      }
+      minX={0}
+      minY={0}
+    />
+  </ThemeProvider>
+</div>
+`;

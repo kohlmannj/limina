@@ -1,21 +1,21 @@
 import units from 'units-css';
 import { CSSValue } from '.';
-import { Breakpoint, IBreakpoint } from './Breakpoint';
+import { Breakpoint, Breakpointable } from './Breakpoint';
 
-export interface IBreakpointTupleOptions {
-  breakpoint: IBreakpoint;
+export interface BreakpointTupleOptions {
+  breakpoint: Breakpointable;
   value: CSSValue;
 }
 
-export interface IBreakpointTuple {
-  breakpoint: IBreakpoint;
+export interface BreakpointTupleable {
+  breakpoint: Breakpointable;
   rawValue: CSSValue;
   unit: string;
   value: number;
 }
 
-export class BreakpointTuple implements IBreakpointTuple {
-  public static isValid(breakpointTuple: IBreakpointTuple) {
+export class BreakpointTuple implements BreakpointTupleable {
+  public static isValid(breakpointTuple: BreakpointTupleable) {
     return (
       typeof breakpointTuple === 'object' &&
       breakpointTuple !== null &&
@@ -25,12 +25,15 @@ export class BreakpointTuple implements IBreakpointTuple {
     );
   }
 
-  public readonly breakpoint: IBreakpoint;
+  public readonly breakpoint: Breakpointable;
+
   public readonly rawValue: CSSValue;
+
   public readonly unit: string;
+
   public readonly value: number;
 
-  constructor(protected options: IBreakpointTupleOptions) {
+  public constructor(options: BreakpointTupleOptions) {
     const { breakpoint, value: rawValue } = options;
 
     if (!Breakpoint.isValid(breakpoint)) {
@@ -56,6 +59,5 @@ export class BreakpointTuple implements IBreakpointTuple {
   }
 }
 
-const createBreakpointTuple = (options: IBreakpointTupleOptions) => new BreakpointTuple(options);
-
-export default createBreakpointTuple;
+export const createBreakpointTuple = (options: BreakpointTupleOptions) =>
+  new BreakpointTuple(options);

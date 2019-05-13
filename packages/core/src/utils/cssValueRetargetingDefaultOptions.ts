@@ -1,7 +1,5 @@
-import { ICSSValueRetargetingDefaultOptions } from '..';
+import { CSSValueRetargetingDefaultOptions } from '..';
 
-const cssValueRetargetingDefaultOptions: ICSSValueRetargetingDefaultOptions = {
+export const cssValueRetargetingDefaultOptions: CSSValueRetargetingDefaultOptions = {
   dynamicUnit: 'vw',
 };
-
-export default cssValueRetargetingDefaultOptions;

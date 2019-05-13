@@ -1,17 +1,17 @@
 import units from 'units-css';
 import { CSSValue } from '.';
-import createBreakpointTuple, { IBreakpointTuple } from './BreakpointTuple';
+import { createBreakpointTuple, BreakpointTupleable } from './BreakpointTuple';
 
 export type Modifier = 'min' | 'max';
 export type Operator = 'and' | 'or';
 
-export interface IBreakpointDefaultProps {
+export interface BreakpointDefaultProps {
   readonly modifier: Modifier;
   readonly operator: Operator;
   readonly unit: string;
 }
 
-export interface IBreakpointOptions {
+export interface BreakpointOptionsObject {
   readonly modifier?: Modifier;
   readonly name?: string;
   readonly operator?: Operator;
@@ -19,35 +19,36 @@ export interface IBreakpointOptions {
   readonly width: CSSValue;
 }
 
-export type BreakpointOptions = IBreakpointOptions | CSSValue;
+export type BreakpointOptions = BreakpointOptionsObject | CSSValue;
 
-export interface IBreakpointProps {
+export interface BreakpointProps {
   readonly modifier: Modifier;
   readonly name?: string;
   readonly operator: Operator;
   readonly rawWidth: CSSValue;
   readonly unit: string;
   readonly width: number;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   readonly [propName: string]: any;
 }
 
-export interface IBreakpoint {
-  props: IBreakpointProps;
-  createTuple: (value: CSSValue) => IBreakpointTuple;
+export interface Breakpointable {
+  props: BreakpointProps;
+  createTuple: (value: CSSValue) => BreakpointTupleable;
   toString: () => string;
 }
 
 export const modifiers = ['min', 'max'];
 export const operators = ['and', 'or'];
 
-export class Breakpoint implements IBreakpoint {
-  public static readonly defaultProps: IBreakpointDefaultProps = {
+export class Breakpoint implements Breakpointable {
+  public static readonly defaultProps: BreakpointDefaultProps = {
     modifier: 'min',
     operator: 'and',
     unit: 'px',
   };
 
-  public static isValid(breakpoint: IBreakpoint) {
+  public static isValid(breakpoint: Breakpointable) {
     return (
       typeof breakpoint === 'object' &&
       breakpoint !== null &&
@@ -58,10 +59,10 @@ export class Breakpoint implements IBreakpoint {
     );
   }
 
-  public props: IBreakpointProps;
+  public props: BreakpointProps;
 
-  constructor(protected options: BreakpointOptions) {
-    const props: IBreakpointOptions =
+  public constructor(options: BreakpointOptions) {
+    const props: BreakpointOptionsObject =
       typeof options === 'string' || typeof options === 'number' ? { width: options } : options;
 
     const { width: rawWidth, ...rest } = props;
@@ -92,13 +93,13 @@ export class Breakpoint implements IBreakpoint {
     };
   }
 
-  public createTuple = (value: CSSValue): IBreakpointTuple =>
+  public createTuple = (value: CSSValue): BreakpointTupleable =>
     createBreakpointTuple({ breakpoint: this, value });
 
   public toString() {
-    const { modifier, name, operator, rawWidth, unit, ...rest } = this.props;
+    const { modifier, /* name, */ operator, /* rawWidth, */ unit, ...rest } = this.props;
     const mediaQueryConditions = Object.entries(rest).map(
-      ([propName, propValue]) =>
+      ([propName /* , propValue */]) =>
         `(${propName === 'width' ? `${modifier}-width` : propName}: ${rest[propName]}${unit})`
     );
 
@@ -107,5 +108,3 @@ export class Breakpoint implements IBreakpoint {
 }
 
 export const createBreakpoint = (props: BreakpointOptions) => new Breakpoint(props);
-
-export default createBreakpoint;

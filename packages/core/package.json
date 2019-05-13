@@ -2,7 +2,7 @@
   "name": "@limina/core",
   "version": "0.2.3",
   "description": "A CSS-in-JS library for interpolating and constraining CSS property values across screen widths",
-  "main": "lib/index.js",
+  "module": "lib/index.js",
   "types": "lib/index.d.ts",
   "repository": "https://github.com/kohlmannj/limina/packages/core",
   "author": "Joseph Kohlmann <joseph.kohlmann@nytimes.com>",
@@ -16,17 +16,11 @@
     "LICENSE",
     "README.md"
   ],
-  "scripts": {
-    "prepare": "node ../../scripts/prepare.js"
-  },
   "dependencies": {
-    "csstype": "^2.5.2",
-    "emotion": "^9.1.3",
+    "@emotion/core": "^10.0.10",
+    "csstype": "^2.6.4",
     "lodash.merge": "^4.6.1",
     "ml-regression-simple-linear": "^1.0.2",
     "units-css": "^0.4.0"
-  },
-  "devDependencies": {
-    "@types/lodash.merge": "^4.6.3"
   }
 }

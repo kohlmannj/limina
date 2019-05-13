@@ -1,12 +1,12 @@
-import createBreakpoint from './Breakpoint';
-import lm from './limina';
+import { createBreakpoint } from './Breakpoint';
+import { limina } from './limina';
 
 const compact = createBreakpoint({ name: 'compact', width: '540px' }).createTuple;
 const regular = createBreakpoint({ name: 'regular', width: '1280px' }).createTuple;
 
-const styles = lm({
+const styles = limina({
   width: [compact(540), regular(1160)],
 });
 
-// tslint:disable-next-line no-console
+// eslint-disable-next-line no-console
 console.log(styles);

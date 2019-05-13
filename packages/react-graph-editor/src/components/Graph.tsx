@@ -1,18 +1,20 @@
+/** @jsx jsx */
+import { jsx } from '@emotion/core';
 import chroma from 'chroma-js';
 import { ThemeProvider } from 'emotion-theming';
-import React, { CSSProperties, SFC } from 'react';
-import styled, { StyledComponent } from 'react-emotion';
-import { IThemeProps, OriginDirection, PointTuple } from '../index';
+import { CSSProperties, Fragment, FunctionComponent } from 'react';
+import styled, { StyledComponent } from '@emotion/styled';
 import { getViewBoxForPoints } from '../utils';
-import Point, { shapes } from './Point';
-import { IPolyLineSVG } from './PolyLineSVG';
-import ViewBoxContext from './ViewBoxContext';
+import { Point, shapes } from './Point';
+import { PolyLineSVGProps } from './PolyLineSVG';
+import { ViewBoxContext } from './ViewBoxContext';
+import { ThemeProps, OriginDirection, PointTuple } from '..';
 
 const shapeNames = Object.keys(shapes);
 
-export interface IGraphProps {
+export interface GraphProps {
   className?: string;
-  lines: IPolyLineSVG[];
+  lines: PolyLineSVGProps[];
   minX?: number;
   minY?: number;
   maxX?: number;
@@ -22,7 +24,7 @@ export interface IGraphProps {
   style?: CSSProperties;
 }
 
-const Graph: SFC<IGraphProps> = ({
+const Graph: FunctionComponent<GraphProps> = ({
   className,
   lines,
   minX: minXProp,
@@ -64,9 +66,11 @@ const Graph: SFC<IGraphProps> = ({
               shape: shapeNames[index % shapeNames.length],
             }}
           >
-            <React.Fragment>
-              {points.map(([x, y]) => <Point key={`${label}_${x}_${y}`} x={x} y={y} />)}
-            </React.Fragment>
+            <Fragment>
+              {points.map(([x, y]) => (
+                <Point key={`${label}_${x}_${y}`} x={x} y={y} />
+              ))}
+            </Fragment>
           </ThemeProvider>
         ))}
       </ViewBoxContext.Provider>
@@ -79,23 +83,21 @@ Graph.defaultProps = {
   originY: 'bottom',
 };
 
-const StyledGraph: StyledComponent<IGraphProps, IThemeProps, {}> = styled(Graph)`
+const StyledGraph: StyledComponent<GraphProps, GraphProps, ThemeProps> = styled(Graph)`
   position: relative;
   width: 100%;
   height: 100%;
 `;
 
-const GraphContainer: SFC<IGraphProps> = ({ className, style, ...rest }) => (
+const GraphContainer: FunctionComponent<GraphProps> = ({ className, style, ...rest }) => (
   <div className={className} style={style}>
     <StyledGraph {...rest} />
   </div>
 );
 
-const StyledGraphContainer = styled(GraphContainer)`
+export const StyledGraphContainer = styled(GraphContainer)`
   width: 100%;
   height: 100%;
   box-sizing: border-box;
   padding: ${props => `${(props.theme.thickness || 8) / 2}px`};
 `;
-
-export default StyledGraphContainer;

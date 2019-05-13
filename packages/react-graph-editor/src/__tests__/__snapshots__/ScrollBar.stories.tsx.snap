@@ -1,0 +1,373 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`react-graph-editor/ScrollBar with default props 1`] = `
+<Component
+  axis="y"
+  style={
+    Object {
+      "height": "100vh",
+    }
+  }
+>
+  <Component
+    axis="y"
+    scale={1}
+  >
+    <Component
+      axis="y"
+      dragSignifier={true}
+      position="start"
+    />
+    <Component
+      axis="y"
+      position="middle"
+    />
+    <Component
+      axis="y"
+      dragSignifier={true}
+      position="end"
+    />
+  </Component>
+</Component>
+`;
+
+exports[`react-graph-editor/ScrollBar with knobs 1`] = `
+<Component
+  axis="y"
+  overflow="auto"
+  progress={0}
+  scale={2}
+  style={
+    Object {
+      "height": "400px",
+      "margin": "25vh",
+    }
+  }
+/>
+`;
+
+exports[`react-graph-editor/ScrollBar/Y-Axis/Scale 2 with progress 0 1`] = `
+<Component
+  axis="y"
+  style={
+    Object {
+      "height": "100vh",
+    }
+  }
+>
+  <Component
+    axis="y"
+    scale={2}
+  >
+    <Component
+      axis="y"
+      dragSignifier={true}
+      position="start"
+    />
+    <Component
+      axis="y"
+      position="middle"
+    />
+    <Component
+      axis="y"
+      dragSignifier={true}
+      position="end"
+    />
+  </Component>
+</Component>
+`;
+
+exports[`react-graph-editor/ScrollBar/Y-Axis/Scale 2 with progress 0.5 1`] = `
+<Component
+  axis="y"
+  progress={0.5}
+  style={
+    Object {
+      "height": "100vh",
+    }
+  }
+>
+  <Component
+    axis="y"
+    progress={0.5}
+    scale={2}
+  >
+    <Component
+      axis="y"
+      dragSignifier={true}
+      position="start"
+    />
+    <Component
+      axis="y"
+      position="middle"
+    />
+    <Component
+      axis="y"
+      dragSignifier={true}
+      position="end"
+    />
+  </Component>
+</Component>
+`;
+
+exports[`react-graph-editor/ScrollBar/Y-Axis/Scale 2 with progress 0.25 1`] = `
+<Component
+  axis="y"
+  progress={0.25}
+  style={
+    Object {
+      "height": "100vh",
+    }
+  }
+>
+  <Component
+    axis="y"
+    progress={0.25}
+    scale={2}
+  >
+    <Component
+      axis="y"
+      dragSignifier={true}
+      position="start"
+    />
+    <Component
+      axis="y"
+      position="middle"
+    />
+    <Component
+      axis="y"
+      dragSignifier={true}
+      position="end"
+    />
+  </Component>
+</Component>
+`;
+
+exports[`react-graph-editor/ScrollBar/Y-Axis/Scale 2 with progress 0.75 1`] = `
+<Component
+  axis="y"
+  progress={0.75}
+  style={
+    Object {
+      "height": "100vh",
+    }
+  }
+>
+  <Component
+    axis="y"
+    progress={0.75}
+    scale={2}
+  >
+    <Component
+      axis="y"
+      dragSignifier={true}
+      position="start"
+    />
+    <Component
+      axis="y"
+      position="middle"
+    />
+    <Component
+      axis="y"
+      dragSignifier={true}
+      position="end"
+    />
+  </Component>
+</Component>
+`;
+
+exports[`react-graph-editor/ScrollBar/Y-Axis/Scale 2 with progress 1 1`] = `
+<Component
+  axis="y"
+  progress={1}
+  style={
+    Object {
+      "height": "100vh",
+    }
+  }
+>
+  <Component
+    axis="y"
+    progress={1}
+    scale={2}
+  >
+    <Component
+      axis="y"
+      dragSignifier={true}
+      position="start"
+    />
+    <Component
+      axis="y"
+      position="middle"
+    />
+    <Component
+      axis="y"
+      dragSignifier={true}
+      position="end"
+    />
+  </Component>
+</Component>
+`;
+
+exports[`react-graph-editor/ScrollBar/Y-Axis/Scale 10 with progress 0 1`] = `
+<Component
+  axis="y"
+  style={
+    Object {
+      "height": "100vh",
+    }
+  }
+>
+  <Component
+    axis="y"
+    scale={10}
+  >
+    <Component
+      axis="y"
+      dragSignifier={true}
+      position="start"
+    />
+    <Component
+      axis="y"
+      position="middle"
+    />
+    <Component
+      axis="y"
+      dragSignifier={true}
+      position="end"
+    />
+  </Component>
+</Component>
+`;
+
+exports[`react-graph-editor/ScrollBar/Y-Axis/Scale 10 with progress 0.5 1`] = `
+<Component
+  axis="y"
+  progress={0.5}
+  style={
+    Object {
+      "height": "100vh",
+    }
+  }
+>
+  <Component
+    axis="y"
+    progress={0.5}
+    scale={10}
+  >
+    <Component
+      axis="y"
+      dragSignifier={true}
+      position="start"
+    />
+    <Component
+      axis="y"
+      position="middle"
+    />
+    <Component
+      axis="y"
+      dragSignifier={true}
+      position="end"
+    />
+  </Component>
+</Component>
+`;
+
+exports[`react-graph-editor/ScrollBar/Y-Axis/Scale 10 with progress 0.25 1`] = `
+<Component
+  axis="y"
+  progress={0.25}
+  style={
+    Object {
+      "height": "100vh",
+    }
+  }
+>
+  <Component
+    axis="y"
+    progress={0.25}
+    scale={10}
+  >
+    <Component
+      axis="y"
+      dragSignifier={true}
+      position="start"
+    />
+    <Component
+      axis="y"
+      position="middle"
+    />
+    <Component
+      axis="y"
+      dragSignifier={true}
+      position="end"
+    />
+  </Component>
+</Component>
+`;
+
+exports[`react-graph-editor/ScrollBar/Y-Axis/Scale 10 with progress 0.75 1`] = `
+<Component
+  axis="y"
+  progress={0.75}
+  style={
+    Object {
+      "height": "100vh",
+    }
+  }
+>
+  <Component
+    axis="y"
+    progress={0.75}
+    scale={10}
+  >
+    <Component
+      axis="y"
+      dragSignifier={true}
+      position="start"
+    />
+    <Component
+      axis="y"
+      position="middle"
+    />
+    <Component
+      axis="y"
+      dragSignifier={true}
+      position="end"
+    />
+  </Component>
+</Component>
+`;
+
+exports[`react-graph-editor/ScrollBar/Y-Axis/Scale 10 with progress 1 1`] = `
+<Component
+  axis="y"
+  progress={1}
+  style={
+    Object {
+      "height": "100vh",
+    }
+  }
+>
+  <Component
+    axis="y"
+    progress={1}
+    scale={10}
+  >
+    <Component
+      axis="y"
+      dragSignifier={true}
+      position="start"
+    />
+    <Component
+      axis="y"
+      position="middle"
+    />
+    <Component
+      axis="y"
+      dragSignifier={true}
+      position="end"
+    />
+  </Component>
+</Component>
+`;

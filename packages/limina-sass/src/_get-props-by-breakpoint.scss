@@ -37,10 +37,18 @@
         @if not map-has-key($breakpoints, $breakpoint-name) {
           @error 'Cannot associate `' + $prop + ': ' + $breakpoint-value + '` with nonexistent breakpoint `' + $breakpoint-name '`';
         }
-        $props-by-breakpoint: _set($props-by-breakpoint, ($breakpoint-name, $prop), $breakpoint-value);
+        $props-by-breakpoint: _set(
+          $props-by-breakpoint,
+          ($breakpoint-name, $prop),
+          $breakpoint-value
+        );
       }
     } @else if $default-breakpoint-name != null {
-      $props-by-breakpoint: _set($props-by-breakpoint, ($default-breakpoint-name, $prop), $breakpoint-value);
+      $props-by-breakpoint: _set(
+        $props-by-breakpoint,
+        ($default-breakpoint-name, $prop),
+        $breakpoint-value
+      );
     } @else {
       $props-without-breakpoint: _set($props-without-breakpoint, $prop, $value);
     }

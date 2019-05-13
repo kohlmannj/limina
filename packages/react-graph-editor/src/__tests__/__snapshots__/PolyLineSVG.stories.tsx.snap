@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`react-graph-editor/PolyLineSVG with points 1`] = `
+<svg
+  height={1160}
+  width={960}
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <polyline
+    points="320,320 480,0 1280,1160"
+    vectorEffect="non-scaling-stroke"
+  />
+</svg>
+`;
+
+exports[`react-graph-editor/PolyLineSVG with theme 1`] = `
+<Component
+  points={
+    Array [
+      Array [
+        320,
+        320,
+      ],
+      Array [
+        480,
+        0,
+      ],
+      Array [
+        1280,
+        1160,
+      ],
+    ]
+  }
+/>
+`;

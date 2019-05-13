@@ -1,8 +1,8 @@
 import { MouseEvent as ReactMouseEvent, TouchEvent as ReactTouchEvent, TouchList } from 'react';
-import { ScrollBarAxis } from '../..';
-import { ReactMouseOrTouchEvent } from './ScrollView.d';
+import { ScrollBarAxis } from '../../index';
+import { ReactMouseOrTouchEvent } from './ScrollView';
 
-export interface INormalizedDragEventData<T> {
+export interface NormalizedDragEventData {
   clientX: number;
   clientY: number;
   target: EventTarget;
@@ -16,7 +16,7 @@ export interface INormalizedDragEventData<T> {
 export function getNormalizedDragEventData<T>(
   e: ReactMouseOrTouchEvent<T> | TouchEvent | MouseEvent,
   dragAxis: ScrollBarAxis
-): INormalizedDragEventData<T> {
+): NormalizedDragEventData {
   const { target, touches }: { target: EventTarget; touches: TouchList } = e as ReactTouchEvent<T>;
   const { clientX, clientY } = touches ? touches[0] : (e as ReactMouseEvent<T>);
 

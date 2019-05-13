@@ -1,6 +1,6 @@
-import { IDomainRange, IViewBox, PointTuple } from './index.d';
+import { DomainRange, ViewBox, PointTuple } from '.';
 
-export const getExtentsForPoints = (points: PointTuple[]): IDomainRange => {
+export const getExtentsForPoints = (points: PointTuple[]): DomainRange => {
   const xVals = points.map(([x]) => x);
   const yVals = points.map(point => point[1]);
 
@@ -10,7 +10,7 @@ export const getExtentsForPoints = (points: PointTuple[]): IDomainRange => {
   };
 };
 
-export const getViewBoxForPoints = (points: PointTuple[], padding = 0): IViewBox => {
+export const getViewBoxForPoints = (points: PointTuple[], padding = 0): ViewBox => {
   const { domain, range } = getExtentsForPoints(points);
 
   return {

@@ -1,24 +1,25 @@
-import { css } from 'emotion';
-import React, { ButtonHTMLAttributes, SFC } from 'react';
-import { IScrollBarProps, IStyledScrollBarProps } from '..';
-import defaultTheme from '../../../theme';
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core';
+import { ButtonHTMLAttributes, FunctionComponent } from 'react';
+import { ScrollBarProps, StyledScrollBarProps } from '..';
+import { defaults } from '../../../scrollBarTheme';
 import { getSingleBorderRadiusValue, getSingleMarginValue } from './ThumbContainer';
 
 export type ThumbSegmentPosition = 'start' | 'middle' | 'end';
 
-export interface IThumbSegmentAdditionalProps {
+export interface ThumbSegmentAdditionalProps {
   dragSignifier?: boolean;
   position: ThumbSegmentPosition;
 }
 
-export interface IThumbSegmentProps
+export interface ThumbSegmentProps
   extends ButtonHTMLAttributes<HTMLButtonElement>,
-    IThumbSegmentAdditionalProps,
-    IScrollBarProps {}
+    ThumbSegmentAdditionalProps,
+    ScrollBarProps {}
 
-export interface IStyledThumbSegmentProps extends IThumbSegmentProps, IStyledScrollBarProps {}
+export interface StyledThumbSegmentProps extends ThumbSegmentProps, StyledScrollBarProps {}
 
-export const dragSignifier = (props: IStyledThumbSegmentProps) =>
+export const dragSignifier = (props: StyledThumbSegmentProps) =>
   css({
     cursor: `${!props.axis || props.axis === 'y' ? 'row' : 'col'}-resize`,
 
@@ -30,24 +31,24 @@ export const dragSignifier = (props: IStyledThumbSegmentProps) =>
       left: 0,
       boxSizing: 'border-box',
       margin: 'auto',
-      [!props.axis || props.axis === 'y' ? 'border-top' : 'border-left']: '1px solid',
-      [!props.axis || props.axis === 'y' ? 'border-bottom' : 'border-right']: '1px solid',
+      [!props.axis || props.axis === 'y' ? 'borderTop' : 'borderLeft']: '1px solid',
+      [!props.axis || props.axis === 'y' ? 'borderBottom' : 'borderRight']: '1px solid',
       borderColor:
-        props.theme && props.theme.trackColor ? props.theme.trackColor : defaultTheme.trackColor,
+        props.theme && props.theme.trackColor ? props.theme.trackColor : defaults.trackColor,
       [!props.axis || props.axis === 'y' ? 'width' : 'height']: `${(props.theme &&
       typeof props.theme.thumbWidth !== 'undefined'
         ? props.theme.thumbWidth
-        : defaultTheme.thumbWidth) / 2}px`,
+        : defaults.thumbWidth) / 2}px`,
       [!props.axis || props.axis === 'y' ? 'height' : 'width']: `${(props.theme &&
       typeof props.theme.thumbWidth !== 'undefined'
         ? props.theme.thumbWidth
-        : defaultTheme.thumbWidth) / 4}px`,
-      [!props.axis || props.axis === 'y' ? 'min-height' : 'min-width']: '3px',
+        : defaults.thumbWidth) / 4}px`,
+      [!props.axis || props.axis === 'y' ? 'minHeight' : 'minWidth']: '3px',
       content: "''",
     },
   });
 
-export const getBorderRadiusValue = ({ axis, position, theme }: IStyledThumbSegmentProps) => {
+export const getBorderRadiusValue = ({ axis, position, theme }: StyledThumbSegmentProps) => {
   const radius = getSingleBorderRadiusValue({ theme });
   let borderRadiusValue = '0';
 
@@ -57,24 +58,22 @@ export const getBorderRadiusValue = ({ axis, position, theme }: IStyledThumbSegm
     } else if (position === 'end') {
       borderRadiusValue = `0 0 ${radius} ${radius}`;
     }
-  } else {
-    if (position === 'start') {
-      borderRadiusValue = `${radius} 0 0 ${radius}`;
-    } else if (position === 'end') {
-      borderRadiusValue = `0 ${radius} ${radius} 0`;
-    }
+  } else if (position === 'start') {
+    borderRadiusValue = `${radius} 0 0 ${radius}`;
+  } else if (position === 'end') {
+    borderRadiusValue = `0 ${radius} ${radius} 0`;
   }
 
   return borderRadiusValue;
 };
 
-export const getFlex = (props: IStyledThumbSegmentProps) => {
+export const getFlex = (props: StyledThumbSegmentProps) => {
   switch (props.position) {
     case 'start':
     case 'end':
       return `0 0 ${(props.theme && typeof props.theme.thumbWidth !== 'undefined'
         ? props.theme.thumbWidth
-        : defaultTheme.thumbWidth) +
+        : defaults.thumbWidth) +
         getSingleMarginValue(props) * 2}px`;
     case 'middle':
     default:
@@ -82,7 +81,7 @@ export const getFlex = (props: IStyledThumbSegmentProps) => {
   }
 };
 
-const thumbSegment = ({ position, theme }: IStyledThumbSegmentProps) => css`
+const thumbSegment = ({ position, theme }: StyledThumbSegmentProps) => css`
   position: relative;
   flex: ${getFlex({ position, theme })};
   padding: ${getSingleMarginValue({ theme })}px;
@@ -111,23 +110,18 @@ const dragSignifierClassNames = {
   },
 };
 
-const ThumbSegment: SFC<IThumbSegmentProps> = ({
-  className,
+export const ThumbSegment: FunctionComponent<ThumbSegmentProps> = ({
   dragSignifier: dragSignifierProp,
   axis,
   position,
   ...rest
 }) => (
   <button
-    className={[
-      className,
+    type="button"
+    css={[
       thumbSegmentClassNames[position],
       dragSignifierProp && dragSignifierClassNames[axis || 'y'][position],
-    ]
-      .filter(Boolean)
-      .join(' ')}
+    ]}
     {...rest}
   />
 );
-
-export default ThumbSegment;

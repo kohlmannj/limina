@@ -1,15 +1,20 @@
-const path = require('path');
-
-module.exports = (baseConfig, env, config) => {
+module.exports = ({ config }) => {
   config.module.rules.push({
     test: /\.tsx?$/,
-    exclude: /node_modules/,
     use: [
       {
-        loader: require.resolve('babel-loader'),
-        options: { extends: path.join(__dirname, '.babelrc') },
+        loader: 'ts-loader',
+        options: {
+          /** @see https://github.com/TypeStrong/ts-loader#projectreferences-boolean-defaultfalse */
+          projectReferences: true,
+          /** @see https://github.com/TypeStrong/ts-loader#transpileonly-boolean-defaultfalse */
+          transpileOnly: true,
+        },
       },
-      { loader: 'react-docgen-typescript-loader' },
+      // Optional
+      {
+        loader: 'react-docgen-typescript-loader',
+      },
     ],
   });
   config.resolve.extensions.push('.ts', '.tsx');

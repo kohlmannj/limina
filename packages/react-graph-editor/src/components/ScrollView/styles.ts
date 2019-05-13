@@ -1,6 +1,6 @@
-import { css } from 'emotion';
-import defaultTheme from '../../theme';
-import { IStyledScrollBarProps } from '../ScrollBar';
+import { css } from '@emotion/core';
+import { defaults } from '../../scrollBarTheme';
+import { StyledScrollBarProps } from '../ScrollBar';
 
 export const root = css`
   position: relative;
@@ -12,13 +12,13 @@ export const absolutelyPositioned = css`
   z-index: 1;
 `;
 
-export const overflowContainer = ({ theme }: IStyledScrollBarProps) => css`
+export const overflowContainer = ({ theme }: StyledScrollBarProps) => css`
   overflow: auto;
   width: ${`calc(100% - ${
-    theme && typeof theme.trackWidth !== 'undefined' ? theme.trackWidth : defaultTheme.trackWidth
+    theme && typeof theme.trackWidth !== 'undefined' ? theme.trackWidth : defaults.trackWidth
   }px)`};
   height: ${`calc(100% - ${
-    theme && typeof theme.trackWidth !== 'undefined' ? theme.trackWidth : defaultTheme.trackWidth
+    theme && typeof theme.trackWidth !== 'undefined' ? theme.trackWidth : defaults.trackWidth
   }px)`};
   -webkit-overflow-scrolling: touch;
 

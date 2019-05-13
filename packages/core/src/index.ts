@@ -1,25 +1,25 @@
-import { _Interpolation1 } from 'emotion';
-import { IBreakpointTuple } from './BreakpointTuple';
+import { Interpolation } from '@emotion/core';
+import { BreakpointTupleable } from './BreakpointTuple';
 
-export interface ICSSValueRetargetingDefaultOptions {
+export * from './limina';
+
+export interface CSSValueRetargetingDefaultOptions {
   dynamicUnit: 'vw';
 }
 
-export interface ICSSValueRetargetingOptions {
+export interface CSSValueRetargetingOptions {
   dynamicUnit?: 'vw';
   property: string;
 }
 
-export interface IReduceToCSSOptions {
-  prevTuple?: IBreakpointTuple;
-  css: _Interpolation1;
+export interface ReduceToCSSOptions {
+  prevTuple?: BreakpointTupleable;
+  css: Interpolation & object;
 }
 
-export interface ICSSPropertyValueTuple extends Array<string | IBreakpointTuple[]> {
+export interface CSSPropertyValueTuple extends Array<string | BreakpointTupleable[]> {
   0: string;
-  1: IBreakpointTuple[];
+  1: BreakpointTupleable[];
 }
 
 export type CSSValue = number | string;
-
-export { default } from './limina';

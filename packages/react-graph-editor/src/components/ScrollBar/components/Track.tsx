@@ -1,35 +1,32 @@
-import { css } from 'emotion';
-import React, { SFC } from 'react';
-import { IScrollBarProps, IStyledScrollBarProps } from '..';
-import defaultTheme from '../../../theme';
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core';
+import { FunctionComponent } from 'react';
+import { ScrollBarProps, StyledScrollBarProps } from '..';
+import { defaults } from '../../../scrollBarTheme';
 
-export const positionForOrientation = ({ axis, theme }: IStyledScrollBarProps) => css`
+export const positionForOrientation = ({ axis, theme }: StyledScrollBarProps) => css`
   top: ${!axis || axis === 'y' ? 0 : 'auto'};
   right: ${!axis || axis === 'y'
     ? 0
     : `${
-        theme && typeof theme.trackWidth !== 'undefined'
-          ? theme.trackWidth
-          : defaultTheme.trackWidth
+        theme && typeof theme.trackWidth !== 'undefined' ? theme.trackWidth : defaults.trackWidth
       }px`};
   bottom: ${!axis || axis === 'y'
     ? `${
-        theme && typeof theme.trackWidth !== 'undefined'
-          ? theme.trackWidth
-          : defaultTheme.trackWidth
+        theme && typeof theme.trackWidth !== 'undefined' ? theme.trackWidth : defaults.trackWidth
       }px`
     : 0};
   left: ${!axis || axis === 'y' ? 'auto' : 0};
 `;
 
-const trackStyles = ({ axis, theme }: IStyledScrollBarProps) => css`
+const trackStyles = ({ axis, theme }: StyledScrollBarProps) => css`
   display: flex;
   flex-direction: ${!axis || axis === 'y' ? 'column' : 'row'};
   align-items: center;
-  background: ${theme && theme.trackColor ? theme.trackColor : defaultTheme.trackColor};
+  background: ${theme && theme.trackColor ? theme.trackColor : defaults.trackColor};
   ${!axis || axis === 'y' ? 'width' : 'height'}: ${theme && typeof theme.trackWidth !== 'undefined'
     ? theme.trackWidth
-    : defaultTheme.trackWidth}px;
+    : defaults.trackWidth}px;
   ${positionForOrientation({ axis, theme })};
   ${theme && theme.trackClassName};
 `;
@@ -39,15 +36,13 @@ const trackClassNames = {
   y: trackStyles({ axis: 'y' }),
 };
 
-const Track: SFC<IScrollBarProps> = ({ className, axis, progress, style, ...rest }) => (
+export const Track: FunctionComponent<ScrollBarProps> = ({ axis, progress, style, ...rest }) => (
   <div
-    className={`${className} ${trackClassNames[axis || 'y']}`}
+    css={trackClassNames[axis || 'y']}
     style={{
       ...style,
-      justifyContent: typeof progress === 'number' && progress > 0.5 ? 'flex-end' : 'flex-start',
+      justifyContent: progress && progress > 0.5 ? 'flex-end' : 'flex-start',
     }}
     {...rest}
   />
 );
-
-export default Track;

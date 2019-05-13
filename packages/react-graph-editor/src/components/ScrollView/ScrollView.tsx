@@ -1,16 +1,69 @@
-import React, { Component, CSSProperties } from 'react';
-import ScrollBar from '../ScrollBar';
-import ScrollBarCorner from '../ScrollBarCorner';
-import {
-  IScaleEventHandlerOptions,
-  IScrollViewProps,
-  IScrollViewState,
-  ReactMouseOrTouchEvent,
-} from './ScrollView.d';
+/** @jsx jsx */
+/* eslint-env browser */
+/* eslint-disable react/no-danger */
+import { jsx } from '@emotion/core';
+import { Component, CSSProperties } from 'react';
+import { ScrollBar } from '../ScrollBar';
+import { ScrollBarCorner } from '../ScrollBarCorner';
 import { absolutelyPositioned, overflowContainer, root } from './styles';
 import { getNormalizedDragEventData } from './utils';
+import { OverflowMode, ScrollBarAxis } from '../../index';
+import {
+  StyledThumbSegmentProps,
+  ThumbSegmentPosition,
+} from '../ScrollBar/components/ThumbSegment';
 
-export default class ScrollView extends Component<IScrollViewProps, IScrollViewState> {
+export type DragType = 'progress' | 'scale';
+
+export interface ScrollViewProps {
+  className?: string;
+  contentClassName?: string;
+  contentStyle?: CSSProperties;
+  dangerouslySetInnerHTML?: {
+    __html: string;
+  };
+  maxScaleX?: number;
+  maxScaleY?: number;
+  minScaleX?: number;
+  minScaleY?: number;
+  overflow?: OverflowMode;
+  overflowX?: OverflowMode;
+  overflowY?: OverflowMode;
+  proportional?: boolean;
+  scaleIncrement?: number;
+  style?: CSSProperties;
+  thumbXEndProps?: Partial<StyledThumbSegmentProps>;
+  thumbXMiddleProps?: Partial<StyledThumbSegmentProps>;
+  thumbXStartProps?: Partial<StyledThumbSegmentProps>;
+  thumbYEndProps?: Partial<StyledThumbSegmentProps>;
+  thumbYMiddleProps?: Partial<StyledThumbSegmentProps>;
+  thumbYStartProps?: Partial<StyledThumbSegmentProps>;
+}
+
+export interface ScrollViewState {
+  dragAxis?: ScrollBarAxis;
+  dragBeginX?: number;
+  dragBeginY?: number;
+  dragPosition?: ThumbSegmentPosition;
+  dragStartProgress?: number;
+  dragThumbLength?: number;
+  dragTrackLength?: number;
+  dragType?: DragType;
+  progressX: number;
+  progressY: number;
+  scaleX: number;
+  scaleY: number;
+}
+
+export interface ScaleEventHandlerOptions {
+  axis: ScrollBarAxis;
+  pos: ThumbSegmentPosition;
+  type: DragType;
+}
+
+export type ReactMouseOrTouchEvent<E> = React.MouseEvent<E> | React.TouchEvent<E>;
+
+export class ScrollView extends Component<ScrollViewProps, ScrollViewState> {
   public static defaultProps = {
     maxScaleX: 10,
     maxScaleY: 10,
@@ -21,7 +74,7 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
     scaleY: 1,
   };
 
-  public state: IScrollViewState = {
+  public state: ScrollViewState = {
     progressX: 0.5,
     progressY: 0.5,
     scaleX: 1,
@@ -31,10 +84,12 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
   private overflowContainer?: HTMLDivElement | null;
 
   public componentDidMount() {
-    this.startListeningToWindowEvents();
+    if (typeof window !== 'undefined') {
+      this.startListeningToWindowEvents();
+    }
   }
 
-  public componentDidUpdate(prevProps: IScrollViewProps, prevState: IScrollViewState) {
+  public componentDidUpdate(_prevProps: ScrollViewProps, prevState: ScrollViewState) {
     const { dragAxis, dragType, progressX, progressY, scaleX, scaleY } = this.state;
 
     if (!this.overflowContainer) {
@@ -69,113 +124,9 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
     this.stopListeningToWindowEvents();
   }
 
-  public render() {
-    const {
-      children,
-      className,
-      contentClassName,
-      contentStyle: contentStyleProp,
-      dangerouslySetInnerHTML,
-      maxScaleX,
-      maxScaleY,
-      minScaleX,
-      minScaleY,
-      overflow,
-      overflowX,
-      overflowY,
-      proportional,
-      scaleIncrement,
-      style,
-      thumbXStartProps,
-      thumbXMiddleProps,
-      thumbXEndProps,
-      thumbYStartProps,
-      thumbYMiddleProps,
-      thumbYEndProps,
-      ...rest
-    } = this.props;
-    const { progressX, progressY, scaleX, scaleY } = this.state;
-
-    const contentStyle: CSSProperties = {
-      ...contentStyleProp,
-      width: `${scaleX * 100}%`,
-      height: `${scaleY * 100}%`,
-    };
-
-    // Generate event handlers
-    const onBeginDragXSrt = this.onBeginDrag({ axis: 'x', pos: 'start', type: 'scale' });
-    const onBeginDragXMid = this.onBeginDrag({ axis: 'x', pos: 'middle', type: 'progress' });
-    const onBeginDragXEnd = this.onBeginDrag({ axis: 'x', pos: 'end', type: 'scale' });
-    const onBeginDragYSrt = this.onBeginDrag({ axis: 'y', pos: 'start', type: 'scale' });
-    const onBeginDragYMid = this.onBeginDrag({ axis: 'y', pos: 'middle', type: 'progress' });
-    const onBeginDragYEnd = this.onBeginDrag({ axis: 'y', pos: 'end', type: 'scale' });
-
-    return (
-      <div className={[className, root].filter(Boolean).join(' ')} style={style} {...rest}>
-        <div
-          className={overflowContainer({})}
-          onScroll={this.onScroll}
-          ref={e => {
-            this.overflowContainer = e;
-          }}
-        >
-          <div
-            className={contentClassName}
-            dangerouslySetInnerHTML={dangerouslySetInnerHTML}
-            style={contentStyle}
-          >
-            {children}
-          </div>
-        </div>
-        <ScrollBar
-          axis="x"
-          className={absolutelyPositioned}
-          overflow={overflowX || overflow}
-          progress={progressX}
-          scale={scaleX}
-          thumbStartProps={{
-            dragSignifier: true,
-            onMouseDown: onBeginDragXSrt,
-            onTouchStart: onBeginDragXSrt,
-          }}
-          thumbMiddleProps={{
-            onMouseDown: onBeginDragXMid,
-            onTouchStart: onBeginDragXMid,
-          }}
-          thumbEndProps={{
-            dragSignifier: true,
-            onMouseDown: onBeginDragXEnd,
-            onTouchStart: onBeginDragXEnd,
-          }}
-        />
-        <ScrollBar
-          axis="y"
-          className={absolutelyPositioned}
-          overflow={overflowY || overflow}
-          progress={progressY}
-          scale={scaleY}
-          thumbStartProps={{
-            dragSignifier: true,
-            onMouseDown: onBeginDragYSrt,
-            onTouchStart: onBeginDragYSrt,
-          }}
-          thumbMiddleProps={{
-            onMouseDown: onBeginDragYMid,
-            onTouchStart: onBeginDragYMid,
-          }}
-          thumbEndProps={{
-            dragSignifier: true,
-            onMouseDown: onBeginDragYEnd,
-            onTouchStart: onBeginDragYEnd,
-          }}
-        />
-        <ScrollBarCorner />
-      </div>
-    );
-  }
-
   private onScroll = (): void => {
-    if (!this.overflowContainer || typeof this.state.dragType !== 'undefined') {
+    const { dragType } = this.state;
+    if (!this.overflowContainer || typeof dragType !== 'undefined') {
       return;
     }
 
@@ -185,11 +136,11 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
     const progressX = scrollLeft / (scrollWidth - width);
     const progressY = scrollTop / (scrollHeight - height);
 
-    if (!isNaN(progressX)) {
+    if (!Number.isNaN(progressX)) {
       this.setState({ progressX });
     }
 
-    if (!isNaN(progressY)) {
+    if (!Number.isNaN(progressY)) {
       this.setState({ progressY });
     }
 
@@ -208,9 +159,11 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
   };
 
   private stopListeningToWindowEvents = () => {
+    const { dragType } = this.state;
+
     window.removeEventListener('resize', this.onScroll);
 
-    if (typeof this.state.dragType !== 'undefined') {
+    if (typeof dragType !== 'undefined') {
       window.removeEventListener('mousemove', this.onMoveDrag);
       window.removeEventListener('mouseup', this.onEndDrag);
       window.removeEventListener('touchmove', this.onMoveDrag);
@@ -222,7 +175,7 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
     axis: dragAxis,
     pos: dragPosition,
     type: dragType,
-  }: IScaleEventHandlerOptions) => (e: ReactMouseOrTouchEvent<HTMLButtonElement>): void => {
+  }: ScaleEventHandlerOptions) => (e: ReactMouseOrTouchEvent<HTMLButtonElement>): void => {
     const { progressX, progressY } = this.state;
 
     const {
@@ -331,7 +284,7 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
       let nextScale = dragTrackLength / nextThumbLength;
       // Round nextScale to the nearest increment
       if (typeof scaleIncrement !== 'undefined') {
-        nextScale = Math.round(nextScale * 1 / scaleIncrement) / (1 / scaleIncrement);
+        nextScale = Math.round((nextScale * 1) / scaleIncrement) / (1 / scaleIncrement);
       }
 
       if (nextScale >= minScale && nextScale <= maxScale) {
@@ -388,4 +341,111 @@ export default class ScrollView extends Component<IScrollViewProps, IScrollViewS
       dragType: undefined,
     });
   };
+
+  public render() {
+    /* eslint-disable @typescript-eslint/no-unused-vars */
+    const {
+      children,
+      className,
+      contentClassName,
+      contentStyle: contentStyleProp,
+      dangerouslySetInnerHTML,
+      maxScaleX,
+      maxScaleY,
+      minScaleX,
+      minScaleY,
+      overflow,
+      overflowX,
+      overflowY,
+      proportional,
+      scaleIncrement,
+      style,
+      thumbXStartProps,
+      thumbXMiddleProps,
+      thumbXEndProps,
+      thumbYStartProps,
+      thumbYMiddleProps,
+      thumbYEndProps,
+      ...rest
+    } = this.props;
+    /* eslint-enable @typescript-eslint/no-unused-vars */
+    const { progressX, progressY, scaleX, scaleY } = this.state;
+
+    const contentStyle: CSSProperties = {
+      ...contentStyleProp,
+      width: `${scaleX * 100}%`,
+      height: `${scaleY * 100}%`,
+    };
+
+    // Generate event handlers
+    const onBeginDragXSrt = this.onBeginDrag({ axis: 'x', pos: 'start', type: 'scale' });
+    const onBeginDragXMid = this.onBeginDrag({ axis: 'x', pos: 'middle', type: 'progress' });
+    const onBeginDragXEnd = this.onBeginDrag({ axis: 'x', pos: 'end', type: 'scale' });
+    const onBeginDragYSrt = this.onBeginDrag({ axis: 'y', pos: 'start', type: 'scale' });
+    const onBeginDragYMid = this.onBeginDrag({ axis: 'y', pos: 'middle', type: 'progress' });
+    const onBeginDragYEnd = this.onBeginDrag({ axis: 'y', pos: 'end', type: 'scale' });
+
+    return (
+      <div className={[className, root].filter(Boolean).join(' ')} style={style} {...rest}>
+        <div
+          css={overflowContainer({})}
+          onScroll={this.onScroll}
+          ref={e => {
+            this.overflowContainer = e;
+          }}
+        >
+          <div
+            className={contentClassName}
+            dangerouslySetInnerHTML={dangerouslySetInnerHTML}
+            style={contentStyle}
+          >
+            {children}
+          </div>
+        </div>
+        <ScrollBar
+          axis="x"
+          css={absolutelyPositioned}
+          overflow={overflowX || overflow}
+          progress={progressX}
+          scale={scaleX}
+          thumbStartProps={{
+            dragSignifier: true,
+            onMouseDown: onBeginDragXSrt,
+            onTouchStart: onBeginDragXSrt,
+          }}
+          thumbMiddleProps={{
+            onMouseDown: onBeginDragXMid,
+            onTouchStart: onBeginDragXMid,
+          }}
+          thumbEndProps={{
+            dragSignifier: true,
+            onMouseDown: onBeginDragXEnd,
+            onTouchStart: onBeginDragXEnd,
+          }}
+        />
+        <ScrollBar
+          axis="y"
+          css={absolutelyPositioned}
+          overflow={overflowY || overflow}
+          progress={progressY}
+          scale={scaleY}
+          thumbStartProps={{
+            dragSignifier: true,
+            onMouseDown: onBeginDragYSrt,
+            onTouchStart: onBeginDragYSrt,
+          }}
+          thumbMiddleProps={{
+            onMouseDown: onBeginDragYMid,
+            onTouchStart: onBeginDragYMid,
+          }}
+          thumbEndProps={{
+            dragSignifier: true,
+            onMouseDown: onBeginDragYEnd,
+            onTouchStart: onBeginDragYEnd,
+          }}
+        />
+        <ScrollBarCorner />
+      </div>
+    );
+  }
 }

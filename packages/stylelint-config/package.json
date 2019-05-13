@@ -11,17 +11,15 @@
     "access": "public"
   },
   "dependencies": {
-    "stylelint-config-idiomatic-order": "^6.2.0",
-    "stylelint-config-standard": "^18.2.0",
+    "stylelint-config-idiomatic-order": "^7.0.0",
+    "stylelint-config-prettier": "^5.1.0",
+    "stylelint-config-standard": "^18.3.0",
     "stylelint-config-styled-components": "^0.1.1",
-    "stylelint-processor-styled-components": "^1.5.2"
+    "stylelint-prettier": "^1.1.0",
+    "stylelint-processor-styled-components": "^1.7.0"
   },
   "peerDependencies": {
-    "stylelint": "^9.10.1",
-    "stylelint-scss": "^3.5.1"
-  },
-  "devDependencies": {
-    "stylelint": "^9.10.1",
-    "stylelint-scss": "^3.5.1"
+    "stylelint": "^10.0.1",
+    "stylelint-scss": "^3.6.1"
   }
 }

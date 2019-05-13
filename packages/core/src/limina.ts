@@ -1,13 +1,11 @@
 import merge from 'lodash.merge';
-import { ICSSPropertyValueTuple } from '.';
-import { IBreakpointTuple } from './BreakpointTuple';
+import { CSSPropertyValueTuple } from '.';
+import { BreakpointTupleable } from './BreakpointTuple';
 import { retargetCSSPropertyValue } from './utils/retargetCSSPropertyValue';
 
-const liminaNeue = (styles: Record<string, IBreakpointTuple[]>) =>
+export const limina = (styles: Record<string, BreakpointTupleable[]>) =>
   Object.entries(styles).reduce(
-    (retargetedStyles, styleTuple: ICSSPropertyValueTuple) =>
+    (retargetedStyles, styleTuple: CSSPropertyValueTuple) =>
       merge(retargetedStyles, retargetCSSPropertyValue(styleTuple)),
     {}
   );
-
-export default liminaNeue;

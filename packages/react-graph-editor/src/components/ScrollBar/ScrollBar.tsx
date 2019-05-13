@@ -1,53 +1,46 @@
-import React, { CSSProperties, SFC } from 'react';
+/** @jsx jsx */
+import { jsx } from '@emotion/core';
+import { CSSProperties, FunctionComponent } from 'react';
+import { ScrollBarTheme } from '../../scrollBarTheme';
+import { ThumbContainer } from './components/ThumbContainer';
+import { ThumbSegment, StyledThumbSegmentProps } from './components/ThumbSegment';
+import { Track } from './components/Track';
 import { OverflowMode, ScrollBarAxis } from '../..';
-import { IScrollBarTheme } from '../../theme';
-import ThumbContainer from './components/ThumbContainer';
-import ThumbSegment, { IStyledThumbSegmentProps } from './components/ThumbSegment';
-import Track from './components/Track';
 
-export interface IScrollBarProps {
+export interface ScrollBarProps {
   axis?: ScrollBarAxis;
   className?: string;
   overflow?: OverflowMode;
   progress?: number;
   scale?: number;
   style?: CSSProperties;
-  thumbEndProps?: Partial<IStyledThumbSegmentProps>;
-  thumbMiddleProps?: Partial<IStyledThumbSegmentProps>;
-  thumbStartProps?: Partial<IStyledThumbSegmentProps>;
+  thumbEndProps?: Partial<StyledThumbSegmentProps>;
+  thumbMiddleProps?: Partial<StyledThumbSegmentProps>;
+  thumbStartProps?: Partial<StyledThumbSegmentProps>;
 }
 
-export interface IStyledScrollBarProps extends IScrollBarProps {
-  theme?: Partial<IScrollBarTheme>;
+export interface StyledScrollBarProps extends ScrollBarProps {
+  theme?: Partial<ScrollBarTheme>;
 }
 
-export const ScrollBar: SFC<IScrollBarProps> = ({
-  axis,
+export const ScrollBar: FunctionComponent<ScrollBarProps> = ({
+  axis = 'y',
   className,
-  overflow,
+  overflow = 'scroll',
   progress,
-  scale,
+  scale = 1,
   style,
   thumbEndProps,
   thumbMiddleProps,
   thumbStartProps,
 }) => (
   <Track className={className} axis={axis} progress={progress} style={style}>
-    {typeof scale !== 'undefined' &&
-      (scale > 1 || (scale <= 1 && overflow === 'scroll')) && (
-        <ThumbContainer axis={axis} progress={progress} scale={scale}>
-          <ThumbSegment dragSignifier axis={axis} position="start" {...thumbStartProps} />
-          <ThumbSegment axis={axis} position="middle" {...thumbMiddleProps} />
-          <ThumbSegment dragSignifier axis={axis} position="end" {...thumbEndProps} />
-        </ThumbContainer>
-      )}
+    {typeof scale !== 'undefined' && (scale > 1 || (scale <= 1 && overflow === 'scroll')) && (
+      <ThumbContainer axis={axis} progress={progress} scale={scale}>
+        <ThumbSegment dragSignifier axis={axis} position="start" {...thumbStartProps} />
+        <ThumbSegment axis={axis} position="middle" {...thumbMiddleProps} />
+        <ThumbSegment dragSignifier axis={axis} position="end" {...thumbEndProps} />
+      </ThumbContainer>
+    )}
   </Track>
 );
-
-ScrollBar.defaultProps = {
-  axis: 'y',
-  overflow: 'scroll',
-  scale: 1,
-};
-
-export default ScrollBar;

@@ -1,7 +1,7 @@
-import React, { SFC } from 'react';
-import styled, { StyledComponent } from 'react-emotion';
-import { IThemeProps, PointTuple } from '../index';
+import React, { FunctionComponent } from 'react';
+import styled, { StyledComponent } from '@emotion/styled';
 import { getDimensionsForPoints } from '../utils';
+import { ThemeProps, PointTuple } from '..';
 
 export type InterpolationKeyword = 'linear' | 'ease-in-out' | 'ease-in' | 'ease-out';
 
@@ -9,19 +9,20 @@ export type InterpolationFunction = (x: number) => number;
 
 export type InterpolationKeywordOrFunction = InterpolationKeyword | InterpolationFunction;
 
-export interface IPolyLineSVG {
+export interface PolyLineSVGProps {
   className?: string;
   interpolation?: InterpolationKeywordOrFunction;
   label?: string;
   points: PointTuple[];
 }
 
-export const PolyLineSVG: SFC<IPolyLineSVG> = ({
+export const PolyLineSVG: FunctionComponent<PolyLineSVGProps> = ({
   className,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   label,
   points,
   ...rest
-}: IPolyLineSVG) => (
+}) => (
   <svg xmlns="http://www.w3.org/2000/svg" {...getDimensionsForPoints(points)}>
     <polyline
       className={className}
@@ -32,10 +33,12 @@ export const PolyLineSVG: SFC<IPolyLineSVG> = ({
   </svg>
 );
 
-const StyledPolyLineSVG: StyledComponent<IPolyLineSVG, IThemeProps, {}> = styled(PolyLineSVG)`
+export const StyledPolyLineSVG: StyledComponent<
+  PolyLineSVGProps,
+  PolyLineSVGProps,
+  ThemeProps
+> = styled(PolyLineSVG)`
   fill: none;
   stroke: ${props => props.theme.color || '#000'};
   stroke-width: ${props => `${props.theme.thickness / 4 || 2}px`};
 `;
-
-export default StyledPolyLineSVG;
