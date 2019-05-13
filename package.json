@@ -19,7 +19,7 @@
     "lint:style": "stylelint",
     "lint-fix": "concurrently \"yarn lint:js --fix .\" \"yarn lint:md . -qfo\"",
     "precommit": "concurrently yarn:build:lib \"lint-staged\"",
-    "prerelease": "NODE_ENV=production yarn clean && yarn lint && yarn test && yarn build",
+    "prerelease": "yarn clean && yarn lint && yarn test && NODE_ENV=production yarn build",
     "release": "lerna publish",
     "storybook": "concurrently yarn:build:lib yarn:storybook-server",
     "prestorybook-deploy": "yarn build:lib",
