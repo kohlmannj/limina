@@ -50,7 +50,7 @@ exports[`core with div that decreases in width on wider screens 1`] = `
     Hello World!
   </h1>
   <h2>
-    Start editing to see some magic happen ✨
+    Resize the preview pane to see some magic happen ✨
   </h2>
 </div>
 `;

@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`limina basic usage 1`] = `
+Object {
+  "@media (max-width: 540px)": Object {
+    "width": "100vw",
+  },
+  "@media (min-width: 1280px)": Object {
+    "width": "90.625vw",
+  },
+  "@media (min-width: 541px) and (max-width: 1279px)": Object {
+    "width": "calc(83.78378378378379vw + 87.56756756756761px)",
+  },
+}
+`;
+
+exports[`limina styles object with array of BreakpointValues three breakpoints works with a multiple property-value pairs 1`] = `
+Object {
+  "@media (max-width: 540px)": Object {
+    "fontSize": "5.9259259259259265vw",
+    "width": "100vw",
+  },
+  "@media (min-width: 1280px)": Object {
+    "fontSize": "5vw",
+    "width": "90.625vw",
+  },
+  "@media (min-width: 541px) and (max-width: 853px)": Object {
+    "fontSize": "calc(5.095541401273886vw + 4.484076433121018px)",
+    "width": "calc(72.61146496815286vw + 147.89808917197456px)",
+  },
+  "@media (min-width: 854px)": Object {
+    "fontSize": "5.620608899297424vw",
+    "width": "89.92974238875878vw",
+  },
+  "@media (min-width: 855px) and (max-width: 1279px)": Object {
+    "fontSize": "calc(3.755868544600939vw + 15.924882629107984px)",
+    "width": "calc(92.01877934272301vw + -17.840375586854407px)",
+  },
+}
+`;
+
+exports[`limina styles object with array of BreakpointValues three breakpoints works with a single property-value pair 1`] = `
+Object {
+  "@media (max-width: 540px)": Object {
+    "width": "100vw",
+  },
+  "@media (min-width: 1280px)": Object {
+    "width": "90.625vw",
+  },
+  "@media (min-width: 541px) and (max-width: 853px)": Object {
+    "width": "calc(72.61146496815286vw + 147.89808917197456px)",
+  },
+  "@media (min-width: 854px)": Object {
+    "width": "89.92974238875878vw",
+  },
+  "@media (min-width: 855px) and (max-width: 1279px)": Object {
+    "width": "calc(92.01877934272301vw + -17.840375586854407px)",
+  },
+}
+`;
+
+exports[`limina styles object with array of BreakpointValues two breakpoints works with a single property-value pair 1`] = `
+Object {
+  "@media (max-width: 540px)": Object {
+    "width": "100vw",
+  },
+  "@media (min-width: 1280px)": Object {
+    "width": "90.625vw",
+  },
+  "@media (min-width: 541px) and (max-width: 1279px)": Object {
+    "width": "calc(83.78378378378379vw + 87.56756756756761px)",
+  },
+}
+`;

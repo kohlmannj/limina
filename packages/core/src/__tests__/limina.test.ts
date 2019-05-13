@@ -1,57 +1,53 @@
-// import testMediaQueries from '../__stubs__/testMediaQueries';
-import { createBreakpoint } from '../Breakpoint';
-import { limina } from '../limina';
+import { createBreakpoints, limina } from '..';
 
 /** @see https://codepen.io/anon/pen/VXJgom */
 /** @see https://codesandbox.io/s/jj438z6r2w */
 /** @see https://codesandbox.io/s/x256m5vl54 */
 
 describe('limina', () => {
+  it('basic usage', () => {
+    const [compact, regular] = createBreakpoints(540, 1280);
+
+    const styles = limina({
+      width: [compact(540), regular(1160)],
+    });
+
+    expect(styles).toMatchSnapshot();
+  });
   describe('styles object with array of BreakpointValues', () => {
     describe('two breakpoints', () => {
       it('works with a single property-value pair', () => {
-        const [compact, regular] = [540, 1280].map(w => createBreakpoint(w).createValue);
+        const [compact, regular] = createBreakpoints(540, 1280);
 
         const styles = limina({
           // TODO: order values before calling retargetCSSPropertyValue()
           width: [compact(540), regular(1160)],
         });
 
-        // console.log(styles);
-
-        expect(styles).toBeInstanceOf(Object);
+        expect(styles).toMatchSnapshot();
       });
     });
 
     describe('three breakpoints', () => {
       it('works with a single property-value pair', () => {
-        const [compact, tabletPortrait, regular] = [540, 854, 1280].map(
-          w => createBreakpoint(w).createValue
-        );
+        const [mobile, tablet, desktop] = createBreakpoints(540, 854, 1280);
 
         const styles = limina({
-          width: [compact(540), tabletPortrait(768), regular(1160)],
+          width: [mobile(540), tablet(768), desktop(1160)],
         });
 
-        // console.log(styles);
-
-        expect(styles).toBeInstanceOf(Object);
+        expect(styles).toMatchSnapshot();
       });
 
       it('works with a multiple property-value pairs', () => {
-        const [compact, tabletPortrait, regular] = [540, 854, 1280].map(
-          w => createBreakpoint(w).createValue
-        );
+        const [mobile, tablet, desktop] = createBreakpoints(540, 854, 1280);
 
         const styles = limina({
-          width: [compact(540), tabletPortrait(768), regular(1160)],
-          fontSize: [compact(32), tabletPortrait(48), regular(64)],
+          width: [mobile(540), tablet(768), desktop(1160)],
+          fontSize: [mobile(32), tablet(48), desktop(64)],
         });
 
-        /** @see https://codepen.io/anon/pen/LdwPeP */
-        // console.log(styles);
-
-        expect(styles).toBeInstanceOf(Object);
+        expect(styles).toMatchSnapshot();
       });
     });
   });
