@@ -1,24 +1,14 @@
 import units from 'units-css';
 import { CSSValue } from '.';
-import { Breakpoint, Breakpointable } from './Breakpoint';
+import { Breakpoint } from './Breakpoint';
 
 export interface BreakpointValueOptions {
-  breakpoint: Breakpointable;
+  breakpoint: Breakpoint;
   value: CSSValue;
 }
 
 export class BreakpointValue {
-  public static isValid(breakpointValue: BreakpointValue) {
-    return (
-      typeof breakpointValue === 'object' &&
-      breakpointValue !== null &&
-      Breakpoint.isValid(breakpointValue.breakpoint) &&
-      typeof breakpointValue.value === 'number' &&
-      typeof breakpointValue.unit === 'string'
-    );
-  }
-
-  public readonly breakpoint: Breakpointable;
+  public readonly breakpoint: Breakpoint;
 
   public readonly rawValue: CSSValue;
 
@@ -28,14 +18,6 @@ export class BreakpointValue {
 
   public constructor(options: BreakpointValueOptions) {
     const { breakpoint, value: rawValue } = options;
-
-    if (!Breakpoint.isValid(breakpoint)) {
-      throw new Error('`breakpoint` must be a valid Breakpoint class instance');
-    }
-
-    if (typeof rawValue !== 'string' && typeof rawValue !== 'number') {
-      throw new Error('`value` must be a number or string');
-    }
 
     this.breakpoint = breakpoint;
     this.rawValue = rawValue;

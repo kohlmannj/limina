@@ -1,9 +1,10 @@
-import { Interpolation } from '@emotion/core';
 import { CSSPropertyValueTuple, ReduceToCSSOptions } from '..';
 import { reduceBreakpointValuesToCSS } from './reduceBreakpointValuesToCSS';
 import { sortValuesByBreakpointWidth } from './sortValuesByBreakpointWidth';
 
-export const retargetCSSPropertyValue = (tuple: CSSPropertyValueTuple): Interpolation => {
+export const retargetCSSPropertyValue = (
+  tuple: CSSPropertyValueTuple
+): import('@emotion/core').Interpolation => {
   const [property, value] = tuple;
   const initialValue: ReduceToCSSOptions = { css: {} };
 

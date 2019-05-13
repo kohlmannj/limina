@@ -1,6 +1,7 @@
 {
   "search.exclude": {
     ".cache": true,
+    ".idea": true,
     ".jest_cache": true,
     "**/dist": true,
     "**/lib": true,

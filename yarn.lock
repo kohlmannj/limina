@@ -1842,10 +1842,9 @@
 "@limina/core@file:packages/core":
   version "0.2.3"
   dependencies:
-    "@emotion/core" "^10.0.10"
     csstype "^2.6.4"
     lodash.merge "^4.6.1"
-    ml-regression-simple-linear "^1.0.2"
+    ml-regression-simple-linear "^2.0.1"
     units-css "^0.4.0"
 
 "@limina/eslint-config@file:packages/eslint-config":
@@ -9648,17 +9647,17 @@ mkdirp@0.5.1, mkdirp@0.x, mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.0, mkdirp@~0
   dependencies:
     minimist "0.0.8"
 
-ml-regression-base@^1.0.0:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/ml-regression-base/-/ml-regression-base-1.2.1.tgz#ce4de3ddb635af2536e8f5bfaa1910ae1f5552ec"
-  integrity sha512-G1gKXkGqT5fvv1oirmF1PjdRAS4qmAH+eTBCL8flAiJ2SI6Lxnh5U18pVJuujKjhOykCvF0Oi47FpWD5CPsLxw==
+ml-regression-base@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/ml-regression-base/-/ml-regression-base-2.0.1.tgz#3e7126f3da96aeee37701cc65c830cf11d62c1e8"
+  integrity sha512-aZGe0DxeyLYPKT4343gzcILJJXrq56FtuMmb4ZafTl9NP9ZEhrjJ9GGkF+yc9CxLJ5Ba7Uc2zAZeLtQ4JokN8g==
 
-ml-regression-simple-linear@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/ml-regression-simple-linear/-/ml-regression-simple-linear-1.0.2.tgz#d99fe95be9178c3bf045cc58490b1e62851336af"
-  integrity sha1-2Z/pW+kXjDvwRcxYSQseYoUTNq8=
+ml-regression-simple-linear@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/ml-regression-simple-linear/-/ml-regression-simple-linear-2.0.1.tgz#7d800cb213ae93df9a9567d7c1785fa6e078661a"
+  integrity sha512-OM0GXVnwAbMLze18HexDzw9nx3/7D+eAegFceqLUZmHr8/eFIoACcvJFaQpWffndqRB3ppOCqgE8y+3rbL9zkw==
   dependencies:
-    ml-regression-base "^1.0.0"
+    ml-regression-base "^2.0.1"
 
 mocha@^5.2.0:
   version "5.2.0"

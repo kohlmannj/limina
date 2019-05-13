@@ -32,32 +32,15 @@ export interface BreakpointProps {
   readonly [propName: string]: any;
 }
 
-export interface Breakpointable {
-  props: BreakpointProps;
-  createValue: (value: CSSValue) => BreakpointValue;
-  toString: () => string;
-}
-
 export const modifiers = ['min', 'max'];
 export const operators = ['and', 'or'];
 
-export class Breakpoint implements Breakpointable {
+export class Breakpoint {
   public static readonly defaultProps: BreakpointDefaultProps = {
     modifier: 'min',
     operator: 'and',
     unit: 'px',
   };
-
-  public static isValid(breakpoint: Breakpointable) {
-    return (
-      typeof breakpoint === 'object' &&
-      breakpoint !== null &&
-      typeof breakpoint.props === 'object' &&
-      breakpoint.props !== null &&
-      typeof breakpoint.props.width === 'number' &&
-      typeof breakpoint.props.unit === 'string'
-    );
-  }
 
   public props: BreakpointProps;
 

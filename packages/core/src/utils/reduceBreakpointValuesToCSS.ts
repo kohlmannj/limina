@@ -1,4 +1,3 @@
-import { Interpolation } from '@emotion/core';
 import { CSSValueRetargetingOptions, ReduceToCSSOptions } from '..';
 import { BreakpointValue } from '../BreakpointValue';
 import { createLinearRegressionMediaQuery } from './createLinearRegressionMediaQuery';
@@ -17,7 +16,7 @@ export const reduceBreakpointValuesToCSS = (options: CSSValueRetargetingOptions)
     breakpointValueString = breakpointValueString.replace('min-width', 'max-width');
   }
 
-  const nextCSS: Interpolation = {
+  const nextCSS: import('@emotion/core').Interpolation = {
     ...css,
     ...(typeof prevValue === 'object' && prevValue !== null
       ? createLinearRegressionMediaQuery({ property, dynamicUnit })(prevValue, breakpointValue)
