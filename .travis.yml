@@ -15,4 +15,4 @@ script:
   - yarn build:lib
   - yarn test --bail --runInBand --silent
   - codecov --token=$CODECOV_TOKEN
-  - if [ $TRAVIS_BRANCH == 'master' ]; then yarn storybook-deploy --ci --host-token-env-variable=$GITHUB_TOKEN; fi
+  - if [ $TRAVIS_BRANCH == 'default' ]; then yarn storybook-deploy --ci --host-token-env-variable=$GITHUB_TOKEN; fi
