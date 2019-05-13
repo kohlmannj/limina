@@ -17,23 +17,23 @@ export interface BreakpointOptionsObject {
   readonly operator?: Operator;
   readonly unit?: string;
   readonly width: CSSValue;
+  // TODO: support arbitrary media query constraints???
+  // readonly [propName: string]: unknown;
 }
 
 export type BreakpointOptions = BreakpointOptionsObject | CSSValue;
 
-export interface BreakpointProps {
-  readonly modifier: Modifier;
-  readonly name?: string;
-  readonly operator: Operator;
-  readonly rawWidth: CSSValue;
-  readonly unit: string;
+export interface BreakpointProps
+  extends Required<
+      Pick<BreakpointOptionsObject, Exclude<keyof BreakpointOptionsObject, 'name' | 'width'>>
+    >,
+    Pick<BreakpointOptionsObject, 'name'> {
+  readonly rawWidth: BreakpointOptionsObject['width'];
   readonly width: number;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  readonly [propName: string]: any;
 }
 
-export const modifiers = ['min', 'max'];
-export const operators = ['and', 'or'];
+// export const modifiers = ['min', 'max'];
+// export const operators = ['and', 'or'];
 
 export class Breakpoint {
   public static readonly defaultProps: BreakpointDefaultProps = {
@@ -42,36 +42,19 @@ export class Breakpoint {
     unit: 'px',
   };
 
-  public props: BreakpointProps;
+  public readonly props: BreakpointProps;
 
   public constructor(options: BreakpointOptions) {
-    const props: BreakpointOptionsObject =
+    const { width: rawWidth, ...rest }: BreakpointOptionsObject =
       typeof options === 'string' || typeof options === 'number' ? { width: options } : options;
 
-    const { width: rawWidth, ...rest } = props;
     const { value: width, unit } = units.parse(rawWidth);
-
-    if (props.modifier && modifiers.indexOf(props.modifier) < 0) {
-      throw new Error('`modifier` prop is invalid');
-    }
-
-    if (typeof props.name !== 'undefined' && typeof props.name !== 'string') {
-      throw new Error('`name` prop is invalid');
-    }
-
-    if (props.operator && operators.indexOf(props.operator) < 0) {
-      throw new Error('`operator` prop is invalid');
-    }
-
-    if (props.unit && typeof props.unit !== 'string') {
-      throw new Error('`unit` prop is invalid');
-    }
 
     this.props = {
       ...Breakpoint.defaultProps,
       ...rest,
       rawWidth,
-      unit: unit === '' ? 'px' : unit, // TODO: generalize the default unit setting
+      unit: unit === '' ? Breakpoint.defaultProps.unit : unit,
       width,
     };
   }
@@ -82,9 +65,11 @@ export class Breakpoint {
   public toString() {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { modifier, name, operator, rawWidth, unit, ...rest } = this.props;
-    const mediaQueryConditions = Object.entries(rest).map(
-      ([propName /* , propValue */]) =>
-        `(${propName === 'width' ? `${modifier}-width` : propName}: ${rest[propName]}${unit})`
+    const mediaQueryConditions: string[] = Object.entries(rest).map(
+      ([propName, propValue]: [string, unknown]) =>
+        `(${propName === 'width' ? `${modifier}-width` : propName}: ${
+          typeof propValue === 'number' ? `${propValue}${unit}` : propValue
+        })`
     );
 
     return `@media ${mediaQueryConditions.join(`${operator === 'or' ? ',' : ` ${operator}`} `)}`;

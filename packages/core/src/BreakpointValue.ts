@@ -8,6 +8,8 @@ export interface BreakpointValueOptions {
 }
 
 export class BreakpointValue {
+  public static readonly defaultUnit = 'px';
+
   public readonly breakpoint: Breakpoint;
 
   public readonly rawValue: CSSValue;
@@ -16,14 +18,11 @@ export class BreakpointValue {
 
   public readonly value: number;
 
-  public constructor(options: BreakpointValueOptions) {
-    const { breakpoint, value: rawValue } = options;
-
+  public constructor({ breakpoint, value: rawValue }: BreakpointValueOptions) {
     this.breakpoint = breakpoint;
     this.rawValue = rawValue;
     const { unit, value } = units.parse(rawValue);
-    // TODO: generalize the default unit setting
-    this.unit = unit === '' ? 'px' : unit;
+    this.unit = unit === '' ? BreakpointValue.defaultUnit : unit;
     this.value = value;
   }
 
