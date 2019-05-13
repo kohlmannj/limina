@@ -2,6 +2,7 @@
   "name": "@limina/react-graph-editor",
   "version": "0.3.0",
   "description": "A general-purpose React graph editor component",
+  "main": "dist/index.js",
   "module": "lib/index.js",
   "types": "lib/index.d.ts",
   "repository": "https://github.com/kohlmannj/limina/packages/graph-editor",
