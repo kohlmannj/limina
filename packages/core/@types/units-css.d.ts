@@ -1,8 +1,12 @@
 declare module 'units-css' {
-  export interface ParsedCSSValue {
-    unit: string;
-    value: number;
+  namespace unitsCss {
+    interface ParsedCSSValue {
+      unit: string;
+      value: number;
+    }
+
+    function parse(unitStr: string | number): ParsedCSSValue;
   }
 
-  export function parse(unitStr: string | number): ParsedCSSValue;
+  export = unitsCss;
 }

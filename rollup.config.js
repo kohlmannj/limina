@@ -8,6 +8,9 @@ const { terser } = require('rollup-plugin-terser');
 const { pascalCase } = require('change-case');
 
 const extensions = ['.mjs', '.js', '.jsx', '.ts', '.tsx', '.json', '.node'];
+// const commonJsExtensions = ['.js', '.jsx', '.json'];
+
+const tsconfig = path.join(process.cwd(), '..', '..', 'tsconfig.settings.json');
 
 const pkgPath = path.join(process.cwd(), 'package.json');
 const pkgStr = fs.readFileSync(pkgPath);
@@ -28,8 +31,8 @@ module.exports = {
   },
   external,
   plugins: [
+    typescript({ tsconfig }),
     nodeResolve({ extensions }),
-    typescript(),
     commonjs({ extensions }),
     sourcemaps(),
     process.env.NODE_ENV === 'production' &&
