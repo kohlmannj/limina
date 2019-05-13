@@ -1,6 +1,6 @@
 {
   "name": "@limina/react-graph-editor",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "A general-purpose React graph editor component",
   "main": "dist/index.js",
   "module": "lib/index.js",
