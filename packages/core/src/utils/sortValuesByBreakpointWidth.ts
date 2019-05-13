@@ -1,6 +1,6 @@
-import { BreakpointTupleable } from '../BreakpointTuple';
+import { BreakpointValue } from '../BreakpointValue';
 
-export const sortValuesByBreakpointWidth = (l: BreakpointTupleable, r: BreakpointTupleable) => {
+export const sortValuesByBreakpointWidth = (l: BreakpointValue, r: BreakpointValue) => {
   const leftWidth = l.breakpoint.props.width;
   const rightWidth = r.breakpoint.props.width;
 

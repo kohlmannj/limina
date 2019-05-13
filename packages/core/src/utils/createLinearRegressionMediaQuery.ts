@@ -1,69 +1,48 @@
 import SLR from 'ml-regression-simple-linear';
 import { CSSValueRetargetingOptions } from '..';
-import { BreakpointTupleable } from '../BreakpointTuple';
+import { BreakpointValue } from '../BreakpointValue';
 import { cssValueRetargetingDefaultOptions as defaultOptions } from './cssValueRetargetingDefaultOptions';
 
 export const createLinearRegressionMediaQuery = (options: CSSValueRetargetingOptions) => (
-  leftTuple: BreakpointTupleable,
-  rightTuple: BreakpointTupleable
+  leftValue: BreakpointValue,
+  rightValue: BreakpointValue
 ) => {
   const { dynamicUnit, property } = { ...defaultOptions, ...options };
 
-  if (
-    typeof leftTuple !== 'object' ||
-    leftTuple === null ||
-    typeof leftTuple.breakpoint !== 'object' ||
-    leftTuple.breakpoint === null ||
-    typeof leftTuple.breakpoint.props !== 'object' ||
-    leftTuple.breakpoint.props === null ||
-    typeof leftTuple.breakpoint.props.width !== 'number' ||
-    typeof leftTuple.breakpoint.props.unit !== 'string' ||
-    typeof rightTuple !== 'object' ||
-    rightTuple === null ||
-    typeof rightTuple.breakpoint !== 'object' ||
-    rightTuple.breakpoint === null ||
-    typeof rightTuple.breakpoint.props !== 'object' ||
-    rightTuple.breakpoint.props === null ||
-    typeof rightTuple.breakpoint.props.width !== 'number' ||
-    typeof rightTuple.breakpoint.props.unit !== 'string'
-  ) {
-    throw new Error('Either leftTuple or rightTuple is invalid');
-  }
-
-  if (leftTuple.breakpoint.props.unit !== rightTuple.breakpoint.props.unit) {
+  if (leftValue.breakpoint.props.unit !== rightValue.breakpoint.props.unit) {
     throw new Error(
-      `leftTuple and rightTuple's breakpoints each use different CSS units
-            (${leftTuple.breakpoint.props.unit} and ${rightTuple.breakpoint.props.unit})`
+      `leftValue and rightValue's breakpoints each use different CSS units
+            (${leftValue.breakpoint.props.unit} and ${rightValue.breakpoint.props.unit})`
     );
   }
 
-  if (leftTuple.unit !== rightTuple.unit) {
+  if (leftValue.unit !== rightValue.unit) {
     throw new Error(
-      `leftTuple and rightTuple's values each use different CSS units
-            (${leftTuple.unit} and ${rightTuple.unit})`
+      `leftValue and rightValue's values each use different CSS units
+            (${leftValue.unit} and ${rightValue.unit})`
     );
   }
 
   // const leftBreakpointIsSmaller =
-  //   leftTuple.breakpoint.props.width < rightTuple.breakpoint.props.width;
-  // const smallerTuple = leftBreakpointIsSmaller ? leftTuple : rightTuple;
-  // const largerTuple = leftBreakpointIsSmaller ? rightTuple : leftTuple;
+  //   leftValue.breakpoint.props.width < rightValue.breakpoint.props.width;
+  // const smallerValue = leftBreakpointIsSmaller ? leftValue : rightValue;
+  // const largerValue = leftBreakpointIsSmaller ? rightValue : leftValue;
 
   const breakpointConditions = [
-    `(min-width: ${leftTuple.breakpoint.props.width + 1}${leftTuple.breakpoint.props.unit})`,
-    `(max-width: ${rightTuple.breakpoint.props.width - 1}${rightTuple.breakpoint.props.unit})`,
+    `(min-width: ${leftValue.breakpoint.props.width + 1}${leftValue.breakpoint.props.unit})`,
+    `(max-width: ${rightValue.breakpoint.props.width - 1}${rightValue.breakpoint.props.unit})`,
   ];
 
   const { coefficients } = new SLR(
-    [leftTuple.breakpoint.props.width, rightTuple.breakpoint.props.width],
-    [leftTuple.value, rightTuple.value]
+    [leftValue.breakpoint.props.width, rightValue.breakpoint.props.width],
+    [leftValue.value, rightValue.value]
   );
 
-  // Note: we've previously determined that both tuples' values use the same units
+  // Note: we've previously determined that both values use the same units
   return {
     [`@media ${breakpointConditions.join(' and ')}`]: {
       [property]: `calc(${coefficients[1] * 100}${dynamicUnit} + ${coefficients[0]}${
-        leftTuple.unit
+        leftValue.unit
       })`,
     },
   };

@@ -1,6 +1,6 @@
 import units from 'units-css';
 import { CSSValue } from '.';
-import { createBreakpointTuple, BreakpointTupleable } from './BreakpointTuple';
+import { createBreakpointValue, BreakpointValue } from './BreakpointValue';
 
 export type Modifier = 'min' | 'max';
 export type Operator = 'and' | 'or';
@@ -34,7 +34,7 @@ export interface BreakpointProps {
 
 export interface Breakpointable {
   props: BreakpointProps;
-  createTuple: (value: CSSValue) => BreakpointTupleable;
+  createValue: (value: CSSValue) => BreakpointValue;
   toString: () => string;
 }
 
@@ -93,11 +93,12 @@ export class Breakpoint implements Breakpointable {
     };
   }
 
-  public createTuple = (value: CSSValue): BreakpointTupleable =>
-    createBreakpointTuple({ breakpoint: this, value });
+  public createValue = (value: CSSValue): BreakpointValue =>
+    createBreakpointValue({ breakpoint: this, value });
 
   public toString() {
-    const { modifier, /* name, */ operator, /* rawWidth, */ unit, ...rest } = this.props;
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const { modifier, name, operator, rawWidth, unit, ...rest } = this.props;
     const mediaQueryConditions = Object.entries(rest).map(
       ([propName /* , propValue */]) =>
         `(${propName === 'width' ? `${modifier}-width` : propName}: ${rest[propName]}${unit})`

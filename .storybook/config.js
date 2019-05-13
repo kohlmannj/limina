@@ -7,7 +7,7 @@ const customTheme = require('./customTheme');
 addParameters({
   options: { theme: customTheme },
 });
-addDecorator(withInfo);
+addDecorator(withInfo({ source: false }));
 addDecorator(withKnobs);
 
 const req = require.context('../packages', true, /\.stories\.[t]sx?$/);

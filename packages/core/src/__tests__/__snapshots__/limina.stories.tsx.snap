@@ -1,0 +1,301 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`core with div that decreases in width on wider screens 1`] = `
+.emotion-0 {
+  margin: 0 auto;
+  background-color: rebeccapurple;
+  color: goldenrod;
+  font-family: sans-serif;
+}
+
+@media (max-width:540px) {
+  .emotion-0 {
+    width: 100vw;
+    font-size: 5.9259259259259265vw;
+  }
+}
+
+@media (min-width:541px) and (max-width:853px) {
+  .emotion-0 {
+    width: calc(-70.06369426751591vw + 918.343949044586px);
+    font-size: calc(5.095541401273886vw + 4.484076433121018px);
+  }
+}
+
+@media (min-width:854px) {
+  .emotion-0 {
+    width: 37.470725995316165vw;
+    font-size: 5.620608899297424vw;
+  }
+}
+
+@media (min-width:855px) and (max-width:1279px) {
+  .emotion-0 {
+    width: calc(197.1830985915493vw + -1363.9436619718308px);
+    font-size: calc(3.755868544600939vw + 15.924882629107984px);
+  }
+}
+
+@media (min-width:1280px) {
+  .emotion-0 {
+    width: 90.625vw;
+    font-size: 5vw;
+  }
+}
+
+<div
+  class="emotion-0"
+>
+  <h1>
+    Hello World!
+  </h1>
+  <h2>
+    Start editing to see some magic happen ✨
+  </h2>
+</div>
+`;
+
+exports[`core with multiple containers 1`] = `
+Array [
+  .emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 200px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  background-color: orange;
+  font-family: sans-serif;
+}
+
+@media (max-width:320px) {
+  .emotion-0 {
+    width: 93.75vw;
+  }
+}
+
+@media (min-width:321px) and (max-width:767px) {
+  .emotion-0 {
+    width: calc(93.75vw + 0px);
+  }
+}
+
+@media (min-width:768px) {
+  .emotion-0 {
+    width: 93.75vw;
+  }
+}
+
+@media (min-width:769px) and (max-width:1023px) {
+  .emotion-0 {
+    width: calc(87.890625vw + 45px);
+  }
+}
+
+@media (min-width:1024px) {
+  .emotion-0 {
+    width: 92.28515625vw;
+  }
+}
+
+@media (min-width:1025px) and (max-width:1279px) {
+  .emotion-0 {
+    width: calc(0vw + 945px);
+  }
+}
+
+@media (min-width:1280px) {
+  .emotion-0 {
+    width: 73.828125vw;
+  }
+}
+
+@media (min-width:1281px) and (max-width:1439px) {
+  .emotion-0 {
+    width: calc(159.375vw + -1095px);
+  }
+}
+
+@media (min-width:1440px) {
+  .emotion-0 {
+    width: 83.33333333333334vw;
+  }
+}
+
+<div
+    class="emotion-0"
+  >
+    <span>
+      Large Container
+    </span>
+  </div>,
+  .emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 200px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  background-color: orange;
+  font-family: sans-serif;
+}
+
+@media (max-width:320px) {
+  .emotion-0 {
+    width: 93.75vw;
+  }
+}
+
+@media (min-width:321px) and (max-width:767px) {
+  .emotion-0 {
+    width: calc(73.66071428571429vw + 64.28571428571428px);
+  }
+}
+
+@media (min-width:768px) {
+  .emotion-0 {
+    width: 82.03125vw;
+  }
+}
+
+@media (min-width:769px) and (max-width:1023px) {
+  .emotion-0 {
+    width: calc(-11.71875vw + 720px);
+  }
+}
+
+@media (min-width:1024px) {
+  .emotion-0 {
+    width: 58.59375vw;
+  }
+}
+
+@media (min-width:1025px) and (max-width:1279px) {
+  .emotion-0 {
+    width: calc(0vw + 600px);
+  }
+}
+
+@media (min-width:1280px) {
+  .emotion-0 {
+    width: 46.875vw;
+  }
+}
+
+@media (min-width:1281px) and (max-width:1439px) {
+  .emotion-0 {
+    width: calc(18.75vw + 360px);
+  }
+}
+
+@media (min-width:1440px) {
+  .emotion-0 {
+    width: 43.75vw;
+  }
+}
+
+<div
+    class="emotion-0"
+  >
+    <span>
+      Medium Container
+    </span>
+  </div>,
+  .emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 200px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  background-color: orange;
+  font-family: sans-serif;
+}
+
+@media (max-width:320px) {
+  .emotion-0 {
+    width: 93.75vw;
+  }
+}
+
+@media (min-width:321px) and (max-width:767px) {
+  .emotion-0 {
+    width: calc(0vw + 300px);
+  }
+}
+
+@media (min-width:768px) {
+  .emotion-0 {
+    width: 39.0625vw;
+  }
+}
+
+@media (min-width:769px) and (max-width:1023px) {
+  .emotion-0 {
+    width: calc(0vw + 300px);
+  }
+}
+
+@media (min-width:1024px) {
+  .emotion-0 {
+    width: 29.296875vw;
+  }
+}
+
+@media (min-width:1025px) and (max-width:1279px) {
+  .emotion-0 {
+    width: calc(0vw + 300px);
+  }
+}
+
+@media (min-width:1280px) {
+  .emotion-0 {
+    width: 23.4375vw;
+  }
+}
+
+@media (min-width:1281px) and (max-width:1439px) {
+  .emotion-0 {
+    width: calc(0vw + 300px);
+  }
+}
+
+@media (min-width:1440px) {
+  .emotion-0 {
+    width: 20.833333333333336vw;
+  }
+}
+
+<div
+    class="emotion-0"
+  >
+    <span>
+      Small Container
+    </span>
+  </div>,
+]
+`;

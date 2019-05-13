@@ -1,7 +1,10 @@
 import { Interpolation } from '@emotion/core';
-import { BreakpointTupleable } from './BreakpointTuple';
+import { BreakpointValue } from './BreakpointValue';
 
 export * from './limina';
+export * from './Breakpoint';
+export * from './BreakpointValue';
+export * from './createBreakpoints';
 
 export interface CSSValueRetargetingDefaultOptions {
   dynamicUnit: 'vw';
@@ -13,13 +16,10 @@ export interface CSSValueRetargetingOptions {
 }
 
 export interface ReduceToCSSOptions {
-  prevTuple?: BreakpointTupleable;
+  prevValue?: BreakpointValue;
   css: Interpolation & object;
 }
 
-export interface CSSPropertyValueTuple extends Array<string | BreakpointTupleable[]> {
-  0: string;
-  1: BreakpointTupleable[];
-}
+export type CSSPropertyValueTuple = [string, BreakpointValue[]];
 
 export type CSSValue = number | string;
