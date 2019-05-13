@@ -1,2 +1,2 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import '@storybook/addon-knobs/register';
+require('@storybook/addon-knobs/register');

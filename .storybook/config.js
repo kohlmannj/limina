@@ -1,8 +1,12 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import { addDecorator, configure } from '@storybook/react';
-import { withKnobs } from '@storybook/addon-knobs/react';
-import { withInfo } from '@storybook/addon-info';
+const { addDecorator, addParameters, configure } = require('@storybook/react');
+const { withKnobs } = require('@storybook/addon-knobs/react');
+const { withInfo } = require('@storybook/addon-info');
+const customTheme = require('./customTheme');
 
+addParameters({
+  options: { theme: customTheme },
+});
 addDecorator(withInfo);
 addDecorator(withKnobs);
 
