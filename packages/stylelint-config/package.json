@@ -21,5 +21,6 @@
   "peerDependencies": {
     "stylelint": "^10.0.1",
     "stylelint-scss": "^3.6.1"
-  }
+  },
+  "gitHead": "5bf75ff47081672d5fd06ca6c101f5e6fd3c99ad"
 }
