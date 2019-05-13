@@ -62,7 +62,7 @@ storiesOf('react-graph-editor/ScrollView', module)
         css={css`
           width: 100%;
           height: 100%;
-          background-image: url('https://placekitten.com/g/1600/1600');
+          background-image: url('https://placekitten.com/1600/1600');
           background-size: 100% 100%;
         `}
       />
