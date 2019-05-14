@@ -29,7 +29,7 @@
     "storybook-deploy": "storybook-to-ghpages",
     "storybook-server": "start-storybook -p 4001",
     "test": "jest",
-    "watch": "concurrently yarn:watch:lib yarn:watch:lint:js",
+    "watch": "concurrently yarn:watch:*",
     "watch:dist": "lerna exec --parallel --scope @limina/core --scope @limina/react-graph-editor -- '$LERNA_ROOT_PATH/node_modules/.bin/rollup -c ../../rollup.config.js --watch'",
     "watch:lib": "yarn build:lib --watch",
     "watch:lint:js": "chokidar ./packages/*/src/**/*.{js,jsx,json,ts,tsx} -c \"yarn lint:js .\" --initial"

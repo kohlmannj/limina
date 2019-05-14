@@ -4,19 +4,90 @@
   "version": "2.0.0",
   "tasks": [
     {
+      "label": "Bootstrap",
       "type": "npm",
-      "script": "build",
+      "script": "bootstrap",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Build",
+      "dependsOn": ["build:dist", "build:lib"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "build:dist",
+      "type": "npm",
+      "script": "build:dist",
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "build:lib",
+      "type": "npm",
+      "script": "build:lib",
+      "group": "build",
       "problemMatcher": ["$tsc"]
     },
     {
+      "label": "Clean",
+      "type": "npm",
+      "script": "clean",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Lint",
+      "dependsOn": ["lint:js", "lint:md", "lint:style"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "lint:js",
       "type": "npm",
       "script": "lint:js",
       "problemMatcher": ["$eslint-stylish"]
     },
     {
+      "label": "lint:md",
+      "type": "npm",
+      "script": "lint:md",
+      "problemMatcher": []
+    },
+    {
+      "label": "lint:style",
+      "type": "npm",
+      "script": "lint:style",
+      "problemMatcher": []
+    },
+    {
+      "label": "Watch",
+      "dependsOn": ["watch:dist", "watch:lib", "watch:lint:js"],
+      "isBackground": true,
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
       "label": "watch:dist",
       "type": "npm",
       "script": "watch:dist",
+      "group": "build",
       "isBackground": true,
       "problemMatcher": []
     },
@@ -24,6 +95,7 @@
       "label": "watch:lib",
       "type": "npm",
       "script": "watch:lib",
+      "group": "build",
       "isBackground": true,
       "problemMatcher": ["$tsc-watch"]
     },
@@ -31,26 +103,26 @@
       "label": "watch:lint:js",
       "type": "npm",
       "script": "watch:lint:js",
+      "group": "build",
       "isBackground": true,
       "problemMatcher": ["$eslint-stylish"]
     },
     {
-      "label": "watch",
-      "isBackground": true,
-      "dependsOn": ["watch:dist", "watch:lib", "watch:lint:js"],
-      "problemMatcher": []
-    },
-    {
-      "label": "npm:storybook-server",
+      "label": "storybook-server",
       "type": "npm",
       "script": "storybook-server",
+      "group": "build",
       "isBackground": true,
       "problemMatcher": []
     },
     {
       "label": "Storybook",
+      "dependsOn": ["storybook-server", "watch:lib"],
       "isBackground": true,
-      "dependsOn": ["npm:storybook-server", "watch:lib"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
       "problemMatcher": []
     }
   ]
