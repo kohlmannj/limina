@@ -1,5 +1,12 @@
-import { createBreakpoint } from './Breakpoint';
-import { CSSValue } from '.';
+import { createBreakpoint, BreakpointOptions } from './breakpoint';
+import { createBoundBreakpointValue, BoundBreakpointValueConstructor } from './breakpointValue';
 
-export const createBreakpoints = (...widths: CSSValue[]) =>
-  widths.map(width => createBreakpoint(width).createValue);
+export function createBreakpoints(...breakpointOptionsArray: BreakpointOptions[]) {
+  return breakpointOptionsArray.map(createBreakpoint);
+}
+
+export function createBreakpointValueConstructors(
+  ...breakpointOptionsArray: BreakpointOptions[]
+): BoundBreakpointValueConstructor[] {
+  return createBreakpoints(...breakpointOptionsArray).map(createBoundBreakpointValue);
+}

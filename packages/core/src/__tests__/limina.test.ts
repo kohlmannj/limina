@@ -1,4 +1,4 @@
-import { createBreakpoints, limina } from '..';
+import { createBreakpointValueConstructors, limina } from '..';
 
 /** @see https://codepen.io/anon/pen/VXJgom */
 /** @see https://codesandbox.io/s/jj438z6r2w */
@@ -6,7 +6,7 @@ import { createBreakpoints, limina } from '..';
 
 describe('limina', () => {
   it('basic usage', () => {
-    const [compact, regular] = createBreakpoints(540, 1280);
+    const [compact, regular] = createBreakpointValueConstructors(540, 1280);
 
     const styles = limina({
       width: [compact(540), regular(1160)],
@@ -17,7 +17,7 @@ describe('limina', () => {
   describe('styles object with array of BreakpointValues', () => {
     describe('two breakpoints', () => {
       it('works with a single property-value pair', () => {
-        const [compact, regular] = createBreakpoints(540, 1280);
+        const [compact, regular] = createBreakpointValueConstructors(540, 1280);
 
         const styles = limina({
           // TODO: order values before calling retargetCSSPropertyValue()
@@ -30,7 +30,7 @@ describe('limina', () => {
 
     describe('three breakpoints', () => {
       it('works with a single property-value pair', () => {
-        const [mobile, tablet, desktop] = createBreakpoints(540, 854, 1280);
+        const [mobile, tablet, desktop] = createBreakpointValueConstructors(540, 854, 1280);
 
         const styles = limina({
           width: [mobile(540), tablet(768), desktop(1160)],
@@ -40,7 +40,7 @@ describe('limina', () => {
       });
 
       it('works with a multiple property-value pairs', () => {
-        const [mobile, tablet, desktop] = createBreakpoints(540, 854, 1280);
+        const [mobile, tablet, desktop] = createBreakpointValueConstructors(540, 854, 1280);
 
         const styles = limina({
           width: [mobile(540), tablet(768), desktop(1160)],

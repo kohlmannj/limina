@@ -1,6 +1,6 @@
-import { CSSPropertyValueTuple, ReduceToCSSOptions } from '..';
 import { reduceBreakpointValuesToCSS } from './reduceBreakpointValuesToCSS';
 import { sortValuesByBreakpointWidth } from './sortValuesByBreakpointWidth';
+import { CSSPropertyValueTuple, ReduceToCSSOptions } from '../types';
 
 export const retargetCSSPropertyValue = (
   tuple: CSSPropertyValueTuple

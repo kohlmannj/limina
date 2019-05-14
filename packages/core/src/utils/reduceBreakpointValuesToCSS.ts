@@ -1,16 +1,17 @@
-import { CSSValueRetargetingOptions, ReduceToCSSOptions } from '..';
-import { BreakpointValue } from '../BreakpointValue';
+import { getBreakpointString } from '../breakpoint';
+import { BreakpointValueProps } from '../breakpointValue';
 import { createLinearRegressionMediaQuery } from './createLinearRegressionMediaQuery';
-import { cssValueRetargetingDefaultOptions as defaultOptions } from './cssValueRetargetingDefaultOptions';
+import { cssValueRetargetingDefaultOptions } from './cssValueRetargetingDefaultOptions';
+import { CSSValueRetargetingOptions, ReduceToCSSOptions } from '../types';
 
 export const reduceBreakpointValuesToCSS = (options: CSSValueRetargetingOptions) => (
   { prevValue, css }: ReduceToCSSOptions,
-  breakpointValue: BreakpointValue
+  breakpointValue: BreakpointValueProps
 ) => {
-  const { property, dynamicUnit } = { ...defaultOptions, ...options };
+  const { property, dynamicUnit } = { ...cssValueRetargetingDefaultOptions, ...options };
   const { breakpoint, value } = breakpointValue;
 
-  let breakpointValueString = breakpoint.toString();
+  let breakpointValueString = getBreakpointString(breakpoint);
   // TODO: replace this postfix with something more architecturally sound
   if (!prevValue) {
     breakpointValueString = breakpointValueString.replace('min-width', 'max-width');
@@ -22,7 +23,7 @@ export const reduceBreakpointValuesToCSS = (options: CSSValueRetargetingOptions)
       ? createLinearRegressionMediaQuery({ property, dynamicUnit })(prevValue, breakpointValue)
       : undefined),
     [breakpointValueString]: {
-      [property]: `${(value / breakpoint.props.width) * 100}${dynamicUnit}`,
+      [property]: `${(value / breakpoint.width) * 100}${dynamicUnit}`,
     },
   };
 

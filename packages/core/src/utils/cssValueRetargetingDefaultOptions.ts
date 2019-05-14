@@ -1,4 +1,4 @@
-import { CSSValueRetargetingDefaultOptions } from '..';
+import { CSSValueRetargetingDefaultOptions } from '../types';
 
 export const cssValueRetargetingDefaultOptions: CSSValueRetargetingDefaultOptions = {
   dynamicUnit: 'vw',

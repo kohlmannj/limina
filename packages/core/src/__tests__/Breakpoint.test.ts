@@ -1,21 +1,26 @@
-import { createBreakpoint, isValidBreakpoint } from '..';
+import { createBreakpoint } from '..';
 
 describe('Breakpoint', () => {
   describe('constructor', () => {
     it('supports strings', () => {
-      const breakpoint = createBreakpoint('1280px');
-      expect(isValidBreakpoint(breakpoint)).toBeTruthy();
+      expect(() => {
+        createBreakpoint('1280px');
+      }).not.toThrow();
     });
 
     it('supports numbers', () => {
-      const breakpoint = createBreakpoint(1280);
-      expect(isValidBreakpoint(breakpoint)).toBeTruthy();
+      expect(() => {
+        createBreakpoint(1280);
+      }).not.toThrow();
+      // expect(isValidBreakpoint(breakpoint)).toBeTruthy();
     });
 
     it('supports named breakpoints', () => {
-      const breakpoint = createBreakpoint({ name: 'compact', width: 1280 });
-      expect(isValidBreakpoint(breakpoint)).toBeTruthy();
-      expect(breakpoint.props.name).toEqual('compact');
+      expect(() => {
+        const breakpoint = createBreakpoint({ name: 'compact', width: 1280 });
+        // expect(isValidBreakpoint(breakpoint)).toBeTruthy();
+        expect(breakpoint.name).toEqual('compact');
+      }).not.toThrow();
     });
   });
 });

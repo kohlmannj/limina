@@ -1,37 +1,61 @@
 import units from 'units-css';
-import { CSSValue } from '.';
-import { Breakpoint } from './Breakpoint';
+import * as defaults from './defaults';
+import { getPreferredUnit } from './utils/getPreferredUnit';
+import { CSSValue } from './types';
+import { getBreakpointString, BreakpointProps } from './breakpoint';
 
-export interface BreakpointValueOptions {
-  breakpoint: Breakpoint;
+export interface BreakpointValueOptionsObject {
+  breakpoint: BreakpointProps;
+  unit?: string;
   value: CSSValue;
 }
 
-export class BreakpointValue {
-  public static readonly defaultUnit = 'px';
+export type BoundBreakpointValueOptionsObject = Pick<
+  BreakpointValueOptionsObject,
+  Exclude<keyof BreakpointValueOptionsObject, 'breakpoint'>
+>;
 
-  public readonly breakpoint: Breakpoint;
+export type BoundBreakpointValueOptions = BoundBreakpointValueOptionsObject | CSSValue;
 
-  public readonly rawValue: CSSValue;
+export type BoundBreakpointValueConstructor = (
+  options: BoundBreakpointValueOptions
+) => BreakpointValueProps;
 
-  public readonly unit: string;
-
-  public readonly value: number;
-
-  public constructor({ breakpoint, value: rawValue }: BreakpointValueOptions) {
-    this.breakpoint = breakpoint;
-    this.rawValue = rawValue;
-    const { unit, value } = units.parse(rawValue);
-    this.unit = unit === '' ? BreakpointValue.defaultUnit : unit;
-    this.value = value;
-  }
-
-  public toString() {
-    return `${this.breakpoint.toString()} { --${
-      this.breakpoint.props.name ? `${this.breakpoint.props.name}-` : ''
-    }value: ${this.value}${this.unit}; }`;
-  }
+export interface BreakpointValueProps extends Pick<BreakpointValueOptionsObject, 'breakpoint'> {
+  rawValue: CSSValue;
+  unit: string;
+  value: number;
 }
 
-export const createBreakpointValue = (options: BreakpointValueOptions) =>
-  new BreakpointValue(options);
+export function createBreakpointValue({
+  breakpoint,
+  value: rawValue,
+  unit,
+}: BreakpointValueOptionsObject): BreakpointValueProps {
+  const { value, unit: parsedUnit } = units.parse(rawValue);
+
+  return {
+    breakpoint,
+    rawValue,
+    unit: getPreferredUnit(unit, parsedUnit, defaults.unit),
+    value,
+  };
+}
+
+export function createBoundBreakpointValue(
+  breakpoint: BreakpointValueOptionsObject['breakpoint']
+): BoundBreakpointValueConstructor {
+  return options =>
+    createBreakpointValue({
+      breakpoint,
+      ...(typeof options === 'number' || typeof options === 'string'
+        ? { value: options }
+        : options),
+    });
+}
+
+export function getBreakpointValueString({ breakpoint, unit, value }: BreakpointValueProps) {
+  return `${getBreakpointString(breakpoint)} { --${
+    breakpoint.name ? `${breakpoint.name}-` : ''
+  }value: ${value}${unit}; }`;
+}

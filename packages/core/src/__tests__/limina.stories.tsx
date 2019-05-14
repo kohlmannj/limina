@@ -3,11 +3,11 @@ import React, { Fragment } from 'react';
 import { css } from '@emotion/core';
 import styled from '@emotion/styled';
 import { storiesOf } from '@storybook/react';
-import { createBreakpoints, limina } from '..';
+import { createBreakpointValueConstructors, limina } from '..';
 
 storiesOf('core', module)
   .add('with div that decreases in width on wider screens', () => {
-    const [mobile, tablet, desktop] = createBreakpoints(540, 854, 1280);
+    const [mobile, tablet, desktop] = createBreakpointValueConstructors(540, 854, 1280);
 
     const LiminaDiv = styled('div')(
       limina({
@@ -31,7 +31,7 @@ storiesOf('core', module)
     );
   })
   .add('with multiple containers', () => {
-    const [sm, md, ml, lg, xl] = createBreakpoints(320, 768, 1024, 1280, 1440);
+    const [sm, md, ml, lg, xl] = createBreakpointValueConstructors(320, 768, 1024, 1280, 1440);
 
     const Container = styled('div')`
       display: flex;

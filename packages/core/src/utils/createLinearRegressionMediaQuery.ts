@@ -1,18 +1,18 @@
 import SLR from 'ml-regression-simple-linear';
-import { CSSValueRetargetingOptions } from '..';
-import { BreakpointValue } from '../BreakpointValue';
+import { BreakpointValueProps } from '../breakpointValue';
 import { cssValueRetargetingDefaultOptions as defaultOptions } from './cssValueRetargetingDefaultOptions';
+import { CSSValueRetargetingOptions } from '../types';
 
 export const createLinearRegressionMediaQuery = (options: CSSValueRetargetingOptions) => (
-  leftValue: BreakpointValue,
-  rightValue: BreakpointValue
+  leftValue: BreakpointValueProps,
+  rightValue: BreakpointValueProps
 ) => {
   const { dynamicUnit, property } = { ...defaultOptions, ...options };
 
-  if (leftValue.breakpoint.props.unit !== rightValue.breakpoint.props.unit) {
+  if (leftValue.breakpoint.unit !== rightValue.breakpoint.unit) {
     throw new Error(
       `leftValue and rightValue's breakpoints each use different CSS units
-            (${leftValue.breakpoint.props.unit} and ${rightValue.breakpoint.props.unit})`
+            (${leftValue.breakpoint.unit} and ${rightValue.breakpoint.unit})`
     );
   }
 
@@ -24,17 +24,17 @@ export const createLinearRegressionMediaQuery = (options: CSSValueRetargetingOpt
   }
 
   // const leftBreakpointIsSmaller =
-  //   leftValue.breakpoint.props.width < rightValue.breakpoint.props.width;
+  //   leftValue.breakpoint.width < rightValue.breakpoint.width;
   // const smallerValue = leftBreakpointIsSmaller ? leftValue : rightValue;
   // const largerValue = leftBreakpointIsSmaller ? rightValue : leftValue;
 
   const breakpointConditions = [
-    `(min-width: ${leftValue.breakpoint.props.width + 1}${leftValue.breakpoint.props.unit})`,
-    `(max-width: ${rightValue.breakpoint.props.width - 1}${rightValue.breakpoint.props.unit})`,
+    `(min-width: ${leftValue.breakpoint.width + 1}${leftValue.breakpoint.unit})`,
+    `(max-width: ${rightValue.breakpoint.width - 1}${rightValue.breakpoint.unit})`,
   ];
 
   const { coefficients } = new SLR(
-    [leftValue.breakpoint.props.width, rightValue.breakpoint.props.width],
+    [leftValue.breakpoint.width, rightValue.breakpoint.width],
     [leftValue.value, rightValue.value]
   );
 

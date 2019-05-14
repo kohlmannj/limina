@@ -1,8 +1,8 @@
-import { BreakpointValue } from '../BreakpointValue';
+import { BreakpointValueProps } from '../breakpointValue';
 
-export const sortValuesByBreakpointWidth = (l: BreakpointValue, r: BreakpointValue) => {
-  const leftWidth = l.breakpoint.props.width;
-  const rightWidth = r.breakpoint.props.width;
+export const sortValuesByBreakpointWidth = (l: BreakpointValueProps, r: BreakpointValueProps) => {
+  const leftWidth = l.breakpoint.width;
+  const rightWidth = r.breakpoint.width;
 
   if (leftWidth < rightWidth) {
     return -1;
