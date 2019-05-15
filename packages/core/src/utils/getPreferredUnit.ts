@@ -1,6 +1,6 @@
-import { BreakpointOptionsObject } from '../breakpoint';
+import { PartialBreakpoint } from '../breakpoint';
 
-export function getPreferredUnit(...possibleUnits: BreakpointOptionsObject['unit'][]): string {
+export function getPreferredUnit(...possibleUnits: PartialBreakpoint['unit'][]): string {
   const finalUnit = possibleUnits.find(
     possibleUnit => typeof possibleUnit !== 'undefined' && possibleUnit !== ''
   );

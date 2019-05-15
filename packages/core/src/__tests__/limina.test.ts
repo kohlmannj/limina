@@ -1,4 +1,4 @@
-import { createBreakpointValueConstructors, limina } from '..';
+import { createBreakpointValueConstructors, limina, createBreakpoints } from '..';
 
 /** @see https://codepen.io/anon/pen/VXJgom */
 /** @see https://codesandbox.io/s/jj438z6r2w */
@@ -6,6 +6,8 @@ import { createBreakpointValueConstructors, limina } from '..';
 
 describe('limina', () => {
   it('basic usage', () => {
+    const [compactBreakpoint, regularBreakpoint] = createBreakpoints(540, 1280);
+
     const [compact, regular] = createBreakpointValueConstructors(540, 1280);
 
     const styles = limina({

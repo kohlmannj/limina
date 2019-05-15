@@ -17,9 +17,9 @@ describe('Breakpoint', () => {
 
     it('supports named breakpoints', () => {
       expect(() => {
-        const breakpoint = createBreakpoint({ name: 'compact', width: 1280 });
+        const breakpoint = createBreakpoint({ label: 'compact', width: 1280 });
         // expect(isValidBreakpoint(breakpoint)).toBeTruthy();
-        expect(breakpoint.name).toEqual('compact');
+        expect(breakpoint.label).toEqual('compact');
       }).not.toThrow();
     });
   });

@@ -83,6 +83,7 @@
     "chokidar-cli": "^1.2.2",
     "chroma-js": "^2.0.3",
     "concurrently": "^4.1.0",
+    "csstype": "^2.6.4",
     "emotion-theming": "^10.0.10",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.13.0",

@@ -1,18 +1,19 @@
-import { BreakpointValueProps } from './breakpointValue';
+import { BreakpointValue } from './breakpointValue';
+import { MediaQueryDelimitedCSSPropertyValues } from './utils/createLinearRegressionMediaQuery';
 
 export interface CSSValueRetargetingDefaultOptions {
   dynamicUnit: 'vw';
 }
 
-export interface CSSValueRetargetingOptions {
-  dynamicUnit?: 'vw';
-  property: string;
+export interface CSSValueRetargetingOptions<P extends string, U extends string | undefined> {
+  dynamicUnit?: U;
+  property: P;
 }
 
-export interface ReduceToCSSOptions {
-  prevValue?: BreakpointValueProps;
-  css: import('@emotion/core').Interpolation & object;
+export interface ReduceToCSSOptions<P extends string, D extends string | undefined> {
+  prevValue?: BreakpointValue;
+  css: MediaQueryDelimitedCSSPropertyValues<P, D>;
 }
 
-export type CSSPropertyValueTuple = [string, BreakpointValueProps[]];
+export type CSSPropertyValueTuple = [string, BreakpointValue[]];
 export type CSSValue = number | string;

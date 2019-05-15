@@ -1,14 +1,46 @@
 import SLR from 'ml-regression-simple-linear';
-import { BreakpointValueProps } from '../breakpointValue';
-import { cssValueRetargetingDefaultOptions as defaultOptions } from './cssValueRetargetingDefaultOptions';
-import { CSSValueRetargetingOptions } from '../types';
+import { BreakpointValue } from '../breakpointValue';
+import { CSSValueRetargetingOptions, CSSValue } from '../types';
+import { Breakpoint } from '..';
 
-export const createLinearRegressionMediaQuery = (options: CSSValueRetargetingOptions) => (
-  leftValue: BreakpointValueProps,
-  rightValue: BreakpointValueProps
-) => {
-  const { dynamicUnit, property } = { ...defaultOptions, ...options };
+export type CSSProperty = keyof import('csstype').PropertiesFallback<number | string>;
 
+export type CSSPropertyValues<P extends string, D extends string | undefined> = {
+  [K in P]: D extends string ? string : number
+};
+
+export type MediaQueryDelimitedCSSPropertyValues<
+  P extends string,
+  D extends string | undefined,
+  M extends string = string
+> = { [K in M]: CSSPropertyValues<P, D> };
+
+export type DeeplyMergedMediaQueryDelimitedCSSPropertyValues<
+  P extends string,
+  D extends string | undefined,
+  M extends string = string
+> = { [K in M]: Partial<CSSPropertyValues<P, D>> };
+
+export type LinearRegressionMediaQuerySolver<
+  P extends string,
+  DynamicUnit extends string | undefined,
+  Value extends CSSValue = CSSValue,
+  Unit extends string = string
+> = (
+  leftValue: BreakpointValue<Value, Breakpoint, Unit>,
+  rightValue: BreakpointValue<Value, Breakpoint, Unit>
+) => MediaQueryDelimitedCSSPropertyValues<P, DynamicUnit>;
+
+export const createLinearRegressionMediaQuery = <
+  P extends string,
+  D extends string | undefined = 'vw'
+>({
+  dynamicUnit = 'vw',
+  property,
+}: CSSValueRetargetingOptions<P, D>): LinearRegressionMediaQuerySolver<P, D> => (
+  leftValue,
+  rightValue
+): MediaQueryDelimitedCSSPropertyValues<P, D> => {
   if (leftValue.breakpoint.unit !== rightValue.breakpoint.unit) {
     throw new Error(
       `leftValue and rightValue's breakpoints each use different CSS units
