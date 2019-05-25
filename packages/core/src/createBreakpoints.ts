@@ -1,10 +1,7 @@
 import { createBreakpoint, BreakpointOptions, InferredBreakpointFromOptions } from './breakpoint';
-import {
-  createBoundBreakpointValueConstructor,
-  BoundBreakpointValueConstructor,
-} from './breakpointValue';
+import { createBoundBreakpointValueConstructor, CallableBreakpoint } from './breakpointValue';
 
-export const createBreakpoints = <T extends readonly (BreakpointOptions)[]>(
+export const createBreakpointObjects = <T extends readonly (BreakpointOptions)[]>(
   breakpointOptionsArray: T
 ) => {
   const mappedBreakpoints: unknown = Array.prototype.map.call(
@@ -15,15 +12,7 @@ export const createBreakpoints = <T extends readonly (BreakpointOptions)[]>(
   return mappedBreakpoints as { [K in keyof T]: InferredBreakpointFromOptions<T[K]> };
 };
 
-const dingus = { width: '480px', unit: 'px', label: 'dingus' } as const;
-
-const b = createBreakpoint(480);
-
-const testBreakpointOptions = [320, '480px'] as const;
-
-const [compactBreakpoint, desktopBreakpoint] = createBreakpoints(testBreakpointOptions);
-
-export const createBreakpointValueConstructors = <T extends readonly BreakpointOptions[]>(
+export const createBreakpoints = <T extends readonly BreakpointOptions[]>(
   breakpointOptionsArray: T
 ) => {
   const breakpointValueConstructors: unknown = Array.prototype.map.call(
@@ -33,8 +22,6 @@ export const createBreakpointValueConstructors = <T extends readonly BreakpointO
   );
 
   return breakpointValueConstructors as {
-    [K in keyof T]: BoundBreakpointValueConstructor<InferredBreakpointFromOptions<T[K]>>
+    [K in keyof T]: CallableBreakpoint<InferredBreakpointFromOptions<T[K]>>
   };
 };
-
-const [compact, desktop] = createBreakpointValueConstructors(testBreakpointOptions);

@@ -32,7 +32,7 @@ export const reduceBreakpointValuesToCSS = <P extends string, D extends string |
     breakpointValueString = breakpointValueString.replace('min-width', 'max-width');
   }
 
-  const nextCSS: MediaQueryDelimitedCSSPropertyValues<P, D> = {
+  const nextCSS = {
     ...css,
     ...(typeof prevValue !== 'undefined'
       ? linearRegressionMediaQuery(prevValue, breakpointValue)
@@ -42,5 +42,5 @@ export const reduceBreakpointValuesToCSS = <P extends string, D extends string |
     },
   };
 
-  return { prevValue: breakpointValue, css: nextCSS };
+  return { prevValue: breakpointValue, css: nextCSS as MediaQueryDelimitedCSSPropertyValues<P, D> };
 };

@@ -76,11 +76,13 @@ export const createLinearRegressionMediaQuery = <
   );
 
   // Note: we've previously determined that both values use the same units
-  return {
+  const finalMediaQueryObject = {
     [`@media ${breakpointConditions.join(' and ')}`]: {
       [property]: `calc(${coefficients[1] * 100}${dynamicUnit} + ${coefficients[0]}${
         leftValue.unit
       })`,
     },
   };
+
+  return finalMediaQueryObject as MediaQueryDelimitedCSSPropertyValues<P, D>;
 };

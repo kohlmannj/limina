@@ -14,7 +14,7 @@ export interface BreakpointValueOptionsObject<
   value: Value;
 }
 
-export type BoundBreakpointValueOptionsObject<
+export type CallableBreakpointOptionsObject<
   Value extends CSSValue,
   BoundBreakpoint extends Breakpoint,
   Unit extends string | undefined
@@ -23,18 +23,27 @@ export type BoundBreakpointValueOptionsObject<
   Exclude<keyof BreakpointValueOptionsObject<Value, BoundBreakpoint, Unit>, 'breakpoint'>
 >;
 
-export type BoundBreakpointValueOptions<
+export type CallableBreakpointOptions<
   Value extends CSSValue,
   BoundBreakpoint extends Breakpoint,
   Unit extends string | undefined
-> = BoundBreakpointValueOptionsObject<Value, BoundBreakpoint, Unit> | Value;
+> = CallableBreakpointOptionsObject<Value, BoundBreakpoint, Unit> | Value;
 
-export type BoundBreakpointValueConstructor<BoundBreakpoint extends Breakpoint> = <
-  Value extends CSSValue,
-  Unit extends string = Value extends number ? typeof defaults.unit : string
->(
-  options: BoundBreakpointValueOptions<Value, BoundBreakpoint, Unit>
-) => BreakpointValue<Value, BoundBreakpoint, Unit>;
+export interface CallableBreakpoint<BoundBreakpoint extends Breakpoint> {
+  <
+    Value extends CSSValue,
+    Unit extends string = Value extends number ? typeof defaults.unit : string
+  >(
+    options: CallableBreakpointOptions<Value, BoundBreakpoint, Unit>
+  ): BreakpointValue<Value, BoundBreakpoint, Unit>;
+
+  label: BoundBreakpoint['label'];
+  modifier: BoundBreakpoint['modifier'];
+  operator: BoundBreakpoint['operator'];
+  rawWidth: BoundBreakpoint['rawWidth'];
+  unit: BoundBreakpoint['unit'];
+  width: BoundBreakpoint['width'];
+}
 
 export interface BreakpointValue<
   Value extends CSSValue = CSSValue,
@@ -73,16 +82,27 @@ export const createBreakpointValue = <
 
 export const createBoundBreakpointValueConstructor = <BoundBreakpoint extends Breakpoint>(
   breakpoint: BoundBreakpoint
-): BoundBreakpointValueConstructor<BoundBreakpoint> => <
-  Value extends CSSValue,
-  Unit extends string = Value extends number ? typeof defaults.unit : string
->(
-  options: BoundBreakpointValueOptions<Value, BoundBreakpoint, Unit>
-): BreakpointValue<Value, BoundBreakpoint, Unit> =>
-  createBreakpointValue({
-    breakpoint,
-    ...(typeof options === 'object' && options !== null ? options : { value: options }),
-  });
+): CallableBreakpoint<BoundBreakpoint> => {
+  const breakpointValueConstructor = <
+    Value extends CSSValue,
+    Unit extends string = Value extends number ? typeof defaults.unit : string
+  >(
+    options: CallableBreakpointOptions<Value, BoundBreakpoint, Unit>
+  ): BreakpointValue<Value, BoundBreakpoint, Unit> =>
+    createBreakpointValue({
+      breakpoint,
+      ...(typeof options === 'object' && options !== null ? options : { value: options }),
+    });
+
+  breakpointValueConstructor.label = breakpoint.label;
+  breakpointValueConstructor.modifier = breakpoint.modifier;
+  breakpointValueConstructor.operator = breakpoint.operator;
+  breakpointValueConstructor.rawWidth = breakpoint.rawWidth;
+  breakpointValueConstructor.unit = breakpoint.unit;
+  breakpointValueConstructor.width = breakpoint.width;
+
+  return breakpointValueConstructor;
+};
 
 export const getBreakpointValueString = <
   Value extends CSSValue,

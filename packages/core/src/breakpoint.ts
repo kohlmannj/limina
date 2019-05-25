@@ -159,18 +159,6 @@ export const createBreakpoint = <
   };
 };
 
-const b = createBreakpoint(320);
-const c = createBreakpoint('320px');
-const d = createBreakpoint({ width: '320px' });
-
-const o = { width: '320px', unit: 'px' };
-
-type Y = (typeof o)['width'];
-
-type W = InferWidth<typeof o>;
-
-type D = InferredPartialBreakpointFromOptions<typeof o>;
-
 export const getBreakpointString = <
   Width extends CSSValue,
   Unit extends string,
