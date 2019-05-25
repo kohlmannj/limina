@@ -37,12 +37,8 @@ export interface CallableBreakpoint<BoundBreakpoint extends Breakpoint> {
     options: CallableBreakpointOptions<Value, BoundBreakpoint, Unit>
   ): BreakpointValue<Value, BoundBreakpoint, Unit>;
 
-  label: BoundBreakpoint['label'];
-  modifier: BoundBreakpoint['modifier'];
-  operator: BoundBreakpoint['operator'];
-  rawWidth: BoundBreakpoint['rawWidth'];
-  unit: BoundBreakpoint['unit'];
-  width: BoundBreakpoint['width'];
+  breakpoint: BoundBreakpoint;
+  toString: () => string;
 }
 
 export interface BreakpointValue<
@@ -83,7 +79,7 @@ export const createBreakpointValue = <
 export const createBoundBreakpointValueConstructor = <BoundBreakpoint extends Breakpoint>(
   breakpoint: BoundBreakpoint
 ): CallableBreakpoint<BoundBreakpoint> => {
-  const breakpointValueConstructor = <
+  const callableBreakpoint = <
     Value extends CSSValue,
     Unit extends string = Value extends number ? typeof defaults.unit : string
   >(
@@ -94,14 +90,10 @@ export const createBoundBreakpointValueConstructor = <BoundBreakpoint extends Br
       ...(typeof options === 'object' && options !== null ? options : { value: options }),
     });
 
-  breakpointValueConstructor.label = breakpoint.label;
-  breakpointValueConstructor.modifier = breakpoint.modifier;
-  breakpointValueConstructor.operator = breakpoint.operator;
-  breakpointValueConstructor.rawWidth = breakpoint.rawWidth;
-  breakpointValueConstructor.unit = breakpoint.unit;
-  breakpointValueConstructor.width = breakpoint.width;
+  callableBreakpoint.breakpoint = breakpoint;
+  callableBreakpoint.toString = () => getBreakpointString(breakpoint);
 
-  return breakpointValueConstructor;
+  return callableBreakpoint;
 };
 
 export const getBreakpointValueString = <

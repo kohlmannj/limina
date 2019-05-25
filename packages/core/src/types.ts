@@ -8,6 +8,7 @@ export interface CSSValueRetargetingDefaultOptions {
 export interface CSSValueRetargetingOptions<P extends string, U extends string | undefined> {
   dynamicUnit?: U;
   property: P;
+  precision: number;
 }
 
 export interface ReduceToCSSOptions<P extends string, D extends string | undefined> {

@@ -1,0 +1,155 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`core/createLimina with text styles 1`] = `
+.emotion-3 {
+  background: #ccc;
+  margin: 0 auto;
+}
+
+@media (max-width:320px) {
+  .emotion-3 {
+    width: 90.625vw;
+  }
+}
+
+@media (min-width:321px) and (max-width:413px) {
+  .emotion-3 {
+    width: calc(100vw + -30px);
+  }
+}
+
+@media (min-width:414px) {
+  .emotion-3 {
+    width: 92.75362vw;
+  }
+}
+
+@media (min-width:415px) and (max-width:719px) {
+  .emotion-3 {
+    width: calc(62.7451vw + 124.23529px);
+  }
+}
+
+@media (min-width:720px) {
+  .emotion-3 {
+    width: 80vw;
+  }
+}
+
+@media (min-width:721px) and (max-width:1023px) {
+  .emotion-3 {
+    width: calc(47.36842vw + 234.94737px);
+  }
+}
+
+@media (min-width:1024px) {
+  .emotion-3 {
+    width: 70.3125vw;
+  }
+}
+
+.emotion-0 {
+  margin: 0 0 0.25em;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+@media (max-width:320px) {
+  .emotion-0 {
+    font-size: 6.25vw;
+  }
+}
+
+@media (min-width:321px) and (max-width:719px) {
+  .emotion-0 {
+    font-size: calc(1.5vw + 15.2px);
+  }
+}
+
+@media (min-width:720px) {
+  .emotion-0 {
+    font-size: 3.61111vw;
+  }
+}
+
+@media (min-width:721px) and (max-width:1023px) {
+  .emotion-0 {
+    font-size: calc(1.31579vw + 16.52632px);
+    -webkit-letter-spacing: calc(1.31579vw + -9.47368px);
+    -moz-letter-spacing: calc(1.31579vw + -9.47368px);
+    -ms-letter-spacing: calc(1.31579vw + -9.47368px);
+    letter-spacing: calc(1.31579vw + -9.47368px);
+  }
+}
+
+@media (min-width:1024px) {
+  .emotion-0 {
+    font-size: 2.92969vw;
+    -webkit-letter-spacing: 0.39063vw;
+    -moz-letter-spacing: 0.39063vw;
+    -ms-letter-spacing: 0.39063vw;
+    letter-spacing: 0.39063vw;
+  }
+}
+
+@media (max-width:720px) {
+  .emotion-0 {
+    -webkit-letter-spacing: 0vw;
+    -moz-letter-spacing: 0vw;
+    -ms-letter-spacing: 0vw;
+    letter-spacing: 0vw;
+  }
+}
+
+.emotion-1 {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.emotion-1 + .emotion-1 {
+  margin-top: 0.5em;
+}
+
+@media (max-width:320px) {
+  .emotion-1 {
+    font-size: 5vw;
+  }
+}
+
+@media (min-width:321px) and (max-width:1023px) {
+  .emotion-1 {
+    font-size: calc(0.28409vw + 15.09091px);
+  }
+}
+
+@media (min-width:1024px) {
+  .emotion-1 {
+    font-size: 1.75781vw;
+  }
+}
+
+<div
+  class="emotion-3"
+>
+  <h3
+    class="emotion-0"
+  >
+    Level Three Heading
+  </h3>
+  <p
+    class="emotion-1"
+  >
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec nisl accumsan, efficitur velit non, mollis est. Fusce eu elit vel velit tincidunt efficitur. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer quam purus, ultrices vel vulputate a, facilisis at enim. Duis convallis blandit mauris. Integer eget hendrerit elit, at pharetra justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla posuere est consequat, consequat nunc vel, placerat neque. Donec augue nisi, sollicitudin ut molestie sit amet, tincidunt id lectus. Nam sit amet aliquam ipsum. Pellentesque vitae scelerisque dui. Proin at nisi at ligula bibendum suscipit. Donec tincidunt lectus dolor, et sollicitudin leo tincidunt non.
+  </p>
+  <p
+    class="emotion-1"
+  >
+    Inspired by 
+    <a
+      href="https://www.reaktor.com/blog/an-abstraction-called-text-styles/"
+    >
+      Joonas Salovaara
+    </a>
+  </p>
+</div>
+`;

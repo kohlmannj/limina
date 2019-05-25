@@ -2,6 +2,7 @@ import SLR from 'ml-regression-simple-linear';
 import { BreakpointValue } from '../breakpointValue';
 import { CSSValueRetargetingOptions, CSSValue } from '../types';
 import { Breakpoint } from '..';
+import { roundToPrecision } from './roundToPrecision';
 
 export type CSSPropertyBreakpointValueRecord<
   T extends keyof import('csstype').PropertiesFallback<number | string>,
@@ -36,11 +37,9 @@ export type LinearRegressionMediaQuerySolver<
   rightValue: BreakpointValue<Value, Breakpoint, Unit>
 ) => MediaQueryDelimitedCSSPropertyValues<P, DynamicUnit>;
 
-export const createLinearRegressionMediaQuery = <
-  P extends string,
-  D extends string | undefined = 'vw'
->({
-  dynamicUnit = 'vw',
+export const createLinearRegressionMediaQuery = <P extends string, D extends string | undefined>({
+  dynamicUnit,
+  precision,
   property,
 }: CSSValueRetargetingOptions<P, D>): LinearRegressionMediaQuerySolver<P, D> => (
   leftValue,
@@ -70,15 +69,20 @@ export const createLinearRegressionMediaQuery = <
     `(max-width: ${rightValue.breakpoint.width - 1}${rightValue.breakpoint.unit})`,
   ];
 
-  const { coefficients } = new SLR(
+  const {
+    coefficients: [staticValue, dynamicValue],
+  } = new SLR(
     [leftValue.breakpoint.width, rightValue.breakpoint.width],
     [leftValue.value, rightValue.value]
   );
 
+  const staticValueRounded = roundToPrecision(staticValue, precision);
+  const dynamicValueRounded = roundToPrecision(dynamicValue * 100, precision);
+
   // Note: we've previously determined that both values use the same units
   const finalMediaQueryObject = {
     [`@media ${breakpointConditions.join(' and ')}`]: {
-      [property]: `calc(${coefficients[1] * 100}${dynamicUnit} + ${coefficients[0]}${
+      [property]: `calc(${dynamicValueRounded}${dynamicUnit} + ${staticValueRounded}${
         leftValue.unit
       })`,
     },

@@ -5,6 +5,7 @@ import {
   MediaQueryDelimitedCSSPropertyValues,
   LinearRegressionMediaQuerySolver,
 } from './createLinearRegressionMediaQuery';
+import { roundToPrecision } from './roundToPrecision';
 
 export interface ReduceBreakpointValuesToCSSOptions<P extends string, D extends string | undefined>
   extends CSSValueRetargetingOptions<P, D> {
@@ -20,6 +21,7 @@ export const reduceBreakpointValuesToCSS = <P extends string, D extends string |
   property,
   dynamicUnit,
   linearRegressionMediaQuery,
+  precision,
 }: ReduceBreakpointValuesToCSSOptions<P, D>): BreakpointValuesReducer<P, D> => (
   { prevValue, css },
   breakpointValue
@@ -32,13 +34,15 @@ export const reduceBreakpointValuesToCSS = <P extends string, D extends string |
     breakpointValueString = breakpointValueString.replace('min-width', 'max-width');
   }
 
+  const roundedValue = roundToPrecision((value / breakpoint.width) * 100, precision);
+
   const nextCSS = {
     ...css,
     ...(typeof prevValue !== 'undefined'
       ? linearRegressionMediaQuery(prevValue, breakpointValue)
       : {}),
     [breakpointValueString]: {
-      [property]: `${(value / breakpoint.width) * 100}${dynamicUnit}`,
+      [property]: `${roundedValue}${dynamicUnit}`,
     },
   };
 

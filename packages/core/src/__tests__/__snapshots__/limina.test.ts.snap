@@ -9,7 +9,7 @@ Object {
     "width": "90.625vw",
   },
   "@media (min-width: 541px) and (max-width: 1279px)": Object {
-    "width": "calc(83.78378378378379vw + 87.56756756756761px)",
+    "width": "calc(83.78378vw + 87.56757px)",
   },
 }
 `;
@@ -17,7 +17,7 @@ Object {
 exports[`limina styles object with array of BreakpointValues three breakpoints works with a multiple property-value pairs 1`] = `
 Object {
   "@media (max-width: 540px)": Object {
-    "fontSize": "5.9259259259259265vw",
+    "fontSize": "5.92593vw",
     "width": "100vw",
   },
   "@media (min-width: 1280px)": Object {
@@ -25,16 +25,16 @@ Object {
     "width": "90.625vw",
   },
   "@media (min-width: 541px) and (max-width: 853px)": Object {
-    "fontSize": "calc(5.095541401273886vw + 4.484076433121018px)",
-    "width": "calc(72.61146496815286vw + 147.89808917197456px)",
+    "fontSize": "calc(5.09554vw + 4.48408px)",
+    "width": "calc(72.61146vw + 147.89809px)",
   },
   "@media (min-width: 854px)": Object {
-    "fontSize": "5.620608899297424vw",
-    "width": "89.92974238875878vw",
+    "fontSize": "5.62061vw",
+    "width": "89.92974vw",
   },
   "@media (min-width: 855px) and (max-width: 1279px)": Object {
-    "fontSize": "calc(3.755868544600939vw + 15.924882629107984px)",
-    "width": "calc(92.01877934272301vw + -17.840375586854407px)",
+    "fontSize": "calc(3.75587vw + 15.92488px)",
+    "width": "calc(92.01878vw + -17.84038px)",
   },
 }
 `;
@@ -48,13 +48,13 @@ Object {
     "width": "90.625vw",
   },
   "@media (min-width: 541px) and (max-width: 853px)": Object {
-    "width": "calc(72.61146496815286vw + 147.89808917197456px)",
+    "width": "calc(72.61146vw + 147.89809px)",
   },
   "@media (min-width: 854px)": Object {
-    "width": "89.92974238875878vw",
+    "width": "89.92974vw",
   },
   "@media (min-width: 855px) and (max-width: 1279px)": Object {
-    "width": "calc(92.01877934272301vw + -17.840375586854407px)",
+    "width": "calc(92.01878vw + -17.84038px)",
   },
 }
 `;
@@ -68,7 +68,7 @@ Object {
     "width": "90.625vw",
   },
   "@media (min-width: 541px) and (max-width: 1279px)": Object {
-    "width": "calc(83.78378378378379vw + 87.56756756756761px)",
+    "width": "calc(83.78378vw + 87.56757px)",
   },
 }
 `;

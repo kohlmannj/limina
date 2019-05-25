@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`createLimina outputs the same CSS object content as "regular" limina() 1`] = `
+Object {
+  "@media (max-width: 320px)": Object {
+    "fontSize": "6.25vw",
+  },
+  "@media (max-width: 720px)": Object {
+    "letterSpacing": "0vw",
+  },
+  "@media (min-width: 1024px)": Object {
+    "fontSize": "2.92969vw",
+    "letterSpacing": "0.39063vw",
+  },
+  "@media (min-width: 321px) and (max-width: 719px)": Object {
+    "fontSize": "calc(1.5vw + 15.2px)",
+  },
+  "@media (min-width: 720px)": Object {
+    "fontSize": "3.61111vw",
+  },
+  "@media (min-width: 721px) and (max-width: 1023px)": Object {
+    "fontSize": "calc(1.31579vw + 16.52632px)",
+    "letterSpacing": "calc(1.31579vw + -9.47368px)",
+  },
+}
+`;
+
+exports[`createLimina works 1`] = `
+Object {
+  "@media (max-width: 540px)": Object {
+    "letterSpacing": "0vw",
+    "width": "100vw",
+  },
+  "@media (min-width: 1280px)": Object {
+    "letterSpacing": "0.3125vw",
+    "width": "90.625vw",
+  },
+  "@media (min-width: 541px) and (max-width: 1279px)": Object {
+    "letterSpacing": "calc(0.54054vw + -2.91892px)",
+  },
+  "@media (min-width: 541px) and (max-width: 853px)": Object {
+    "width": "calc(72.61146vw + 147.89809px)",
+  },
+  "@media (min-width: 854px)": Object {
+    "width": "89.92974vw",
+  },
+  "@media (min-width: 855px) and (max-width: 1279px)": Object {
+    "width": "calc(92.01878vw + -17.84038px)",
+  },
+}
+`;

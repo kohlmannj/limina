@@ -11,19 +11,28 @@ export const retargetCSSPropertyValue = <
   V extends readonly BreakpointValue[],
   D extends string | undefined
 >({
+  dynamicUnit,
+  precision,
   property,
   values,
-  dynamicUnit,
 }: {
+  dynamicUnit: D;
+  precision: number;
   property: P;
   values: V;
-  dynamicUnit: D;
 }): MediaQueryDelimitedCSSPropertyValues<P, D> => {
-  const linearRegressionMediaQuery = createLinearRegressionMediaQuery({ property, dynamicUnit });
+  const linearRegressionMediaQuery = createLinearRegressionMediaQuery({
+    dynamicUnit,
+    precision,
+    property,
+  });
 
   return [...values]
     .sort(sortValuesByBreakpointWidth)
-    .reduce(reduceBreakpointValuesToCSS({ property, dynamicUnit, linearRegressionMediaQuery }), {
-      css: {},
-    }).css;
+    .reduce(
+      reduceBreakpointValuesToCSS({ dynamicUnit, linearRegressionMediaQuery, precision, property }),
+      {
+        css: {},
+      }
+    ).css;
 };

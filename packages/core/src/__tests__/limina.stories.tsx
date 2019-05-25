@@ -1,11 +1,12 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import React, { Fragment } from 'react';
-import { css } from '@emotion/core';
+/** @jsx jsx */
+import { jsx, css } from '@emotion/core';
+import { Fragment } from 'react';
 import styled from '@emotion/styled';
 import { storiesOf } from '@storybook/react';
 import { createBreakpoints, limina } from '..';
 
-storiesOf('core', module)
+storiesOf('core/limina', module)
   .add('with div that decreases in width on wider screens', () => {
     const [mobile, tablet, desktop] = createBreakpoints([540, 854, 1280]);
 
@@ -75,5 +76,63 @@ storiesOf('core', module)
           <span>Small Container</span>
         </SmallContainer>
       </Fragment>
+    );
+  })
+  /** @see https://www.reaktor.com/blog/an-abstraction-called-text-styles/ */
+  .add('with text styles', () => {
+    const [mobile, phablet, lap, desk] = createBreakpoints([320, 414, 720, 1024]);
+
+    const container = css(
+      { background: '#ccc', margin: '0 auto' },
+      limina({
+        width: [mobile(290), phablet(384), lap(576), desk(720)],
+      })
+    );
+
+    const bodyCopy = css(
+      `
+        margin: 0;
+        font-family: sans-serif;
+
+        & + & {
+          margin-top: 0.5em;
+        }
+      `,
+      limina({
+        fontSize: [mobile(16), desk(18)],
+      })
+    );
+
+    const heading = css(
+      { margin: '0 0 0.25em', fontFamily: 'sans-serif', fontWeight: 'bold' },
+      limina({
+        fontSize: [mobile(20), lap(26), desk(30)],
+        letterSpacing: [lap(0), desk(4)],
+      })
+    );
+
+    return (
+      <div css={container}>
+        <h3 css={heading}>Level Three Heading</h3>
+
+        <p css={bodyCopy}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec nisl accumsan,
+          efficitur velit non, mollis est. Fusce eu elit vel velit tincidunt efficitur. Pellentesque
+          habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer
+          quam purus, ultrices vel vulputate a, facilisis at enim. Duis convallis blandit mauris.
+          Integer eget hendrerit elit, at pharetra justo. Vestibulum ante ipsum primis in faucibus
+          orci luctus et ultrices posuere cubilia Curae; Nulla posuere est consequat, consequat nunc
+          vel, placerat neque. Donec augue nisi, sollicitudin ut molestie sit amet, tincidunt id
+          lectus. Nam sit amet aliquam ipsum. Pellentesque vitae scelerisque dui. Proin at nisi at
+          ligula bibendum suscipit. Donec tincidunt lectus dolor, et sollicitudin leo tincidunt non.
+        </p>
+
+        <p css={bodyCopy}>
+          Inspired by{' '}
+          <a href="https://www.reaktor.com/blog/an-abstraction-called-text-styles/">
+            Joonas Salovaara
+          </a>
+        </p>
+      </div>
     );
   });
