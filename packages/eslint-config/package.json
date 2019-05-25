@@ -1,6 +1,6 @@
 {
   "name": "@limina/eslint-config",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "description": "A shared ESLint config for Limina TypeScript packages",
   "main": "index.js",
   "repository": "https://github.com/kohlmannj/limina/packages/eslint-config",
