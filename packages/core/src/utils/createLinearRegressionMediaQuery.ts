@@ -3,6 +3,11 @@ import { BreakpointValue } from '../breakpointValue';
 import { CSSValueRetargetingOptions, CSSValue } from '../types';
 import { Breakpoint } from '..';
 
+export type CSSPropertyBreakpointValueRecord<
+  T extends keyof import('csstype').PropertiesFallback<number | string>,
+  V extends BreakpointValue[] | readonly BreakpointValue[]
+> = Record<T, V>;
+
 export type CSSProperty = keyof import('csstype').PropertiesFallback<number | string>;
 
 export type CSSPropertyValues<P extends string, D extends string | undefined> = {

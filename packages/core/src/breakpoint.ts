@@ -58,51 +58,118 @@ export type BreakpointString<
   Label extends string | undefined = string | undefined
 > = string;
 
+export type InferWidth<T> = T extends PartialBreakpoint
+  ? T['width']
+  : T extends CSSValue
+  ? T
+  : never;
+
+export type InferUnit<T> = T extends PartialBreakpoint
+  ? (T extends { unit: string }
+      ? T['unit']
+      : T extends { width: number }
+      ? typeof defaults.unit
+      : string)
+  : T extends CSSValue
+  ? typeof defaults.unit
+  : never;
+
+export type InferModifier<T> = T extends PartialBreakpoint
+  ? (T extends { modifier: Modifier } ? T['modifier'] : typeof defaults.modifier)
+  : T extends CSSValue
+  ? typeof defaults.modifier
+  : never;
+
+export type InferOperator<T> = T extends PartialBreakpoint
+  ? (T extends { operator: Operator } ? T['operator'] : typeof defaults.operator)
+  : T extends CSSValue
+  ? typeof defaults.operator
+  : never;
+
+export type InferLabel<T, V = undefined> = V extends string
+  ? V
+  : T extends PartialBreakpoint
+  ? (T extends { label: string } ? T['label'] : undefined)
+  : T extends CSSValue
+  ? undefined
+  : never;
+
+export type InferredBreakpointFromPartial<T, V = undefined> = Breakpoint<
+  InferWidth<T>,
+  InferUnit<T>,
+  InferModifier<T>,
+  InferOperator<T>,
+  V extends string ? V : InferLabel<T>
+>;
+
+export type InferredPartialBreakpointFromPartial<
+  T extends PartialBreakpoint,
+  V = undefined
+> = PartialBreakpoint<
+  InferWidth<T>,
+  InferUnit<T>,
+  InferModifier<T>,
+  InferOperator<T>,
+  V extends string ? V : InferLabel<T>
+>;
+
+export type InferredBreakpointFromOptions<T, V = undefined> = Breakpoint<
+  InferWidth<T>,
+  InferUnit<T>,
+  InferModifier<T>,
+  InferOperator<T>,
+  V extends string ? V : InferLabel<T>
+>;
+
+export type InferredPartialBreakpointFromOptions<T> = PartialBreakpoint<
+  InferWidth<T>,
+  InferUnit<T>,
+  InferModifier<T>,
+  InferOperator<T>,
+  InferLabel<T>
+>;
+
 export const createBreakpoint = <
-  Width extends CSSValue,
-  Unit extends string = Width extends number ? typeof defaults.unit : string,
-  Mod extends Modifier = typeof defaults.modifier,
-  Op extends Operator = typeof defaults.operator,
-  Label extends string | undefined = undefined
+  T extends string | number | object,
+  V extends string | undefined = undefined
 >(
-  options: PartialBreakpoint<Width, Unit, Mod, Op, Label> | Width,
-  labelArg?: Label
-): Breakpoint<Width, Unit, Mod, Op, Label> => {
-  const {
-    modifier,
-    label,
-    operator,
-    unit,
-    width: rawWidth,
-  }: PartialBreakpoint<Width, Unit, Mod, Op, Label> =
-    typeof options === 'object' && options !== null ? options : { width: options };
+  options: T,
+  labelArg?: V
+): InferredBreakpointFromOptions<T, V> => {
+  let optionsObj: InferredPartialBreakpointFromOptions<T>;
+  if (typeof options === 'string' || typeof options === 'number') {
+    optionsObj = { width: options as InferWidth<Exclude<T, PartialBreakpoint>> };
+  } else {
+    optionsObj = options as InferredPartialBreakpointFromOptions<T>;
+  }
+
+  const { modifier, label, operator, unit, width: rawWidth } = optionsObj;
 
   const { value: width, unit: parsedUnit } = units.parse(rawWidth);
 
+  const finalUnit = getPreferredUnit(unit, parsedUnit, defaults.unit);
+
   return {
-    modifier: (modifier || defaults.modifier) as Mod,
-    label: labelArg || label,
-    operator: (operator || defaults.operator) as Op,
+    modifier: (modifier || defaults.modifier) as InferModifier<T>,
+    label: (labelArg || label) as InferLabel<T, V>,
+    operator: (operator || defaults.operator) as InferOperator<T>,
     rawWidth,
-    unit: getPreferredUnit(unit, parsedUnit, defaults.unit) as Unit,
+    unit: finalUnit as InferUnit<T>,
     width,
   };
 };
 
-// const b = createBreakpoint('320px', 'dope');
+const b = createBreakpoint(320);
+const c = createBreakpoint('320px');
+const d = createBreakpoint({ width: '320px' });
 
-// const c = createBreakpoint(320, 'fly');
+const o = { width: '320px', unit: 'px' };
 
-// const d = createBreakpoint({ label: 'regular', width: 320 });
+type Y = (typeof o)['width'];
 
-// const options: BreakpointOptions<CSSValue, string, Modifier, Operator, string | undefined>[] = [
-//   320,
-//   { label: 'regular', width: 320 },
-// ];
+type W = InferWidth<typeof o>;
 
-// // createBreakpoint(options[1]);
-
-// const breakpoints = options.map(o => createBreakpoint(o));
+type D = InferredPartialBreakpointFromOptions<typeof o>;
 
 export const getBreakpointString = <
   Width extends CSSValue,
