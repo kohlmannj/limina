@@ -8,29 +8,23 @@ export type CSSPropertiesWithMultiValues<TLength = string | 0> = {
     | Extract<CSSProperties<TLength>[K], string>[]
 };
 
-export type MappedCSSPropertiesWithMultiValues<TLength = string | 0> = Record<
-  string,
-  CSSPropertiesWithMultiValues<TLength>
->;
+export interface MediaQueryDelimitedCSSPropertiesWithMultiValues<TLength = string | 0> {
+  [K: string]: CSSPropertiesWithMultiValues<TLength>;
+}
 
-export type CSSPropertyWithMultiValues<
-  T,
+export type CSSAndMediaQueryDelimitedCSSPropertiesWithMultiValues<
   TLength = string | 0
-> = T extends keyof CSSPropertiesWithMultiValues<TLength>
-  ? CSSPropertiesWithMultiValues<TLength>[T]
-  : never;
-
-export type InferredCSSAndMappedCSSProperties<
-  T extends object,
-  TLength = string | 0,
-  V = CSSPropertiesWithMultiValues<TLength>
-> = { [K in keyof T]: K extends keyof V ? V[K] : V };
+> = CSSPropertiesWithMultiValues<TLength> &
+  MediaQueryDelimitedCSSPropertiesWithMultiValues<TLength>;
 
 /** @see https://stackoverflow.com/a/22338512/1991086 */
 export const mediaQueryRegex = /\s*@media\s+/;
 
-export const parseStyles = <T extends object, TLength = string | 0>(
-  styles: InferredCSSAndMappedCSSProperties<T, TLength>,
+export const parseStyles = <TLength = string | 0>(
+  styles:
+    | CSSAndMediaQueryDelimitedCSSPropertiesWithMultiValues<TLength>
+    | CSSPropertiesWithMultiValues<TLength>
+    | MediaQueryDelimitedCSSPropertiesWithMultiValues<TLength>,
   mediaQueries: Map<string, MediaQueryListNode>,
   stylesByMediaQueryString: Map<string, CSSPropertiesWithMultiValues<TLength>>,
   rootStyles: CSSPropertiesWithMultiValues<TLength>,
@@ -89,19 +83,14 @@ export interface NewLiminaReturnType<TLength = string | number> {
   stylesByMediaQueryString: Map<string, CSSPropertiesWithMultiValues<TLength>>;
 }
 
-export type BreakpointDelimitedCSSProperties<TLength = string | 0> = Record<
-  string,
-  CSSProperties<TLength>
->;
-
-function newLimina<T extends object, TLength = string | number>(
-  styles: InferredCSSAndMappedCSSProperties<T, TLength>
-): NewLiminaReturnType<TLength> {
+function newLimina(
+  styles: CSSAndMediaQueryDelimitedCSSPropertiesWithMultiValues<string | number>
+): NewLiminaReturnType<string | number> {
   const mediaQueries = new Map<string, MediaQueryListNode>([
     [defaultMediaQuery, parseMedia(defaultMediaQuery)],
   ]);
-  const stylesByMediaQueryString = new Map<string, CSSPropertiesWithMultiValues<TLength>>();
-  const rootStyles: CSSPropertiesWithMultiValues<TLength> = {};
+  const stylesByMediaQueryString = new Map<string, CSSPropertiesWithMultiValues<string | number>>();
+  const rootStyles: CSSPropertiesWithMultiValues<string | number> = {};
 
   parseStyles(styles, mediaQueries, stylesByMediaQueryString, rootStyles);
 
