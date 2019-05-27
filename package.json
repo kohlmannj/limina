@@ -94,6 +94,8 @@
     "jest-emotion": "^10.0.11",
     "lerna": "^3.14.1",
     "lint-staged": "^8.1.7",
+    "postcss": "^7.0.16",
+    "postcss-media-query-parser": "^0.2.3",
     "prettier": "^1.17.1",
     "react": "^16.8.6",
     "react-docgen-typescript-loader": "^3.1.0",
@@ -114,6 +116,7 @@
     "stylelint-scss": "^3.6.1",
     "ts-jest": "^24.0.2",
     "ts-loader": "^6.0.1",
+    "ts-node": "^8.2.0",
     "tslib": "^1.9.3",
     "typescript": "^3.4.5",
     "webpack": "^4.32.2"

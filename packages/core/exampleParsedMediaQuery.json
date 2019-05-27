@@ -1,0 +1,8 @@
+{
+  "after": "",
+  "before": "",
+  "nodes": [],
+  "sourceIndex": 0,
+  "type": "media-query-list",
+  "value": "@media (min-width: 480px)"
+}

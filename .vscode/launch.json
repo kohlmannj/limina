@@ -30,6 +30,20 @@
       "windows": {
         "program": "${workspaceFolder}/node_modules/jest/bin/jest"
       }
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "scratchpad (ts-node)",
+      "program": "${workspaceFolder}/node_modules/.bin/ts-node",
+      "args": [
+        "-T",
+        "--compiler-options",
+        "{ \"module\": \"commonjs\" }",
+        "${workspaceFolder}/packages/core/src/scratchpad.ts"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
     }
   ]
 }

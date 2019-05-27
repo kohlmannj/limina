@@ -1,0 +1,203 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`newLimina works 1`] = `
+Object {
+  "mediaQueries": Map {
+    "@media (min-width: 0)" => Node {
+      "after": "",
+      "before": "",
+      "nodes": Array [
+        Node {
+          "after": "",
+          "before": "",
+          "nodes": Array [
+            Node {
+              "after": " ",
+              "before": "",
+              "parent": [Circular],
+              "sourceIndex": 0,
+              "type": "media-type",
+              "value": "@media",
+            },
+            Node {
+              "after": "",
+              "before": " ",
+              "nodes": Array [
+                Object {
+                  "after": "",
+                  "before": "",
+                  "parent": [Circular],
+                  "sourceIndex": 8,
+                  "type": "media-feature",
+                  "value": "min-width",
+                },
+                Object {
+                  "after": " ",
+                  "before": "",
+                  "parent": [Circular],
+                  "sourceIndex": 17,
+                  "type": "colon",
+                  "value": ":",
+                },
+                Object {
+                  "after": "",
+                  "before": " ",
+                  "parent": [Circular],
+                  "sourceIndex": 19,
+                  "type": "value",
+                  "value": "0",
+                },
+              ],
+              "parent": [Circular],
+              "sourceIndex": 7,
+              "type": "media-feature-expression",
+              "value": "(min-width: 0)",
+            },
+          ],
+          "parent": [Circular],
+          "sourceIndex": 0,
+          "type": "media-query",
+          "value": "@media (min-width: 0)",
+        },
+      ],
+      "sourceIndex": 0,
+      "type": "media-query-list",
+      "value": "@media (min-width: 0)",
+    },
+    "@media (min-width: 720px)" => Node {
+      "after": "",
+      "before": "",
+      "nodes": Array [
+        Node {
+          "after": "",
+          "before": "",
+          "nodes": Array [
+            Node {
+              "after": " ",
+              "before": "",
+              "parent": [Circular],
+              "sourceIndex": 0,
+              "type": "media-type",
+              "value": "@media",
+            },
+            Node {
+              "after": "",
+              "before": " ",
+              "nodes": Array [
+                Object {
+                  "after": "",
+                  "before": "",
+                  "parent": [Circular],
+                  "sourceIndex": 8,
+                  "type": "media-feature",
+                  "value": "min-width",
+                },
+                Object {
+                  "after": " ",
+                  "before": "",
+                  "parent": [Circular],
+                  "sourceIndex": 17,
+                  "type": "colon",
+                  "value": ":",
+                },
+                Object {
+                  "after": "",
+                  "before": " ",
+                  "parent": [Circular],
+                  "sourceIndex": 19,
+                  "type": "value",
+                  "value": "720px",
+                },
+              ],
+              "parent": [Circular],
+              "sourceIndex": 7,
+              "type": "media-feature-expression",
+              "value": "(min-width: 720px)",
+            },
+          ],
+          "parent": [Circular],
+          "sourceIndex": 0,
+          "type": "media-query",
+          "value": "@media (min-width: 720px)",
+        },
+      ],
+      "sourceIndex": 0,
+      "type": "media-query-list",
+      "value": "@media (min-width: 720px)",
+    },
+    "@media (min-width: 1280px)" => Node {
+      "after": "",
+      "before": "",
+      "nodes": Array [
+        Node {
+          "after": "",
+          "before": "",
+          "nodes": Array [
+            Node {
+              "after": " ",
+              "before": "",
+              "parent": [Circular],
+              "sourceIndex": 0,
+              "type": "media-type",
+              "value": "@media",
+            },
+            Node {
+              "after": "",
+              "before": " ",
+              "nodes": Array [
+                Object {
+                  "after": "",
+                  "before": "",
+                  "parent": [Circular],
+                  "sourceIndex": 8,
+                  "type": "media-feature",
+                  "value": "min-width",
+                },
+                Object {
+                  "after": " ",
+                  "before": "",
+                  "parent": [Circular],
+                  "sourceIndex": 17,
+                  "type": "colon",
+                  "value": ":",
+                },
+                Object {
+                  "after": "",
+                  "before": " ",
+                  "parent": [Circular],
+                  "sourceIndex": 19,
+                  "type": "value",
+                  "value": "1280px",
+                },
+              ],
+              "parent": [Circular],
+              "sourceIndex": 7,
+              "type": "media-feature-expression",
+              "value": "(min-width: 1280px)",
+            },
+          ],
+          "parent": [Circular],
+          "sourceIndex": 0,
+          "type": "media-query",
+          "value": "@media (min-width: 1280px)",
+        },
+      ],
+      "sourceIndex": 0,
+      "type": "media-query-list",
+      "value": "@media (min-width: 1280px)",
+    },
+  },
+  "stylesByMediaQueryString": Map {
+    "@media (min-width: 720px)" => Object {
+      "fontSize": 48,
+    },
+    "@media (min-width: 1280px)" => Object {
+      "fontSize": 56,
+    },
+    "@media (min-width: 0)" => Object {
+      "fontSize": 32,
+      "lineHeight": 48,
+    },
+  },
+}
+`;

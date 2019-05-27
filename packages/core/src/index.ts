@@ -3,3 +3,4 @@ export * from './breakpointValue';
 export * from './createBreakpoints';
 export * from './createLimina';
 export * from './limina';
+export * from './newLimina';
