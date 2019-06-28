@@ -11,7 +11,7 @@ export interface PartialBreakpoint<
   Unit extends string = string,
   Mod extends Modifier = Modifier,
   Op extends Operator = Operator,
-  Label extends string | undefined = string | undefined
+  Label extends string | undefined = undefined
 > {
   label?: Label;
   modifier?: Mod;
@@ -27,7 +27,7 @@ export type BreakpointOptions<
   Unit extends string = string,
   Mod extends Modifier = Modifier,
   Op extends Operator = Operator,
-  Label extends string | undefined = string | undefined
+  Label extends string | undefined = undefined
 > = PartialBreakpoint<Width, Unit, Mod, Op, Label> | Width;
 
 export interface Breakpoint<
@@ -35,7 +35,7 @@ export interface Breakpoint<
   Unit extends string = string,
   Mod extends Modifier = Modifier,
   Op extends Operator = Operator,
-  Label extends string | undefined = string | undefined
+  Label extends string | undefined = undefined
 >
   extends Required<
       Pick<
@@ -55,7 +55,7 @@ export type BreakpointString<
   Unit extends string = string,
   Mod extends Modifier = Modifier,
   Op extends Operator = Operator,
-  Label extends string | undefined = string | undefined
+  Label extends string | undefined = undefined
 > = string;
 
 export type InferWidth<T> = T extends PartialBreakpoint
