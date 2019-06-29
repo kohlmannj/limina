@@ -22,6 +22,6 @@ export const createBreakpoints = <T extends readonly BreakpointOptions[]>(
   );
 
   return breakpointValueConstructors as {
-    [K in keyof T]: CallableBreakpoint<InferredBreakpointFromOptions<T[K]>>
+    [K in keyof T]: CallableBreakpoint<InferredBreakpointFromOptions<T[K]>>;
   };
 };

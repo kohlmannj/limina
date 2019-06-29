@@ -12,7 +12,7 @@ export type CSSPropertyBreakpointValueRecord<
 export type CSSProperty = keyof import('csstype').PropertiesFallback<number | string>;
 
 export type CSSPropertyValues<P extends string, D extends string | undefined> = {
-  [K in P]: D extends string ? string : number
+  [K in P]: D extends string ? string : number;
 };
 
 export type MediaQueryDelimitedCSSPropertyValues<
@@ -82,9 +82,7 @@ export const createLinearRegressionMediaQuery = <P extends string, D extends str
   // Note: we've previously determined that both values use the same units
   const finalMediaQueryObject = {
     [`@media ${breakpointConditions.join(' and ')}`]: {
-      [property]: `calc(${dynamicValueRounded}${dynamicUnit} + ${staticValueRounded}${
-        leftValue.unit
-      })`,
+      [property]: `calc(${dynamicValueRounded}${dynamicUnit} + ${staticValueRounded}${leftValue.unit})`,
     },
   };
 
