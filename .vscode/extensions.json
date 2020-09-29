@@ -6,6 +6,6 @@
     "jpoissonnier.vscode-styled-components",
     "mrmlnc.vscode-scss",
     "orta.vscode-jest",
-    "shinnn.stylelint"
+    "stylelint.vscode-stylelint"
   ]
 }
