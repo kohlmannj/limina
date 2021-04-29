@@ -1,0 +1,46 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: weekly
+    day: friday
+    time: "18:00"
+    timezone: America/New_York
+  open-pull-requests-limit: 10
+  versioning-strategy: widen
+  ignore:
+  - dependency-name: "@babel/core"
+    versions:
+    - 7.12.10
+    - 7.12.13
+    - 7.13.10
+    - 7.13.13
+    - 7.13.14
+    - 7.13.15
+    - 7.13.8
+  - dependency-name: eslint-plugin-jest
+    versions:
+    - 24.1.3
+    - 24.1.5
+    - 24.2.1
+    - 24.3.2
+  - dependency-name: "@types/react"
+    versions:
+    - 17.0.0
+    - 17.0.2
+  - dependency-name: lodash-es
+    versions:
+    - 4.17.20
+  - dependency-name: lint-staged
+    versions:
+    - 10.5.3
+  - dependency-name: elliptic
+    versions:
+    - 6.5.3
+  - dependency-name: handlebars
+    versions:
+    - 4.7.6
+  - dependency-name: eslint-config-airbnb
+    versions:
+    - 18.0.1
